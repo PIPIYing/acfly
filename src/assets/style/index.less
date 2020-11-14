@@ -1,39 +1,113 @@
 #index {
-  width: 1000px;
-  mid-width: 100%;
-  max-width: 1400px;
+  /*width: 100%;*/
+  width: 100%;  //页面布局
+  mid-width: 1275px;  //页面布局
   height: 100%;
   #topBar {
-    width: 100%;
-    height: 140px;
+    /*width: 100%;*/
+    width: 1275px;  //页面布局
+    height: 120px;
+    margin: 0 auto;
     background-color: #000;
     color: #fff;
     display: flex;
     align-items: center;
-    .logo {
-      height: 80px;
-      /*margin: 0 75px 0 20%;*/
+    .logoImg {
+      width: 25%;
+      text-align: right;
+      text-align: -moz-right;
+      text-align: -webkit-right;
+      .logo {
+        height: 80px;
+      }
     }
     #nav {
-      width: 600px;
+      width: 50%;
+      /*width: 600px;*/
       display: flex;
       justify-content: center;
       .navItem {
-        width: 150px;
-        height: 60px;
+        width: 24%;
+        mid-width: 200px;
+        height: 120px;  //同topBar
         margin: 0 1px;
-        background-color: red;
-        font-size: 18px;
+        font-size: 20px;
         text-align: center;
-        line-height: 60px;
+        text-align: -moz-center;
+        text-align: -webkit-center;
+        line-height: 120px;
+      }
+      /*.navItem:hover {
+        border: 1px #fff solid;
+      }*/
+    }
+    #switchBtn {
+      width: 25%;
+      /*width: 100px;*/
+      font-size: 14px;
+      text-align: center;
+      text-align: -moz-center;
+      text-align: -webkit-center;
+    }
+  }
+  .content {
+    width: 1275px;  //页面布局，固定宽度
+    height: 100%;
+    margin: 0 auto;
+  }
+  #footer {
+    width: 1275px;  //页面布局
+    height: 340px;
+    background-color: #2B2C30;
+    margin: 0 auto;
+    padding-top: 50px;
+    .footerContent {
+      display: flex;
+      justify-content: center;
+      .logoImg {
+        margin: -18px 50px 0 50px;
+        .logo {
+          height: 80px;
+        }
+      }
+      .footerList {
+        margin: 0 30px;
+        display: flex;
+        flex-direction: column;
+        p,a {
+          color: #fff;
+          margin-bottom: 20px;
+        }
+        .title {
+          font-size: 19px;
+          font-weight: 700;
+        }
+        a {
+          font-weight: 100;
+        }
       }
     }
-    .switchBtn {
-      width: 200px;
-      background-color: red;
-      font-size: 14px;
-      color: yellow;
-      /*margin-left: 20%;*/
+    .copy {
+      width: 50%;
+      height: 50px;
+      border-top: 1px rgba(255,255,255,0.4) solid;
+      margin-left: 25%;
+      margin-top: 100px;
+      text-align: center;
+      text-align: -moz-center;
+      text-align: -webkit-center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .logoImg {
+        margin-right: 20px;
+        .logo {
+          height: 40px;
+        }
+      }
+      .copyRight {
+        color: rgba(255,255,255,0.5);
+      }
     }
   }
 }

@@ -1,12 +1,56 @@
 <template>
   <div id="intro">
-    intro
+    <img src="../../assets/images/intro1.png" alt="" id="bg" />
+    <div class="btn1">
+      <div class="btn1_1">
+        <router-link to="/" style="color: #000;">了解更多</router-link>
+      </div>
+      <div class="btn1_2">
+        <a href="#" style="color: #000;">立即购买</a>
+      </div>
+    </div>
+    <div class="box">
+      <div class="boxIntro">
+        <p class="title">C9飞行控制器</p>
+        <p class="explain">C9飞行控制器是一款工业级创新型的驾驶控制器</p>
+        <p class="explain">具有高效稳定的特点</p>
+        <div class="btn2">
+          <div class="btn2_1">
+            <a href="#" style="color: #4299F9;">立即购买</a>
+          </div>
+          <div class="btn2_2">
+            <router-link to="/" style="color: #4299F9;">了解更多》</router-link>
+          </div>
+        </div>
+      </div>
+      <div class="boxImg">
+        <img src="../../assets/images/intro2.png" alt="" class="introImg1" />
+      </div>
+    </div>
+    <div class="box">
+      <div class="boxIntro">
+        <p class="title">A9飞行控制器</p>
+        <p class="explain">A9飞行控制器是一款主打应用在教育领域的飞控</p>
+        <p class="explain">目前该款飞行控制器已上线，其具有稳定、高效等特点</p>
+        <div class="btn2">
+          <div class="btn2_1">
+            <a href="#" style="color: #4299F9;">立即购买</a>
+          </div>
+          <div class="btn2_2">
+            <router-link to="/" style="color: #4299F9;">了解更多》</router-link>
+          </div>
+        </div>
+      </div>
+      <div class="boxImg">
+        <img src="../../assets/images/intro3.png" alt="" class="introImg2" />
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
   export default {
-    name: "intro",
+    name: "Intro",
     data() {
       return {}
     },
@@ -15,5 +59,5 @@
 </script>
 
 <style lang="less" scoped>
-
+  @import "../../assets/style/intro";
 </style>
