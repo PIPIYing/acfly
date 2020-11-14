@@ -1,12 +1,12 @@
 <template>
-  <div id="components">
-    components
+  <div id="cases">
+    cases
   </div>
 </template>
 
 <script>
   export default {
-    name: "Components",
+    name: "cases",
     data() {
       return {}
     },
@@ -14,6 +14,6 @@
   }
 </script>
 
-<style scoped>
+<style lang="less" scoped>
 
 </style>
