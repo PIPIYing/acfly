@@ -21,7 +21,7 @@
             <a href="#" style="color: #4299F9;">立即购买</a>
           </div>
           <div class="btn2_2">
-            <router-link to="/" style="color: #4299F9;">了解更多》</router-link>
+            <router-link to="/" style="color: #4299F9;">了解更多>></router-link>
           </div>
         </div>
       </div>
@@ -39,7 +39,7 @@
             <a href="#" style="color: #4299F9;">立即购买</a>
           </div>
           <div class="btn2_2">
-            <router-link to="/" style="color: #4299F9;">了解更多》</router-link>
+            <router-link to="/" style="color: #4299F9;">了解更多>></router-link>
           </div>
         </div>
       </div>
