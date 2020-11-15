@@ -1,19 +1,19 @@
 #index {
-  /*width: 100%;*/
-  width: 100%;  //页面布局
-  mid-width: 1275px;  //页面布局
+  /*width: 100%;  //页面布局
+  mid-width: 1702px;  //页面布局*/
+  width: 100%;
   height: 100%;
   #topBar {
-    /*width: 100%;*/
-    width: 1275px;  //页面布局
+    /*width: 1702px;  //页面布局
+    mid-width: 100%;  //页面布局*/
     height: 120px;
-    margin: 0 auto;
     background-color: #000;
     color: #fff;
     display: flex;
     align-items: center;
     .logoImg {
-      width: 25%;
+      /*width: 25%;*/
+      flex: 2 1 auto;  //flex设置项目的宽度和放缩情况
       text-align: right;
       text-align: -moz-right;
       text-align: -webkit-right;
@@ -22,15 +22,15 @@
       }
     }
     #nav {
-      width: 50%;
-      /*width: 600px;*/
+      /*width: 50%;*/
+      flex: 4 0 auto;  //flex设置项目的宽度和放缩情况
+      /*max-width: 500px;*/
       display: flex;
       justify-content: center;
       .navItem {
-        width: 24%;
-        mid-width: 200px;
+        width: 25%;
         height: 120px;  //同topBar
-        margin: 0 1px;
+        /*margin: 0 1px;*/
         font-size: 20px;
         text-align: center;
         text-align: -moz-center;
@@ -42,8 +42,8 @@
       }*/
     }
     #switchBtn {
-      width: 25%;
-      /*width: 100px;*/
+      /*width: 25%;*/
+      flex: 2 1 60px;  //flex设置项目的宽度和放缩情况
       font-size: 14px;
       text-align: center;
       text-align: -moz-center;
@@ -51,15 +51,17 @@
     }
   }
   .content {
-    width: 1275px;  //页面布局，固定宽度
+    /*width: 1702px;  //页面布局，固定宽度
+    mid-width: 100%;  //页面布局*/
+    width: 100%;
     height: 100%;
     margin: 0 auto;
   }
   #footer {
-    width: 1275px;  //页面布局
-    height: 340px;
+   /* width: 1702px;  //页面布局
+    mid-width: 100%;  //页面布局*/
+    height: 310px;
     background-color: #2B2C30;
-    margin: 0 auto;
     padding-top: 50px;
     .footerContent {
       display: flex;
@@ -71,11 +73,12 @@
         }
       }
       .footerList {
-        margin: 0 30px;
+        margin: 0 25px;
         display: flex;
         flex-direction: column;
         p,a {
           color: #fff;
+          line-height: 22px;
           margin-bottom: 20px;
         }
         .title {
@@ -88,8 +91,33 @@
       }
     }
     .copy {
-      width: 50%;
       height: 50px;
+      background-color: #2B2C30;
+      padding-bottom: 5px;
+      .line {
+        width: 50%;
+        height: 1px;
+        border-top: 1px rgba(255,255,255,0.4) solid;
+        margin: 40px auto 0 auto;
+      }
+      .copyContent {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .logoImg {
+          margin-right: 20px;
+          .logo {
+            height: 40px;
+          }
+        }
+        .copyRight {
+          color: rgba(255,255,255,0.5);
+        }
+      }
+
+      /*width: 50%;
+      height: 50px;
+      background-color: red;
       border-top: 1px rgba(255,255,255,0.4) solid;
       margin-left: 25%;
       margin-top: 100px;
@@ -107,7 +135,7 @@
       }
       .copyRight {
         color: rgba(255,255,255,0.5);
-      }
+      }*/
     }
   }
 }

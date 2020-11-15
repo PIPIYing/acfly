@@ -1,6 +1,8 @@
 <template>
   <div id="intro">
-    <img src="../../assets/images/intro1.png" alt="" id="bg" />
+    <div id="bg">
+      <img src="../../assets/images/intro1.png" alt="" />
+    </div>
     <div class="btn1">
       <div class="btn1_1">
         <router-link to="/" style="color: #000;">了解更多</router-link>
@@ -9,7 +11,7 @@
         <a href="#" style="color: #000;">立即购买</a>
       </div>
     </div>
-    <div class="box">
+    <div class="box" :style="sizeInfo">
       <div class="boxIntro">
         <p class="title">C9飞行控制器</p>
         <p class="explain">C9飞行控制器是一款工业级创新型的驾驶控制器</p>
@@ -27,7 +29,7 @@
         <img src="../../assets/images/intro2.png" alt="" class="introImg1" />
       </div>
     </div>
-    <div class="box">
+    <div class="box" :style="sizeInfo">
       <div class="boxIntro">
         <p class="title">A9飞行控制器</p>
         <p class="explain">A9飞行控制器是一款主打应用在教育领域的飞控</p>
@@ -52,9 +54,31 @@
   export default {
     name: "Intro",
     data() {
-      return {}
+      return {
+        sizeInfo: {
+          width: ''
+        }
+      }
     },
-    methods: {}
+    methods: {
+      getInfo() {
+        /*this.info.width=window.innerWidth+'px';*/
+        /*this.info.width=window.outerWidth+'px';*/
+        if(window.outerWidth > window.innerWidth) {
+          this.sizeInfo.width = (window.outerWidth - 5) * 0.8 + 'px';
+        }else {
+          this.sizeInfo.width = (window.innerWidth - 5) * 0.8 + 'px';
+        }
+        console.log(this.sizeInfo.width);
+      }
+    },
+    created(){
+      window.addEventListener('resize', this.getInfo); //注册监听器
+      this.getInfo() //页面创建时先调用一次
+    },
+    destroyed(){
+      window.removeEventListener('resize', this.getInfo)
+    }
   }
 </script>
 

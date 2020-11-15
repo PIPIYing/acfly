@@ -1,6 +1,6 @@
 <template>
   <div id="index">
-    <div id="topBar">
+    <div id="topBar" :style="sizeInfo">
       <div class="logoImg">
         <img src="../assets/images/logo.png" alt="博睿创新科技" class="logo" />
       </div>
@@ -12,8 +12,8 @@
       </div>
       <div id="switchBtn">简体中文</div>
     </div>
-    <router-view class="content" />
-    <div id="footer">
+    <router-view class="content" :style="sizeInfo" />
+    <div id="footer" :style="sizeInfo">
       <div class="footerContent">
         <div class="logoImg">
           <img src="../assets/images/logo.png" alt="博睿创新科技" class="logo" />
@@ -43,10 +43,13 @@
         </div>
       </div>
       <div class="copy">
-        <div class="logoImg">
-          <img src="../assets/images/logo.png" alt="博睿创新科技" class="logo" />
+        <div class="line"></div>
+        <div class="copyContent">
+          <div class="logoImg">
+            <img src="../assets/images/logo.png" alt="博睿创新科技" class="logo" />
+          </div>
+          <p class="copyRight">IC备案：粤icp2802989024910466 广州博睿创新科技有限公司</p>
         </div>
-        <p class="copyRight">IC备案：粤icp2802989024910466 广州博睿创新科技有限公司</p>
       </div>
     </div>
   </div>
@@ -56,9 +59,31 @@
   export default {
     name: "Index",
     data() {
-      return {}
+      return {
+        sizeInfo: {
+          width: ''
+        }
+      }
     },
-    methods: {}
+    methods: {
+      getInfo() {
+        /*this.info.width=window.innerWidth+'px';*/
+        /*this.info.width=window.outerWidth+'px';*/
+        if(window.outerWidth > window.innerWidth) {
+          this.sizeInfo.width = window.outerWidth - 5 + 'px';
+        }else {
+          this.sizeInfo.width = window.innerWidth - 5 + 'px';
+        }
+        console.log(window.outerWidth,window.innerWidth,this.sizeInfo.width);
+      }
+    },
+    created(){
+      window.addEventListener('resize', this.getInfo); //注册监听器
+      this.getInfo() //页面创建时先调用一次
+    },
+    destroyed(){
+      window.removeEventListener('resize', this.getInfo)
+    }
   }
 </script>
 
