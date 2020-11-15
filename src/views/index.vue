@@ -8,7 +8,7 @@
         <router-link to="/index/intro" class="navItem">首页</router-link>
         <router-link to="/index/products" class="navItem">产品中心</router-link>
         <router-link to="/index/cases" class="navItem">应用案例</router-link>
-        <router-link to="/index/skill" class="navItem">技术支持</router-link>
+        <router-link to="/skill" class="navItem">技术支持</router-link>
       </div>
       <div id="switchBtn">简体中文</div>
     </div>

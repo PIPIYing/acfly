@@ -6,7 +6,7 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '*',
-    redirect: '/index/cases'
+    redirect: '/index/safe'
   },
   {
     path: '/index',
@@ -29,11 +29,26 @@ const routes = [
         component: () => import('../views/cases/cases')
       },
       {
-        path: 'skill',
-        name: 'Skill',
-        component: () => import('../views/skill/skill')
-      }
+        path: 'develop',
+        name: 'Develop',
+        component: () => import('../views/skill/develop')
+      },
+      {
+        path: 'company',
+        name: 'Company',
+        component: () => import('../views/company/company')
+      },
+      {
+        path: 'safe',
+        name: 'Safe',
+        component: () => import('../views/safe/safe')
+      },
     ]
+  },
+  {
+    path: '/skill',
+    name: 'Skill',
+    component: () => import('../views/skill/skill')
   }
 ]
 
