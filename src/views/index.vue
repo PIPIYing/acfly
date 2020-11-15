@@ -5,10 +5,10 @@
         <img src="../assets/images/logo.png" alt="博睿创新科技" class="logo" />
       </div>
       <div id="nav">
-        <div class="navItem">首页</div>
-        <div class="navItem">产品中心</div>
-        <div class="navItem">应用案例</div>
-        <div class="navItem">技术支持</div>
+        <router-link to="/index/intro" class="navItem">首页</router-link>
+        <router-link to="/index/products" class="navItem">产品中心</router-link>
+        <router-link to="/index/cases" class="navItem">应用案例</router-link>
+        <router-link to="/index/skill" class="navItem">技术支持</router-link>
       </div>
       <div id="switchBtn">简体中文</div>
     </div>

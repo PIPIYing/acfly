@@ -25,7 +25,7 @@
       </div>
       <div class="productItem">
         <p class="word1">A9飞行控制器</p>
-        <p class="word2">A9飞行控制器主要应用于教育行业，对于无人机发烧米来说十分友好</p>
+        <p class="word2">A9飞行控制器主要应用于教育行业，对于无人机发烧迷来说十分友好</p>
         <router-link to="/" class="wordBuy">产品详情>></router-link>
         <div class="btn">
           <a href="#">立即购买</a>

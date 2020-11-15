@@ -1,12 +1,17 @@
 <template>
   <div id="cases">
-    cases
+    <div id="bg">
+      <img src="../../assets/images/intro1.png" alt="" />
+    </div>
+    <div class="caseBox">
+      案例分析
+    </div>
   </div>
 </template>
 
 <script>
   export default {
-    name: "cases",
+    name: "Cases",
     data() {
       return {}
     },
@@ -15,5 +20,5 @@
 </script>
 
 <style lang="less" scoped>
-
+  @import "../../assets/style/cases";
 </style>
