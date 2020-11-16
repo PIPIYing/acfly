@@ -7,7 +7,7 @@
   #topBar {
     /*width: 1702px;  //页面布局
     mid-width: 100%;  //页面布局*/
-    height: 120px;
+    height: 80px;
     background-color: #000;
     color: #fff;
     display: flex;
@@ -30,18 +30,17 @@
       /*max-width: 500px;*/
       display: flex;
       justify-content: center;
-      .navItem {
+      a {
+        color: #fff;
+      }
+      .navItem, .el-dropdown {
         width: 25%;
-        height: 120px;  //同topBar
-        /*margin: 0 1px;*/
-        font-size: 20px;
+        height: 80px;  //同topBar
+        font-size: 18px;
         text-align: center;
         text-align: -moz-center;
         text-align: -webkit-center;
-        line-height: 120px;
-      }
-      a {
-        color: #fff;
+        line-height: 80px;
       }
       /*.navItem:hover {
         border: 1px #fff solid;
@@ -83,7 +82,8 @@
         margin: 0 50px;
         display: flex;
         flex-direction: column;
-        p,a {
+        p,a, .el-popover__reference-wrapper {
+          display: block;
           color: #fff;
           line-height: 22px;
           margin-bottom: 20px;
@@ -92,7 +92,7 @@
           font-size: 19px;
           font-weight: 700;
         }
-        a {
+        a, .el-popover__reference-wrapper {
           font-weight: 100;
         }
       }
@@ -121,28 +121,6 @@
           color: rgba(255,255,255,0.5);
         }
       }
-
-      /*width: 50%;
-      height: 50px;
-      background-color: red;
-      border-top: 1px rgba(255,255,255,0.4) solid;
-      margin-left: 25%;
-      margin-top: 100px;
-      text-align: center;
-      text-align: -moz-center;
-      text-align: -webkit-center;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      .logoImg {
-        margin-right: 20px;
-        .logo {
-          height: 40px;
-        }
-      }
-      .copyRight {
-        color: rgba(255,255,255,0.5);
-      }*/
     }
   }
 }

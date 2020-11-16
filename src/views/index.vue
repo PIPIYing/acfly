@@ -6,7 +6,12 @@
       </div>
       <div id="nav">
         <router-link to="/index/intro" class="navItem">首页</router-link>
-        <router-link to="/index/products" class="navItem">产品中心</router-link>
+        <el-dropdown placement="bottom">
+          <router-link to="/index/products" class="navItem">产品中心</router-link>
+          <el-dropdown-menu slot="dropdown">
+            <el-dropdown-item>C9pro 飞行控制器</el-dropdown-item>
+          </el-dropdown-menu>
+        </el-dropdown>
         <router-link to="/index/cases" class="navItem">应用案例</router-link>
         <router-link to="/index/skill" class="navItem">技术支持</router-link>
       </div>
@@ -36,9 +41,22 @@
         </div>
         <div class="footerList">
           <p class="title">联系我们</p>
-          <a href="#" onclick="return false">企业微信</a>
+          <el-popover
+              placement="top-start"
+              effect="dark"
+              width="150"
+              trigger="hover">
+            <img src="../assets/images/enterpriseWeChat_hover.jpg" alt="企业微信" />
+            <a href="#" slot="reference" onclick="return false">企业微信</a>
+          </el-popover>
           <a href="#" onclick="return false">官方微博</a>
-          <a href="#" onclick="return false">微信公众号</a>
+          <el-popover
+              placement="top-start"
+              width="150"
+              trigger="hover">
+            <img src="../assets/images/publicWeChat_hover.jpg" alt="企业微信" />
+            <a href="#" slot="reference" onclick="return false">微信公众号</a>
+          </el-popover>
           <router-link to="/index/company">关于我们</router-link>
         </div>
       </div>

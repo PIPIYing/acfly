@@ -4,7 +4,7 @@
       <img src="../../assets/images/intro1.png" alt="" />
     </div>
     <div class="content">
-      <img src="" alt="" />
+      <img src="../../assets/images/icon_develop.png" alt="" class="icon" />
       <p class="title">定制开发及二次开发解决方案</p>
       <p class="explain">为满足不同客户的需求，我公司可提供飞控定制开发服务，需要的客户请联系我们</p>
       <img src="../../assets/images/enterpriseWeChat.jpg" alt="博睿创新" class="weChat" />
