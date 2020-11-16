@@ -5,7 +5,7 @@
     </div>
     <div class="btn1">
       <div class="btn1_1">
-        <router-link to="/" style="color: #000;">了解更多</router-link>
+        <router-link to="/index/products/C9pro" style="color: #000;">了解更多</router-link>
       </div>
       <div class="btn1_2">
         <a href="#" style="color: #000;">立即购买</a>
@@ -21,7 +21,7 @@
             <a href="#" style="color: #4299F9;">立即购买</a>
           </div>
           <div class="btn2_2">
-            <router-link to="/" style="color: #4299F9;">了解更多>></router-link>
+            <router-link to="/index/products/C9pro" style="color: #4299F9;">了解更多>></router-link>
           </div>
         </div>
       </div>
@@ -39,7 +39,7 @@
             <a href="#" style="color: #4299F9;">立即购买</a>
           </div>
           <div class="btn2_2">
-            <router-link to="/" style="color: #4299F9;">了解更多>></router-link>
+            <router-link to="/index/products/C9pro" style="color: #4299F9;">了解更多>></router-link>
           </div>
         </div>
       </div>

@@ -8,7 +8,7 @@
         <router-link to="/index/intro" class="navItem">首页</router-link>
         <router-link to="/index/products" class="navItem">产品中心</router-link>
         <router-link to="/index/cases" class="navItem">应用案例</router-link>
-        <router-link to="/skill" class="navItem">技术支持</router-link>
+        <router-link to="/index/skill" class="navItem">技术支持</router-link>
       </div>
       <div id="switchBtn">简体中文</div>
     </div>
@@ -20,10 +20,10 @@
         </div>
         <div class="footerList">
           <p class="title">热门产品</p>
-          <a href="#">C9 PRO飞行控制器</a>
-          <a href="#">C9 飞行控制器</a>
-          <a href="#">A9 飞行控制器</a>
-          <a href="#">测绘整机解决方案</a>
+          <router-link to="/index/products/C9pro">C9 PRO飞行控制器</router-link>
+          <router-link to="/index/products/C9pro">C9 飞行控制器</router-link>
+          <router-link to="/index/products/C9pro">A9 飞行控制器</router-link>
+          <router-link to="/index/products/C9pro">测绘整机解决方案</router-link>
         </div>
         <div class="footerList">
           <p class="title">购买渠道</p>
@@ -32,14 +32,14 @@
         </div>
         <div class="footerList">
           <p class="title">安全飞行</p>
-          <a href="#">安全飞行指引</a>
+          <router-link to="/index/safe">安全飞行指引</router-link>
         </div>
         <div class="footerList">
           <p class="title">联系我们</p>
-          <a href="#">企业微信</a>
-          <a href="#">官方微博</a>
-          <a href="#">微信公众号</a>
-          <a href="#">关于我们</a>
+          <a href="#" onclick="return false">企业微信</a>
+          <a href="#" onclick="return false">官方微博</a>
+          <a href="#" onclick="return false">微信公众号</a>
+          <router-link to="/index/company">关于我们</router-link>
         </div>
       </div>
       <div class="copy">

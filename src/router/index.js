@@ -6,7 +6,7 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '*',
-    redirect: '/index/safe'
+    redirect: '/index/intro'
   },
   {
     path: '/index',
@@ -21,7 +21,12 @@ const routes = [
       {
         path: 'products',
         name: 'Products',
-        component: () => import('../views/products/products')
+        component: () => import('../views/products/products'),
+      },
+      {
+        path: 'products/C9pro',
+        name: 'C9pro',
+        component: () => import('../views/products/C9pro')
       },
       {
         path: 'cases',
@@ -46,7 +51,7 @@ const routes = [
     ]
   },
   {
-    path: '/skill',
+    path: '/index/skill',
     name: 'Skill',
     component: () => import('../views/skill/skill')
   }
@@ -54,7 +59,11 @@ const routes = [
 
 const router = new VueRouter({
   routes,
-  mode: 'history'  //history mode
+  mode: 'history',  //history mode
+  /* eslint-disable */
+  scrollBehavior (to, from, savedPosition) {
+    return { x: 0, y: 0 }
+  }
 })
 
 export default router
