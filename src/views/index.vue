@@ -5,15 +5,40 @@
         <img src="../assets/images/logo.png" alt="博睿创新科技" class="logo" />
       </div>
       <div id="nav">
-        <router-link to="/index/intro" class="navItem">首页</router-link>
-        <el-dropdown placement="bottom">
-          <router-link to="/index/products" class="navItem">产品中心</router-link>
-          <el-dropdown-menu slot="dropdown">
-            <el-dropdown-item>C9pro 飞行控制器</el-dropdown-item>
-          </el-dropdown-menu>
-        </el-dropdown>
-        <router-link to="/index/cases" class="navItem">应用案例</router-link>
-        <router-link to="/index/skill" class="navItem">技术支持</router-link>
+        <div class="dropdown">
+          <router-link to="/index/intro">首页</router-link>
+        </div>
+        <div class="dropdown">
+          <router-link to="/index/products">产品中心</router-link>
+          <div class="navList">
+            <div class="item">
+              <router-link to="/index/products/C9pro">C9pro飞行控制器</router-link>
+            </div>
+            <div class="item">
+              <router-link to="/index/products/C9">C9飞行控制器</router-link>
+            </div>
+            <div class="item">
+              <router-link to="/index/products/A9">A9飞行控制器</router-link>
+            </div>
+            <div class="item">
+              <router-link to="/index/products/mapping">测绘整机解决方案</router-link>
+            </div>
+          </div>
+        </div>
+        <div class="dropdown">
+          <router-link to="/index/cases">应用案例</router-link>
+        </div>
+        <div class="dropdown">
+          <router-link to="/index/skill">技术支持</router-link>
+          <div class="navList">
+            <div class="item">
+              <router-link to="/index/skill">技术文档</router-link>
+            </div>
+            <div class="item">
+              <router-link to="/index/develop">定制开发</router-link>
+            </div>
+          </div>
+        </div>
       </div>
       <div id="switchBtn">简体中文</div>
     </div>

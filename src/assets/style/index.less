@@ -8,7 +8,7 @@
     /*width: 1702px;  //页面布局
     mid-width: 100%;  //页面布局*/
     height: 80px;
-    background-color: #000;
+    background-color: rgba(0,0,0,0.9);
     color: #fff;
     display: flex;
     align-items: center;
@@ -30,25 +30,47 @@
       /*max-width: 500px;*/
       display: flex;
       justify-content: center;
-      a {
-        color: #fff;
-      }
-      .navItem, .el-dropdown {
+      .dropdown {
+        position: relative;
+        display: inline-block;
         width: 25%;
+        /*min-width: 220px;*/
         height: 80px;  //同topBar
-        font-size: 18px;
+        font-size: 19px;
         text-align: center;
         text-align: -moz-center;
         text-align: -webkit-center;
         line-height: 80px;
+        a {
+          color: #fff;
+        }
+        .navList {
+          display: none;
+          position: absolute;
+          color: #fff;
+          background-color: rgba(0,0,0,0.7);
+          width: calc(100% - 20px);
+          min-width: 180px;
+          box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+          padding: 0px 10px;
+          a {
+            color: #fff;
+          }
+          a:hover {
+            color: #FADB14;
+          }
+        }
       }
-      /*.navItem:hover {
-        border: 1px #fff solid;
-      }*/
+      .dropdown:hover .navList {
+        display: block;
+      }
+      .dropdown:hover {
+        background-color: #000;
+      }
     }
     #switchBtn {
       /*width: 25%;*/
-      flex: 2 1 60px;  //flex设置项目的宽度和放缩情况
+      flex: 3 1 60px;  //flex设置项目的宽度和放缩情况
       font-size: 14px;
       text-align: center;
       text-align: -moz-center;
@@ -69,6 +91,7 @@
     height: 310px;
     background-color: #2B2C30;
     padding-top: 50px;
+    /*white-space: nowrap;*/
     .footerContent {
       display: flex;
       justify-content: center;

@@ -41,7 +41,7 @@
       border-radius: 0 70px 70px 0;
     }
   }
-  .box {
+  /*.box {
     clear: both;
     mid-width: 1275px;
     max-width: 1600px;  //使用浏览器缩放
@@ -63,7 +63,7 @@
         margin: 0 0 50px 65px;
       }
       .explain {
-        white-space:nowrap;
+        white-space: nowrap;
         line-height: 36px;
         margin: 0 50px;
       }
@@ -79,14 +79,14 @@
     .boxImg {
       flex: 1 4 auto;  //flex布局
        .introImg1 {
-         /*height: 300px;*/
+         !*height: 300px;*!
          width: auto;
          height: auto;
          max-width: 68%;
          max-height: 68%;  //图片自适应
       }
       .introImg2 {
-        /*height: 320px;*/
+        !*height: 320px;*!
         width: auto;
         height: auto;
         max-width: 65%;
@@ -94,6 +94,30 @@
         margin-left: 22%;
       }
     }
-
+  }*/
+  .box {
+    width: 100%;
+    max-height: 740px;
+    margin: 80px auto;
+    background-color: #fff;
+    border: 1px #fff solid;
+    box-shadow: darkgrey 0 10px 10px 2px ;  //边框阴影
+    img {
+      width: 100%;
+      max-height: 740px;
+      position: relative;
+      z-index: 0;
+    }
+    .btn2 {
+      display: flex;
+      margin: 0 50px 0 10%;
+      font-size: 22px;
+      position: relative;
+      bottom: 100px;
+      z-index: 99;
+      .btn2_2 {
+        margin-left: 80px;
+      }
+    }
   }
 }
