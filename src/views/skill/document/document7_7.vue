@@ -105,7 +105,7 @@
           <td class="solidBottom">高度方向航线速度</td>
         </tr>
       </table>
-      <table class="table1">
+      <table class="table1" style="margin-top: 50px;">
         <tr>
           <th class="left solidTop bottom">高度前馈滤波器参数</th>
           <th class="right solidTop bottom">反馈增益参数</th>

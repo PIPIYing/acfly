@@ -37,6 +37,9 @@
             <div class="item">
               <router-link to="/index/develop">定制开发</router-link>
             </div>
+            <div class="item">
+              <router-link to="/index/problem">常见问题</router-link>
+            </div>
           </div>
         </div>
       </div>
@@ -51,9 +54,9 @@
         <div class="footerList">
           <p class="title">热门产品</p>
           <router-link to="/index/products/C9pro">C9 PRO飞行控制器</router-link>
-          <router-link to="/index/products/C9pro">C9 飞行控制器</router-link>
-          <router-link to="/index/products/C9pro">A9 飞行控制器</router-link>
-          <router-link to="/index/products/C9pro">测绘整机解决方案</router-link>
+          <router-link to="/index/products/C9">C9 飞行控制器</router-link>
+          <router-link to="/index/products/A9">A9 飞行控制器</router-link>
+          <router-link to="/index/products/mapping">测绘整机解决方案</router-link>
         </div>
         <div class="footerList">
           <p class="title">购买渠道</p>

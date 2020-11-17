@@ -9,7 +9,9 @@
       <div class="catalog">
         <ul>
           <li class="title">ACFLY飞控用户手册</li>
-          <li class="title1">0 阅读提示</li>
+          <li class="title1">
+            <router-link to="/index/skill/document0_1">0 阅读提示</router-link>
+          </li>
           <li class="title2">
             <router-link to="/index/skill/document0_1">0.1 使用建议</router-link>
           </li>
@@ -19,7 +21,9 @@
           <li class="title2">
             <router-link to="/index/skill/document0_3">0.3 关注微信公众号</router-link>
           </li>
-          <li class="title1">1 开发环境搭建</li>
+          <li class="title1">
+            <router-link to="/index/skill/document1_1">1 开发环境搭建</router-link>
+          </li>
           <li class="title2">
             <router-link to="/index/skill/document1_1">1.1 编译环境（MDK）安装</router-link>
           </li>
@@ -29,11 +33,12 @@
           <li class="title2">
             <router-link to="/index/skill/document1_3">1.3 固件烧录</router-link>
           </li>
-          <li class="title1">2 正版注册</li>
-          <li class="title2">
-            <router-link to="/index/skill/document2_1">2.1 正版注册情况</router-link>
+          <li class="title1">
+            <router-link to="/index/skill/document2">2 正版注册</router-link>
           </li>
-          <li class="title1">3 硬件接口定义</li>
+          <li class="title1">
+            <router-link to="/index/skill/document3_1">3 硬件接口定义</router-link>
+          </li>
           <li class="title2">
             <router-link to="/index/skill/document3_1">3.1 接口定义</router-link>
           </li>
@@ -43,7 +48,9 @@
           <li class="title2">
             <router-link to="/index/skill/document3_3">3.3 飞控尺寸重量</router-link>
           </li>
-          <li class="title1">4 飞控安装</li>
+          <li class="title1">
+            <router-link to="/index/skill/document4_1">4 飞控安装</router-link>
+          </li>
           <li class="title2">
             <router-link to="/index/skill/document4_1">4.1 电机顺序及转向</router-link>
           </li>
@@ -53,7 +60,9 @@
           <li class="title2">
             <router-link to="/index/skill/document4_3">4.3 连接接收机</router-link>
           </li>
-          <li class="title1">5 飞控初始设置及校准</li>
+          <li class="title1">
+            <router-link to="/index/skill/document5_1">5 飞控初始设置及校准</router-link>
+          </li>
           <li class="title2">
             <router-link to="/index/skill/document5_1">5.1 飞控初始化</router-link>
           </li>
@@ -78,7 +87,9 @@
           <li class="title1">
             <router-link to="/index/skill/document6">6 固件更新</router-link>
           </li>
-          <li class="title1">7 飞控调参</li>
+          <li class="title1">
+            <router-link to="/index/skill/document7_1">7 飞控调参</router-link>
+          </li>
           <li class="title2">
             <router-link to="/index/skill/document7_1">7.1 调参软件</router-link>
           </li>
@@ -109,7 +120,9 @@
           <li class="title2">
             <router-link to="/index/skill/document7_10">7.10 POfs参数</router-link>
           </li>
-          <li class="title1">8 功能介绍</li>
+          <li class="title1">
+            <router-link to="/index/skill/document8_1">8 功能介绍</router-link>
+          </li>
           <li class="title2">
             <router-link to="/index/skill/document8_1">8.1 航点设置</router-link>
           </li>
@@ -125,7 +138,9 @@
           <li class="title2">
             <router-link to="/index/skill/document8_5">8.5 抗磁干扰</router-link>
           </li>
-          <li class="title1">9 代码框架</li>
+          <li class="title1">
+            <router-link to="/index/skill/document9_1">9 代码框架</router-link>
+          </li>
           <li class="title2">
             <router-link to="/index/skill/document9_1">9.1 代码总体布局</router-link>
           </li>
@@ -138,9 +153,15 @@
           <li class="title2">
             <router-link to="/index/skill/document10_2">10.2 接收机接口</router-link>
           </li>
-          <li class="title1">11 稳压连接</li>
-          <li class="title1">12 代码二次开发教程</li>
-          <li class="title1">13 版本更新日志</li>
+          <li class="title1">
+            <router-link to="/index/skill/document11">11 稳压连接</router-link>
+          </li>
+          <li class="title1">
+            <router-link to="/index/skill/document12">12 代码二次开发教程</router-link>
+          </li>
+          <li class="title1">
+            <router-link to="/index/skill/document13">13 版本更新日志</router-link>
+          </li>
         </ul>
       </div>
       <router-view class="content"></router-view>

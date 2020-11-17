@@ -1,7 +1,7 @@
 <template>
-  <div id="document3_1">
+  <div id="document12">
     <div class="box">
-      <p class="title">3.1 接口定义</p>
+      <p class="title">12 代码二次开发教程</p>
       <p>待补充</p>
     </div>
   </div>
@@ -9,7 +9,7 @@
 
 <script>
   export default {
-    name: "document3_1",
+    name: "document12",
     data() {
       return {}
     },
