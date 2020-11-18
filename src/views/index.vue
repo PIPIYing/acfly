@@ -60,7 +60,7 @@
         </div>
         <div class="footerList">
           <p class="title">购买渠道</p>
-          <a href="#">官方商城</a>
+          <a href="https://shop227604841.taobao.com/?spm=2013.1.1000126.2.315331437MJ3XW">官方商城</a>
           <a href="#">经销合作</a>
         </div>
         <div class="footerList">

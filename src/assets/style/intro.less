@@ -45,7 +45,8 @@
       border-radius: 0 60px 60px 0;
     }
   }
-  /*.box {
+  //图+文字的part
+  .box {
     clear: both;
     mid-width: 1275px;
     max-width: 1600px;  //使用浏览器缩放
@@ -64,17 +65,20 @@
         font-size: 40px;
         line-height: 40px;
         letter-spacing: 5px;
-        margin: 0 0 50px 65px;
+        margin: 0 0 50px 62px;
       }
       .explain {
         white-space: nowrap;
         line-height: 36px;
-        margin: 0 50px;
+        margin: 0 65px;
       }
       .btn2 {
         display: flex;
         margin: 80px 50px 0 65px;
         font-size: 22px;
+        a {
+          white-space: nowrap;
+        }
         .btn2_2 {
           margin-left: 80px;
         }
@@ -83,23 +87,31 @@
     .boxImg {
       flex: 1 4 auto;  //flex布局
        .introImg1 {
-         !*height: 300px;*!
+         /*height: 300px;*/
          width: auto;
          height: auto;
          max-width: 68%;
          max-height: 68%;  //图片自适应
       }
       .introImg2 {
-        !*height: 320px;*!
+        /*height: 320px;*/
         width: auto;
         height: auto;
-        max-width: 65%;
-        max-height: 65%;  //图片自适应
-        margin-left: 22%;
+        max-width: 56%;
+        max-height: 56%;  //图片自适应
+        margin-left: 30%;
+      }
+      .introImg3 {
+        /*height: 300px;*/
+        width: auto;
+        height: auto;
+        max-width: 100%;
+        max-height: 100%;  //图片自适应
       }
     }
-  }*/
-  .box {
+  }
+  //只有图，没有文字的part
+  /*.box {
     width: 100%;
     max-height: 740px;
     margin: 80px auto;
@@ -123,5 +135,5 @@
         margin-left: 80px;
       }
     }
-  }
+  }*/
 }

@@ -7,7 +7,7 @@
     </div>
     <div class="center" :style="sizeInfo">
       <div class="catalog">
-        <!--<ul>
+        <ul>
           <li class="title">ACFLY飞控用户手册</li>
           <li class="title1">
             <router-link to="/index/skill/document0_1">0 阅读提示</router-link>
@@ -162,7 +162,7 @@
           <li class="title1">
             <router-link to="/index/skill/document13">13 版本更新日志</router-link>
           </li>
-        </ul>-->
+        </ul>
         <ul>
           <li></li>
         </ul>

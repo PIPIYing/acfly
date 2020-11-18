@@ -12,7 +12,8 @@
       </div>
     </div>
     <div class="box" :style="sizeInfo">
-      <img src="../../assets/images/C9_intro.jpg" alt="">
+      <!--只有图，没有文字的part-->
+      <!--<img src="../../assets/images/C9_intro.jpg" alt="">
       <div class="btn2">
         <div class="btn2_1">
           <a href="#" style="color: #4299F9;">立即购买</a>
@@ -20,26 +21,28 @@
         <div class="btn2_2">
           <router-link to="/index/products/C9pro" style="color: #4299F9;">了解更多>></router-link>
         </div>
-      </div>
-      <!--<div class="boxIntro">
+      </div>-->
+      <!--图+文字的part-->
+      <div class="boxIntro">
         <p class="title">C9飞行控制器</p>
-        <p class="explain">C9飞行控制器是一款工业级创新型的驾驶控制器</p>
-        <p class="explain">具有高效稳定的特点</p>
+        <p class="explain">匠心打造 成就不凡</p>
+        <p class="explain">工业级创新型驾驶控制器</p>
         <div class="btn2">
           <div class="btn2_1">
-            <a href="#" style="color: #4299F9;">立即购买</a>
+            <a href="https://item.taobao.com/item.htm?spm=a1z10.1-c.w4004-23273774756.5.78dc4a92ubEpVX&id=631387331308" style="color: #4299F9;">立即购买</a>
           </div>
           <div class="btn2_2">
-            <router-link to="/index/products/C9pro" style="color: #4299F9;">了解更多>></router-link>
+            <router-link to="/index/products/C9" style="color: #4299F9;">了解更多>></router-link>
           </div>
         </div>
       </div>
       <div class="boxImg">
         <img src="../../assets/images/intro2.png" alt="" class="introImg1" />
-      </div>-->
+      </div>
     </div>
     <div class="box" :style="sizeInfo">
-      <img src="../../assets/images/A9_intro.jpg" alt="">
+      <!--只有图，没有文字的part-->
+      <!--<img src="../../assets/images/A9_intro.jpg" alt="">
       <div class="btn2">
         <div class="btn2_1">
           <a href="#" style="color: #4299F9;">立即购买</a>
@@ -47,23 +50,44 @@
         <div class="btn2_2">
           <router-link to="/index/products/C9pro" style="color: #4299F9;">了解更多>></router-link>
         </div>
-      </div>
-      <!--<div class="boxIntro">
+      </div>-->
+      <!--图+文字的part-->
+      <div class="boxIntro">
         <p class="title">A9飞行控制器</p>
-        <p class="explain">A9飞行控制器是一款主打应用在教育领域的飞控</p>
-        <p class="explain">目前该款飞行控制器已上线，其具有稳定、高效等特点</p>
+        <p class="explain">罗盘异常修正 多传感器融合</p>
+        <p class="explain">单参数调节 65536航点</p>
         <div class="btn2">
           <div class="btn2_1">
-            <a href="#" style="color: #4299F9;">立即购买</a>
+            <a href="https://item.taobao.com/item.htm?spm=a1z10.1-c.w4004-23273774756.3.78dc4a92ubEpVX&id=591615647197" style="color: #4299F9;">立即购买</a>
           </div>
           <div class="btn2_2">
-            <router-link to="/index/products/C9pro" style="color: #4299F9;">了解更多>></router-link>
+            <router-link to="/index/products/A9" style="color: #4299F9;">了解更多>></router-link>
           </div>
         </div>
       </div>
       <div class="boxImg">
         <img src="../../assets/images/intro3.png" alt="" class="introImg2" />
-      </div>-->
+      </div>
+    </div>
+    <div class="box" :style="sizeInfo">
+      <!--图+文字的part-->
+      <div class="boxIntro">
+        <p class="title">X640飞行器</p>
+        <p class="explain">简单 使用 创新</p>
+        <p class="explain">一体化航电结构</p>
+        <p class="explain">双星四频 精准定位</p>
+        <div class="btn2">
+          <div class="btn2_1">
+            <a href="#" style="color: #4299F9;">立即购买</a>
+          </div>
+          <div class="btn2_2">
+            <router-link to="/index/products/mapping" style="color: #4299F9;">了解更多>></router-link>
+          </div>
+        </div>
+      </div>
+      <div class="boxImg">
+        <img src="../../assets/images/intro4.png" alt="" class="introImg3" />
+      </div>
     </div>
   </div>
 </template>
