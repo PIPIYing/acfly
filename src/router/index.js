@@ -8,10 +8,10 @@ const routes = [
     path: '*',
     redirect: '/index/intro'
   },
-  {
+/*  {
     path: '/index/skill',
     redirect: '/index/skill/document0_1'
-  },
+  },*/
   {
     path: '/index',
     name: 'Index',
@@ -78,7 +78,7 @@ const routes = [
     path: '/index/skill',
     name: 'Skill',
     component: () => import('../views/skill/skill'),
-    children: [
+    /*children: [
       {
         path: 'document_nav',
         name: 'document_nav',
@@ -299,7 +299,7 @@ const routes = [
         name: 'document13',
         component: () => import('../views/skill/document_v1/document13')
       }
-    ]
+    ]*/
   }
 ]
 
