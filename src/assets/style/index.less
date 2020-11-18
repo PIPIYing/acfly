@@ -8,11 +8,14 @@
   #topBar {
     /*width: 1702px;  //页面布局
     mid-width: 100%;  //页面布局*/
-    height: 80px;
-    background-color: rgba(0,0,0,0.9);
-    color: #fff;
+    height: 75px;
+    /*background-color: rgba(0,0,0,0.9)
+    color: #fff;;*/  //旧导航栏
+    background: rgba(255,255,255,0);
     display: flex;
     align-items: center;
+    position: relative;
+    z-index: 99;
     /*position: fixed;
     top: 0;  //固定顶端*/
     .logoImg {
@@ -22,7 +25,7 @@
       text-align: -moz-right;
       text-align: -webkit-right;
       .logo {
-        height: 80px;
+        height: 75px;
       }
     }
     #nav {
@@ -36,12 +39,13 @@
         display: inline-block;
         width: 25%;
         /*min-width: 220px;*/
-        height: 80px;  //同topBar
+        height: 75px;  //同topBar
         text-align: center;
         text-align: -moz-center;
         text-align: -webkit-center;
-        line-height: 80px;
+        line-height: 75px;
         a {
+          //修改链接颜色
           color: #fff;
         }
         .navList {
@@ -72,10 +76,14 @@
       /*width: 25%;*/
       flex: 3 1 60px;  //flex设置项目的宽度和放缩情况
       font-size: 14px;
+      color: #fff; //同步修改引擎颜色
       text-align: center;
       text-align: -moz-center;
       text-align: -webkit-center;
     }
+  }
+  #topBar:hover {
+    background-color: #000;
   }
   .content {
     /*width: 1702px;  //页面布局，固定宽度
