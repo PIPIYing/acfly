@@ -86,7 +86,7 @@
         </div>
       </div>
       <div class="boxImg">
-        <img src="../../assets/images/intro4.png" alt="" class="introImg3" />
+        <img src="../../assets/images/intro4.jpg" alt="" class="introImg3" />
       </div>
     </div>
   </div>

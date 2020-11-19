@@ -9,10 +9,8 @@
       <p class="word0">内置双频RTK/自抗扰算法/免减震设计/超宽压电源/超小尺寸</p>
     </div>
     <div class="detail1">
-      <p class="title1">内置双频RTK</p>
-      <!--<p class="word1">
-        我是示例文字我是示例文字我是示例文字我是示例文字我是示例文字我是示例文字
-      </p>-->
+      <p class="title1">内置双频ZED-F9P RTK</p>
+      <p class="word1">本机可支持外接基站和千寻位置定位，定位精度可至2厘米</p>
     </div>
     <div class="detail2">
       <p class="title2">大小机型任意装</p>
