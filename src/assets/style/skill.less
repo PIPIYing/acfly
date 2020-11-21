@@ -1,6 +1,7 @@
 #skill {
   width: 100%;
   height: 100%;
+  font-family: "微软雅黑", sans-serif;
   .top {
     height: 50px;
     background-color: #000;
@@ -19,53 +20,210 @@
       ul {
         width: 240px;
         height: calc(100% - 20px);
-        padding: 10px 0 10px 20px;
-        background-color: #F5F5F5;
-        font-size: 16px;
-        line-height: 32px;
+        padding: 10px 0;
+        /*background-color: #F5F5F5;*/
         overflow-y: auto;
-        .title {
+        li {
+          a {
+            color: #000;
+          }
+          ul {
+            li {
+              a {
+                color: #000;
+                display: inline-block;
+                width: 190px;
+                height: 100%;
+                padding-left: 50px;
+                position: relative;
+                right: 40px;
+              }
+            }
+          }
+        }
+        /*.title {
           font-size: 20px;
           font-weight: 700;
           margin: 5px 0;
           position: relative;
           left: 1px;
-        }
-        .title1 {
+        }*/
+        /*.el-submenu__title {
           font-weight: 600;
-          a {
-            font-weight: 600;
+          .el-submenu__icon-arrow {
+            font-size: 20px;
           }
-        }
-        .title2 {
+        }*/
+        /*.title2 {
           text-indent: 2em;
         }
         a {
           color: rgba(0,0,0,0.9);
-        }
+        }*/
       }
-      ul::-webkit-scrollbar {/*滚动条整体样式*/
+      .el-menu::-webkit-scrollbar {/*滚动条整体样式*/
         width: 10px;     /*高宽分别对应横竖滚动条的尺寸*/
         height: 1px;
       }
-      ul::-webkit-scrollbar-thumb {/*滚动条里面小方块*/
+      .el-menu::-webkit-scrollbar-thumb {/*滚动条里面小方块*/
         border-radius: 10px;
         -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
         background: #535353;
       }
-      ul::-webkit-scrollbar-track {/*滚动条里面轨道*/
+      .el-menu::-webkit-scrollbar-track {/*滚动条里面轨道*/
         -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
         border-radius: 10px;
         background: #EDEDED;
       }
     }
     .content {
+      width: 100%;
+      height: 100%;
       /*width: calc(100% - 230px);*/
       margin-right: 5px;
       overflow-y: auto;
+      .box {
+        width: 80%;
+        margin: 0 auto;
+        padding: 40px 50px;
+        p,ul {
+          font-size: 18px;
+          line-height: 54px;
+          /*text-indent: 2em;*/
+        }
+        .title {
+          font-size: 30px;
+          line-height: 60px;
+          padding: 10px 0;
+          /*text-indent: 0;*/
+          border-bottom: 4px rgba(0,0,0,0.1) solid;
+        }
+        .imageSmall {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          margin: 40px auto;
+          img {
+            width: 200px;
+          }
+          .explain {
+            font-size: 16px;
+            color: rgba(0,0,0,0.3);
+            line-height: 24px;
+            /*text-indent: 0;*/
+          }
+        }
+        .image {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          margin: 40px auto;
+          img {
+            width: 90%;
+          }
+        }
+        ul {
+          li {
+            list-style-type: square;
+            text-indent: 2em;
+            ul {
+              li {
+                list-style-type: circle;
+                text-indent: 4em;
+              }
+            }
+            span {
+              display: inline-block;
+              text-indent: 2em;
+            }
+          }
+        }
+        .table1, .table2, .table3, .table4 {
+          width: 100%;
+          border-collapse: collapse;
+          margin: 20px auto;
+          td, th {
+            font-size: 1.1em;
+            padding: 15px 0;
+            text-align: center;
+            text-align: -moz-center;
+            text-align: -webkit-center;
+            vertical-align: center;
+          }
+          .solidBottom {
+            border-bottom: 3px #000 solid;
+          }
+        }
+        .table1 {
+          .left {
+            border-right: 1px solid #000;
+          }
+          .right {
+            border-left: 1px solid #000;
+          }
+          .solidTop {
+            border-top: 3px solid #000;
+          }
+          .bottom {
+            border-bottom: 1px solid #000;
+          }
+        }
+        .table2 {
+          th {
+            line-height: 30px;
+            border-top: 3px #000 solid;
+            border-bottom: 1px #000 solid;
+          }
+          .firstCol {
+            width: 100px;
+          }
+        }
+        .table3 {
+          th {
+            border-top: 3px #000 solid;
+            border-bottom: 1px #000 solid;
+          }
+          .left {
+            border-right: 1px solid #000;
+          }
+          .right {
+            border-left: 1px solid #000;
+          }
+        }
+        .table4 {
+          .solidTop {
+            border-top: 3px #000 solid;
+          }
+          .top {
+            border-top: 1px #000 solid;
+          }
+          .left {
+            border-right: 1px solid #000;
+          }
+          .right {
+            border-left: 1px solid #000;
+          }
+        }
+        .table5 {
+          width: 100%;
+          border-collapse: collapse;
+          margin: 20px auto;
+          td, th {
+            border: 1px #000 solid;
+            font-size: 1.1em;
+            padding: 15px 0;
+            vertical-align: center;
+          }
+          .center {
+            text-align: center;
+            text-align: -moz-center;
+            text-align: -webkit-center;
+          }
+        }
+      }
     }
     .content::-webkit-scrollbar {/*滚动条整体样式*/
-      width: 10px;     /*高宽分别对应横竖滚动条的尺寸*/
+      width: 15px;     /*高宽分别对应横竖滚动条的尺寸*/
       height: 1px;
     }
     .content::-webkit-scrollbar-thumb {/*滚动条里面小方块*/
@@ -79,6 +237,7 @@
       background: #EDEDED;
     }
   }
+
   .bottom {
     height: 62px;
     background-color: #3A3535;

@@ -8,10 +8,10 @@ const routes = [
     path: '*',
     redirect: '/index/intro'
   },
-/*  {
+  {
     path: '/index/skill',
-    redirect: '/index/skill/document0_1'
-  },*/
+    redirect: '/index/skill/document_C9'
+  },
   {
     path: '/index',
     name: 'Index',
@@ -78,6 +78,43 @@ const routes = [
     path: '/index/skill',
     name: 'Skill',
     component: () => import('../views/skill/skill'),
+    children: [
+      /*{
+        path: 'catalog_C9',
+        name: 'catalog_C9',
+        component: () => import('../views/skill/document_v2/catalog_C9')
+      },
+      {
+        path: 'catalog_A9',
+        name: 'catalog_A9',
+        component: () => import('../views/skill/document_v2/catalog_A9')
+      },
+      {
+        path: 'catalog_mapping',
+        name: 'catalog_mapping',
+        component: () => import('../views/skill/document_v2/catalog_mapping')
+      },*/
+      {
+        path: 'document_C9',
+        name: 'document_C9',
+        component: () => import('../views/skill/document_v2/document_C9')
+      },
+      {
+        path: 'document_A9',
+        name: 'document_A9',
+        component: () => import('../views/skill/document_v2/document_A9')
+      },
+      {
+        path: 'document_mapping',
+        name: 'document_mapping',
+        component: () => import('../views/skill/document_v2/document_mapping')
+      },
+      {
+        path: 'document_diary',
+        name: 'document_diary',
+        component: () => import('../views/skill/document_v2/document_diary')
+      },
+    ]
     /*children: [
       {
         path: 'document_nav',

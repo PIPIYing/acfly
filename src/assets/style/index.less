@@ -11,16 +11,17 @@
     height: 70px;
     /*background-color: rgba(0,0,0,0.9)
     color: #fff;;*/  //旧导航栏
-    /*background: rgba(255,255,255,0);*/
-    background-color: rgba(0,0,0,0.9);
+    color: #000;
+    background-color: rgba(255,255,255,0);
     display: flex;
     align-items: center;
     position: relative;
     z-index: 99;
+    float: left;
     /*position: fixed;
     top: 0;  //固定顶端*/
-    .logoImg {
-      /*width: 25%;*/
+    /*.logoImg {
+      !*width: 25%;*!
       flex: 2 1 auto;  //flex设置项目的宽度和放缩情况
       text-align: right;
       text-align: -moz-right;
@@ -28,6 +29,15 @@
       .logo {
         height: 65px;
       }
+    }*/
+    .logoImg {
+      flex: 2 1 auto;  //flex设置项目的宽度和放缩情况
+      height: 65px;
+      line-height: 70px;
+      background-image: url("../../assets/images/logo.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      margin-left: 10%;
     }
     #nav {
       /*width: 50%;*/
@@ -46,14 +56,14 @@
         text-align: -webkit-center;
         line-height: 70px;
         a {
-          //修改链接颜色
           color: #fff;
         }
         .navList {
           display: none;
           position: absolute;
           color: #fff;
-          background-color: rgba(0,0,0,0.7);
+          /*background-color: rgba(0,0,0,0.7);*/
+          background-color: rgba(255,255,255,0.9);
           width: calc(100% - 20px);
           min-width: 180px;
           box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
@@ -62,7 +72,7 @@
             color: #fff;
           }
           a:hover {
-            color: #FADB14;
+            color: #409EFF;
           }
         }
       }
@@ -70,7 +80,7 @@
         display: block;
       }
       .dropdown:hover {
-        background-color: #000;
+        background-color: rgba(255,255,255,0.9);
       }
     }
     #switchBtn {
@@ -84,7 +94,21 @@
     }
   }
   #topBar:hover {
-    background-color: #000;
+    /*background-color: rgba(0,0,0,0.5);*/
+    background-color:  rgba(255,255,255,0.9);
+    .logoImg {
+      background-image: url("../../assets/images/logo_black.png");
+    }
+    #nav {
+      .dropdown {
+        a {
+          color: #000;
+        }
+      }
+    }
+    #switchBtn {
+      color: #000;
+    }
   }
   .content {
     /*width: 1702px;  //页面布局，固定宽度
@@ -98,7 +122,7 @@
    /* width: 1702px;  //页面布局
     mid-width: 100%;  //页面布局*/
     height: 310px;
-    background-color: #2B2C30;
+    background-color: #000;
     padding-top: 50px;
     /*white-space: nowrap;*/
     .footerContent {
@@ -131,7 +155,7 @@
     }
     .copy {
       height: 50px;
-      background-color: #2B2C30;
+      background-color: #000;
       padding-bottom: 5px;
       .line {
         width: 50%;

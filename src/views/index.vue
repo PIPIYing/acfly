@@ -2,7 +2,7 @@
   <div id="index">
     <div id="topBar" :style="sizeInfo">
       <div class="logoImg">
-        <img src="../assets/images/logo.png" alt="博睿创新科技" class="logo" />
+        <!--<img src="../assets/images/logo.png" alt="博睿创新科技" class="logo" />-->
       </div>
       <div id="nav">
         <div class="dropdown">

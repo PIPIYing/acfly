@@ -1,11 +1,13 @@
 #C9pro, #C9, #A9, #mapping {
   width: 100%;
   height: 100%;
+  position: relative;
+  bottom: 75px;
   .intro_C9pro, .detail1, .detail2, .detail3, .detail4, .detail5,
   .intro_C9, .detail7, .detail8, .detail9, .detail10,
   .intro_A9, .detail12, .detail13, .detail14,
   .intro_mapping, .detail16, .detail17, .detail18, .detail19{
-    height: 680px;
+    height: 900px;
     max-height: 1200px;
     color: #fff;
     background-repeat: no-repeat;
@@ -38,6 +40,9 @@
   .intro_C9pro {
     background-image: url("../../assets/images/C9_1.jpg");  //背景图
     background-attachment: fixed;
+    position: relative;
+    /*bottom: 75px;*/
+    z-index: 1;
     /*img {
       width: 100%;
       position: fixed;
@@ -49,8 +54,12 @@
     }*/
   }
   .intro_C9 {
-    background-image: url("../../assets/images/C9_1.jpg");  //背景图
+    background-image: url("../../assets/images/products_v2/C9_0.jpg");  //背景图带文字
+    /*background-image: url("../../assets/images/products_v2/A9_0.png");  //背景图*/
     background-attachment: fixed;
+    position: relative;
+    /*bottom: 75px;*/
+    z-index: 1;
     /*.title6, .word6 {
       padding-left: 10%;
       position: relative;
@@ -58,7 +67,11 @@
     }*/
   }
   .intro_A9 {
-    background-image: url("../../assets/images/products/A90.jpg");  //背景图
+    background-image: url("../../assets/images/products_v2/A9_0.png");  //背景图带文字
+    position: relative;
+    /*bottom: 75px;*/
+    z-index: 1;
+    /*background-image: url("../../assets/images/products_v2/A9_0.jpg");  //背景图*/
     background-attachment: fixed;
     /*.title6, .word6 {
       padding-left: 10%;
@@ -67,9 +80,14 @@
     }*/
   }
   .intro_mapping {
-    background-image: url("../../assets/images/products/mapping0.jpg");  //背景图
+    background-image: url("../../assets/images/products_v2/mapping0.jpg");  //背景图带文字
+    position: relative;
+    /*bottom: 75px;*/
+    z-index: 1;
+    /*
+    background-image: url("../../assets/images/products_v2/mapping0_bg.png");  //背景图
+    */
     background-attachment: fixed;
-    color: #000;
     .title15, .word15 {
       padding-left: 12%;
       position: relative;
@@ -79,6 +97,7 @@
       padding-left: 22%;
     }
     .word15 {
+      white-space:nowrap;
       text-align: center;
     }
   }
@@ -124,7 +143,8 @@
     }
   }
   .detail7 {
-    background-image: url("../../assets/images/C9_3.jpg"); //背景图
+    background-image: url("../../assets/images/products_v2/C9_1.jpg");  //背景图带文字
+    /*background-image: url("../../assets/images/products_v2/C9_0.jpg");  //背景图*/
     .title7, .word7 {
       /*padding-left: 50%;
       position: relative;
@@ -132,7 +152,8 @@
     }
   }
   .detail8 {
-    background-image: url("../../assets/images/C9_3.jpg"); //背景图
+    background-image: url("../../assets/images/products_v2/C9_2.jpg");  //背景图带文字
+    /*background-image: url("../../assets/images/products_v2/C9_0.jpg");  //背景图*/
     .title8, .word8 {
       /*padding-left: 50%;
       position: relative;
@@ -140,7 +161,8 @@
     }
   }
   .detail9 {
-    background-image: url("../../assets/images/C9_3.jpg"); //背景图
+    background-image: url("../../assets/images/products_v2/C9_3.jpg");  //背景图带文字
+    /*background-image: url("../../assets/images/products_v2/C9_0.jpg");  //背景图*/
     .title9, .word9 {
       /*padding-left: 50%;
       position: relative;
@@ -148,7 +170,8 @@
     }
   }
   .detail10 {
-    background-image: url("../../assets/images/products/A90.jpg"); //背景图
+    background-image: url("../../assets/images/products_v2/C9_4.jpg");  //背景图带文字
+    /*background-image: url("../../assets/images/products_v2/C9_0.jpg");  //背景图*/
     .title10, .word10 {
       /*padding-left: 50%;
       position: relative;
@@ -156,7 +179,8 @@
     }
   }
   .detail12 {
-    background-image: url("../../assets/images/products/A91.jpg"); //背景图
+    background-image: url("../../assets/images/products_v2/A9_1.png");  //背景图带文字
+    /*background-image: url("../../assets/images/products/A91.jpg"); //背景图*/
     .title12, .word12 {
       /*padding-left: 50%;
       position: relative;
@@ -164,7 +188,8 @@
     }
   }
   .detail13 {
-    background-image: url("../../assets/images/A9_1.jpg"); //背景图
+    background-image: url("../../assets/images/products_v2/A9_2.png");  //背景图带文字
+    /*background-image: url("../../assets/images/A9_1.jpg"); //背景图*/
     .title13, .word13 {
       /*padding-left: 50%;
       position: relative;
@@ -172,7 +197,8 @@
     }
   }
   .detail14 {
-    background-image: url("../../assets/images/A9_2.jpg"); //背景图
+    background-image: url("../../assets/images/products_v2/A9_3.png");  //背景图带文字
+    /*background-image: url("../../assets/images/A9_2.jpg"); //背景图*/
     .title14, .word14 {
       /*padding-left: 50%;
       position: relative;
@@ -180,7 +206,10 @@
     }
   }
   .detail16 {
-    background-image: url("../../assets/images/products/mapping1.jpg"); //背景图
+    background-image: url("../../assets/images/products_v2/mapping1.png"); //背景图带文字
+    /*
+    background-image: url("../../assets/images/products_v2/mapping1_bg.jpg"); //背景图
+    */
     .title16, .word16 {
       padding-left: 60%;
       position: relative;
@@ -188,7 +217,10 @@
     }
   }
   .detail17 {
-    background-image: url("../../assets/images/products/mapping0.jpg"); //背景图
+    background-image: url("../../assets/images/products_v2/mapping2.jpg"); //背景图带文字
+    /*
+    background-image: url("../../assets/images/products_v2/mapping2_bg.jpg"); //背景图
+    */
     .title17, .word17 {
       color: #000;
       padding-left: 50%;
@@ -197,7 +229,10 @@
     }
   }
   .detail18 {
-    background-image: url("../../assets/images/products/mapping3.jpg"); //背景图
+    background-image: url("../../assets/images/products_v2/mapping3.jpg"); //背景图带文字
+    /*
+    background-image: url("../../assets/images/products_v2/mapping3_bg.jpg"); //背景图
+    */
     .title18, .word18 {
       /*padding-left: 50%;
       position: relative;
@@ -205,7 +240,10 @@
     }
   }
   .detail19 {
-    background-image: url("../../assets/images/products/mapping4.jpg"); //背景图
+    background-image: url("../../assets/images/products_v2/mapping4.jpg"); //背景图带文字
+    /*
+    background-image: url("../../assets/images/products_v2/mapping3_bg.jpg"); //背景图
+    */
     .title19, .word19 {
       padding-left: 8%;
       position: relative;

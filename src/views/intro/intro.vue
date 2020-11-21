@@ -1,8 +1,6 @@
 <template>
   <div id="intro">
-    <div id="bg">
-      <img src="../../assets/images/C9_1.jpg" alt="" />
-    </div>
+    <img src="../../assets/images/C9pro_bg.jpg" alt="" />
     <div class="btn1">
       <div class="btn1_1">
         <router-link to="/index/products/C9pro" style="color: #000;">了解更多</router-link>
