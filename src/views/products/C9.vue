@@ -27,13 +27,14 @@
       <p class="word10">因强磁场等环境因素干扰，导致无人机航向异常，飞控可实时检测磁场异常，并通过GPS进行航向智能对准，表面因磁场异常而炸机。</p>-->
     </div>
     <!--<TablePart :parameterData="parameter"></TablePart>-->
+    <p class="dataTitle">参数说明</p>
     <div class="data">
       <!--<TablePart :parameterData="parameter1"></TablePart>
       <TablePart :parameterData="parameter2"></TablePart>-->
       <table class="parameter">
         <tr>
           <th class="color">产品名称</th>
-          <td class="color">C9 PRO</td>
+          <td class="color">C9</td>
         </tr>
         <tr>
           <th>MCU处理器</th>
@@ -69,7 +70,7 @@
           <td class="color">GLONASS L1OF、L2OF</td>
         </tr>
         <tr>
-          <td class="color">Beidou B11、B21</td>
+          <td class="color">Beidou B1l、B2l</td>
         </tr>
         <tr>
           <td class="color">Galileo E1、E5b</td>

@@ -9,6 +9,7 @@
       <p class="word0">内置双频RTK/自抗扰算法/免减震设计/超宽压电源/超小尺寸</p>
     </div>
     <div class="detail1">
+      <img src="../../assets/images/mapping1.jpg" alt="">
       <p class="title1">内置双频ZED-F9P RTK</p>
       <p class="word1">本机可支持外接基站和千寻位置定位，定位精度可至2厘米</p>
     </div>
@@ -28,6 +29,7 @@
       <p class="title5">磁场干扰自对准</p>
       <p class="word5">因强磁场等环境因素干扰，导致无人机航向异常，飞控可实时检测磁场异常，并通过GPS进行航向智能对准，表面因磁场异常而炸机。</p>
     </div>
+    <p class="dataTitle">参数说明</p>
     <div class="data">
       <!--<TablePart :parameterData="parameter1"></TablePart>
       <TablePart :parameterData="parameter2"></TablePart>-->
@@ -70,7 +72,7 @@
           <td class="color">GLONASS L1OF、L2OF</td>
         </tr>
         <tr>
-          <td class="color">Beidou B11、B21</td>
+          <td class="color">Beidou B1l、B2l</td>
         </tr>
         <tr>
           <td class="color">Galileo E1、E5b</td>

@@ -24,7 +24,75 @@
       <!--<p class="title14">强风乱流轻松搞定</p>-->
       <!--<p class="word14">重定义单参数调节：飞控默认参数实测250mm-1800mm轴距多旋翼飞行器，超20000+架次，均能起飞且姿态可控</p>-->
     </div>
-    <TablePart :parameterData="parameter"></TablePart>
+    <p class="dataTitle">参数说明</p>
+    <div class="data">
+      <table class="parameter">
+        <tr>
+          <th class="color">产品名称</th>
+          <td class="color">A9</td>
+        </tr>
+        <tr>
+          <th>MCU处理器</th>
+          <td>STM32H743</td>
+        </tr>
+        <tr>
+          <th rowspan="3" class="color">IMU传感器</th>
+          <td class="color">陀螺仪加速度BMI088</td>
+        </tr>
+        <tr>
+          <td class="color">磁罗盘AK8975</td>
+        </tr>
+        <tr>
+          <td class="color">气压计SPL06</td>
+        </tr>
+        <tr>
+          <th>FLASH存储</th>
+          <td>8MB</td>
+        </tr>
+        <tr>
+          <th class="color">TF存储容量</th>
+          <td class="color">自定义</td>
+        </tr>
+        <tr>
+          <th>供电范围</th>
+          <td>4.8-5.5V</td>
+        </tr>
+      </table>
+      <table class="parameter">
+        <tr>
+          <th class="color">PWM通道</th>
+          <td class="color">8路</td>
+        </tr>
+        <tr>
+          <th class="color">抗震性能</th>
+          <td class="color">免减震</td>
+        </tr>
+        <tr>
+          <th>磁场干扰</th>
+          <td>自动校准</td>
+        </tr>
+        <tr>
+          <th class="color">调参难度</th>
+          <td class="color">单参数调节</td>
+        </tr>
+        <tr>
+          <th>航点数量</th>
+          <td>65536</td>
+        </tr>
+        <tr>
+          <th class="color">POS记录</th>
+          <td class="color">实时位置、姿态</td>
+        </tr>
+        <tr>
+          <th>工作温度</th>
+          <td>-40℃ ~ + 85℃</td>
+        </tr>
+        <tr>
+          <th class="color">材料</th>
+          <td class="color">光敏树脂</td>
+        </tr>
+      </table>
+    </div>
     <div class="btn">
       <a href="https://item.taobao.com/item.htm?spm=a1z10.1-c.w4004-23273774756.3.78dc4a92ubEpVX&id=591615647197">立即购买</a>
     </div>
@@ -33,12 +101,10 @@
 
 <script>
   /*import Detail from "../../components/products/detailPage";*/
-  import TablePart from "../../components/products/tablePart";
 
   export default {
     name: "A9",
     /*components: { Detail, TablePart },*/
-    components: {  TablePart },
     data() {
       return {
         /*url: [
@@ -46,12 +112,6 @@
           { bg: require('../../assets/images/A9_2.jpg') },
           { bg: require('../../assets/images/C9_2.jpg') }
         ],*/
-        parameter: [
-          ['C9PRO参数','111','111','111'],
-          ['参数1','111','111','111'],
-          ['参数2','111','111','111'],
-          ['参数3','111','111','111']
-        ]
       }
     },
     methods: {}
