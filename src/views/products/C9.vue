@@ -11,18 +11,22 @@
       <p class="word6">超小尺寸</p>-->
     </div>
     <div class="detail7">
-      <!--<p class="title17">大小机型任意装</p>
-      <p class="word17">姿态控制算法，摈弃PID调参，融合ADRC自抗扰姿态算法适应各类不同结构和动力规格的机型，变重心或变负载使用亦可自适应。</p>-->
+      <img src="../../assets/images/products_v2/C9_1.jpg" alt="">
+      <!--<p class="title7">大小机型任意装</p>
+      <p class="word7">姿态控制算法，摈弃PID调参，融合ADRC自抗扰姿态算法适应各类不同结构和动力规格的机型，变重心或变负载使用亦可自适应。</p>-->
     </div>
     <div class="detail8">
+      <img src="../../assets/images/products_v2/C9_2.jpg" alt="">
       <!--<p class="title8">暴力飞行平地履</p>
       <p class="word8">高度控制算法，自适应无参数观测器和控制器、运动震动智能抑制、运动气压变化智能补偿、免调参亦可快速飞行。</p>-->
     </div>
     <div class="detail9">
+      <img src="../../assets/images/products_v2/C9_3.jpg" alt="">
       <!--<p class="title9">强风乱流轻松搞定</p>
       <p class="word9">位置解算算法，实时智能检测传感器精度，自动选用传感器，数据智能融合提供最佳位置精度。恶劣气象变化亦可精准飞行。</p>-->
     </div>
     <div class="detail10">
+      <img src="../../assets/images/products_v2/C9_4.jpg" alt="">
       <!--<p class="title10">磁场干扰自对准</p>
       <p class="word10">因强磁场等环境因素干扰，导致无人机航向异常，飞控可实时检测磁场异常，并通过GPS进行航向智能对准，表面因磁场异常而炸机。</p>-->
     </div>

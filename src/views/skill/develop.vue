@@ -1,7 +1,7 @@
 <template>
   <div id="develop">
     <div id="bg">
-      <img src="../../assets/images/intro1.png" alt="" />
+      <img src="../../assets/images/intro_develop.jpg" alt="" />
     </div>
     <div class="content">
       <img src="../../assets/images/icon_develop.png" alt="" class="icon" />
