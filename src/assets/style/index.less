@@ -32,8 +32,8 @@
     }*/
     .logoImg {
       flex: 2 1 auto;  //flex设置项目的宽度和放缩情况
-      height: 70px;
-      line-height: 70px;
+      height: 72px;
+      line-height: 72px;
       background-image: url("../../assets/images/logo.png");
       background-size: contain;
       background-repeat: no-repeat;
@@ -48,8 +48,8 @@
       .dropdown {
         position: relative;
         display: inline-block;
-        width: 25%;
-        min-width: 180px;
+        width: 21%;
+        min-width: 155px;
         height: 70px;  //同topBar
         text-align: center;
         text-align: -moz-center;
@@ -65,7 +65,7 @@
           /*background-color: rgba(0,0,0,0.7);*/
           background-color: rgba(255,255,255,0.9);
           width: calc(100% - 20px);
-          min-width: 180px;
+          min-width: 155px;
           box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
           padding: 0 10px;
           a {
@@ -122,14 +122,16 @@
    /* width: 1702px;  //页面布局
     mid-width: 100%;  //页面布局*/
     height: 310px;
-    background-color: #000;
+    color: #000;
+    background-color: rgba(255,255,255,0);
     padding-top: 50px;
+    border-top: 1px #000 solid;
     /*white-space: nowrap;*/
     .footerContent {
       display: flex;
       justify-content: center;
       .logoImg {
-        margin: -18px 50px 0 50px;
+        margin: -18px 50px 0 -150px;
         .logo {
           height: 80px;
         }
@@ -140,7 +142,7 @@
         flex-direction: column;
         p,a, .el-popover__reference-wrapper {
           display: block;
-          color: #fff;
+          color: #000;
           line-height: 22px;
           margin-bottom: 20px;
         }
@@ -155,12 +157,12 @@
     }
     .copy {
       height: 50px;
-      background-color: #000;
+      background-color: rgba(255,255,255,0);
       padding-bottom: 5px;
       .line {
         width: 50%;
         height: 1px;
-        border-top: 1px rgba(255,255,255,0.4) solid;
+        border-top: 1px rgba(0,0,0,0.4) solid;
         margin: 40px auto 0 auto;
       }
       .copyContent {
@@ -174,7 +176,7 @@
           }
         }
         .copyRight {
-          color: rgba(255,255,255,0.5);
+          color: rgba(0,0,0,0.5);
         }
       }
     }

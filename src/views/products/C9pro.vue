@@ -229,8 +229,13 @@
         </tr>
       </table>
     </div>
-    <div class="btn">
-      <a href="#">立即购买</a>
+    <div class="link">
+      <div class="explain">
+        <router-link to="/index/skill/document_C9">产品手册</router-link>
+      </div>
+      <div class="btn">
+        <a href="#">立即购买</a>
+      </div>
     </div>
   </div>
 </template>
