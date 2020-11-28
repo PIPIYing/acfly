@@ -49,7 +49,7 @@
     <div id="footer" :style="sizeInfo">
       <div class="footerContent">
         <div class="logoImg">
-          <img src="../assets/images/logo_black.png" alt="博睿创新科技" class="logo" />
+          <img src="../assets/images/logo.png" alt="博睿创新科技" class="logo" />
         </div>
         <div class="footerList">
           <p class="title">热门产品</p>
@@ -91,7 +91,7 @@
         <div class="line"></div>
         <div class="copyContent">
           <div class="logoImg">
-            <img src="../assets/images/logo_black.png" alt="博睿创新科技" class="logo" />
+            <img src="../assets/images/logo.png" alt="博睿创新科技" class="logo" />
           </div>
           <p class="copyRight">IC备案：粤icp2802989024910466 广州博睿创新科技有限公司</p>
         </div>

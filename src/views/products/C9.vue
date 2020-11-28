@@ -35,198 +35,203 @@
     <div class="data">
       <!--<TablePart :parameterData="parameter1"></TablePart>
       <TablePart :parameterData="parameter2"></TablePart>-->
-      <table class="parameter">
-        <tr>
-          <th class="color">产品名称</th>
-          <td class="color">C9</td>
-        </tr>
-        <tr>
-          <th>MCU处理器</th>
-          <td>STM32H743</td>
-        </tr>
-        <tr>
-          <th rowspan="3" class="color">IMU传感器</th>
-          <td class="color">陀螺仪加速度BMI088</td>
-        </tr>
-        <tr>
-          <td class="color">磁罗盘IST8310</td>
-        </tr>
-        <tr>
-          <td class="color">气压计SPL06</td>
-        </tr>
-        <tr>
-          <th>FLASH存储</th>
-          <td>8MB</td>
-        </tr>
-        <tr>
-          <th class="color">TF卡存储</th>
-          <td class="color">32GB</td>
-        </tr>
-        <tr>
-          <th>RTK内置</th>
-          <td>无</td>
-        </tr>
-        <tr>
-          <th rowspan="4" class="color">RTK卫星</th>
-          <td class="color">GPS L1C/A、L2C</td>
-        </tr>
-        <tr>
-          <td class="color">GLONASS L1OF、L2OF</td>
-        </tr>
-        <tr>
-          <td class="color">Beidou B1l、B2l</td>
-        </tr>
-        <tr>
-          <td class="color">Galileo E1、E5b</td>
-        </tr>
-        <tr>
-          <th>RTK频率</th>
-          <td>10Hz/20hz</td>
-        </tr>
-        <tr>
-          <th class="color">RTK定位精度</th>
-          <td class="color">2cm</td>
-        </tr>
-        <tr>
-          <th>GPS罗盘模块</th>
-          <td>UBLOX NEO-M8N + IST8310</td>
-        </tr>
-        <tr>
-          <th rowspan="6" class="color">GPS卫星</th>
-          <td class="color">GPS L1C/A</td>
-        </tr>
-        <tr>
-          <td class="color">GLONASS L1OF</td>
-        </tr>
-        <tr>
-          <td class="color">Beidou B11</td>
-        </tr>
-        <tr>
-          <td class="color">Galileo E1</td>
-        </tr>
-        <tr>
-          <td class="color">SBAS L1C/A</td>
-        </tr>
-        <tr>
-          <td class="color">QZSS L1C/A</td>
-        </tr>
-        <tr>
-          <th>GPS频率</th>
-          <td>5Hz</td>
-        </tr>
-        <tr>
-          <th class="color">GPS定位精度</th>
-          <td class="color">1m</td>
-        </tr>
-        <tr>
-          <th rowspan="2">供电范围</th>
-          <td>4.5V - 30V</td>
-        </tr>
-        <tr>
-          <td>PMU：7V - 60V</td>
-        </tr>
-        <tr>
-          <th class="color">电压监测</th>
-          <td class="color">OV-60V × 3路</td>
-        </tr>
-      </table>
-      <table class="parameter">
-        <tr>
-          <th class="color">电流检测</th>
-          <td class="color">OA-150A × 1路</td>
-        </tr>
-        <tr>
-          <th>PWM通道</th>
-          <td>12路</td>
-        </tr>
-        <tr>
-          <th class="color">继电器通道</th>
-          <td class="color">1路</td>
-        </tr>
-        <tr>
-          <th>拍照热靴</th>
-          <td>支持</td>
-        </tr>
-        <tr>
-          <th class="color">自定义载板</th>
-          <td class="color">支持</td>
-        </tr>
-        <tr>
-          <th>调参难度</th>
-          <td>自适应调参，控制性强</td>
-        </tr>
-        <tr>
-          <th class="color">抗震性能</th>
-          <td class="color">免减震</td>
-        </tr>
-        <tr>
-          <th>磁场干扰</th>
-          <td>自动校准</td>
-        </tr>
-        <tr>
-          <th rowspan="2" class="color">悬停精度</th>
-          <td class="color">RTK：0.1米</td>
-        </tr>
-        <tr>
-          <td class="color">单点：0.3米</td>
-        </tr>
-        <tr>
-          <th>RTK基站</th>
-          <td>本地串口、网络NTRIP</td>
-        </tr>
-        <tr>
-          <th class="color">航点数量</th>
-          <td class="color">65535个</td>
-        </tr>
-        <tr>
-          <th>POS记录</th>
-          <td>实时位置、姿态、后处理PPK</td>
-        </tr>
-        <tr>
-          <th class="color">工作温度</th>
-          <td class="color">-40℃ ~ +85℃</td>
-        </tr>
-        <tr>
-          <th>防护</th>
-          <td>IP67</td>
-        </tr>
-        <tr>
-          <th class="color">材料</th>
-          <td class="color">7075铝合金</td>
-        </tr>
-        <tr>
-          <th rowspan="5">尺寸</th>
-          <td>主控：55×50×14mm</td>
-        </tr>
-        <tr>
-          <td>PMU：63×32×18mm</td>
-        </tr>
-        <tr>
-          <td>GPS：54×15mm</td>
-        </tr>
-        <tr>
-          <td>LED：24×8mm</td>
-        </tr>
-        <tr>
-          <td>RTK：28×60mm</td>
-        </tr>
-        <tr>
-          <th rowspan="5" class="color">重量</th>
-          <td class="color">主控：50g</td>
-        </tr>
-        <tr>
-          <td class="color">PMU：30g</td>
-        </tr>
-        <tr>
-          <td class="color">GPS：30g</td>
-        </tr>
-        <tr>
-          <td class="color">LED：5g</td>
-        </tr>
-        <tr>
-          <td class="color">RTK：16g</td>
-        </tr>
-      </table>
+      <div class="table">
+        <table class="parameter">
+          <tr>
+            <th class="color">产品名称</th>
+            <td class="color">C9</td>
+          </tr>
+          <tr>
+            <th>MCU处理器</th>
+            <td>STM32H743</td>
+          </tr>
+          <tr>
+            <th rowspan="3" class="color">IMU传感器</th>
+            <td class="color">陀螺仪加速度BMI088</td>
+          </tr>
+          <tr>
+            <td class="color">磁罗盘IST8310</td>
+          </tr>
+          <tr>
+            <td class="color">气压计SPL06</td>
+          </tr>
+          <tr>
+            <th>FLASH存储</th>
+            <td>8MB</td>
+          </tr>
+          <tr>
+            <th class="color">TF卡存储</th>
+            <td class="color">32GB</td>
+          </tr>
+          <tr>
+            <th>RTK内置</th>
+            <td>无</td>
+          </tr>
+          <tr>
+            <th rowspan="4" class="color">RTK卫星</th>
+            <td class="color">GPS L1C/A、L2C</td>
+          </tr>
+          <tr>
+            <td class="color">GLONASS L1OF、L2OF</td>
+          </tr>
+          <tr>
+            <td class="color">Beidou B1l、B2l</td>
+          </tr>
+          <tr>
+            <td class="color">Galileo E1、E5b</td>
+          </tr>
+          <tr>
+            <th>RTK频率</th>
+            <td>10Hz/20hz</td>
+          </tr>
+          <tr>
+            <th class="color">RTK定位精度</th>
+            <td class="color">2cm</td>
+          </tr>
+          <tr>
+            <th>GPS罗盘模块</th>
+            <td>UBLOX NEO-M8N + IST8310</td>
+          </tr>
+          <tr>
+            <th rowspan="6" class="color">GPS卫星</th>
+            <td class="color">GPS L1C/A</td>
+          </tr>
+          <tr>
+            <td class="color">GLONASS L1OF</td>
+          </tr>
+          <tr>
+            <td class="color">Beidou B11</td>
+          </tr>
+          <tr>
+            <td class="color">Galileo E1</td>
+          </tr>
+          <tr>
+            <td class="color">SBAS L1C/A</td>
+          </tr>
+          <tr>
+            <td class="color">QZSS L1C/A</td>
+          </tr>
+          <tr>
+            <th>GPS频率</th>
+            <td>5Hz</td>
+          </tr>
+          <tr>
+            <th class="color">GPS定位精度</th>
+            <td class="color">1m</td>
+          </tr>
+          <tr>
+            <th rowspan="2">供电范围</th>
+            <td>4.5V - 30V</td>
+          </tr>
+          <tr>
+            <td>PMU：7V - 60V</td>
+          </tr>
+          <tr>
+            <th class="color">电压监测</th>
+            <td class="color">OV-60V × 3路</td>
+          </tr>
+        </table>
+        <table class="parameter">
+          <tr>
+            <th class="color">电流检测</th>
+            <td class="color">OA-150A × 1路</td>
+          </tr>
+          <tr>
+            <th>PWM通道</th>
+            <td>12路</td>
+          </tr>
+          <tr>
+            <th class="color">继电器通道</th>
+            <td class="color">1路</td>
+          </tr>
+          <tr>
+            <th>拍照热靴</th>
+            <td>支持</td>
+          </tr>
+          <tr>
+            <th class="color">自定义载板</th>
+            <td class="color">支持</td>
+          </tr>
+          <tr>
+            <th>调参难度</th>
+            <td>自适应调参，控制性强</td>
+          </tr>
+          <tr>
+            <th class="color">抗震性能</th>
+            <td class="color">免减震</td>
+          </tr>
+          <tr>
+            <th>磁场干扰</th>
+            <td>自动校准</td>
+          </tr>
+          <tr>
+            <th rowspan="2" class="color">悬停精度</th>
+            <td class="color">RTK：0.1米</td>
+          </tr>
+          <tr>
+            <td class="color">单点：0.3米</td>
+          </tr>
+          <tr>
+            <th>RTK基站</th>
+            <td>本地串口、网络NTRIP</td>
+          </tr>
+          <tr>
+            <th class="color">航点数量</th>
+            <td class="color">65535个</td>
+          </tr>
+          <tr>
+            <th>POS记录</th>
+            <td>实时位置、姿态、后处理PPK</td>
+          </tr>
+          <tr>
+            <th class="color">工作温度</th>
+            <td class="color">-40℃ ~ +85℃</td>
+          </tr>
+          <tr>
+            <th>防护</th>
+            <td>IP67</td>
+          </tr>
+          <tr>
+            <th class="color">材料</th>
+            <td class="color">7075铝合金</td>
+          </tr>
+          <tr>
+            <th rowspan="5">尺寸</th>
+            <td>主控：55×50×14mm</td>
+          </tr>
+          <tr>
+            <td>PMU：63×32×18mm</td>
+          </tr>
+          <tr>
+            <td>GPS：54×15mm</td>
+          </tr>
+          <tr>
+            <td>LED：24×8mm</td>
+          </tr>
+          <tr>
+            <td>RTK：28×60mm</td>
+          </tr>
+          <tr>
+            <th rowspan="5" class="color">重量</th>
+            <td class="color">主控：50g</td>
+          </tr>
+          <tr>
+            <td class="color">PMU：30g</td>
+          </tr>
+          <tr>
+            <td class="color">GPS：30g</td>
+          </tr>
+          <tr>
+            <td class="color">LED：5g</td>
+          </tr>
+          <tr>
+            <td class="color">RTK：16g</td>
+          </tr>
+        </table>
+      </div>
+      <div class="link">
+        （更多详情请查看<router-link to="/index/skill/document_C9">产品手册</router-link>）
+      </div>
     </div>
     <div class="btn">
       <a href="https://item.taobao.com/item.htm?spm=a1z10.1-c.w4004-23273774756.5.78dc4a92ubEpVX&id=631387331308">立即购买</a>

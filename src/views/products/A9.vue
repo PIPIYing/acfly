@@ -28,72 +28,77 @@
     </div>
     <p class="dataTitle">参数说明</p>
     <div class="data">
-      <table class="parameter">
-        <tr>
-          <th class="color">产品名称</th>
-          <td class="color">A9</td>
-        </tr>
-        <tr>
-          <th>MCU处理器</th>
-          <td>STM32H743</td>
-        </tr>
-        <tr>
-          <th rowspan="3" class="color">IMU传感器</th>
-          <td class="color">陀螺仪加速度BMI088</td>
-        </tr>
-        <tr>
-          <td class="color">磁罗盘AK8975</td>
-        </tr>
-        <tr>
-          <td class="color">气压计SPL06</td>
-        </tr>
-        <tr>
-          <th>FLASH存储</th>
-          <td>8MB</td>
-        </tr>
-        <tr>
-          <th class="color">TF存储容量</th>
-          <td class="color">自定义</td>
-        </tr>
-        <tr>
-          <th>供电范围</th>
-          <td>4.8-5.5V</td>
-        </tr>
-      </table>
-      <table class="parameter">
-        <tr>
-          <th class="color">PWM通道</th>
-          <td class="color">8路</td>
-        </tr>
-        <tr>
-          <th class="color">抗震性能</th>
-          <td class="color">免减震</td>
-        </tr>
-        <tr>
-          <th>磁场干扰</th>
-          <td>自动校准</td>
-        </tr>
-        <tr>
-          <th class="color">调参难度</th>
-          <td class="color">单参数调节</td>
-        </tr>
-        <tr>
-          <th>航点数量</th>
-          <td>65536</td>
-        </tr>
-        <tr>
-          <th class="color">POS记录</th>
-          <td class="color">实时位置、姿态</td>
-        </tr>
-        <tr>
-          <th>工作温度</th>
-          <td>-40℃ ~ + 85℃</td>
-        </tr>
-        <tr>
-          <th class="color">材料</th>
-          <td class="color">光敏树脂</td>
-        </tr>
-      </table>
+      <div class="table">
+        <table class="parameter">
+          <tr>
+            <th class="color">产品名称</th>
+            <td class="color">A9</td>
+          </tr>
+          <tr>
+            <th>MCU处理器</th>
+            <td>STM32H743</td>
+          </tr>
+          <tr>
+            <th rowspan="3" class="color">IMU传感器</th>
+            <td class="color">陀螺仪加速度BMI088</td>
+          </tr>
+          <tr>
+            <td class="color">磁罗盘AK8975</td>
+          </tr>
+          <tr>
+            <td class="color">气压计SPL06</td>
+          </tr>
+          <tr>
+            <th>FLASH存储</th>
+            <td>8MB</td>
+          </tr>
+          <tr>
+            <th class="color">TF存储容量</th>
+            <td class="color">自定义</td>
+          </tr>
+          <tr>
+            <th>供电范围</th>
+            <td>4.8-5.5V</td>
+          </tr>
+        </table>
+        <table class="parameter">
+          <tr>
+            <th class="color">PWM通道</th>
+            <td class="color">8路</td>
+          </tr>
+          <tr>
+            <th class="color">抗震性能</th>
+            <td class="color">免减震</td>
+          </tr>
+          <tr>
+            <th>磁场干扰</th>
+            <td>自动校准</td>
+          </tr>
+          <tr>
+            <th class="color">调参难度</th>
+            <td class="color">单参数调节</td>
+          </tr>
+          <tr>
+            <th>航点数量</th>
+            <td>65536</td>
+          </tr>
+          <tr>
+            <th class="color">POS记录</th>
+            <td class="color">实时位置、姿态</td>
+          </tr>
+          <tr>
+            <th>工作温度</th>
+            <td>-40℃ ~ + 85℃</td>
+          </tr>
+          <tr>
+            <th class="color">材料</th>
+            <td class="color">光敏树脂</td>
+          </tr>
+        </table>
+      </div>
+      <div class="link">
+        （更多详情请查看<router-link to="/index/skill/document_A9">产品手册</router-link>）
+      </div>
     </div>
     <div class="btn">
       <a href="https://item.taobao.com/item.htm?spm=a1z10.1-c.w4004-23273774756.3.78dc4a92ubEpVX&id=591615647197">立即购买</a>

@@ -9,12 +9,12 @@
       <div class="box">
         <p class="title">1.1 编译环境（MDK）安装</p>
         <p>（1）MDK开发软件安装</p>
-        <p>在keil官网 http://www.keil.com/ 的Download页面自行下载双击安装MDK5.26：</p>
+        <p class="indent_2_5">在keil官网 http://www.keil.com/ 的Download页面自行下载双击安装MDK5.26：</p>
         <div class="image">
           <img src="../../../assets/images/document/1.1_1.png" alt="" />
         </div>
         <p>（2）芯片支持包安装</p>
-        <p>在keil官网http://www.keil.com/pack下载下图中的最新版本软件支持包并安装</p>
+        <p class="indent_2_5">在keil官网http://www.keil.com/pack下载下图中的最新版本软件支持包并安装</p>
         <div class="image">
           <img src="../../../assets/images/document/1.1_2.png" alt="" />
         </div>
@@ -35,14 +35,14 @@
       </div>
       <div class="box">
         <p class="title">1.3 固件烧录</p>
-        <p>代码烧录有两种方式，一是使用stlink下载，二是使用USB下载固件(具体看固件更新一章)。仿真代码需要连接飞控的SWD接口。将此接口与ST-Link（推荐）、JLink等下载器的对应接口连接，然后接通电源即可下载。</p>
+        <p class="indent_2">代码烧录有两种方式，一是使用stlink下载，二是使用USB下载固件(具体看固件更新一章)。仿真代码需要连接飞控的SWD接口。将此接口与ST-Link（推荐）、JLink等下载器的对应接口连接，然后接通电源即可下载。</p>
       </div>
     </div>
     <div id="A9_2">
       <div class="box">
         <p class="title">2.1 接口定义</p>
         <div class="image">
-          <img src="../../../assets/images/document/3.1_1.jpg" alt="" />
+          <img src="../../../assets/images/document/3.1_1.jpg" alt="" class="max_image" />
         </div>
       </div>
       <div class="box">
@@ -72,9 +72,9 @@
         </div>
         <p>请严格按照地面站指示的机头方向、电机序号和转向来装机。</p>
         <p>将飞控按上述方向紧固在飞行器上。然后按上述要求安装电机及电调。</p>
-        <p>飞控安装需固定住飞控四个角，不能只固定住中间，否则会导致震动过大而影响飞行效果。</p>
-        <p>飞控安装需固定住飞控四个角，不能只固定住中间，否则会导致震动过大而影响飞行效果。</p>
-        <p>飞控安装需固定住飞控四个角，不能只固定住中间，否则会导致震动过大而影响飞行效果。</p>
+        <p style="font-weight: 600;color: red;">飞控安装需固定住飞控四个角，不能只固定住中间，否则会导致震动过大而影响飞行效果。</p>
+        <!--<p>飞控安装需固定住飞控四个角，不能只固定住中间，否则会导致震动过大而影响飞行效果。</p>
+        <p>飞控安装需固定住飞控四个角，不能只固定住中间，否则会导致震动过大而影响飞行效果。</p>-->
         <div class="image">
           <img src="../../../assets/images/document/4.1_2.png" alt="" />
         </div>
@@ -102,13 +102,14 @@
         <p>首先等待5.1中的飞控自检完成，飞控状态灯切换至绿灯慢闪。</p>
         <p>将飞控用USB或者数传连接到电脑，打开ACFly地面站，点击连接。</p>
         <p>（1）打开遥控器（已将接收机连接至飞控，参考3.3）</p>
-        <p>部分遥控器需要提前设置好遥控器的PPM/SBUS模式，根据需要设置2-3个按钮（即辅助通道）</p>
+        <p class="indent_2_5">部分遥控器需要提前设置好遥控器的PPM/SBUS模式，根据需要设置2-3个按钮（即辅助通道）</p>
         <p>（2）将四个摇杆通道回中，在ACFly地面站中选择美国手、中国手或者日本手后，点击“校准遥控器”按钮。飞控进入遥控器校准模式。</p>
         <div class="image">
           <img src="../../../assets/images/document/5.2_1.png" alt="" />
         </div>
         <p>（3）等待蜂鸣器响三声后，表示已记录所有摇杆初始位置</p>
         <p>（4）按照地面站动画和文字提示校准飞控，最后需将油门拉低，蜂鸣器快响三声表示表示校准成功。</p>
+        <br/>
         <p>错误情况：</p>
         <ul>
           <li>哔—长叫并退出校准模式：遥控器或接收机断开</li>
@@ -133,9 +134,9 @@
       </div>
       <div class="box">
         <p class="title">4.4 电调电机校准</p>
-        <p>为了安全起见，请先卸桨！！！</p>
-        <p>为了安全起见，请先卸桨！！！</p>
-        <p>为了安全起见，请先卸桨！！！</p>
+        <p style="font-weight: 600;color: red;">为了安全起见，请先卸桨！！！</p>
+        <!--        <p>为了安全起见，请先卸桨！！！</p>
+                <p>为了安全起见，请先卸桨！！！</p>-->
         <p>打开ACFly地面站，将飞控通过USB与地面站连接，连接成功后，在配置-参数调整-电调参数栏目中，点击校准电调，断电，为了安全起见，请先卸桨！！！然后用电池给飞控和电机同时上电，此时电调会发出滴-滴滴-滴的声音，表示校准完成。</p>
         <div class="image">
           <img src="../../../assets/images/document/5.4_1.png" alt="" />
@@ -148,7 +149,7 @@
       <div class="box">
         <p class="title">4.5 陀螺校准</p>
         <ul>
-          <li>首先等待5.1中的飞控自检完成，飞控状态灯切换至绿色慢闪。</li>
+          <li>首先等待4.1中的飞控自检完成，飞控状态灯切换至绿色慢闪。</li>
           <li>遥控器油门最小，偏航最右，俯仰居中，横滚最右，两秒左右，滴一声进入陀螺校准模式，蓝绿 </li>
           <li>飞控需放置静止不动等待5秒左右，滴滴后校准完成，绿色慢闪。</li>
           <li>如果校准过程中飞控不静止，将会校准失败，出现红灯并滴一声退出校准，重新打杆校准即可。</li>
@@ -157,7 +158,7 @@
       <div class="box">
         <p class="title">4.6 加速度计校准</p>
         <ul>
-          <li>首先等待5.1中的飞控自检完成，飞控状态灯切换至绿色慢闪。</li>
+          <li>首先等待4.1中的飞控自检完成，飞控状态灯切换至绿色慢闪。</li>
           <li>遥控器油门最小，偏航最左，俯仰最下，横滚最左，两秒左右将进入M12_ACCCalib加速度校准模式。</li>
           <li>将无人机分别摆放六个面（不用按顺序，差不多水平即可）静止。每个面需静止放置5秒左右，静止放置时飞控指示灯显示蓝色，会由暗变亮指示当前进度，表示正在采集数据校准，完成一个面校准后指示灯会闪烁然后变红并且嘀一声，然后更换下一个面校准。全部六面校准完毕后自动退出M12_ACCCalib加速度校准模式，绿色慢闪。</li>
           <li>飞控灯红色表示当前面已经校准或者飞控不是静止状态无法校准。</li>
@@ -180,30 +181,26 @@
           <li>下载名为DFU驱动的压缩包(这里放置下载连接)，解压后安装驱动。</li>
           <li>打开ACFLY地面站(无需点击连接)，点击配置 – 固件更新 – 浏览 – 双击选择固件(.hex)</li>
           <li>插上飞控USB，等待烧录完成。</li>
-          <li>
-            <p style="text-indent: 2em;">注意：需要飞控先断电，地面站选择固件后10秒内将飞控通过USB连接至电脑。</p>
+          <li style="list-style-type: none;">
+            <ul>
+              <li>注意：需要飞控先断电，地面站选择固件后10秒内将飞控通过USB连接至电脑。</li>
+            </ul>
           </li>
           <li>部分使用32位 windows7 系统的用户，若经过上述步骤地面站仍然无法连接飞控，则安装一下MP或者QGC地面站，安装完成打开该软件再关闭。</li>
-          <li>
-            <div class="image">
-              <img src="../../../assets/images/document/6_1.png" alt="" />
-            </div>
-          </li>
+          <div class="image">
+            <img src="../../../assets/images/document/6_1.png" alt="" />
+          </div>
           <li>飞控出厂默认烧录BootLoader，如果由于个人二次开发不小心刷掉了飞控Flash里的BootLoader代码而导致不能用USB下载固件（一般情况下不会被刷掉），可到售后群下载ACFLy_BootLoader工程，用keil打开， stlink烧录进飞控即可。</li>
-          <li>
-            <div class="image">
-              <img src="../../../assets/images/document/6_2.png" alt="" />
-            </div>
-          </li>
+          <div class="image">
+            <img src="../../../assets/images/document/6_2.png" alt="" />
+          </div>
         </ul>
       </div>
     </div>
     <div id="A9_6">
       <div class="box">
         <p class="title">6.1 调参软件</p>
-        <ul>
-          <li>本飞控使用Mavlink协议，支持使用Mavlink的参数协议进行调参。</li>
-        </ul>
+        <p>本飞控使用Mavlink协议，支持使用Mavlink的参数协议进行调参。</p>
         <p>（1）ACFly地面站</p>
         <ul>
           <li>将飞控连接到电脑，打开ACFly地面站 (下载链接)，通过USB连接飞控</li>
@@ -218,7 +215,7 @@
           <img src="../../../assets/images/document/7.1_2.png" alt="" />
         </div>
         <p>在配置调试—>参数表中修改参数，然后点击右侧的写入参数即可将参数写入飞控。</p>
-        <p>(3)支持手机QGC地面站修改参数。</p>
+        <p>（3）支持手机QGC地面站修改参数。</p>
       </div>
       <div class="box">
         <p class="title">6.2 参数分类</p>
@@ -241,9 +238,7 @@
       </div>
       <div class="box">
         <p class="title">6.3 调参教程</p>
-        <ul>
-          <li>无人机机型选择，对应参数名：AC_UAV_Type</li>
-        </ul>
+        <p>无人机机型选择，对应参数名：AC_UAV_Type</p>
         <table class="table1">
           <tr>
             <th class="left solidTop bottom">AC_UAV_Type参数值</th>
@@ -334,7 +329,7 @@
       </div>
       <div class="box">
         <p class="title">6.4 姿态控制参数</p>
-        <p>角速度参数与角加速度参数的单位分别是：°/s，°/s^2。</p>
+        <p style="text-align: right;margin: 20px 0 -20px 0;">角速度参数与角加速度参数的单位分别是：°/s，°/s^2。</p>
         <table class="table1">
           <tr>
             <th class="left solidTop bottom">参数名</th>
@@ -415,17 +410,17 @@
             <td class="solidBottom">GPS1延时</td>
           </tr>
         </table>
-        <p>(1) GPSx_GNSS参数值设置：</p>
+        <p>（1）GPSx_GNSS参数值设置：</p>
         <ul>
           <li>63：GPS+北斗+伽利略</li>
           <li>119：GPS+格洛纳斯+伽利略</li>
           <li>126：北斗+格洛纳斯+伽利略</li>
         </ul>
-        <p>(2) GPSx_delay参数值设置：M8N延时一般为0.2(默认)，RTK则为0.05。</p>
+        <p>（2）GPSx_delay参数值设置：M8N延时一般为0.2(默认)，RTK则为0.05。</p>
       </div>
       <div class="box">
         <p class="title">6.7 位置控制参数</p>
-        <p>速度参数与加速度参数的单位分别是：cm/s，cm/s^2。</p>
+        <p style="text-align: right;margin: 20px 0 -20px 0;">速度参数与加速度参数的单位分别是：cm/s，cm/s^2。</p>
         <table class="table4">
           <tr>
             <th class="solidTop left" colspan="2">手动模式</th>
@@ -661,25 +656,30 @@
     <div id="A9_8">
       <div class="box">
         <p class="title">8.1 代码总体布局</p>
-        <p>本飞控代码已经分组在14个大类里，如图所示。建议看的部分：（3）驱动中的Sensors接口及Receiver接口；（5）Basic中的时间实现；（7）解算系统中的解算系统接口；（11）模式中的飞行模式；（12）控制系统中的控制系统接口。</p>
+        <p>本飞控代码已经分组在14个大类里，如图所示。建议看的部分：</p>
+        <p>（3）驱动中的Sensors接口及Receiver接口；</p>
+        <p>（5）Basic中的时间实现；</p>
+        <p>（7）解算系统中的解算系统接口；</p>
+        <p>（11）模式中的飞行模式；</p>
+        <p>（12）控制系统中的控制系统接口。</p>
         <div class="image">
-          <img src="../../../assets/images/document/9.1_1.png" alt="" />
+          <img src="../../../assets/images/document/9.1_1.png" alt="" class="max_image" />
         </div>
         <p>（1）CMSIS（板级支持包）</p>
-        <p>板级支持文件，最底层的库，不用看基本不用修改（可以修改startup.s里面的堆栈设置）。</p>
+        <p class="indent_2_5">板级支持文件，最底层的库，不用看基本不用修改（可以修改startup.s里面的堆栈设置）。</p>
         <p>（2）Main（主函数文件）</p>
-        <p>主函数包括：</p>
-        <ul>
+        <p class="indent_2_5">主函数包括：</p>
+        <ul class="indent_2_5">
           <li>初始化所有需要用到的外设；</li>
           <li>开启任务调度器；</li>
           <li>错误中断拉低所有输出。</li>
         </ul>
         <p>（3）Driver（驱动）</p>
-        <p>驱动包含：</p>
-        <ul>
+        <p class="indent_2_5">驱动包含：</p>
+        <ul class="indent_2_5">
           <li>外设的初始化配置（drv_开头文件）</li>
           <li>
-          <span>
+          <span style="text-indent: 2.5em;">
             传感器接口，包括（建议细看，二次开发必备）：
           </span>
             <ul>
@@ -689,7 +689,7 @@
             </ul>
           </li>
           <li>
-          <span>
+          <span style="text-indent: 2.5em;">
             接收机接口，包括：
           </span>
             <ul>
@@ -699,23 +699,23 @@
           </li>
         </ul>
         <p>（4）HAL_Library</p>
-        <p>32HAL库，二次开发需要用到的但现工程没有的请自己加进工程。</p>
+        <p class="indent_2_5">32HAL库，二次开发需要用到的但现工程没有的请自己加进工程。</p>
         <p>（5）Basic（基本）</p>
-        <p>Basic.c里面初始化TIM5定时器用于计时，实现了TIME结构体用于时间计算，其他部分程序所有时间相关操作都是基于TIME，建议细看。</p>
+        <p class="indent_2_5">Basic.c里面初始化TIM5定时器用于计时，实现了TIME结构体用于时间计算，其他部分程序所有时间相关操作都是基于TIME，建议细看。</p>
         <p>（6）Math（数学库）</p>
-        <p>包含四元数、三维向量运算，以及一些简单的数学运算，重力等常量的定义。</p>
+        <p class="indent_2_5">包含四元数、三维向量运算，以及一些简单的数学运算，重力等常量的定义。</p>
         <p>（7）MeasurementSystem（解算系统）</p>
-        <p>姿态解算及位置解算。</p>
-        <p>建议细看解算系统接口MeasurementSystem.h，包含解算结果的获取函数声明及使用说明。</p>
+        <p class="indent_2_5">姿态解算及位置解算。</p>
+        <p class="indent_2_5">建议细看解算系统接口MeasurementSystem.h，包含解算结果的获取函数声明及使用说明。</p>
         <p>（8）Filters（滤波器）</p>
-        <p>包含巴特沃斯低通滤波器、TD4非线性滤波器实现。</p>
+        <p class="indent_2_5">包含巴特沃斯低通滤波器、TD4非线性滤波器实现。</p>
         <p>（9）DataStructure（数据结构）</p>
-        <p>包含环形缓冲区的实现。</p>
+        <p class="indent_2_5">包含环形缓冲区的实现。</p>
         <p>（10）Communic（通讯）</p>
-        <p>包含Mavlink库、调试通讯文件Debug.c、通用端口交互文件Commulink.c（驱动程序可通过Commulink.h里的函数注册端口成为通用端口用于mavlink等标准通讯）</p>
+        <p class="indent_2_5">包含Mavlink库、调试通讯文件Debug.c、通用端口交互文件Commulink.c（驱动程序可通过Commulink.h里的函数注册端口成为通用端口用于mavlink等标准通讯）</p>
         <p>（11）Modes（模式）</p>
-        <p>建议细看飞行模式！二次开发必备</p>
-        <ul>
+        <p class="indent_2_5">建议细看飞行模式！二次开发必备</p>
+        <ul class="indent_2_5">
           <li>0-9号为非飞行非校准的其他模式</li>
           <li>10-19号为校准模式</li>
           <li>30-39号为飞行模式</li>
@@ -723,8 +723,8 @@
           <li>M01下可通过遥控或上位机命令进入其他校准及飞行模式。</li>
         </ul>
         <p>（12）ControlSystem（控制系统）</p>
-        <p>建议细看ControlSystem.h！二次开发必备</p>
-        <p>ControlSystem.h包含控制系统的API接口。Ctrl_Attitude和Ctrl_Position分别为姿态和位置控制器。</p>
+        <p class="indent_2_5">建议细看ControlSystem.h！二次开发必备</p>
+        <p class="indent_2_5">ControlSystem.h包含控制系统的API接口。Ctrl_Attitude和Ctrl_Position分别为姿态和位置控制器。</p>
       </div>
     </div>
     <div id="A9_9">
@@ -747,44 +747,44 @@
           <li>函数定义位于：Sensors.c里</li>
         </ul>
         <p>（1）IMU传感器定义（Sensors.h）</p>
-        <p>IMU传感器包括加速度计、陀螺仪、磁力计，每种各支持3个。定义如下：</p>
+        <p class="indent_2_5">IMU传感器包括加速度计、陀螺仪、磁力计，每种各支持3个。定义如下：</p>
         <div class="image">
           <img src="../../../assets/images/document/10.1_1.png" alt="" />
         </div>
         <p>（2）位置传感器定义（Sensors.h）</p>
-        <p>位置传感器包括气压、光流、超声波等，本飞控最多支持同时存在8个定位传感器。定义如下：</p>
+        <p class="indent_2_5">位置传感器包括气压、光流、超声波等，本飞控最多支持同时存在8个定位传感器。定义如下：</p>
         <div class="image">
           <img src="../../../assets/images/document/10.1_2.png" alt="" />
         </div>
-        <p>其中：</p>
-        <ul>
+        <p class="indent_2_5">其中：</p>
+        <ul class="indent_2_5">
           <li>sensor_type定义了传感器是经纬度定位、相对定位，还是测距定位传感器。</li>
           <li>sensor_DataType定义了传感器的数据类型：例如z轴位置数据，xy速度数据等。</li>
           <li>velocity_data_frame针对速度传感器，定义了速度传感器所测速度所在的坐标系。</li>
         </ul>
         <p>（3）IMU传感器读取接口（Sensors.h）</p>
-        <p>IMU传感器读取接口会返回const的IMU传感器结构体：</p>
+        <p class="indent_2_5">IMU传感器读取接口会返回const的IMU传感器结构体：</p>
         <div class="image">
           <img src="../../../assets/images/document/10.1_3.png" alt="" />
         </div>
         <p>（4）IMU传感器注册、更新接口（Sensors_Backend.h）</p>
-        <p>在IMU传感器更新前，首先调用注册函数进行注册，设置传感器的灵敏度。</p>
-        <p>注册完成后把IMU传感器编号及原始数据送入update接口即可完成更新。</p>
+        <p class="indent_2_5">在IMU传感器更新前，首先调用注册函数进行注册，设置传感器的灵敏度。</p>
+        <p class="indent_2_5">注册完成后把IMU传感器编号及原始数据送入update接口即可完成更新。</p>
         <div class="image">
           <img src="../../../assets/images/document/10.1_4.png" alt="" />
         </div>
         <p>（5）位置传感器读取接口（Sensors.h）</p>
-        <p>位置传感器读取接口会返回const的位置传感器结构体：</p>
+        <p class="indent_2_5">位置传感器读取接口会返回const的位置传感器结构体：</p>
         <div class="image">
           <img src="../../../assets/images/document/10.1_5.png" alt="" />
         </div>
         <p>（6）位置传感器注册、更新接口（Sensors_Backend.h）</p>
-        <p>在位置传感器更新前，首先调用注册函数进行注册，设置传感器的类型等参数：</p>
+        <p class="indent_2_5">在位置传感器更新前，首先调用注册函数进行注册，设置传感器的类型等参数：</p>
         <div class="image">
           <img src="../../../assets/images/document/10.1_6.png" alt="" />
         </div>
-        <p>如果位置传感器很久没有更新，MS_Main解算任务中会自动把此传感器取消注册。</p>
-        <p>注册完成后把位置传感器编号及与传感器sensor_data_type对应的数据送入update接口即可完成更新：</p>
+        <p class="indent_2_5">如果位置传感器很久没有更新，MS_Main解算任务中会自动把此传感器取消注册。</p>
+        <p class="indent_2_5">注册完成后把位置传感器编号及与传感器sensor_data_type对应的数据送入update接口即可完成更新：</p>
         <div class="image">
           <img src="../../../assets/images/document/10.1_7.png" alt="" />
         </div>
@@ -798,12 +798,12 @@
           <li>函数定义位于：Receiver.c里</li>
         </ul>
         <p>（1）接收机定义（Receiver.h）</p>
-        <p>接收机包含SBUS、PPM等协议的接收机（至少具有6个通道），定义如下：</p>
+        <p class="indent_2_5">接收机包含SBUS、PPM等协议的接收机（至少具有6个通道），定义如下：</p>
         <div class="image">
           <img src="../../../assets/images/document/10.2_1.png" alt="" />
         </div>
         <p>（2）接收机读取接口（Receiver.h）</p>
-        <ul>
+        <ul class="indent_2_5">
           <li>get_Receiver会返回指定接收机的const结构体</li>
           <li>get_current_Receiver会返回当前接收机的const结构体（自动选择序号最低的可用接收机，无可用接收机是返回随机接收机）</li>
           <li>get_current_Reciever_Type返回当前接收机的类型（SBUS接收机、PPM接收机等）</li>
@@ -812,7 +812,7 @@
           <img src="../../../assets/images/document/10.2_2.png" alt="" />
         </div>
         <p>（3）接收机更新接口（Receiver_Backend.h）</p>
-        <p>把接收机类型、原始数据、是否已连接等信息发送给接口即可完成接收机数据更新。</p>
+        <p class="indent_2_5">把接收机类型、原始数据、是否已连接等信息发送给接口即可完成接收机数据更新。</p>
         <div class="image">
           <img src="../../../assets/images/document/10.2_3.png" alt="" />
         </div>

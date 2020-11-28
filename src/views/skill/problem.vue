@@ -14,6 +14,14 @@
         <p class="question">{{ item.q}}</p>
         <p class="answer">{{ item.a }}</p>
       </div>
+      <div class="box">
+        <p class="question">
+          Q17：对其他方面仍有疑问？
+        </p>
+        <p class="answer">
+          A17：请<router-link to="/index/company">点击此处</router-link>联系我们，了解更多。
+        </p>
+      </div>
     </div>
   </div>
 </template>

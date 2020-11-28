@@ -1,9 +1,8 @@
 <template>
   <div id="cases">
     <div id="bg">
-     <div class="hover_bg">
-       <!--<img src="../../assets/images/cases_bg.jpg" alt="" />-->
-     </div>
+      <img src="../../assets/images/cases_bg3.jpg" alt="" />
+      <div class="hover_bg"></div>
     </div>
     <div class="intro">
       <p class="title">测绘应用</p>
