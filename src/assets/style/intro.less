@@ -2,7 +2,8 @@
   width: 100%;
   height: 100%;
   font-size: 18px;
-  background-color: #f3f3f3;
+  /*background-color: #f3f3f3;*/
+  background-color: #fff;
   padding-bottom: 50px;
   img {
     /*width: 1702px;  //页面布局
@@ -13,23 +14,62 @@
     bottom: 75px;
     z-index: 1;
   }
+  .introBox {
+    position: absolute;
+    left: -20%;
+    top: 25%;
+    z-index: 100;
+    line-height: 40px;
+    animation:box1 1s ease-out 0.5s forwards;
+    -moz-animation:box1 1s ease-out 0.5s forwards;   /* Firefox: */
+    -webkit-animation:box1 1s ease-out 0.5s forwards;    /* Safari and Chrome: */
+    -o-animation:box1 1s ease-out 0.5s forwards;    /* Opera: */
+    .introTitle {
+      font-size: 37px;
+      font-weight: 700;
+      margin-bottom: 40px;
+    }
+    .introWord {
+      font-size: 20px;
+    }
+  }
+  @keyframes box1 {
+    from{color: rgba(0,0,0,0); left: -20%;}
+    to{color: rgb(0,0,0); left: 9%;}
+  }
+  @-moz-keyframes box1 {
+    from{color: rgba(0,0,0,0); left: -20%;}
+    to{color: rgb(0,0,0); left: 9%;}
+  }
+  @-webkit-keyframes box1 {
+    from{color: rgba(0,0,0,0); left: -20%;}
+    to{color: rgb(0,0,0); left: 9%;}
+  }
+  @-o-keyframes box1 {
+    from{color: rgba(0,0,0,0); left: -20%;}
+    to{color: rgb(0,0,0); left: 9%;}
+  }
   .btn1 {
     width: 280px;
     display: flex;
     float: right;
     position: relative;
-    bottom: 200px;
+    bottom: 300px;
     right: 2%;
     z-index: 100;
+    animation:box2 1.5s ease-out 0.5s forwards;
+    -moz-animation:box2 1.5s ease-out 0.5s forwards;   /* Firefox: */
+    -webkit-animation:box2 1.5s ease-out 0.5s forwards;    /* Safari and Chrome: */
+    -o-animation:box2 1.5s ease-out 0.5s forwards;    /* Opera: */
     .btn1_1, .btn1_2 {
       width: 120px;
       max-width: 130px;
-      height: 60px;
+      height: 50px;
       background-color: #fbfbfb;
       text-align: center;
       text-align: -moz-center;
       text-align: -webkit-center;
-      line-height: 60px;
+      line-height: 50px;
     }
     .btn1_1 {
       -webkit-border-radius: 60px 0 0 60px;
@@ -42,6 +82,22 @@
       -moz-border-radius: 0 60px 60px 0;
       border-radius: 0 60px 60px 0;
     }
+  }
+  @keyframes box2 {
+    from{color: rgba(0,0,0,0); right: 0%;}
+    to{color: rgb(0,0,0); right: 2%;}
+  }
+  @-moz-keyframes box2 {
+    from{color: rgba(0,0,0,0); right: 0%;}
+    to{color: rgb(0,0,0); right: 2%;}
+  }
+  @-webkit-keyframes box2 {
+    from{color: rgba(0,0,0,0); right: 0%;}
+    to{color: rgb(0,0,0); right: 2%;}
+  }
+  @-o-keyframes box2 {
+    from{color: rgba(0,0,0,0); right: 0%;}
+    to{color: rgb(0,0,0); right: 2%;}
   }
   //图+文字的part
   .box {

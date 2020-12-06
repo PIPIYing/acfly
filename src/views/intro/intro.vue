@@ -1,6 +1,11 @@
 <template>
   <div id="intro">
-    <img src="../../assets/images/C9pro_bg1.jpg" alt="" />
+    <div class="introBox">
+      <p class="introTitle">C9PRO飞行控制器</p>
+      <p class="introWord">匠心打造 成就不凡</p>
+      <p class="introWord">工业级创新型驾驶控制器</p>
+    </div>
+    <img src="../../assets/images/C9pro_bg3.jpg" alt="" />
     <div class="btn1">
       <div class="btn1_1">
         <router-link to="/index/products/C9pro" style="color: #000;">了解更多</router-link>
