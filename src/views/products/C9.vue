@@ -1,7 +1,7 @@
 <template>
   <div id="C9">
     <!--<Detail :urlData="url"></Detail>-->
-    <div class="intro_C9">
+    <div class="intro_C9" :style="size">
       <!--<img src="../../assets/images/mapping1.jpg" alt="">-->
       <!--<p class="title6">C9飞行控制器</p>
       <p class="word6">工业级创新型驾驶控制器</p>
@@ -252,9 +252,32 @@
           { bg: require('../../assets/images/C9_2.jpg') },
           { bg: require('../../assets/images/C9_3.jpg') }
         ],*/
+        size: {
+          height: ''
+        }
       }
     },
-    methods: {}
+    methods: {
+      getImgSize() {
+        //获取背景图元素
+        var img = document.getElementsByTagName('img')[0];
+        if(window.innerWidth > 1600) {
+          this.size.height = ( 1080 * window.innerWidth ) / 1920 - 100 + "px";
+        }
+        else {
+          this.size.height = ( 1080 * window.innerWidth ) / 1920 + "px";
+        }
+        /*this.size.height = img.offsetHeight + 'px';*/
+        console.log(img);
+      }
+    },
+    created() {
+      window.addEventListener('resize', this.getImgSize); //注册监听器
+      this.getImgSize();
+    },
+    destroyed() {
+      window.removeEventListener('resize', this.getImgSize)
+    }
   }
 </script>
 

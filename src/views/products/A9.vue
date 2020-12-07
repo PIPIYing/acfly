@@ -1,7 +1,7 @@
 <template>
   <div id="A9">
     <!--<Detail :urlData="url"></Detail>-->
-    <div class="intro_A9">
+    <div class="intro_A9" :style="size">
       <!--<p class="title11">A9飞行控制器</p>
       <p class="word11">采用STM32H743VIT6处理器，主频高达480Mhz，带16kbyte L1 Cache</p>
       <p class="word11">超高性能主控芯片、分离式高性能IMU、8个电阻整版恒温、板载丰富外设接口</p>-->
@@ -119,9 +119,32 @@
           { bg: require('../../assets/images/A9_2.jpg') },
           { bg: require('../../assets/images/C9_2.jpg') }
         ],*/
+        size: {
+          height: ''
+        }
       }
     },
-    methods: {}
+    methods: {
+      getImgSize() {
+        //获取背景图元素
+        var img = document.getElementsByTagName('img')[0];
+        if(window.innerWidth > 1600) {
+          this.size.height = ( 1080 * window.innerWidth ) / 1920 - 100 + "px";
+        }
+        else {
+          this.size.height = ( 1080 * window.innerWidth ) / 1920 + "px";
+        }
+        /*this.size.height = img.offsetHeight + 'px';*/
+        console.log(img);
+      }
+    },
+    created() {
+      window.addEventListener('resize', this.getImgSize); //注册监听器
+      this.getImgSize();
+    },
+    destroyed() {
+      window.removeEventListener('resize', this.getImgSize)
+    }
   }
 </script>
 

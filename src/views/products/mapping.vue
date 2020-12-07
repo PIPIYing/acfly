@@ -1,6 +1,6 @@
 <template>
   <div id="mapping">
-    <div class="intro_mapping">
+    <div class="intro_mapping" :style="size">
       <!--<p class="title15">简单 使用 创新</p>
       <p class="word15">独特的飞控系统：卓越的差分定位性能，带领用户进入无忧飞行时代。</p>
       <p class="word15">X640结构简约，造型精致，高效易用，彰显专业魅力。</p>
@@ -283,9 +283,32 @@
           { bg: require('../../assets/images/mapping2.jpg') },
           { bg: require('../../assets/images/mapping3.jpg') }
         ]*/
+        size: {
+          height: ''
+        }
       }
     },
-    methods: {}
+    methods: {
+      getImgSize() {
+        //获取背景图元素
+        var img = document.getElementsByTagName('img')[0];
+        if(window.innerWidth > 1600) {
+          this.size.height = ( 1080 * window.innerWidth ) / 1920 - 100 + "px";
+        }
+        else {
+          this.size.height = ( 1080 * window.innerWidth ) / 1920 + "px";
+        }
+        /*this.size.height = img.offsetHeight + 'px';*/
+        console.log(img);
+      }
+    },
+    created() {
+      window.addEventListener('resize', this.getImgSize); //注册监听器
+      this.getImgSize();
+    },
+    destroyed() {
+      window.removeEventListener('resize', this.getImgSize)
+    }
   }
 </script>
 

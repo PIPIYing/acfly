@@ -1,8 +1,7 @@
 <template>
   <div id="C9pro">
     <!--<Detail :urlData="url"></Detail>-->
-    <div class="intro_C9pro" :style="size" >
-      <img src="../../assets/images/products_v4/C9pro_0.jpg" alt="">
+    <div class="intro_C9pro" :style="size">
       <p class="title0">C9pro飞行控制器</p>
       <p class="word0">工业级创新型驾驶控制器</p>
       <p class="word0">匠心打造 成就不凡</p>
@@ -272,10 +271,7 @@
           this.size.height = ( 1080 * window.innerWidth ) / 1920 + "px";
         }
         /*this.size.height = img.offsetHeight + 'px';*/
-        console.log(window.innerWidth);
-        console.log(img.offsetWidth);
-        console.log(img.offsetHeight);
-        console.log(this.size.height);
+        console.log(img);
       }
     },
     created() {
