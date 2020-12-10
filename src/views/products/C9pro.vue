@@ -5,7 +5,7 @@
       <p class="title0">C9pro飞行控制器</p>
       <p class="word0">工业级创新型驾驶控制器</p>
       <p class="word0">匠心打造 成就不凡</p>
-      <p class="word0" style="white-space: nowrap">内置双频RTK/自抗扰算法/免减震设计/超宽压电源/超小尺寸</p>
+      <p class="word0">内置双频RTK/自抗扰算法/免减震设计/超宽压电源/超小尺寸</p>
     </div>
     <div class="detail1">
       <img src="../../assets/images/products_v2/C9_1.jpg" alt="">
@@ -264,12 +264,13 @@
       getImgSize() {
         //获取背景图元素
         var img = document.getElementsByTagName('img')[0];
-        if(window.innerWidth > 1600) {
+        if(window.innerWidth > 800) {
           this.size.height = ( 1080 * window.innerWidth ) / 1920 - 100 + "px";
         }
         else {
           this.size.height = ( 1080 * window.innerWidth ) / 1920 + "px";
         }
+        /*this.size.height = ( 1080 * window.innerWidth ) / 1920 + "px";*/
         /*this.size.height = img.offsetHeight + 'px';*/
         console.log(img);
       }

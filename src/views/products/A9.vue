@@ -2,9 +2,9 @@
   <div id="A9">
     <!--<Detail :urlData="url"></Detail>-->
     <div class="intro_A9" :style="size">
-      <!--<p class="title11">A9飞行控制器</p>
-      <p class="word11">采用STM32H743VIT6处理器，主频高达480Mhz，带16kbyte L1 Cache</p>
-      <p class="word11">超高性能主控芯片、分离式高性能IMU、8个电阻整版恒温、板载丰富外设接口</p>-->
+      <p class="title11">A9飞行控制器</p>
+      <p class="word11">STM32H743VIT6处理器 | 480Mhz高主频</p>
+      <p class="word11">超高性能主控芯片 | 分离式高性能IMU | 电阻整版恒温</p>
     </div>
     <div class="detail12">
       <img src="../../assets/images/products_v3/A91.png" alt="">
@@ -128,7 +128,7 @@
       getImgSize() {
         //获取背景图元素
         var img = document.getElementsByTagName('img')[0];
-        if(window.innerWidth > 1600) {
+        if(window.innerWidth > 800) {
           this.size.height = ( 1080 * window.innerWidth ) / 1920 - 100 + "px";
         }
         else {

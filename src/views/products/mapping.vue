@@ -1,8 +1,8 @@
 <template>
   <div id="mapping">
     <div class="intro_mapping" :style="size">
-      <!--<p class="title15">简单 使用 创新</p>
-      <p class="word15">独特的飞控系统：卓越的差分定位性能，带领用户进入无忧飞行时代。</p>
+      <p class="title15">飞控 | 简约 | 不凡</p>
+      <!--<p class="word15">独特的飞控系统：卓越的差分定位性能，带领用户进入无忧飞行时代。</p>
       <p class="word15">X640结构简约，造型精致，高效易用，彰显专业魅力。</p>
       <p class="word15">轻巧使携，续航不凡：操作简单注用户体验，引领长航时多旋步入便携时代</p>-->
     </div>

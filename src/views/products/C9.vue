@@ -3,12 +3,9 @@
     <!--<Detail :urlData="url"></Detail>-->
     <div class="intro_C9" :style="size">
       <!--<img src="../../assets/images/mapping1.jpg" alt="">-->
-      <!--<p class="title6">C9飞行控制器</p>
+      <p class="title6">C9飞行控制器</p>
       <p class="word6">工业级创新型驾驶控制器</p>
-      <p class="word6">自抗扰算法</p>
-      <p class="word6">免减震设计</p>
-      <p class="word6">超宽压电源</p>
-      <p class="word6">超小尺寸</p>-->
+      <p class="word6">自抗扰算法 | 免减震设计 | 超宽压电源 | 超小尺寸</p>
     </div>
     <div class="detail7">
       <img src="../../assets/images/products_v2/C9_1.jpg" alt="">
@@ -261,7 +258,7 @@
       getImgSize() {
         //获取背景图元素
         var img = document.getElementsByTagName('img')[0];
-        if(window.innerWidth > 1600) {
+        if(window.innerWidth > 800) {
           this.size.height = ( 1080 * window.innerWidth ) / 1920 - 100 + "px";
         }
         else {
