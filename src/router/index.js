@@ -9,6 +9,10 @@ const routes = [
     redirect: '/index/intro'
   },
   {
+    path: '/index',
+    redirect: '/index/intro'
+  },
+  {
     path: '/index/skill',
     redirect: '/index/skill/document_C9'
   },

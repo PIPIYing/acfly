@@ -3,34 +3,44 @@
     <!--<Detail :urlData="url"></Detail>-->
     <div class="intro_C9pro" :style="size">
       <p class="title0">C9pro飞行控制器</p>
+      <p class="word0">独具匠心 工匠精神</p>
       <p class="word0">工业级创新型驾驶控制器</p>
-      <p class="word0">匠心打造 成就不凡</p>
-      <p class="word0">内置双频RTK/自抗扰算法/免减震设计/超宽压电源/超小尺寸</p>
     </div>
-    <div class="detail1">
-      <img src="../../assets/images/products_v2/C9_1.jpg" alt="">
-      <!--<p class="title1">内置双频ZED-F9P RTK</p>
-      <p class="word1">本机可支持外接基站和千寻位置定位，定位精度可至2厘米</p>-->
+    <div class="detail1" :style="imgSize">
+     <!-- <img src="../../assets/images/products_v4/C9pro_1.jpg" alt="" class="picture">-->
+      <p class="title1">单参数调参</p>
+      <p class="word1">默认参数实测250mm-1800mm轴距多旋翼飞行器超20000+架次，稳定可靠</p>
     </div>
-    <div class="detail2">
-      <img src="../../assets/images/products_v2/C9_2.jpg" alt="">
-      <!--<p class="title2">大小机型任意装</p>
-      <p class="word2">姿态控制算法，摈弃PID调参，融合ADRC自抗扰姿态算法适应各类不同结构和动力规格的机型，变重心或变负载使用亦可自适应。</p>-->
+    <div class="detail2" :style="imgSize">
+<!--
+      <img src="../../assets/images/products_v4/C9pro_2.jpg" alt="">
+-->
+      <p class="title2">磁场干扰自对准</p>
+      <p class="word2">因强磁场等环境因素干扰，导致无人机航向异常</p>
+      <p class="word2">飞控可实时检测磁场异常，并通过GPS进行航向智能对准，保证无人机稳定执行任务和返航</p>
     </div>
-    <div class="detail3">
-      <img src="../../assets/images/products_v2/C9_3.jpg" alt="">
-      <!--<p class="title3">暴力飞行平地履</p>
-      <p class="word3">高度控制算法，自适应无参数观测器和控制器、运动震动智能抑制、运动气压变化智能补偿、免调参亦可快速飞行。</p>-->
+    <div class="detail3" :style="imgSize">
+<!--
+      <img src="../../assets/images/products_v4/C9pro_3.jpg" alt="">
+-->
+      <p class="title3">内置双频ZED-F9P RTK</p>
+      <p class="word3">支持本地串口、网络NTRIP和PPK，定位精度2厘米</p>
     </div>
-    <div class="detail4">
-      <img src="../../assets/images/products_v2/C9_4.jpg" alt="">
-      <!--<p class="title4">强风乱流轻松搞定</p>
-      <p class="word4">位置解算算法，实时智能检测传感器精度，自动选用传感器，数据智能融合提供最佳位置精度。恶劣气象变化亦可精准飞行。</p>-->
+    <div class="detail4" :style="imgSize">
+<!--
+      <img src="../../assets/images/products_v4/C9pro_4.jpg" alt="">
+-->
+      <p class="title4">支持拍照、热靴功能 航点多达65536个</p>
+      <p class="word4">有效解决相片丢片引起的POS数量和照片数量不一致问题</p>
+      <p class="word4">飞控支持双GPS、外置USB和LED，支持USB虚拟U盘高速读取POS记录等，无需插拔SD卡，支持免减震安装</p>
     </div>
-    <div class="detail5">
-      <img src="../../assets/images/products_v2/C9_1.jpg" alt="">
-      <!--<p class="title5">磁场干扰自对准</p>
-      <p class="word5">因强磁场等环境因素干扰，导致无人机航向异常，飞控可实时检测磁场异常，并通过GPS进行航向智能对准，表面因磁场异常而炸机。</p>-->
+    <div class="detail5" :style="imgSize">
+<!--
+      <img src="../../assets/images/products_v4/C9pro_5.jpg" alt="">
+-->
+      <p class="title5">摒弃传统PID调参</p>
+      <p class="word5">自适应无参数观测器和控制器、运动震动智能抑制、运动气压变化</p>
+      <p class="word5">智能补偿算法适应各类不同结构和动力规格的机型变重心或变负载使用亦可自适应</p>
     </div>
     <p class="dataTitle">参数说明</p>
     <div class="data">
@@ -234,10 +244,9 @@
     </div>
     <div class="btnBox">
       <div class="btn">
-        <a href="#">立即购买</a>
+        <a href="https://shop227604841.taobao.com/?spm=2013.1.1000126.2.315331437MJ3XW" target="_blank">立即购买</a>
       </div>
     </div>
-
   </div>
 </template>
 
@@ -257,13 +266,15 @@
         ],*/
         size: {
           height: ''
+        },
+        imgSize: {
+          height: ''
         }
       }
     },
     methods: {
       getImgSize() {
         //获取背景图元素
-        var img = document.getElementsByTagName('img')[0];
         if(window.innerWidth > 800) {
           this.size.height = ( 1080 * window.innerWidth ) / 1920 - 100 + "px";
         }
@@ -272,15 +283,27 @@
         }
         /*this.size.height = ( 1080 * window.innerWidth ) / 1920 + "px";*/
         /*this.size.height = img.offsetHeight + 'px';*/
-        console.log(img);
+      },
+      getImgH() {
+        /*var img = document.getElementsByClassName('picture')[0];
+        if(this.imgSize.height) {
+          this.imgSize.height = img.height + 'px';
+        }else {
+          this.imgSize.height = 840 + 'px';
+        }
+        console.log(img.height);*/
+        this.imgSize.height = ( 840 * window.innerWidth ) / 1920 - 4 + "px";
       }
     },
     created() {
       window.addEventListener('resize', this.getImgSize); //注册监听器
+      window.addEventListener('resize', this.getImgH); //注册监听器
       this.getImgSize();
+      this.getImgH();
     },
     destroyed() {
-      window.removeEventListener('resize', this.getImgSize)
+      window.removeEventListener('resize', this.getImgSize);
+      window.removeEventListener('resize', this.getImgH);
     }
   }
 </script>

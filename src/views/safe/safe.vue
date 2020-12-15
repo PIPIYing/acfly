@@ -8,7 +8,7 @@
       <p class="content">
         尊敬的用户你们好！在使用无人飞行器之前，请务必查询当地关于无人机飞行管控条例的政策与相关法规，在合法合理安全的情况下执行飞行任务。为了方便您的查阅，ACFly将附上中国民用航空局的官方网站链接。请通过如下链接前往各国空域管理政策网站进一步了解。
       </p>
-      <a href="#">政策链接>></a>
+      <a href="http://www.caac.gov.cn/index.html" target="_blank">政策链接>></a>
     </div>
     <div class="ruleBox">
       <p class="rule">安全飞行准则</p>

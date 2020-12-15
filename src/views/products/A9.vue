@@ -6,25 +6,34 @@
       <p class="word11">STM32H743VIT6处理器 | 480Mhz高主频</p>
       <p class="word11">超高性能主控芯片 | 分离式高性能IMU | 电阻整版恒温</p>
     </div>
-    <div class="detail12">
-      <img src="../../assets/images/products_v3/A91.png" alt="">
-      <!--<p class="title12">GPS智能修复罗盘异常</p>
-      <p class="word12">支持在罗盘不准、罗盘干扰和无罗盘状态下稳定飞行</p>
-      <p class="word12">罗盘不准：飞行器转动时会实时进行罗盘校准，让罗盘在飞行过程中保持最佳状态</p>
-      <p class="word12">罗盘干扰：自动检测罗盘干扰情况，自动选用优质罗盘稳定航向</p>
-      <p class="word12">无罗盘：无罗盘情况下，智能分析GPS运动轨迹自动对准航向</p>-->
+    <div class="detail12" :style="imgSize">
+<!--
+      <img src="../../assets/images/products_v4/A9_1.jpg" alt="">
+-->
+      <p class="title12">SDK开源 超快速二次开发 上手简单</p>
+      <p class="word12">支持GPS、光流、超声波、激光定高、毫米波雷达和openmv等多传感器融合</p>
+      <p class="word12">采用STM32H743VIT6处理器，分离式高性能IMU、板载丰富外设接口</p>
     </div>
-    <div class="detail13">
-      <img src="../../assets/images/products_v3/A92.png" alt="">
-      <!--<p class="title13">多传感器异常检测智能融合，杜绝GPS气压不稳定造成位置波动</p>
-      <p class="word13">波动检测：飞行过程中实时监测各个传感器的波动情况，智能分析出各个传感器的健康度</p>
-      <p class="word13">IMU预测：传感器波动剧烈时使用IMU加速度预测位置，在气流干扰环境下仅使用企业计人能进行稳定飞行</p>
-      <p class="word13">健康融合：自动选用健康度最高的传感器，自动使各个传感器取长补短达到优质飞行效果</p>-->
+    <div class="detail13" :style="imgSize">
+<!--
+      <img src="../../assets/images/products_v4/A9_2.jpg" alt="">
+-->
+      <p class="title13">GPS智能修复罗盘异常</p>
+      <p class="word13">支持罗盘不准、罗盘干扰和无罗盘状态下稳定飞行</p>
     </div>
-    <div class="detail14">
-      <img src="../../assets/images/products_v3/A93.png" alt="">
-      <!--<p class="title14">强风乱流轻松搞定</p>-->
-      <!--<p class="word14">重定义单参数调节：飞控默认参数实测250mm-1800mm轴距多旋翼飞行器，超20000+架次，均能起飞且姿态可控</p>-->
+    <div class="detail14" :style="imgSize">
+<!--
+      <img src="../../assets/images/products_v4/C9pro_5.jpg" alt="">
+-->
+      <p class="title14">多传感器智能融合</p>
+      <p class="word14">杜绝GPS气压不稳定造成位置波动飞行过程中实时监测各个传感器的波动情况，智能分析出各个传感器的健康度</p>
+    </div>
+    <div class="detail20" :style="imgSize">
+<!--
+      <img src="../../assets/images/products_v4/C9pro_1.jpg" alt="">
+-->
+      <p class="title20">单参数调参</p>
+      <p class="word20">默认参数实测250mm-1800mm轴距多旋翼飞行器超20000+架次，稳定可靠</p>
     </div>
     <p class="dataTitle">参数说明</p>
     <div class="data">
@@ -100,8 +109,10 @@
         （更多详情请查看<router-link to="/index/skill/document_A9">产品手册</router-link>）
       </div>
     </div>
-    <div class="btn">
-      <a href="https://item.taobao.com/item.htm?spm=a1z10.1-c.w4004-23273774756.3.78dc4a92ubEpVX&id=591615647197">立即购买</a>
+    <div class="btnBox">
+      <div class="btn">
+        <a href="https://item.taobao.com/item.htm?spm=a1z10.1-c.w4004-23273774756.3.78dc4a92ubEpVX&id=591615647197" target="_blank">立即购买</a>
+      </div>
     </div>
   </div>
 </template>
@@ -121,6 +132,9 @@
         ],*/
         size: {
           height: ''
+        },
+        imgSize: {
+          height: ''
         }
       }
     },
@@ -136,14 +150,20 @@
         }
         /*this.size.height = img.offsetHeight + 'px';*/
         console.log(img);
+      },
+      getImgH() {
+        this.imgSize.height = ( 840 * window.innerWidth ) / 1920 - 4 + "px";
       }
     },
     created() {
       window.addEventListener('resize', this.getImgSize); //注册监听器
       this.getImgSize();
+      window.addEventListener('resize', this.getImgH); //注册监听器
+      this.getImgH();
     },
     destroyed() {
-      window.removeEventListener('resize', this.getImgSize)
+      window.removeEventListener('resize', this.getImgSize);
+      window.removeEventListener('resize', this.getImgH);
     }
   }
 </script>

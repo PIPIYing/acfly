@@ -5,7 +5,7 @@
   bottom: 75px;*/
   .intro_C9pro, .detail1, .detail2, .detail3, .detail4, .detail5,
   .intro_C9, .detail7, .detail8, .detail9, .detail10,
-  .intro_A9, .detail12, .detail13, .detail14,
+  .intro_A9, .detail12, .detail13, .detail14, .detail20,
   .intro_mapping, .detail16, .detail17, .detail18, .detail19{
     /*height: 800px;
     max-height: 1200px;*/
@@ -14,32 +14,34 @@
     background-size: 100% 100%;  //背景图片的设置
     .title0, .title1, .title2, .title3, .title4, .title5,
     .title6, .title7, .title8, .title9, .title10,
-    .title11, .title12, .title13, .title14,
+    .title11, .title12, .title13, .title14, .title20,
     .title15, .title16, .title17, .title18, .title19 {
-      font-size: 30px;
+      font-size: 37px;
       font-weight: 700;
       line-height: 33px;
-      margin-bottom: 36px;
+      margin-bottom: 26px;
     }
     .word0, .word1, .word2, .word3, .word4, .word5,
     .word6, .word7, .word8, .word9, .word10,
-    .word11, .word12, .word13, .word14,
+    .word11, .word12, .word13, .word14, .word20,
     .word15, .word16, .word17, .word18, .word19 {
+      font-size: 20px;
       width: 35%;
       line-height: 36px;
     }
   }
   .detail0, .detail1, .detail2, .detail3, .detail4, .detail5,
   .detail6, .detail7, .detail8, .detail9, .detail10,
-  .detail11, .detail12, .detail13, .detail14,
+  .detail11, .detail12, .detail13, .detail14, .detail20,
   .detail15, .detail16, .detail17, .detail18, .detail19 {
-    /*border-bottom: 1px rgba(255,255,255,0.7) solid;*/
     position: relative;
     bottom: 70px;
     img {
       display: block;
-      width: 100%;
+     /* width: 100%;*/
       height: 100%;
+      position: relative;
+      z-index: -99;
     }
   }
   .intro_C9pro, .intro_C9, .intro_A9,.intro_mapping {
@@ -47,13 +49,18 @@
     /*height: 1080px;*/
   }
   .intro_C9pro {
-    background-image: url("../../assets/images/products_v4/C9pro_00.jpg");  //背景图
+    background-image: url("../../assets/images/products_v4/C9pro_0.jpg");  //背景图
     background-attachment: fixed;
     background-size: 100% auto;
     .title0, .word0 {
-      padding-left: 60%;
+      /*padding-left: 10%;*/
+      width: 40%;
+      text-align: center;
+      text-align: -moz-center;
+      text-align: -webkit-center;
       position: relative;
       top: 7%;
+      left: 50%;
       animation:box0 1.5s ease-out 0s forwards;
       -moz-animation:box0 1.5s ease-out 0s forwards;   /* Firefox: */
       -webkit-animation:box0 1.5s ease-out 0s forwards;    /* Safari and Chrome: */
@@ -77,13 +84,18 @@
     }
   }
   .intro_C9 {
-    background-image: url("../../assets/images/products_v4/C9_00.jpg");  //背景图带文字
+    background-image: url("../../assets/images/products_v4/C9_0.jpg");  //背景图带文字
     background-attachment: fixed;
     background-size: 100% auto;
     .title6, .word6 {
-      padding-left: 50%;
+      /*padding-left: 50%;*/
+      width: 100%;
+      text-align: center;
+      text-align: -moz-center;
+      text-align: -webkit-center;
       position: relative;
       top: 13%;
+      left: 200px;
       animation:box6 1.5s ease-out 0s forwards;
       -moz-animation:box6 1.5s ease-out 0s forwards;   /* Firefox: */
       -webkit-animation:box6 1.5s ease-out 0s forwards;    /* Safari and Chrome: */
@@ -147,163 +159,143 @@
     background-attachment: fixed;
     background-size: 100% auto;
     .title15, .word15 {
-      width: 100%;
+      /*padding-left: 8%;*/
+      width: 40%;
       text-align: center;
       text-align: -moz-center;
       text-align: -webkit-center;
       position: relative;
-      top: 5%;
+      top: 10%;
       animation:box15 1.5s ease-out 0s forwards;
       -moz-animation:box15 1.5s ease-out 0s forwards;   /* Firefox: */
       -webkit-animation:box15 1.5s ease-out 0s forwards;    /* Safari and Chrome: */
       -o-animation:box15 1.5s ease-out 0s forwards;    /* Opera: */
     }
     @keyframes box15 {
-      from{color: rgba(0,0,0,0); top: 5%;}
-      to{color: rgb(0,0,0); top: 14%;}
+      from{color: rgba(0,0,0,0); top: 10%;}
+      to{color: rgb(0,0,0); top: 25%;}
     }
     @-moz-keyframes box15 {
-      from{color: rgba(0,0,0,0); top: 5%;}
-      to{color: rgb(0,0,0); top: 14%;}
+      from{color: rgba(0,0,0,0); top: 10%;}
+      to{color: rgb(0,0,0); top: 25%;}
     }
     @-webkit-keyframes box15 {
-      from{color: rgba(0,0,0,0); top: 5%;}
-      to{color: rgb(0,0,0); top: 14%;}
+      from{color: rgba(0,0,0,0); top: 10%;}
+      to{color: rgb(0,0,0); top: 25%;}
     }
     @-o-keyframes box15 {
-      from{color: rgba(0,0,0,0); top: 5%;}
-      to{color: rgb(0,0,0); top: 14%;}
+      from{color: rgba(0,0,0,0); top: 10%;}
+      to{color: rgb(0,0,0); top: 25%;}
+    }
+  }
+  .detail1, .detail2, .detail3, .detail4, .detail5,
+  .detail7, .detail8, .detail9, .detail10,
+  .detail12, .detail13, .detail14, .detail20,
+  .detail16, .detail17 {
+    color: #fff;
+    .title1, .word1, .title2, .word2, .title3, .word3, .title4, .word4, .title5, .word5,
+    .title5, .word5, .title6, .word6, .title7, .word7, .title8, .word8, .title9, .word9, .title10, .word10,
+    .title12, .word12, .title13, .word13, .title14, .word14, .title20, .word20,
+    .title16, .word16, .title17, .word17 {
+      width: 100%;
+      text-align: center;
+      text-align: -moz-center;
+      text-align: -webkit-center;
+      position: relative;
+      top: 50%;
     }
   }
   .detail1 {
-    /*background-image: url("../../assets/images/products/C9pro1.jpg");  //背景图*/
-    .title1, .word1 {
-      padding-left: 10%;
-      position: relative;
-      top: 200px;
-    }
+    background-image: url("../../assets/images/products_v4/C9pro_1.jpg");
+    background-size: 100% auto;
   }
   .detail2 {
-    /*background-image: url("../../assets/images/products/C9pro2.jpg");  //背景图*/
-    .title2, .word2 {
-      padding-left: 58%;
-      position: relative;
-      top: 310px;
-    }
-
+    background-image: url("../../assets/images/products_v4/C9pro_2.jpg");
+    background-size: 100% auto;
   }
   .detail3 {
-    /*background-image: url("../../assets/images/C9_1.jpg"); //背景图*/
-    .title3, .word3 {
-      padding-left: 50%;
-      position: relative;
-      top: 200px;
-    }
+    background-image: url("../../assets/images/products_v4/C9pro_3.jpg");
+    background-size: 100% auto;
   }
   .detail4 {
-    /*background-image: url("../../assets/images/C9_2.jpg"); //背景图*/
-    .title4, .word4 {
-      padding-left: 50%;
-      position: relative;
-      top: 200px;
-    }
+    background-image: url("../../assets/images/products_v4/C9pro_4.jpg");
+    background-size: 100% auto;
   }
   .detail5 {
-    /*background-image: url("../../assets/images/products/C9pro5.jpg"); //背景图*/
-    .title5, .word5 {
-      padding-left: 11%;
-      position: relative;
-      top: 120px;
-    }
+    background-image: url("../../assets/images/products_v4/C9pro_5.jpg");
+    background-size: 100% auto;
   }
   .detail7 {
-    /*background-image: url("../../assets/images/products_v2/C9_1.jpg");  //背景图带文字*/
-    .title7, .word7 {
-      color: #000;
-      padding-left: 50%;
-      position: relative;
-      bottom: 200px;
-    }
+    background-image: url("../../assets/images/products_v4/C9pro_1.jpg");
+    background-size: 100% auto;
   }
   .detail8 {
-    /*background-image: url("../../assets/images/products_v2/C9_2.jpg");  //背景图带文字*/
-    .title8, .word8 {
-      padding-left: 50%;
-      position: relative;
-      top: 200px;
-    }
+    background-image: url("../../assets/images/products_v4/C9pro_2.jpg");
+    background-size: 100% auto;
   }
   .detail9 {
-    /*background-image: url("../../assets/images/products_v2/C9_3.jpg");  //背景图带文字*/
-    .title9, .word9 {
-      padding-left: 50%;
-      position: relative;
-      top: 200px;
-    }
+    background-image: url("../../assets/images/products_v4/C9pro_5.jpg");
+    background-size: 100% auto;
   }
   .detail10 {
-    /*background-image: url("../../assets/images/products_v2/C9_4.jpg");  //背景图带文字*/
-    .title10, .word10 {
-      padding-left: 50%;
-      position: relative;
-      top: 200px;
-    }
+    background-image: url("../../assets/images/products_v4/C9pro_4.jpg");
+    background-size: 100% auto;
   }
   .detail12 {
-    /*background-image: url("../../assets/images/products_v3/A91.png");  //背景图带文字*/
-    .title12, .word12 {
-      padding-left: 50%;
-      position: relative;
-      top: 200px;
-    }
+    background-image: url("../../assets/images/products_v4/A9_1.jpg");
+    background-size: 100% auto;
   }
   .detail13 {
-    /*background-image: url("../../assets/images/products_v3/A92.png");  //背景图带文字*/
-    .title13, .word13 {
-      padding-left: 50%;
-      position: relative;
-      top: 200px;
-    }
+    background-image: url("../../assets/images/products_v4/A9_2.jpg");
+    background-size: 100% auto;
   }
   .detail14 {
-    /*background-image: url("../../assets/images/products_v3/A93.png");  //背景图带文字*/
-    .title14, .word14 {
-      padding-left: 50%;
-      position: relative;
-      top: 200px;
-    }
+    background-image: url("../../assets/images/products_v4/C9pro_5.jpg");
+    background-size: 100% auto;
+  }
+  .detail20 {
+    background-image: url("../../assets/images/products_v4/C9pro_1.jpg");
+    background-size: 100% auto;
   }
   .detail16 {
-    /*background-image: url("../../assets/images/products_v3/mapping1.png"); //背景图带文字*/
-    .title16, .word16 {
-      padding-left: 60%;
-      position: relative;
-      top: 380px;
-    }
+    background-image: url("../../assets/images/products_v4/mapping_1.jpg");
+    background-size: 100% auto;
   }
   .detail17 {
-    /*background-image: url("../../assets/images/products_v3/mapping2.png"); //背景图带文字*/
-    .title17, .word17 {
-      color: #000;
-      padding-left: 50%;
-      position: relative;
-      top: 200px;
-    }
+    background-image: url("../../assets/images/products_v4/C9pro_5.jpg");
+    background-size: 100% auto;
+  }
+  .detail18 {
+    background-image: url("../../assets/images/products_v4/mapping_2.jpg");
+    background-size: 100% auto;
+  }
+  .detail19 {
+    background-image: url("../../assets/images/products_v4/mapping_3.jpg");
+    background-size: 100% auto;
   }
   .detail18 {
     /*background-image: url("../../assets/images/products_v3/mapping3.png"); //背景图带文字*/
+    color: #fff;
     .title18, .word18 {
-      padding-left: 50%;
+      width: 50%;
+      text-align: center;
+      text-align: -moz-center;
+      text-align: -webkit-center;
       position: relative;
-      top: 200px;
+      top: 40%;
     }
   }
   .detail19 {
     /*background-image: url("../../assets/images/products_v3/mapping4.png"); //背景图带文字*/
+    color: #fff;
     .title19, .word19 {
-      padding-left: 8%;
+      width: 60%;
+      text-align: center;
+      text-align: -moz-center;
+      text-align: -webkit-center;
       position: relative;
-      top: 220px;
+      top: 50%;
+      left: 38%;
     }
   }
   .dataTitle {
@@ -399,5 +391,4 @@
       }
     }
   }
-
 }

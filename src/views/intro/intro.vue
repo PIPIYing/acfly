@@ -11,7 +11,7 @@
         <router-link to="/index/products/C9pro" style="color: #000;">了解更多</router-link>
       </div>
       <div class="btn1_2">
-        <a href="#" style="color: #000;">立即购买</a>
+        <a href="https://shop227604841.taobao.com/?spm=2013.1.1000126.2.315331437MJ3XW" target="_blank" style="color: #000;">立即购买</a>
       </div>
     </div>
     <div class="box" :style="sizeInfo">
@@ -32,7 +32,7 @@
         <p class="explain">工业级创新型驾驶控制器</p>
         <div class="btn2">
           <div class="btn2_1">
-            <a href="https://item.taobao.com/item.htm?spm=a1z10.1-c.w4004-23273774756.5.78dc4a92ubEpVX&id=631387331308" style="color: #4299F9;">立即购买</a>
+            <a href="https://item.taobao.com/item.htm?spm=a1z10.1-c.w4004-23273774756.5.78dc4a92ubEpVX&id=631387331308" target="_blank" style="color: #4299F9;">立即购买</a>
           </div>
           <div class="btn2_2">
             <router-link to="/index/products/C9" style="color: #4299F9;">了解更多>></router-link>
@@ -61,7 +61,7 @@
         <p class="explain">单参数调节 65536航点</p>
         <div class="btn2">
           <div class="btn2_1">
-            <a href="https://item.taobao.com/item.htm?spm=a1z10.1-c.w4004-23273774756.3.78dc4a92ubEpVX&id=591615647197" style="color: #4299F9;">立即购买</a>
+            <a href="https://item.taobao.com/item.htm?spm=a1z10.1-c.w4004-23273774756.3.78dc4a92ubEpVX&id=591615647197" target="_blank" style="color: #4299F9;">立即购买</a>
           </div>
           <div class="btn2_2">
             <router-link to="/index/products/A9" style="color: #4299F9;">了解更多>></router-link>
@@ -81,7 +81,7 @@
         <p class="explain">双星四频 精准定位</p>
         <div class="btn2">
           <div class="btn2_1">
-            <a href="#" style="color: #4299F9;">立即购买</a>
+            <a href="https://item.taobao.com/item.htm?spm=a1z10.1-c.w4004-23273774756.7.78dc4a92jslsvd&id=619068803524" target="_blank" style="color: #4299F9;">立即购买</a>
           </div>
           <div class="btn2_2">
             <router-link to="/index/products/mapping" style="color: #4299F9;">了解更多>></router-link>

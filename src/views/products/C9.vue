@@ -4,28 +4,41 @@
     <div class="intro_C9" :style="size">
       <!--<img src="../../assets/images/mapping1.jpg" alt="">-->
       <p class="title6">C9飞行控制器</p>
-      <p class="word6">工业级创新型驾驶控制器</p>
-      <p class="word6">自抗扰算法 | 免减震设计 | 超宽压电源 | 超小尺寸</p>
+      <!--<p class="word6">工业级创新型驾驶控制器</p>
+      <p class="word6">自抗扰算法 | 免减震设计 | 超宽压电源 | 超小尺寸</p>-->
+      <p class="word6">独具匠心 工匠精神</p>
+      <p class="word6">工业级创新型飞行控制器</p>
     </div>
-    <div class="detail7">
-      <img src="../../assets/images/products_v2/C9_1.jpg" alt="">
-      <!--<p class="title7">大小机型任意装</p>
-      <p class="word7">姿态控制算法，摈弃PID调参，融合ADRC自抗扰姿态算法适应各类不同结构和动力规格的机型，变重心或变负载使用亦可自适应。</p>-->
+    <div class="detail7" :style="imgSize">
+<!--
+      <img src="../../assets/images/products_v4/C9pro_1.jpg" alt="">
+-->
+      <p class="title7">单参数调参</p>
+      <p class="word7">默认参数实测250mm-1800mm轴距多旋翼飞行器超20000+架次，稳定可靠</p>
     </div>
-    <div class="detail8">
-      <img src="../../assets/images/products_v2/C9_2.jpg" alt="">
-      <!--<p class="title8">暴力飞行平地履</p>
-      <p class="word8">高度控制算法，自适应无参数观测器和控制器、运动震动智能抑制、运动气压变化智能补偿、免调参亦可快速飞行。</p>-->
+    <div class="detail8" :style="imgSize">
+<!--
+      <img src="../../assets/images/products_v4/C9pro_2.jpg" alt="">
+-->
+      <p class="title8">磁场干扰自对准</p>
+      <p class="word8">因强磁场等环境因素干扰，导致无人机航向异常</p>
+      <p class="word8">飞控可实时检测磁场异常，并通过GPS进行航向智能对准，保证无人机稳定执行任务和返航</p>
     </div>
-    <div class="detail9">
-      <img src="../../assets/images/products_v2/C9_3.jpg" alt="">
-      <!--<p class="title9">强风乱流轻松搞定</p>
-      <p class="word9">位置解算算法，实时智能检测传感器精度，自动选用传感器，数据智能融合提供最佳位置精度。恶劣气象变化亦可精准飞行。</p>-->
+    <div class="detail9" :style="imgSize">
+<!--
+      <img src="../../assets/images/products_v4/C9pro_5.jpg" alt="">
+-->
+      <p class="title9">支持拍照、热靴功能 航点多达65536个</p>
+      <p class="word9">有效解决相片丢片引起的POS数量和照片数量不一致问题</p>
+      <p class="word9">飞控支持双GPS、外置USB和LED，支持USB虚拟U盘高速读取POS记录等，无需插拔SD卡，支持免减震安装</p>
     </div>
-    <div class="detail10">
-      <img src="../../assets/images/products_v2/C9_4.jpg" alt="">
-      <!--<p class="title10">磁场干扰自对准</p>
-      <p class="word10">因强磁场等环境因素干扰，导致无人机航向异常，飞控可实时检测磁场异常，并通过GPS进行航向智能对准，表面因磁场异常而炸机。</p>-->
+    <div class="detail10" :style="imgSize">
+<!--
+      <img src="../../assets/images/products_v4/C9pro_4.jpg" alt="">
+-->
+      <p class="title10">摒弃传统PID调参</p>
+      <p class="word10">自适应无参数观测器和控制器、运动震动智能抑制、运动气压变化</p>
+      <p class="word10">智能补偿算法适应各类不同结构和动力规格的机型变重心或变负载使用亦可自适应</p>
     </div>
     <!--<TablePart :parameterData="parameter"></TablePart>-->
     <p class="dataTitle">参数说明</p>
@@ -230,8 +243,10 @@
         （更多详情请查看<router-link to="/index/skill/document_C9">产品手册</router-link>）
       </div>
     </div>
-    <div class="btn">
-      <a href="https://item.taobao.com/item.htm?spm=a1z10.1-c.w4004-23273774756.5.78dc4a92ubEpVX&id=631387331308">立即购买</a>
+    <div class="btnBox">
+      <div class="btn">
+        <a href="https://item.taobao.com/item.htm?spm=a1z10.1-c.w4004-23273774756.5.78dc4a92ubEpVX&id=631387331308" target="_blank">立即购买</a>
+      </div>
     </div>
   </div>
 </template>
@@ -251,6 +266,9 @@
         ],*/
         size: {
           height: ''
+        },
+        imgSize: {
+          height: ''
         }
       }
     },
@@ -266,14 +284,20 @@
         }
         /*this.size.height = img.offsetHeight + 'px';*/
         console.log(img);
+      },
+      getImgH() {
+        this.imgSize.height = ( 840 * window.innerWidth ) / 1920 - 4 + "px";
       }
     },
     created() {
       window.addEventListener('resize', this.getImgSize); //注册监听器
       this.getImgSize();
+      window.addEventListener('resize', this.getImgH); //注册监听器
+      this.getImgH();
     },
     destroyed() {
-      window.removeEventListener('resize', this.getImgSize)
+      window.removeEventListener('resize', this.getImgSize);
+      window.removeEventListener('resize', this.getImgH);
     }
   }
 </script>

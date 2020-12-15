@@ -60,8 +60,8 @@
         </div>
         <div class="footerList">
           <p class="title">购买渠道</p>
-          <a href="https://shop227604841.taobao.com/?spm=2013.1.1000126.2.315331437MJ3XW">官方商城</a>
-          <a href="#">经销合作</a>
+          <a href="https://shop227604841.taobao.com/?spm=2013.1.1000126.2.315331437MJ3XW" target="_blank">官方商城</a>
+          <router-link to="/index/develop">经销合作</router-link>
         </div>
         <div class="footerList">
           <p class="title">安全飞行</p>
