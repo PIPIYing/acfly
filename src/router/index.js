@@ -114,9 +114,9 @@ const routes = [
         component: () => import('../views/skill/document_v2/document_mapping')
       },
       {
-        path: 'document_diary',
-        name: 'document_diary',
-        component: () => import('../views/skill/document_v2/document_diary')
+        path: 'document_update',
+        name: 'document_update',
+        component: () => import('../views/skill/document_v2/document_update')
       },
     ]
     /*children: [

@@ -40,7 +40,7 @@
         </div>
       </div>
       <div class="boxImg">
-        <img src="../../assets/images/intro2.png" alt="" class="introImg1" />
+        <img src="../../assets/images/intro2.jpg" alt="" class="introImg1" />
       </div>
     </div>
     <div class="box" :style="sizeInfo">

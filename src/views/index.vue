@@ -29,10 +29,10 @@
           <router-link to="/index/cases">应用案例</router-link>
         </div>
         <div class="dropdown">
-          <router-link to="/index/skill">技术支持</router-link>
+          <router-link to="/index/skill" target="_blank">技术支持</router-link>
           <div class="navList">
             <div class="item">
-              <router-link to="/index/skill">技术文档</router-link>
+              <router-link to="/index/skill" target="_blank">技术文档</router-link>
             </div>
             <div class="item">
               <router-link to="/index/develop">定制开发</router-link>

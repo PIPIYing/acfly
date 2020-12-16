@@ -138,7 +138,7 @@
           </tr>
           <tr>
             <th class="color">电压监测</th>
-            <td class="color">OV-60V × 3路</td>
+            <td class="color">OV-60V × 2路</td>
           </tr>
         </table>
         <table class="parameter">
@@ -276,8 +276,17 @@
       getImgSize() {
         //获取背景图元素
         var img = document.getElementsByTagName('img')[0];
-        if(window.innerWidth > 800) {
+        if(window.innerWidth > 2000) {
           this.size.height = ( 1080 * window.innerWidth ) / 1920 - 100 + "px";
+        }
+        else if(window.innerWidth > 1600) {
+          this.size.height = ( 1080 * window.innerWidth ) / 1920 - 50 + "px";
+        }
+        else if(window.innerWidth > 1400) {
+          this.size.height = ( 1080 * window.innerWidth ) / 1920 - 40 + "px";
+        }
+        else if(window.innerWidth > 1000) {
+          this.size.height = ( 1080 * window.innerWidth ) / 1920 - 20 + "px";
         }
         else {
           this.size.height = ( 1080 * window.innerWidth ) / 1920 + "px";

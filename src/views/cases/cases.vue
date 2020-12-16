@@ -5,11 +5,11 @@
       <div class="hover_bg"></div>
     </div>
     <div class="intro">
-      <p class="title">测绘应用</p>
-      <p class="word">随着计算机技术和通讯技术的发展，无人机侧航受到测绘单位的重视，2010年国家测绘局全国配发无人机航测系统，将无人机航测推向了新的高度。</p>
+      <p class="title"><!--测绘应用--></p>
+      <p class="word"><!--随着计算机技术和通讯技术的发展，无人机侧航受到测绘单位的重视，2010年国家测绘局全国配发无人机航测系统，将无人机航测推向了新的高度。--></p>
     </div>
     <div class="caseBox">
-      <p class="title">测绘类型</p>
+      <p class="title"><!--测绘类型--></p>
       <div class="row rowFirst">
         <div class="box case1">
           <div class="hover">

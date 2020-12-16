@@ -1,7 +1,7 @@
 <template>
   <div id="safe">
     <div class="safeFly">
-      <span>安全飞行</span>
+      <span><!--安全飞行指引--></span>
     </div>
     <div class="low">
       <p class="title">政策法规</p>
