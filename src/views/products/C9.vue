@@ -6,7 +6,7 @@
       <p class="title6">C9飞行控制器</p>
       <!--<p class="word6">工业级创新型驾驶控制器</p>
       <p class="word6">自抗扰算法 | 免减震设计 | 超宽压电源 | 超小尺寸</p>-->
-      <p class="word6">独具匠心 工匠精神</p>
+      <p class="word6">单参数调参 抗磁干扰</p>
       <p class="word6">工业级创新型飞行控制器</p>
     </div>
     <div class="detail7" :style="imgSize">
@@ -29,7 +29,7 @@
       <img src="../../assets/images/products_v4/C9pro_5.jpg" alt="">
 -->
       <p class="title9">支持拍照、热靴功能 航点多达65536个</p>
-      <p class="word9">有效解决相片丢片引起的POS数量和照片数量不一致问题</p>
+      <p class="word9">支持USB和SD卡更新固件，有效解决相片丢片引起的POS数量和照片数量不一致问题</p>
       <p class="word9">飞控支持双GPS、外置USB和LED，支持USB虚拟U盘高速读取POS记录等，无需插拔SD卡，支持免减震安装</p>
     </div>
     <div class="detail10" :style="imgSize">
@@ -187,7 +187,7 @@
           </tr>
           <tr>
             <th class="color">航点数量</th>
-            <td class="color">65535个</td>
+            <td class="color">65536个</td>
           </tr>
           <tr>
             <th>POS记录</th>

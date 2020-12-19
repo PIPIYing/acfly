@@ -2,7 +2,7 @@
   <div id="intro">
     <div class="introBox">
       <p class="introTitle">C9PRO飞行控制器</p>
-      <p class="introWord">匠心打造 成就不凡</p>
+      <p class="introWord">单参数调参 抗磁干扰</p>
       <p class="introWord">工业级创新型驾驶控制器</p>
     </div>
     <img src="../../assets/images/C9pro_bg7.jpg" alt="" />
@@ -11,7 +11,7 @@
         <router-link to="/index/products/C9pro" style="color: #000;">了解更多</router-link>
       </div>
       <div class="btn1_2">
-        <a href="https://shop227604841.taobao.com/?spm=2013.1.1000126.2.315331437MJ3XW" target="_blank" style="color: #000;">立即购买</a>
+        <a href="https://item.taobao.com/item.htm?spm=a1z10.1-c.w4004-23273774766.8.78dc4a92QMF7JI&id=631387331308" target="_blank" style="color: #000;">立即购买</a>
       </div>
     </div>
     <div class="box" :style="sizeInfo">

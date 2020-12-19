@@ -278,148 +278,171 @@
             <!--<span slot="title">C9/C9pro飞行控制器</span>-->
             <el-menu-item-group>
               <el-menu-item index="/index/skill/document_C9">
-                <a href="#C9_10">版本更新日志</a>
+                <a href="#C9_10">1 版本更新日志</a>
               </el-menu-item>
               <el-submenu index="/index/skill/document_C9#1">
-                <a href="#C9_1" slot="title">开发环境搭建</a>
+                <a href="#C9_1" slot="title">2 开发环境搭建</a>
                 <el-menu-item-group>
                   <el-menu-item index="/index/skill/document_C9">
-                    <a href="#C9_1_1"><!--1.1 -->编译环境（MDK）安装</a>
+                    <a href="#C9_1_1">2.1 编译环境（MDK）安装</a>
                   </el-menu-item>
                   <el-menu-item index="/index/skill/document_C9">
-                    <a href="#C9_1_2"><!--1.2 -->编译环境设置</a>
+                    <a href="#C9_1_2">2.2 编译环境设置</a>
+                  </el-menu-item>
+                  <!--<el-menu-item index="/index/skill/document_C9">
+                    <a href="#C9_1_3">2.3 固件烧录</a>
+                  </el-menu-item>-->
+                </el-menu-item-group>
+              </el-submenu>
+              <el-submenu index="/index/skill/document_C9#3">
+                <a href="#C9_3" slot="title">3 飞控安装</a>
+                <el-menu-item-group>
+                  <el-menu-item index="/index/skill/document_C9">
+                    <a href="#C9_3_1">3.1 选择机型</a>
                   </el-menu-item>
                   <el-menu-item index="/index/skill/document_C9">
-                    <a href="#C9_1_3"><!--1.3 -->固件烧录</a>
+                    <a href="#C9_3_2">3.2 电机顺序及转向</a>
+                  </el-menu-item>
+                  <el-menu-item index="/index/skill/document_C9">
+                    <a href="#C9_3_3">3.3 连接电机电调</a>
+                  </el-menu-item>
+                  <el-menu-item index="/index/skill/document_C9">
+                    <a href="#C9_3_4">3.4 连接接收机</a>
                   </el-menu-item>
                 </el-menu-item-group>
               </el-submenu>
               <el-submenu index="/index/skill/document_C9#2">
-                <a href="#C9_2" slot="title">硬件接口定义</a>
+                <a href="#C9_2" slot="title">4 硬件接口定义</a>
                 <el-menu-item-group>
                   <el-menu-item index="/index/skill/document_C9">
-                    <a href="#C9_2_1"><!--2.1 -->接口定义</a>
+                    <a href="#C9_2_1">4.1 接口定义</a>
                   </el-menu-item>
                   <el-menu-item index="/index/skill/document_C9">
-                    <a href="#C9_2_2"><!--2.2 -->外设接口</a>
+                    <a href="#C9_2_2">4.2 外设接口</a>
                   </el-menu-item>
                   <el-menu-item index="/index/skill/document_C9">
-                    <a href="#C9_2_3"><!--2.3 -->飞控尺寸重量</a>
-                  </el-menu-item>
-                </el-menu-item-group>
-              </el-submenu>
-              <el-submenu index="/index/skill/document_C9#3">
-                <a href="#C9_3" slot="title">飞控安装</a>
-                <el-menu-item-group>
-                  <el-menu-item index="/index/skill/document_C9">
-                    <a href="#C9_3_1"><!--3.1 -->电机顺序及转向</a>
+                    <a href="#C9_2_3">4.3 飞控尺寸重量</a>
                   </el-menu-item>
                   <el-menu-item index="/index/skill/document_C9">
-                    <a href="#C9_3_2"><!--3.2 -->连接电机电调</a>
-                  </el-menu-item>
-                  <el-menu-item index="/index/skill/document_C9">
-                    <a href="#C9_3_3"><!--3.3 -->连接接收机</a>
+                    <a href="#C9_2_4">4.4 飞控供电</a>
                   </el-menu-item>
                 </el-menu-item-group>
               </el-submenu>
               <el-submenu index="/index/skill/document_C9#4">
-                <a href="#C9_4" slot="title">飞控初始设置及校准</a>
+                <a href="#C9_4" slot="title">5 飞控初始设置及校准</a>
                 <el-menu-item-group>
                   <el-menu-item index="/index/skill/document_C9">
-                    <a href="#C9_4_1"><!--4.1 -->飞控初始化</a>
+                    <a href="#C9_4_1">5.1 飞控初始化</a>
                   </el-menu-item>
                   <el-menu-item index="/index/skill/document_C9">
-                    <a href="#C9_4_2"><!--4.2 -->遥控器校准</a>
+                    <a href="#C9_4_2">5.2 遥控器校准</a>
                   </el-menu-item>
                   <el-menu-item index="/index/skill/document_C9">
-                    <a href="#C9_4_3"><!--4.3 -->飞行模式设置</a>
+                    <a href="#C9_4_3">5.3 飞行模式设置</a>
                   </el-menu-item>
                   <el-menu-item index="/index/skill/document_C9">
-                    <a href="#C9_4_4"><!--4.4 -->电调电机校准</a>
+                    <a href="#C9_4_4">5.4 电调电机校准</a>
                   </el-menu-item>
                   <el-menu-item index="/index/skill/document_C9">
-                    <a href="#C9_4_5"><!--4.5 -->陀螺校准</a>
+                    <a href="#C9_4_5">5.5 陀螺校准</a>
                   </el-menu-item>
                   <el-menu-item index="/index/skill/document_C9">
-                    <a href="#C9_4_6"><!--4.6 -->加速度计校准</a>
+                    <a href="#C9_4_6">5.6 加速度计校准</a>
                   </el-menu-item>
                   <el-menu-item index="/index/skill/document_C9">
-                    <a href="#C9_4_7"><!--4.7 -->磁罗盘校准</a>
+                    <a href="#C9_4_7">5.7 磁罗盘校准</a>
                   </el-menu-item>
                 </el-menu-item-group>
               </el-submenu>
-              <el-menu-item index="/index/skill/document_C9">
-                <a href="#C9_5">固件更新</a>
-              </el-menu-item>
-              <el-submenu index="/index/skill/document_C9#6">
-                <a href="#C9_6" slot="title">飞控调参</a>
+              <el-submenu index="/index/skill/document_C9#5">
+                <a href="#C9_5" slot="title">6 固件更新</a>
                 <el-menu-item-group>
                   <el-menu-item index="/index/skill/document_C9">
-                    <a href="#C9_6_1"><!--6.1 -->调参软件</a>
+                    <a href="#C9_5_1">6.1 USB更新固件</a>
                   </el-menu-item>
                   <el-menu-item index="/index/skill/document_C9">
-                    <a href="#C9_6_2"><!--6.2 -->参数分类</a>
+                    <a href="#C9_5_2">6.2 SD卡更新固件</a>
+                  </el-menu-item>
+                </el-menu-item-group>
+              </el-submenu>
+              <el-submenu index="/index/skill/document_C9#6">
+                <a href="#C9_6" slot="title">7 飞控调参</a>
+                <el-menu-item-group>
+                  <el-menu-item index="/index/skill/document_C9">
+                    <a href="#C9_6_1">7.1 调参软件</a>
                   </el-menu-item>
                   <el-menu-item index="/index/skill/document_C9">
-                    <a href="#C9_6_3"><!--6.3 -->调参教程</a>
+                    <a href="#C9_6_2">7.2 参数分类</a>
                   </el-menu-item>
                   <el-menu-item index="/index/skill/document_C9">
-                    <a href="#C9_6_4"><!--6.4 -->姿态控制参数</a>
+                    <a href="#C9_6_3">7.3 调参教程</a>
                   </el-menu-item>
                   <el-menu-item index="/index/skill/document_C9">
-                    <a href="#C9_6_5"><!--6.5 -->电池参数调节</a>
+                    <a href="#C9_6_4">7.4 姿态控制参数</a>
                   </el-menu-item>
                   <el-menu-item index="/index/skill/document_C9">
-                    <a href="#C9_6_6"><!--6.6 -->GPS参数设置</a>
+                    <a href="#C9_6_5">7.5 电池参数</a>
                   </el-menu-item>
                   <el-menu-item index="/index/skill/document_C9">
-                    <a href="#C9_6_7"><!--6.7 -->位置控制参数</a>
+                    <a href="#C9_6_6">7.6 GPS参数设置</a>
                   </el-menu-item>
                   <el-menu-item index="/index/skill/document_C9">
-                    <a href="#C9_6_8"><!--6.8 -->安全模式参数</a>
+                    <a href="#C9_6_7">7.7 位置控制参数</a>
                   </el-menu-item>
                   <el-menu-item index="/index/skill/document_C9">
-                    <a href="#C9_6_9"><!--6.9 -->AUX参数</a>
+                    <a href="#C9_6_8">7.8 安全模式参数</a>
                   </el-menu-item>
                   <el-menu-item index="/index/skill/document_C9">
-                    <a href="#C9_6_10"><!--6.10 -->POfs参数</a>
+                    <a href="#C9_6_9">7.9 AUX参数</a>
+                  </el-menu-item>
+                  <el-menu-item index="/index/skill/document_C9">
+                    <a href="#C9_6_10">7.10 POfs参数</a>
+                  </el-menu-item>
+                  <el-menu-item index="/index/skill/document_C9">
+                    <a href="#C9_6_11">7.11 Init参数</a>
                   </el-menu-item>
                 </el-menu-item-group>
               </el-submenu>
               <el-submenu index="/index/skill/document_C9#7">
-                <a href="#C9_7" slot="title">功能介绍</a>
+                <a href="#C9_7" slot="title">8 功能介绍</a>
                 <el-menu-item-group>
                   <el-menu-item index="/index/skill/document_C9">
-                    <a href="#C9_7_1"><!--7.1 -->航点设置</a>
+                    <a href="#C9_7_1">8.1 航点设置</a>
                   </el-menu-item>
                   <el-menu-item index="/index/skill/document_C9">
-                    <a href="#C9_7_2"><!--7.2 -->航线飞行</a>
+                    <a href="#C9_7_2">8.2 航线飞行</a>
                   </el-menu-item>
                   <el-menu-item index="/index/skill/document_C9">
-                    <a href="#C9_7_3"><!--7.3 -->一键返航</a>
+                    <a href="#C9_7_3">8.3 一键返航</a>
                   </el-menu-item>
                   <el-menu-item index="/index/skill/document_C9">
-                    <a href="#C9_7_4"><!--7.4 -->失控返航</a>
+                    <a href="#C9_7_4">8.4 失控返航</a>
                   </el-menu-item>
                   <el-menu-item index="/index/skill/document_C9">
-                    <a href="#C9_7_5"><!--7.5 -->抗磁干扰</a>
+                    <a href="#C9_7_5">8.5 低电量自动返航或降落</a>
+                  </el-menu-item>
+                  <el-menu-item index="/index/skill/document_C9">
+                    <a href="#C9_7_6">8.6 抗磁干扰</a>
+                  </el-menu-item>
+                  <el-menu-item index="/index/skill/document_C9">
+                    <a href="#C9_7_7">8.7 相机触发拍照</a>
                   </el-menu-item>
                 </el-menu-item-group>
               </el-submenu>
-              <el-menu-item index="/index/skill/document_C9">
+              <!--<el-menu-item index="/index/skill/document_C9">
                 <a href="#C9_8">代码框架</a>
               </el-menu-item>
               <el-submenu index="/index/skill/document_C9#9">
                 <a href="#C9_9" slot="title">代码接口手册</a>
                 <el-menu-item-group>
                   <el-menu-item index="/index/skill/document_C9">
-                    <a href="#C9_9_1"><!--9.1 -->传感器接口</a>
+                    <a href="#C9_9_1">&lt;!&ndash;9.1 &ndash;&gt;传感器接口</a>
                   </el-menu-item>
                   <el-menu-item index="/index/skill/document_C9">
-                    <a href="#C9_9_2"><!--9.2 -->接收机接口</a>
+                    <a href="#C9_9_2">&lt;!&ndash;9.2 &ndash;&gt;接收机接口</a>
                   </el-menu-item>
                 </el-menu-item-group>
-              </el-submenu>
+              </el-submenu>-->
             </el-menu-item-group>
           </el-submenu>
           <el-submenu index="/index/skill/document_A9#">
@@ -718,7 +741,7 @@
             </el-menu-item-group>
           </el-submenu>
           <el-submenu index="/index/skill/document_update">
-            <a href="#update_C9" slot="title">固件更新</a>
+            <a href="#update_C9" slot="title">固件下载</a>
             <el-menu-item-group>
               <el-menu-item index="/index/skill/document_update">
                 <a href="#update_C9">C9</a>
@@ -3200,7 +3223,7 @@
         <div class="logoImg">
           <img src="../../assets/images/logo.png" alt="博睿创新科技" class="logo" />
         </div>
-        <p>IC备案：粤icp2802989024910466 广州博睿创新科技有限公司</p>
+        <p>IC备案：粤ICP备2020124827号 广州博睿创新科技有限公司</p>
       </div>
     </div>
   </div>

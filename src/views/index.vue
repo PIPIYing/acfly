@@ -21,7 +21,7 @@
               <router-link to="/index/products/A9">A9飞行控制器</router-link>
             </div>
             <div class="item">
-              <router-link to="/index/products/mapping">测绘整机解决方案</router-link>
+              <router-link to="/index/products/mapping">整机解决方案</router-link>
             </div>
           </div>
         </div>
@@ -31,6 +31,9 @@
         <div class="dropdown">
           <router-link to="/index/skill" target="_blank">技术支持</router-link>
           <div class="navList">
+            <div class="item">
+              <a href="#">地面站下载</a>
+            </div>
             <div class="item">
               <router-link to="/index/skill" target="_blank">技术文档</router-link>
             </div>
@@ -56,12 +59,13 @@
           <router-link to="/index/products/C9pro">C9 PRO飞行控制器</router-link>
           <router-link to="/index/products/C9">C9 飞行控制器</router-link>
           <router-link to="/index/products/A9">A9 飞行控制器</router-link>
-          <router-link to="/index/products/mapping">测绘整机解决方案</router-link>
+          <router-link to="/index/products/mapping">整机解决方案</router-link>
         </div>
         <div class="footerList">
           <p class="title">购买渠道</p>
           <a href="https://shop227604841.taobao.com/?spm=2013.1.1000126.2.315331437MJ3XW" target="_blank">官方商城</a>
           <router-link to="/index/develop">经销合作</router-link>
+          <a href="#">地面站下载</a>
         </div>
         <div class="footerList">
           <p class="title">安全飞行</p>
@@ -93,7 +97,7 @@
           <div class="logoImg">
             <img src="../assets/images/logo.png" alt="博睿创新科技" class="logo" />
           </div>
-          <p class="copyRight">IC备案：粤icp2802989024910466 广州博睿创新科技有限公司</p>
+          <p class="copyRight">IC备案：粤ICP备2020124827号 广州博睿创新科技有限公司</p>
         </div>
       </div>
     </div>

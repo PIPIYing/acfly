@@ -3,7 +3,7 @@
     <!--<Detail :urlData="url"></Detail>-->
     <div class="intro_C9pro" :style="size">
       <p class="title0">C9pro飞行控制器</p>
-      <p class="word0">独具匠心 工匠精神</p>
+      <p class="word0">单参数调参 抗磁干扰</p>
       <p class="word0">工业级创新型驾驶控制器</p>
     </div>
     <div class="detail1" :style="imgSize">
@@ -31,7 +31,7 @@
       <img src="../../assets/images/products_v4/C9pro_4.jpg" alt="">
 -->
       <p class="title4">支持拍照、热靴功能 航点多达65536个</p>
-      <p class="word4">有效解决相片丢片引起的POS数量和照片数量不一致问题</p>
+      <p class="word4">支持USB和SD卡更新固件，有效解决相片丢片引起的POS数量和照片数量不一致问题</p>
       <p class="word4">飞控支持双GPS、外置USB和LED，支持USB虚拟U盘高速读取POS记录等，无需插拔SD卡，支持免减震安装</p>
     </div>
     <div class="detail5" :style="imgSize">
@@ -186,7 +186,7 @@
           </tr>
           <tr>
             <th class="color">航点数量</th>
-            <td class="color">65535个</td>
+            <td class="color">65536个</td>
           </tr>
           <tr>
             <th>POS记录</th>
@@ -244,7 +244,7 @@
     </div>
     <div class="btnBox">
       <div class="btn">
-        <a href="https://shop227604841.taobao.com/?spm=2013.1.1000126.2.315331437MJ3XW" target="_blank">立即购买</a>
+        <a href="https://item.taobao.com/item.htm?spm=a1z10.1-c.w4004-23273774766.8.78dc4a92QMF7JI&id=631387331308" target="_blank">立即购买</a>
       </div>
     </div>
   </div>

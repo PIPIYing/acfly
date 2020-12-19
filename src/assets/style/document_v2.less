@@ -17,8 +17,14 @@
       /*text-indent: 0;*/
       border-bottom: 4px rgba(0,0,0,0.1) solid;
     }
+    .indent_2 {
+      text-indent: 2em;
+    }
     .indent_2_5 {
       text-indent: 2.5em;
+    }
+    .bold {
+      font-weight: 600;
     }
     .imageSmall {
       display: flex;
@@ -39,11 +45,22 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin: 40px auto;
+      margin: 20px auto;
+      img {
+        width: 90%;
+      }
+      .max_image {
+        width: 60%;
+      }
+    }
+    .image_two {
+      display: flex;
+      justify-content: center;
+      margin: 20px auto;
       img {
         width: 70%;
       }
-      .max_image {
+      .small_one {
         width: 50%;
       }
     }
@@ -147,6 +164,26 @@
         text-align: center;
         text-align: -moz-center;
         text-align: -webkit-center;
+      }
+    }
+    .table6 {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px auto;
+      td, th {
+        border: 1px #000 solid;
+        font-size: 1.1em;
+        padding: 15px 0;
+        vertical-align: center;
+        text-align: center;
+        text-align: -moz-center;
+        text-align: -webkit-center;
+      }
+      .top {
+        border-top: none;
+      }
+      .bottom {
+        border-bottom: none;
       }
     }
     .btnBox {
