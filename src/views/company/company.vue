@@ -1,7 +1,7 @@
 <template>
   <div id="company">
     <div id="bg">
-      <img src="../../assets/images/company.jpg" alt="" />
+      <img src="../../assets/images/img_cut/company.jpg" alt="" />
     </div>
     <div class="introBox">
       <p class="en">INTRODUCTION</p>

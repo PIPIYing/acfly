@@ -346,7 +346,7 @@ const routes = [
 
 const router = new VueRouter({
   routes,
-  mode: 'history',  //history mode
+  mode: 'hash',
   /* eslint-disable */
   scrollBehavior (to, from, savedPosition) {
     return { x: 0, y: 0 }

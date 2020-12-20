@@ -1,7 +1,7 @@
 <template>
   <div id="products">
     <div id="bg">
-      <img src="../../assets/images/products_bg1.jpg" alt="" />
+      <img src="../../assets/images/img_cut/products_0.jpg" alt="" />
     </div>
     <div class="title">
       <p>全部产品</p>

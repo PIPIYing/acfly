@@ -1,7 +1,7 @@
 <template>
   <div id="cases">
     <div id="bg">
-      <img src="../../assets/images/cases_bg3.jpg" alt="" />
+      <img src="../../assets/images/img_cut/cases_bg3.jpg" alt="" />
       <div class="hover_bg"></div>
     </div>
     <div class="intro">

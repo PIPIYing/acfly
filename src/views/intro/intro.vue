@@ -5,7 +5,7 @@
       <p class="introWord">单参数调参 抗磁干扰</p>
       <p class="introWord">工业级创新型驾驶控制器</p>
     </div>
-    <img src="../../assets/images/C9pro_bg7.jpg" alt="" />
+    <img src="../../assets/images/img_cut/index.jpg" alt="" />
     <div class="btn1">
       <div class="btn1_1">
         <router-link to="/index/products/C9pro" style="color: #000;">了解更多</router-link>
