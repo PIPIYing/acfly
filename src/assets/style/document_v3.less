@@ -10,29 +10,36 @@
       font-size: 18px;
       line-height: 46px;
     }
-    .title {
-      font-size: 30px;
+    .title, .title1 {
       line-height: 60px;
       padding: 10px 0;
       /*text-indent: 0;*/
       border-bottom: 4px rgba(0,0,0,0.1) solid;
     }
-    /*.indent_2 {
+    .title {
+      font-size: 30px;
+    }
+    .title1 {
+      font-size: 26px;
+    }
+    .bond {
+      font-weight: 550;
+    }
+    .indent_2 {
       text-indent: 2em;
-    }*/
-    .imageSmall {
+    }
+    .image_word {
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin: 40px auto;
+      margin: 30px auto;
       img {
-        width: 200px;
+        width: 80%;
       }
       .explain {
         font-size: 16px;
-        color: rgba(0,0,0,0.3);
         line-height: 24px;
-        /*text-indent: 0;*/
+        margin-top: 15px;
       }
     }
     .image {
@@ -52,13 +59,13 @@
       justify-content: center;
       margin: 20px auto;
       img {
-        width: 60%;
+        width: 50%;
         margin: 0 20px;
       }
       .small_one {
         width: 50%;
         height: 50%;
-        margin-top: 20px;
+        margin-top: 2%;
       }
     }
     ul {
@@ -71,28 +78,35 @@
         list-style-type: disc;
       }
     }
-    .table1, .table2, .table3, .table4 {
+    .table1 {
       width: 100%;
       border-collapse: collapse;
       margin: 20px auto;
       td, th {
         font-size: 1.1em;
-        padding: 15px 0;
+        line-height: 32px;
+        padding: 10px 0;
         text-align: center;
         text-align: -moz-center;
         text-align: -webkit-center;
         vertical-align: center;
-      }
-    }
-    .table1 {
-      td, th {
         border: 1px solid #000;
       }
-    }
-    .table2 {
-      td, th {
-        border: 1px solid #000;
+      td {
+        padding: 5px 0;
       }
+      .word_left {
+        padding-left: 4px;
+        text-align: left;
+        text-align: -moz-left;
+        text-align: -webkit-left;
+      }
+      /*.top {
+        border-top: none;
+      }
+      .bottom {
+        border-bottom: none;
+      }*/
     }
     .btnBox {
       padding: 100px 0;
