@@ -5,1074 +5,1030 @@
         <p class="title">C9/C9pro官方说明文档</p>
       </div>
     </div>
-    <div id="C9_1">
+    <div id="C9_10">
       <div class="box">
-        <p class="title bond">1 飞控接线</p>
+        <p class="title">1 版本更新日志</p>
+        <table class="table5">
+          <tr>
+            <th>日期</th>
+            <th>新版本</th>
+            <th>旧版本</th>
+            <th>更新内容</th>
+          </tr>
+          <tr>
+            <td class="center">20201208</td>
+            <td class="center">V1.0</td>
+            <td class="center">——</td>
+            <td style="padding-left:20px;">——</td>
+          </tr>
+          <!--<tr>
+            <td class="center">20200623</td>
+            <td class="center">V1.3</td>
+            <td class="center">V1.1</td>
+            <td>
+              <ul>
+                <li>更新第7.2节，参数分类增加了PC-&#45;&#45;位置控制参数。</li>
+                <li>更新了7.3节，增加了调参教程内容。</li>
+                <li>更新了7.4节，增加了姿态参数及其说明。</li>
+                <li>更新了7.5节，增加了一些电池参数及其说明。</li>
+                <li>更新了7.6节，增加了位置控制参数及其说明。</li>
+                <li>更新了7.7节，增加了安全模式参数及其说明。(自动返航参数)</li>
+                <li>增加了第8大节：航点飞行和一键返航功能使用说明。</li>
+                <li>更新了11大节，飞控供电接口说明。</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td class="center">20200721</td>
+            <td class="center">V1.4</td>
+            <td class="center">V1.3</td>
+            <td>
+              <ul>
+                <li>更新第11节，优化供电接口说明</li>
+                <li>优化手册格式内容，条理更加清晰</li>
+                <li>优化手册图片内容，图片更加高清</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td class="center">20200910</td>
+            <td class="center">V1.5</td>
+            <td class="center">V1.4</td>
+            <td>
+              <ul>
+                <li>更新第五章校准流程</li>
+                <li>优化手册相关细节</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td class="center">20200925</td>
+            <td class="center">V1.6</td>
+            <td class="center">V1.5</td>
+            <td>
+              <ul>
+                <li>更新第五章5.4陀螺校准</li>
+                <li>优化配图说明</li>
+                <li>修改部分细节表述</li>
+              </ul>
+            </td>
+          </tr>-->
+        </table>
+        <p>ACFLY飞行控制提供技术支持</p>
+      </div>
+    </div>
+    <div id="C9_1">
+      <div class="box" id="C9_1_1">
+        <p class="title">2.1 编译环境（MDK）安装</p>
+        <p class="bold">（1）MDK开发软件安装</p>
+        <p class="indent_2_5">在keil官网 <a href="http://www.keil.com/" style="color: #0563C1;" target="_blank">http://www.keil.com/</a> 自行下载安装。</p>
+        <!--<div class="image">
+          <img src="../../../assets/images/document/1.1_1.png" alt="" />
+        </div>-->
+        <p class="bold">（2）芯片支持包安装</p>
+        <p class="indent_2_5">在keil官网 <a href="http://www.keil.com/pack" style="color: #0563C1;" target="_blank">http://www.keil.com/pack</a> 下载下图中的最新版本软件支持包并安装。</p>
         <div class="image">
-          <img src="../../../assets/images/document_C9/001.jpg" alt="" style="width: 75%;"/>
+          <img src="../../../assets/images/document/1.1_2.png" alt="" />
         </div>
       </div>
-      <div class="box" id="C9_1_1">
-        <p class="title1">1.1 第1路供电</p>
-        <table class="table1">
-          <tr>
-            <th>标识</th>
-            <th>定义</th>
-            <th>说明</th>
-          </tr>
-          <tr>
-            <td>B1</td>
-            <td>电压检测1</td>
-            <td>范围：0V-60V</td>
-          </tr>
-          <tr>
-            <td>V1</td>
-            <td>电源输入1</td>
-            <td>范围：4.5V-30V</td>
-          </tr>
-          <tr>
-            <td>GD</td>
-            <td>地</td>
-            <td></td>
-          </tr>
-        </table>
-      </div>
       <div class="box" id="C9_1_2">
-        <p class="title1">1.2 第2路供电</p>
-        <table class="table1">
-          <tr>
-            <th>标识</th>
-            <th>定义</th>
-            <th>说明</th>
-          </tr>
-          <tr>
-            <td>B2</td>
-            <td>电压检测2</td>
-            <td>范围：0V-60V</td>
-          </tr>
-          <tr>
-            <td>V2</td>
-            <td>电源输入2</td>
-            <td>范围：4.5V-30V</td>
-          </tr>
-          <tr>
-            <td>GD</td>
-            <td>地</td>
-            <td></td>
-          </tr>
-        </table>
+        <p class="title">2.2 编译环境设置</p>
+        <p class="indent_2">在MDK界面下点击下列按钮进入工程配置选项：</p>
+        <div class="image">
+          <img src="../../../assets/images/document/1.2_1.png" alt="" />
+        </div>
+        <p class="indent_2">在Target选项卡中选择V6开头的编译器（如果没有，可以安装MDK较新的版本或者前往 <a href="https://developer.arm.com/products/software-development-tools/compilers/arm-compiler/downloads/version-6" target="_blank">https://developer.arm.com/products/software-development-tools/compilers/arm-compiler/downloads/version-6</a> 网页单独下载编译器并安装进MDK），并取消Use MicroLib复选框；在C/C++(AC6)选项卡中进行下图中的配置：</p>
+        <div class="image">
+          <img src="../../../assets/images/document/1.2_2.png" alt="" />
+        </div>
+        <div class="image">
+          <img src="../../../assets/images/document/1.2_3.png" alt="" />
+        </div>
       </div>
-      <div class="box" id="C9_1_3">
-        <p class="title1">1.3 电流传感器</p>
-        <table class="table1">
-          <tr>
-            <th>标识</th>
-            <th>定义</th>
-            <th>说明</th>
-          </tr>
-          <tr>
-            <td>CR</td>
-            <td>电流监测</td>
-            <td>模拟输入：0V-5V</td>
-          </tr>
-          <tr>
-            <td>5V</td>
-            <td>5V电源</td>
-            <td>输出</td>
-          </tr>
-          <tr>
-            <td>GD</td>
-            <td>地</td>
-            <td></td>
-          </tr>
-        </table>
+      <!--<div class="box" id="C9_1_3">
+        <p class="title">1.3 固件烧录</p>
+        <p class="indent_2">代码烧录有两种方式，一是使用stlink下载，二是使用USB下载固件(具体看固件更新一章)。仿真代码需要连接飞控的SWD接口。将此接口与ST-Link（推荐）、JLink等下载器的对应接口连接，然后接通电源即可下载。</p>
+      </div>-->
+    </div>
+    <div id="C9_3">
+      <div class="box" id="C9_3_1">
+        <p class="title">3.1 选择机型</p>
+        <p class="indent_2">将飞控用USB或数传连接到电脑，打开ACFly地面站，在COM选择对应飞控端口号，点击连接。点击配置-参数调整-稳定飞行，下拉选择支持的机型。右边图片标明了电机序号(对应飞控M1-M8引脚)和电机转向和机头方向。</p>
+        <div class="image">
+          <img src="../../../assets/images/document/3.1_0.png" alt="" />
+        </div>
       </div>
-      <div class="box" id="C9_1_4">
-        <p class="title1">1.4 遥控接收机</p>
-        <table class="table1">
-          <tr>
-            <th>标识</th>
-            <th>定义</th>
-            <th>说明</th>
-          </tr>
-          <tr>
-            <td>RC</td>
-            <td>接收机信号</td>
-            <td>SBUS/PPM</td>
-          </tr>
-          <tr>
-            <td>5V</td>
-            <td>5V电源</td>
-            <td>输出</td>
-          </tr>
-          <tr>
-            <td>GD</td>
-            <td>地</td>
-            <td></td>
-          </tr>
-        </table>
+      <div class="box" id="C9_3_2">
+        <p class="title">3.2 电机顺序及转向</p>
+        <!--<p>下载ACFLY地面站(此处放下载连接)，使用USB或者数传连接飞控和电脑，点击连接-配置-参数调整-稳定飞行，可看到此时飞控设置的机型、机头方向及电机序号和转向。选择对应的机型并点击写入机型参数。</p>
+        <div class="image">
+          <img src="../../../assets/images/document/4.1_1.png" alt="" />
+        </div>
+        <p>请严格按照地面站指示的机头方向、电机序号和转向来装机。</p>
+        <p>将飞控按上述方向紧固在飞行器上。然后按上述要求安装电机及电调。</p>
+        <p style="font-weight: 600;color: red;">飞控安装需固定住飞控四个角，不能只固定住中间，否则会导致震动过大而影响飞行效果。</p>
+        &lt;!&ndash;<p>飞控安装需固定住飞控四个角，不能只固定住中间，否则会导致震动过大而影响飞行效果。</p>
+        <p>飞控安装需固定住飞控四个角，不能只固定住中间，否则会导致震动过大而影响飞行效果。</p>&ndash;&gt;
+        <div class="image">
+          <img src="../../../assets/images/document/4.1_2.png" alt="" />
+        </div>-->
+        <p class="indent_2">以四旋翼为例，下左图中蓝色箭头为机头方向（俯仰舵向前打时往前飞的方向），飞控需按照下右图中的方向放置。飞控左前方为1号电机，六旋翼八旋翼类似，左上角电机为1号电机，按逆时针顺序分别为1、2、3、4…，1号电机逆时针旋转。</p>
+        <p class="indent_2">将飞控按上述方向紧固在飞行器上（<span style="color: red;">需固定飞控四个角</span>）。然后按上述要求安装电机及电调。</p>
+        <div class="image_two">
+          <img src="../../../assets/images/document/3.2_1.png" alt="" class="small_one" />
+          <img src="../../../assets/images/document/3.2_2.png" alt="" />
+        </div>
       </div>
-      <div class="box" id="C9_1_5">
-        <p class="title1">1.5 通道1-11</p>
-        <table class="table1">
-          <tr>
-            <th>标识</th>
-            <th>定义</th>
-            <th>说明</th>
-          </tr>
-          <tr>
-            <td>C(x)</td>
-            <td>通道x</td>
-            <td>PWM输出</td>
-          </tr>
-          <tr>
-            <td>V2</td>
-            <td>舵机电源</td>
-            <td>输出</td>
-          </tr>
-          <tr>
-            <td>GD</td>
-            <td>地</td>
-            <td></td>
-          </tr>
-        </table>
+      <div class="box" id="C9_3_3">
+        <p class="title">3.3 连接电机电调</p>
+        <p class="indent_2">按3.1中的电机顺序，分别将1、2、3、4…号电机所连接的电调的信号线分别插在飞控的C1-C8口。C代表信号线（白色），V代表电源线（5V），GD代表地线（黑色）。</p>
+        <div class="image">
+          <img src="../../../assets/images/document/3.3_1.png" alt="" />
+        </div>
+        <div class="image">
+          <img src="../../../assets/images/document/3.3_2.png" alt="" />
+        </div>
       </div>
-      <div class="box" id="C9_1_6">
-        <p class="title1">1.6 通道12-13</p>
-        <table class="table1">
-          <tr>
-            <th>标识</th>
-            <th>定义</th>
-            <th>说明</th>
-          </tr>
-          <tr>
-            <td>12</td>
-            <td>PWM或电平输出信号</td>
-            <td>接测绘相机快门信号，可直接驱动五拼相机</td>
-          </tr>
-          <tr>
-            <td>13</td>
-            <td>电平输入信号</td>
-            <td>接测绘相机热靴</td>
-          </tr>
-          <tr>
-            <td>GD</td>
-            <td>地</td>
-            <td></td>
-          </tr>
-        </table>
-      </div>
-      <div class="box" id="C9_1_7">
-        <p class="title1">1.7 GPS&磁罗盘</p>
-        <table class="table1">
-          <tr>
-            <th>标识</th>
-            <th>定义</th>
-            <th>说明</th>
-          </tr>
-          <tr>
-            <td>5V</td>
-            <td>5V电源</td>
-            <td>输出</td>
-          </tr>
-          <tr>
-            <td>8T</td>
-            <td>GPS串口</td>
-            <td>发送</td>
-          </tr>
-          <tr>
-            <td>8R</td>
-            <td>GPS串口</td>
-            <td>接收</td>
-          </tr>
-          <tr>
-            <td>GD</td>
-            <td>地</td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>SCL</td>
-            <td>IC2-SCL</td>
-            <td>磁罗盘等</td>
-          </tr>
-          <tr>
-            <td>SDA</td>
-            <td>IC2-SDA</td>
-            <td>磁罗盘等</td>
-          </tr>
-        </table>
-      </div>
-      <div class="box" id="C9_1_8">
-        <p class="title1">1.8 RTK&PPK(C9 PRO已内置)</p>
-        <table class="table1">
-          <tr>
-            <th>标识</th>
-            <th>定义</th>
-            <th>说明</th>
-          </tr>
-          <tr>
-            <td>5V</td>
-            <td>5V电源</td>
-            <td>输出</td>
-          </tr>
-          <tr>
-            <td>3T</td>
-            <td>GPS串口</td>
-            <td>发送</td>
-          </tr>
-          <tr>
-            <td>3R</td>
-            <td>GPS串口</td>
-            <td>接收</td>
-          </tr>
-          <tr>
-            <td>GND</td>
-            <td>地</td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>TRG</td>
-            <td>触发</td>
-            <td>事件</td>
-          </tr>
-          <tr>
-            <td>PPS</td>
-            <td>秒脉冲</td>
-            <td>授时</td>
-          </tr>
-        </table>
-      </div>
-      <div class="box" id="C9_1_9">
-        <p class="title1">1.9 数传串口</p>
-        <table class="table1">
-          <tr>
-            <th>标识</th>
-            <th>定义</th>
-            <th>说明</th>
-          </tr>
-          <tr>
-            <td>5V</td>
-            <td>5V电源</td>
-            <td>输出</td>
-          </tr>
-          <tr>
-            <td>7T</td>
-            <td>数传串口</td>
-            <td>发送</td>
-          </tr>
-          <tr>
-            <td>7R</td>
-            <td>数传串口</td>
-            <td>接收</td>
-          </tr>
-          <tr>
-            <td>GND</td>
-            <td>地</td>
-            <td></td>
-          </tr>
-        </table>
-      </div>
-      <div class="box" id="C9_1_10">
-        <p class="title1">1.10 USB接口</p>
-        <table class="table1">
-          <tr>
-            <th>标识</th>
-            <th>定义</th>
-            <th>说明</th>
-          </tr>
-          <tr>
-            <td>V</td>
-            <td>USB电源</td>
-            <td>红线</td>
-          </tr>
-          <tr>
-            <td>N</td>
-            <td>USB D-</td>
-            <td>白线</td>
-          </tr>
-          <tr>
-            <td>P</td>
-            <td>USB D+</td>
-            <td>绿线</td>
-          </tr>
-          <tr>
-            <td>G</td>
-            <td>地</td>
-            <td>黑线</td>
-          </tr>
-        </table>
-      </div>
-      <div class="box" id="C9_1_11">
-        <p class="title1">1.11 光流串口</p>
-        <table class="table1">
-          <tr>
-            <th>标识</th>
-            <th>定义</th>
-            <th>说明</th>
-          </tr>
-          <tr>
-            <td>5V</td>
-            <td>5V电源</td>
-            <td>红线</td>
-          </tr>
-          <tr>
-            <td>5T</td>
-            <td>光流串口</td>
-            <td>发送</td>
-          </tr>
-          <tr>
-            <td>5R</td>
-            <td>光流串口</td>
-            <td>接收</td>
-          </tr>
-          <tr>
-            <td>GND</td>
-            <td>地</td>
-            <td></td>
-          </tr>
-        </table>
-      </div>
-      <div class="box" id="C9_1_12">
-        <p class="title1">1.12 测距串口</p>
-        <table class="table1">
-          <tr>
-            <th>标识</th>
-            <th>定义</th>
-            <th>说明</th>
-          </tr>
-          <tr>
-            <td>5V</td>
-            <td>5V电源</td>
-            <td>红线</td>
-          </tr>
-          <tr>
-            <td>1T</td>
-            <td>测距串口</td>
-            <td>发送</td>
-          </tr>
-          <tr>
-            <td>1R</td>
-            <td>测距串口</td>
-            <td>接收</td>
-          </tr>
-          <tr>
-            <td>GND</td>
-            <td>地</td>
-            <td></td>
-          </tr>
-        </table>
-      </div>
-      <div class="box" id="C9_1_13">
-        <p class="title1">1.13 灯&蜂鸣器&编程接口</p>
-        <table class="table1">
-          <tr>
-            <th>标识</th>
-            <th>定义</th>
-            <th>说明</th>
-          </tr>
-          <tr>
-            <td>V</td>
-            <td>5V电源</td>
-            <td>输出</td>
-          </tr>
-          <tr>
-            <td>I</td>
-            <td>SWDIO</td>
-            <td>编程</td>
-          </tr>
-          <tr>
-            <td>C</td>
-            <td>SWCLK</td>
-            <td>编程</td>
-          </tr>
-          <tr>
-            <td>G</td>
-            <td>地</td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>Z</td>
-            <td>蜂鸣器</td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>B</td>
-            <td>蓝灯</td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>G</td>
-            <td>绿灯</td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>R</td>
-            <td>红灯</td>
-            <td></td>
-          </tr>
-        </table>
-      </div>
-      <div class="box" id="C9_1_14">
-        <p class="title1">1.14 CAN总线接口</p>
-        <table class="table1">
-          <tr>
-            <th>标识</th>
-            <th>定义</th>
-            <th>说明</th>
-          </tr>
-          <tr>
-            <td>V</td>
-            <td>5V电源</td>
-            <td>输出</td>
-          </tr>
-          <tr>
-            <td>H</td>
-            <td>CAN_H</td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>L</td>
-            <td>CAN_L</td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>G</td>
-            <td>地</td>
-            <td></td>
-          </tr>
-        </table>
+      <div class="box" id="C9_3_4">
+        <p class="title">3.4 连接接收机</p>
+        <p>支持SBUS(推荐)和PPM接收机，将接收机连接到飞控的RC接口(RC、5V、 GND)即可。</p>
       </div>
     </div>
     <div id="C9_2">
-      <div class="box">
-        <p class="title bond">2 飞控安装</p>
-      </div>
       <div class="box" id="C9_2_1">
-        <p class="title1">2.1 飞控固定</p>
-        <ul>
-          <li>飞控支持免减震安装，需紧固在飞行器上，可使用3M胶固定飞控四个角即可，切勿只粘住飞控中间，飞控松动会影响飞行稳定性。</li>
-        </ul>
+        <p class="title">4.1 接口定义</p>
+        <div class="image">
+          <img src="../../../assets/images/document/4.1_3.png" alt="" class="max_image"/>
+        </div>
+        <div class="image">
+          <img src="../../../assets/images/document/4.1_4.png" alt="" />
+        </div>
       </div>
       <div class="box" id="C9_2_2">
-        <p class="title1">2.2 连接电池(2s-7s适用)</p>
+        <p class="title">4.2 外设接口</p>
         <ul>
-          <li>使用1组电池时，将电池的正负极连接至飞控的V1、GD，另将B1和V1并联实现电压监测。</li>
-          <li>使用2组电池时，将电池1的正负极连接至飞控的V1、GD，将电池2的正负极连接至飞控的V2和GD，另将B1和V1、B2和V2并联实现电压监测。</li>
+          <li>数传串口：Uart7接口</li>
+          <li>RTK：RTK接口(Uart3)</li>
+          <li>GPS串口：Uart8接口</li>
+          <li>外置罗盘：IIC接口</li>
+          <li>光流串口：Uart5接口</li>
+          <li>TFMINI串口：Uart1接口</li>
         </ul>
       </div>
       <div class="box" id="C9_2_3">
-        <p class="title1">2.3 连接电源模块（3S-14S电池适用）</p>
+        <p class="title">4.3 飞控尺寸重量</p>
         <ul>
-          <li>使用1组电池时，将电池的正负极连接配套的电源模块正负极，将电源模块的输出线连接至飞控的B1、V1和GD(3线)。</li>
-          <li>使用2组电池时，将2块电池的正负极分别连接配套的2个电源模块正负极，将电源模块1的输出线连接至飞控的B1、V1、GD(3线)，将电源模块2的输出线连接至飞控的B2、V2、GD(3线)。</li>
+          <li>长5.0cm，宽5.5cm，高1.4cm</li>
+          <li>重50克</li>
         </ul>
       </div>
       <div class="box" id="C9_2_4">
-        <p class="title1">2.4 连接电流传感器</p>
-        <ul>
-          <li>将电流传感器的两端串联在需要测量电流的正极供电线中，其中电池端焊接电池正极，负载端焊接后级设备的正极。</li>
-          <li>将电流传感器的CUR、5V、GND（3线）,连接至飞控的CR、5V、GD一路即可。</li>
-        </ul>
-      </div>
-      <div class="box" id="C9_2_5">
-        <p class="title1">2.5 连接USB</p>
-        <ul>
-          <li>用USB-TYPEC线连接配套的USB转接板，转接板另一端是MX1.25-4P插头连接至飞控USB标识口。</li>
-          <li>飞控通过USB和电脑连接后，电脑会出现一个虚拟串口和一个U盘，串口用于连接地面站，U盘是飞控内部的SD卡，可用于导出POS记录和飞行日志(log)和更新固件(参考11.1节)。</li>
-        </ul>
-      </div>
-      <div class="box" id="C9_2_6">
-        <p class="title1">2.6 上电初始化</p>
-        <ul>
-          <li>飞控上电后会进行初始化，尽量保持静止状态，初始化过程会进行陀螺校准，此过程需要十几秒，等待初始化时状态灯蓝灯快闪烁，待状态灯绿色慢闪变化后代表自检完成。</li>
-        </ul>
-      </div>
-      <div class="box" id="C9_2_7">
-        <p class="title1">2.7 选择机型</p>
-        <ul>
-          <li>将飞控用USB或数传连接到电脑，打开ACFly调参地面站，在COM选择对应飞控端口号，点击连接。点击配置-参数调整-稳定飞行，下拉选择支持的机型。图片标明了电机序号(对应飞控 M1-M8 引脚)和电机转向和机头方向。</li>
-        </ul>
+        <p class="title">4.4 飞控供电</p>
         <div class="image">
-          <img src="../../../assets/images/document_C9/002.png" alt=""/>
-        </div>
-      </div>
-      <div class="box" id="C9_2_8">
-        <p class="title1">2.8 电机转向及顺序</p>
-        <ul>
-          <li>以四旋翼为例，红色箭头为机头方向，飞控需按照下右图中的方向放置。飞控左上角电机为1号电机，六旋翼八旋翼类似，按逆时针顺序分别为1、2、3、4。1和3号电机逆时针旋转，2和4号电机顺时针旋转。将飞控按上述方向紧固在飞行器上（需固定飞控四个角）。然后按上述要求安装电机及电调。</li>
-        </ul>
-        <div class="image_two">
-          <img src="../../../assets/images/document_C9/003.png" alt="" class="small_one"/>
-          <img src="../../../assets/images/document_C9/004.png" alt=""/>
-        </div>
-      </div>
-      <div class="box" id="C9_2_9">
-        <p class="title1">2.9 连接遥控接收机</p>
-        <ul>
-          <li>飞控兼容SBUS和PPM信号的接收机，将接收机的SBUS/PPM信号线（3 线）连接至飞控的RC标识口。</li>
-        </ul>
-      </div>
-    </div>
-    <div id="C9_3">
-      <div class="box">
-        <p class="title bond">3 遥控器校准</p>
-        <div class="image">
-          <img src="../../../assets/images/document_C9/005.png" alt=""/>
+          <img src="../../../assets/images/document/4.4_1.png" alt="" />
         </div>
         <ul>
-          <li>此飞控要求遥控器至少具有6个通道，包含4个摇杆和2个按钮，最多支持校准8个通道。校准的第一个按钮用来切换飞行模式。校准的第二、第三、第四个按钮用来设置执行任务、返航和安全按钮。</li>
-          <li>首先等待5.1中的飞控自检完成，飞控状态灯切换至绿灯慢闪。</li>
-          <li>将飞控用USB或者数传连接到电脑，打开ACFly地面站，点击连接。</li>
-          <li>打开遥控器，连接接收机，部分遥控器需要提前设置好遥控器的PPM/SBUS模式，根据需要设置2-3个按钮，如果飞控识别到接收机，则地面站会显示遥控各通道的原始数值，识别不到则会显示100%。</li>
-          <li>将四个摇杆通道回中，所要设置的2-3个按钮拨到通道值最大的位置。在ACFly地面站中选择美国手、中国手或者日本手后，点击“校准遥控器”按钮。飞控进入遥控器校准模式。地面站有动画和文字提示，按照提示做即可。</li>
-          <li>等待蓝灯闪烁两次（蜂鸣器响两声），表示已记录所有摇杆初始位置</li>
-          <li>按如下顺序操作遥控器：(每次摇杆操作后摇杆需回中)</li>
-          <li style="list-style: none;">
-            <div>
-              <p>油门最下（哔）—>偏航最左（哔）—>俯仰最下（哔）—>横滚最左（哔）—></p>
-              <p>油门最上（哔）—>偏航最右（哔）—>俯仰最上（哔）—>横滚最右（哔）—></p>
-              <p>按钮1拨向1挡位置（哔）—>按钮1拨回原位—>按钮2拨向1挡位置（哔）</p>
-              <p>—>按钮2拨回原位—>按钮3拨向1档位置（哔）（或把油门拉低完成较准）</p>
-              <p>—>按钮3拨回原位—>按钮4拨向1档位置（哔）（或把油门拉低完成较准）</p>
-              <p>—>按钮4拨回原位—>完成（绿灯闪哔哔）</p>
-            </div>
-          </li>
-          <li>错误情况：</li>
-          <li style="list-style: none;">
-            <div>
-              <p>红灯闪哔—长叫并退出模式：遥控器或接收机断开。</p>
-              <p>完成校准时红灯闪</p>
-            </div>
-          </li>
+          <li>C9飞控支持双冗余供电:V1和V2，供电范围：5V—28V。</li>
+          <li>两路电压检测接口：B1和B2，电压检测范围：0V—60V。</li>
         </ul>
       </div>
     </div>
     <div id="C9_4">
-      <div class="box">
-        <p class="title bond">4 飞行模式设置</p>
+      <div class="box" id="C9_4_1">
+        <p class="title">5.1 飞控初始化</p>
+        <p class="indent_2">飞控上电后会初始化（校准等），状态灯三快一慢闪烁。待状态灯三色慢闪变化代表所有校准完成。</p>
+        <p class="indent_2">飞控每次上电后会先进行陀螺对准，此过程可能需要20秒钟（校准加速度传感器后此过程可以缩短）。</p>
+      </div>
+      <div class="box" id="C9_4_2">
+        <p class="title">5.2 遥控器校准</p>
+        <p class="indent_2" style="color: red;">此飞控要求遥控器至少具有6个通道，包含4个摇杆和2个按钮，最多支持校准8个通道。校准的第一个按钮用来切换飞行模式。校准的第二、第三、第四个按钮用来设置执行任务、返航和安全按钮。</p>
+        <p class="indent_2">首先等待5.1中的飞控自检完成，飞控状态灯切换至绿灯慢闪。</p>
+        <p class="indent_2">将飞控用USB或者数传连接到电脑，打开ACFly地面站，点击连接。</p>
+        <p class="indent_2">（1）打开遥控器（已将接收机连接至飞控，参考3.3）</p>
+        <p class="indent_2">部分遥控器需要提前设置好遥控器的PPM/SBUS模式，根据需要设置2-3个按钮（即辅助通道）</p>
+        <p class="indent_2">（2）<span style="color: red;">将四个摇杆通道回中</span>，所要设置的2-3个按钮拨到通道值最大的位置。在ACFly地面站中选择美国手、中国手或者日本手后，点击“校准遥控器”按钮。飞控进入遥控器校准模式。地面站有动画和文字提示，按照提示做即可。</p>
         <div class="image">
-          <img src="../../../assets/images/document_C9/006.png" alt=""/>
+          <img src="../../../assets/images/document/5.2_1.png" alt="" />
         </div>
-        <ul>
-          <li>遥控校准的第一个按钮用来切换飞行模式，定高、定点、任务和返航模式。校准的第二、第三、第四个按钮用来设置执行任务、返航和安全按钮(电机急停按钮)。</li>
-          <li>执行任务按钮是第二种进入任务模式的方式，在定位成功后按下执行任务按钮即可执行任务模式(需设置起飞点)。返航按钮则是执行一键返航功能。安全按钮为电机急停按钮。</li>
-          <li>第二、三、四个按钮有按下和变化两种设置(默认按下即可)，选择按下则对应通道值最大时为按下，选择变化则无论按钮在哪档，只要有变化(三档按钮变化一档即可)则执行对应功能。</li>
-          <li>若无需二次开发，解锁前模式都设置为32即可。</li>
+        <p class="indent_2">（3）等待蓝灯闪烁两次（蜂鸣器响两声），表示已记录所有摇杆初始位置</p>
+        <p class="indent_2">（4）按如下顺序操作遥控器：油门最下（哔）—>偏航最左（哔）—>俯仰最下（哔）—>横滚最左（哔）—>油门最上（哔）—>偏航最右（哔）—>俯仰最上（哔）—>横滚最右（哔）—>杆回中—>按钮1拨向1挡位置（哔）—>按钮1拨回原位—>按钮2拨向1挡位置（哔）—>按钮2拨回原位—>按钮3拨向1档位置（哔）（或把油门拉低完成较准）—>按钮3拨回原位—>按钮4拨向1档位置（哔）（或把油门拉低完成较准）—>按钮4拨回原位—>完成（绿灯闪哔哔）</p>
+        <br/>
+        <p class="indent_2">错误情况：</p>
+        <ul style="margin-left: 32px;">
+          <li>红灯闪哔—长叫并退出模式：遥控器或接收机断开</li>
+          <li>完成校准时红灯闪哔—长叫：摇杆通道的最高油门、最低油门到摇杆中间的行程不一致</li>
         </ul>
       </div>
-    </div>
-    <div id="C9_5">
-      <div class="box">
-        <p class="title bond">5 电机电调校准</p>
+      <div class="box" id="C9_4_3">
+        <p class="title">5.3 飞行模式设置</p>
+        <p class="indent_2">遥控校准的第一个按钮用来切换飞行模式。校准的第二、第三、第四个按钮用来设置执行任务、返航和安全按钮。</p>
         <div class="image">
-          <img src="../../../assets/images/document_C9/007.png" alt=""/>
+          <img src="../../../assets/images/document/5.3_1.png" alt="" />
         </div>
-        <p class="indent_2">为了安全起见，请先卸桨！！！</p>
+        <ul style="margin-left: 32px;">
+          <li>飞行模式有定点模式、定高模式、任务模式和返航模式。通过按钮一来设置。</li>
+          <li>要想任务模式执行的是航线飞行，则将对应的解锁前模式设置为32(默认设置，如上图)。</li>
+          <li>要想任务模式执行的是二次开发飞行任务(需要用户自己实现，具体请看二次开发教程，比如利用openmv自动巡线)，则将对应的解锁前模式设置为35，即将上图模式3栏的32改成35。</li>
+          <li>执行任务按钮是第二种进入任务模式的方式，只要将按钮1(如果是三档按钮)打到中间档，油门回中，然后按下执行任务按钮即可进入任务模式。</li>
+          <li>返航按钮则是执行一键返航功能。</li>
+          <li>安全按钮为电机急停按钮。</li>
+          <li>第二、三、四个按钮有按下和变化两种设置(默认按下即可)，选择按下则对应通道值最大时为按下，选择变化则无论按钮在哪档，只要有变化(三档按钮变化一档即可)则执行对应功能。</li>
+        </ul>
+      </div>
+      <div class="box" id="C9_4_4">
+        <p class="title">5.4 电调电机校准</p>
+        <p class="indent_2" style="color: red;">为了安全起见，请先卸桨！！！</p>
+        <p class="indent_2">打开ACFly地面站，将飞控通过USB或者数传与地面站连接，连接成功后，更改参数Init_CalibESC_T值为3，在配置-参数调整-电调参数栏目中，点击校准电调，飞控断电，然后用电池给飞控和电机同时上电，此时电调会发出滴-滴滴滴的声音，表示校准完成。校准完成后将参数Init_CalibESC_T值改回5(开DEO)或者9(关DEO)，自锁桨请设置为9。</p>
+        <div class="image">
+          <img src="../../../assets/images/document/5.4_2.png" alt="" />
+        </div>
+        <div class="image">
+          <img src="../../../assets/images/document/5.4_1.png" alt="" />
+        </div>
         <ul>
-          <li>打开ACFly调参地面站，将飞控通过USB或者数传与地面站连接，连接成功后，更改参数Init_CalibESC_T值为3，在配置-参数调整-电调参数栏目中，点击校准电调，飞控断电，然后用电池给飞控和电机同时上电，此时电调会发出滴-滴滴滴的声音，表示校准完成。</li>
-          <li>校准完成后将参数Init_CalibESC_T值改回5(开DEO)或者9(关DEO)，自锁桨请设置为9。然后再重新上电一次完成DEO设置。</li>
-          <li>天行者、铂金等非多旋翼电调必须进行起转油门设置，一般天行者起转油门设为15。其他多旋翼电调不用设置起转油门。修改完需点击写入电调参数。</li>
+          <li>天行者、铂金等非多旋翼电调必须进行起转油门设置，一般天行者起转油门设为15。其他多旋翼电调可不用设置起转油门。修改完需点击写入电调参数。</li>
           <li>非线性系数和电调刹车设置有关，普通电调(未开刹车)非线性系数一般为0.45，开刹车一般为0.1，DJI电调一般为0.75。修改完需点击写入电调参数。</li>
         </ul>
       </div>
-    </div>
-    <div id="C9_6">
-      <div class="box">
-        <p class="title bond">6 加速度计校准</p>
-        <ul>
-          <li>出厂已进行过加速度计校准，一般情况无需用户校准。</li>
-          <li>遥控器油门最小，偏航最左，俯仰最下，横滚最左，两秒左右将进入加速度校准模式。</li>
-          <li>将无人机分别摆放六个面（不用按顺序，差不多水平即可）静止。每个面需静止放置 5 秒左右，静止放置时飞控指示灯显示蓝色，会由暗变亮指示当前进度，表示正在采集数据校准，完成一个面校准后指示灯会闪烁然后变红并且嘀一声，然后更换下一个面校准。全部六面校准完毕后会退出校准模式，绿色慢闪。灯红色表示当前面已经校准或者飞控在移动无法校准。</li>
-          <li>需重启飞控校准才会生效。</li>
-        </ul>
-      </div>
-    </div>
-    <div id="C9_7">
-      <div class="box">
-        <p class="title bond">7 磁罗盘校准</p>
-        <ul>
-          <li>首先等待飞控初始化完成，飞控状态灯切换至绿色慢闪。遥控器油门最小，偏航最左，俯仰最上，横滚最左。两秒左右将进入磁罗盘校准模式。</li>
-          <li>旋转无人机尽量多的三维角度，旋转时飞控指示灯显示蓝色，会由暗变亮指示当前进度。指示灯红色表示飞控没有在旋转无法校准，继续旋转无人机即可。</li>
-          <li>完成后飞控指示灯闪烁并嘀一声表示校准完成，绿色慢闪。</li>
-          <li>需重启飞控校准才会生效。</li>
-        </ul>
-      </div>
-    </div>
-    <div id="C9_8">
-      <div class="box">
-        <p class="title bond">8 陀螺校准</p>
+      <div class="box" id="C9_4_5">
+        <p class="title">5.5 陀螺校准</p>
         <ul>
           <li>首先等待5.1中的飞控初始化完成，飞控状态灯切换至绿色慢闪。</li>
           <li>遥控器油门最小，偏航最右，俯仰居中，横滚最右，两秒左右，滴一声进入陀螺校准模式，蓝绿快闪。</li>
           <li>飞控需放置静止不动等待5秒左右，滴滴后校准完成将退出校准模式，绿色慢闪。</li>
           <li>如果校准过程中飞控不静止，将会校准失败，出现红灯并滴一声退出校准，重新打杆校准即可。</li>
-          <li>需重启飞控校准才会生效。</li>
+          <li style="color: red;">需重启飞控校准才会生效，可全部校准完加速度计和罗盘再重启飞控。</li>
         </ul>
+      </div>
+      <div class="box" id="C9_4_6">
+        <p class="title">5.6 加速度计校准</p>
+        <ul>
+          <li>首先等待45.1中的飞控初始化完成，飞控状态灯切换至绿色慢闪。</li>
+          <li>遥控器油门最小，偏航最左，俯仰最下，横滚最左，两秒左右将进入M12_ACCCalib加速度校准模式。</li>
+          <li>将无人机分别摆放六个面（不用按顺序，差不多水平即可）静止。每个面需静止放置5秒左右，静止放置时飞控指示灯显示蓝色，会由暗变亮指示当前进度，表示正在采集数据校准，完成一个面校准后指示灯会闪烁然后变红并且嘀一声，然后更换下一个面校准。全部六面校准完毕后自动退出M12_ACCCalib加速度校准模式，绿色慢闪。</li>
+          <li>飞控灯红色表示当前面已经校准或者飞控不是静止状态无法校准。</li>
+          <li style="color: red;">需重启飞控校准才会生效，可全部校准完陀螺和罗盘再重启飞控。</li>
+        </ul>
+      </div>
+      <div class="box" id="C9_4_7">
+        <p class="title">5.7 磁罗盘校准</p>
+        <ul>
+          <li>首先等待5.1中的飞控初始化完成，飞控状态灯切换至绿色慢闪。</li>
+          <li>遥控器油门最小，偏航最左，俯仰最上，横滚最左。两秒左右将进入M13_MagCalib磁罗盘校准模式。</li>
+          <li>旋转无人机尽量多的三维角度，旋转时飞控指示灯显示蓝色，会由暗变亮指示当前进度。完成后飞控指示灯闪烁并嘀一声表示校准完成。绿色慢闪。</li>
+          <li>飞控指示灯红色表示飞控没有在旋转无法校准，继续旋转无人机即可。</li>
+          <li style="color: red;">需重启飞控校准才会生效，可全部校准完陀螺和加速度计再重启飞控。</li>
+        </ul>
+      </div>
+    </div>
+    <div id="C9_5">
+      <div class="box" id="C9_5_1">
+        <p class="title">6.1 USB更新固件</p>
+        <ul>
+          <li>到售后群下载名为DFU驱动的压缩包，解压后安装对应的版本。Win10系统安装win8.1版本。</li>
+          <li>到售后群下载ACFLY地面站，点击配置 – 固件更新 – 浏览 – 双击选择固件(.hex)</li>
+          <li>插上飞控USB，等待烧录完成。</li>
+          <li style="list-style-type: none;color: red;">注意：需要飞控先断电，地面站选择固件后10秒内将飞控通过USB连接至电脑。</li>
+          <li>部分使用32位 windows7 系统的用户，若经过上述步骤地面站仍然无法连接飞控，则在售后群群文件中下载MissionPlanner_PX4地面站_驱动进行安装，安装完成打开该软件再关闭，即可完成ACFLY地面站驱动的安装。</li>
+          <div class="image">
+            <img src="../../../assets/images/document/6_1.png" alt="" />
+          </div>
+        </ul>
+      </div>
+      <div class="box" id="C9_5_2">
+        <p class="title">6.2 SD卡更新固件</p>
+        <p class="indent_2">飞控用USB连接电脑，电脑会弹出一个U盘(SD卡)，将固件文件(.hex)放进U盘里的ACFLy文件夹中，然后重启飞控，等待固件升级完成，升级过程中飞控蓝灯快闪，此过程需半分钟左右。</p>
+        <div class="image">
+          <img src="../../../assets/images/document/6_2.png" alt="" />
+        </div>
+      </div>
+    </div>
+    <div id="C9_6">
+      <div class="box" id="C9_6_1">
+        <p class="title">7.1 调参软件</p>
+        <p class="indent_2">本飞控使用Mavlink协议，支持使用Mavlink的参数协议进行调参。</p>
+        <p class="bold">（1）ACFly地面站</p>
+        <p class="indent_2">将飞控用USB或数传连接到电脑，打开ACFly地面站，在COM选择对应飞控端口号，点击连接。点击配置-参数表-可对相应参数进行修改，修改后需点击保存全部或者保存选定。</p>
+        <div class="image">
+          <img src="../../../assets/images/document/7.1_1.png" alt="" />
+        </div>
+        <p class="bold">（2）支持Mavlink协议的开源地面站</p>
+        <p class="indent_2">以Mission Planner为例，将飞控连接至电脑，右上角选择COM口号，点击连接，地面站将获取飞控的参数列表。</p>
+        <div class="image">
+          <img src="../../../assets/images/document/7.1_2.png" alt="" />
+        </div>
+        <p class="indent_2_5">在配置调试—>参数表中修改参数，然后点击右侧的写入参数即可将参数写入飞控。</p>
+        <p class="bold">（3）支持手机QGC地面站修改参数。</p>
+      </div>
+      <div class="box" id="C9_6_2">
+        <p class="title">7.2 参数分类</p>
+        <p>不同类别参数以开头分组，如AC_开头为姿态控制参数组。</p>
+        <ul>
+          <li>AC---Attitude Control姿态控制参数：包括Roll、Pitch、Yaw三轴感度，增益等；</li>
+          <li>AUX---PWM输出对应遥控通道映射参数;</li>
+          <li>BAT---Battery电池参数：包括标准电池电压等；</li>
+          <li>GPS0---GPS0参数，包括GPS延时和GPS配置等；</li>
+          <li>GPS1---GPS1参数，包括GPS延时和GPS配置等；</li>
+          <li>Init---初始化校准参数，包括电调校准等；</li>
+          <li>LK---mavlink协议参数，本机ID；</li>
+          <li>MFunc---遥控校准相关参数；</li>
+          <li>UAV---飞行器参数：包括飞行器类型等；</li>
+          <li>PC---位置控制参数。</li>
+          <li>POfs---飞控和位置传感器安装偏移补偿；</li>
+          <li>SDlog ---飞行日志参数。</li>
+          <li>Sf---安全模式参数。</li>
+        </ul>
+      </div>
+      <div class="box" id="C9_6_3">
+        <p class="title">7.3 调参教程</p>
+        <ul>
+          <li>无人机机型选择，对应参数名：AC_UAV_Type</li>
+        </ul>
+        <table class="table1">
+          <tr>
+            <th class="left solidTop bottom">AC_UAV_Type参数值</th>
+            <th class="right solidTop bottom">飞行器类型</th>
+          </tr>
+          <tr>
+            <td class="left">10</td>
+            <td class="right">四旋翼X型</td>
+          </tr>
+          <tr>
+            <td class="left">11</td>
+            <td class="right">六旋翼X型</td>
+          </tr>
+          <tr>
+            <td class="left">12</td>
+            <td class="right">八旋翼X型</td>
+          </tr>
+          <tr>
+            <td class="left">15</td>
+            <td class="right">四旋翼十字型</td>
+          </tr>
+          <tr>
+            <td class="left">20</td>
+            <td class="right">四旋翼Double十字型</td>
+          </tr>
+          <tr>
+            <td class="left solidBottom">32</td>
+            <td class="right solidBottom">六旋翼异构</td>
+          </tr>
+        </table>
+        <p class="indent_2">ACFLy地面站支持图形化调参，用USB或者数传连接飞控后，点击连接-配置-参数调整-稳定飞行。地面站会自动加载飞控默认参数并显示。</p>
+        <div class="image">
+          <img src="../../../assets/images/document/7.3_1.png" alt="" />
+        </div>
+        <ul>
+          <li>无人机高频振荡发抖需将b参数调大，一般只需调 AC_Roll_b、AC_Pitch_b。</li>
+          <li>无人机打杆软绵绵没力需将b参数调小，一般只需调 AC_Roll_b、AC_Pitch_b。</li>
+          <li>T参数（参数名：AC_T）：飞行器电机的惯性时间常数。飞机桨加速至期望值的时间越长，此参数越大。此参数过小飞行器会高频振荡发抖。针对特定机型，此参数需微调。此参数越小（电机加速快），抗扰性能越好，此参数太小会导致b怎么调都会有震荡现象。此参数大不会震荡但是抗扰性能会打折扣（适中就行，没必要追求太强抗扰）。</li>
+        </ul>
+        <p style="text-indent: 2em;">以下参数标准电压：3s=11.6v、4s=15.2v、6s=22.8v</p>
+        <table class="table2">
+          <tr>
+            <th class="firstCol">配置</th>
+            <th>F450+U2216 800kv电机+1147桨+4s</th>
+            <th>F450+dji2312 940kv电机+9450桨+4s</th>
+            <th>精灵3机架+dji2312 940kv电机+9450自锁桨+3s</th>
+            <th>dh600+疯狂4114 400kv电机+飞越1555折叠桨 +6s</th>
+            <th>Tarot X6+朗宇4108 320kv电机+1855碳桨 +6s</th>
+            <th>f550六轴+dji 2312 电机+9450自锁桨 +4s</th>
+            <th>f330+朗宇x2212 1400kv电机+8038桨 +3s</th>
+          </tr>
+          <tr>
+            <td class="firstCol">T</td>
+            <td>0.1</td>
+            <td>0.1</td>
+            <td>0.1</td>
+            <td>0.05</td>
+            <td>0.15</td>
+            <td>0.1</td>
+            <td>0.1</td>
+          </tr>
+          <tr>
+            <td class="firstCol">Roll Pitch</td>
+            <td>b=5.5</td>
+            <td>b=7.5</td>
+            <td>b=8.5</td>
+            <td>b=5.5</td>
+            <td>b=1.2</td>
+            <td>b=5.5</td>
+            <td>b=7.5</td>
+          </tr>
+          <tr>
+            <td class="solidBottom firstCol">Yaw</td>
+            <td class="solidBottom">b=1.0</td>
+            <td class="solidBottom">b=1.0</td>
+            <td class="solidBottom">b=2.0</td>
+            <td class="solidBottom">b=1.0</td>
+            <td class="solidBottom">b=0.8</td>
+            <td class="solidBottom">b=1.0 T=0.005</td>
+            <td class="solidBottom">b=1.0</td>
+          </tr>
+        </table>
+        <ul>
+          <li>感度调节：感度越大，无人机打杆反应速度越快。感度按照需求调节。感度设置好后需点击写入感度按钮等待参数写入成功。</li>
+          <li>电池参数调节请参考7.5节</li>
+          <li>手动飞行和自动飞行模式(包括飞航线)参数调节请参考7.7节，比如飞行最大加速度和最大速度等的调节。</li>
+        </ul>
+      </div>
+      <div class="box" id="C9_6_4">
+        <p class="title">7.4 姿态控制参数</p>
+        <p style="text-align: right;margin: 20px 0 -20px 0;">角速度参数与角加速度参数的单位分别是：°/s，°/s^2。</p>
+        <table class="table1">
+          <tr>
+            <th class="left solidTop bottom">参数名</th>
+            <th class="right solidTop bottom">说明</th>
+          </tr>
+          <tr>
+            <td class="left">AC_maxLean</td>
+            <td class="right">飞行时候的最大倾角，默认45°</td>
+          </tr>
+          <tr>
+            <td class="left">AC_maxRPAcc</td>
+            <td class="right">横滚和俯仰的最大角加速度</td>
+          </tr>
+          <tr>
+            <td class="left">AC_maxRPSp</td>
+            <td class="right">横滚和俯仰的最大角速度</td>
+          </tr>
+          <tr>
+            <td class="left">AC_maxYAcc</td>
+            <td class="right">偏航的最大角加速度</td>
+          </tr>
+          <tr>
+            <td class="left">AC_maxYSp</td>
+            <td class="right">偏航的最大角速度</td>
+          </tr>
+          <tr>
+            <td class="left"></td>
+            <td class="right"></td>
+          </tr>
+          <tr>
+            <td class="left">AC_Roll_b、AC_Pitch_b、AC_Yaw_b</td>
+            <td class="right">控制器增益，请参考7.3节</td>
+          </tr>
+          <tr>
+            <td class="left">AC_XXX_TD4Pn  (n=1、2、3、4)</td>
+            <td class="right">前馈增益</td>
+          </tr>
+          <tr>
+            <td class="left">AC_XXX_Pn  (n=1、2、3、4)</td>
+            <td class="right">反馈增益</td>
+          </tr>
+          <tr>
+            <td class="left">AC_STThr</td>
+            <td class="right">起转油门(参考5.3节)</td>
+          </tr>
+          <tr>
+            <td class="left">AC_T</td>
+            <td class="right">飞行器电机的惯性时间常数</td>
+          </tr>
+          <tr>
+            <td class="left solidBottom">AC_Beta2</td>
+            <td class="right solidBottom">此参数越大抗扰越强，但是不抗震动噪声，输出波动会增大，最大200。不建议新手调节。</td>
+          </tr>
+        </table>
+      </div>
+      <div class="box" id="C9_6_5">
+        <p class="title">7.5 电池参数</p>
+        <p class="indent_2">使用USB或者数传连接电脑，再接电池，选择电池类型和填写电池节数，用BB响或者万用表测出电池的准确电压，填写到准确电压栏里，点击校准，然后再点击写入电池参数。</p>
+        <div class="image">
+          <img src="../../../assets/images/document/7.5_1.png" alt="" />
+        </div>
+        <p class="bold">（1）电池容量</p>
+        <p class="indent_2">参数名：Bat_Capacity</p>
+        <p class="indent_2">电池容量，单位：mAh</p>
+        <p class="bold">（2）电池电流ADC采样放大倍数</p>
+        <p class="indent_2">参数名：Bat_CurrentMKp</p>
+        <p class="indent_2">电流采集模块的分流倍数。</p>
+        <p class="bold">（3）电池标准电压</p>
+        <p class="indent_2">参数名：Bat_STVoltage</p>
+        <p class="indent_2">飞行器使用电池的标准电压，如3s电池可设置为11.6v。</p>
+        <p class="indent_2">此值用于在电压检测可用时，动态调整姿态控制器b参数。</p>
+        <p class="indent_2">比如调参设置b参数为10，标准电压为10v，当测量到电池电压为15v时会动态改变b值为10×15v/10v=15。</p>
+        <p class="bold">（4）电池电压ADC采样放大倍数</p>
+        <p class="indent_2">参数名：Bat_VoltMKp</p>
+        <p class="indent_2">电压采集模块的分压倍数。</p>
+        <p class="indent_2">比如电压采集模块将电池电压分压到1/10给飞控采样，此值应设置为10。</p>
+        <p class="bold">（5）电池电压剩余百分比对应的下降电压</p>
+        <p class="indent_2">参数名：Bat_Voltp0，当电池电压在Bat_STVoltage基础上下降了-Bat_Voltp0伏时，上位机电量将显示0%。</p>
+        <p class="indent_2">参数名：Bat_Voltp1，当电池电压在Bat_STVoltage基础上下降了-Bat_Voltp1伏时，上位机电量将显示10%。</p>
+        <p class="indent_2">参数名：Bat_Voltp2，当电池电压在Bat_STVoltage基础上下降了-Bat_Voltp2伏时，上位机电量将显示20%。</p>
+        <p class="indent_2">参数名：Bat_Voltp3，当电池电压在Bat_STVoltage基础上下降了-Bat_Voltp3伏时，上位机电量将显示30%</p>
+        <p class="indent_2">参数名：Bat_Voltp4，当电池电压在Bat_STVoltage基础上下降了-Bat_Voltp4伏时，上位机电量将显示40%</p>
+        <p class="indent_2">参数名：Bat_Voltp5，当电池电压在Bat_STVoltage基础上下降了-Bat_Voltp5伏时，上位机电量将显示50%。</p>
+        <p class="indent_2">参数名：Bat_Voltp6，当电池电压在Bat_STVoltage基础上下降了-Bat_Voltp6伏时，上位机电量将显示60%。</p>
+        <p class="indent_2">参数名：Bat_Voltp7，当电池电压在Bat_STVoltage基础上下降了-Bat_Voltp7伏时，上位机电量将显示70%。</p>
+        <p class="indent_2">参数名：Bat_Voltp8，当电池电压在Bat_STVoltage基础上下降了-Bat_Voltp8伏时，上位机电量将显示80%</p>
+        <p class="indent_2">参数名：Bat_Voltp9，当电池电压在Bat_STVoltage基础上下降了-Bat_Voltp9伏时，上位机电量将显示90%</p>
+        <p class="indent_2">参数名：Bat_Voltp10，当电池电压在Bat_STVoltage基础上下降了-Bat_Voltp10伏时，上位机电量将显示100%</p>
+        <p class="indent_2" style="color: red;">故从Bat_Voltp0到Bat_Voltp10需为递增，参考下图。</p>
+        <p>例如：</p>
+        <div class="image">
+          <img src="../../../assets/images/document/7.5_2.png" alt="" />
+        </div>
+        <p class="indent_2">如果设置Bat_STVoltage为12.5V时，当电池电压下降了Bat_Voltp9伏(如上图设置的-0.2V)，即剩余12.3伏时，将显示90%电量，当电池电压下降了Bat_Voltp8伏，即剩余12.1伏时，将显示电量80%，如此类推。</p>
+      </div>
+      <div class="box" id="C9_6_6">
+        <p class="title">7.6 GPS参数设置</p>
+        <table class="table3" style="margin-top: 50px;">
+          <tr>
+            <th>参数名</th>
+            <th class="left">说明</th>
+            <th class="right">参数名</th>
+            <th>说明</th>
+          </tr>
+          <tr>
+            <td>GPS0_GNSS</td>
+            <td class="left">GPS搜星配置(uart8)</td>
+            <td class="right">GPS0_delay</td>
+            <td>GPS0延时</td>
+          </tr>
+          <tr>
+            <td class="solidBottom">GPS1_GNSS</td>
+            <td class="solidBottom left">RTK搜星配置(uart3)</td>
+            <td class="solidBottom right">GPS1_ delay</td>
+            <td class="solidBottom">GPS1延时</td>
+          </tr>
+        </table>
+        <p>（1）GPSx_GNSS参数值设置：</p>
+        <ul style="margin-left: 32px;">
+          <li>63：GPS+北斗+伽利略</li>
+          <li>119：GPS+格洛纳斯+伽利略</li>
+          <li>126：北斗+格洛纳斯+伽利略</li>
+          <li>77：北斗+格洛纳斯+伽利略+ GPS</li>
+        </ul>
+        <p>（2）GPSx_delay参数值设置：M8N延时一般为0.2(默认)，RTK则为0.05。</p>
+      </div>
+      <div class="box" id="C9_6_7">
+        <p class="title">7.7 位置控制参数</p>
+        <p style="text-align: right;margin: 20px 0 -20px 0;">速度参数与加速度参数的单位分别是：cm/s，cm/s^2。</p>
+        <table class="table4">
+          <tr>
+            <th class="solidTop left" colspan="2">手动模式</th>
+            <th class="solidTop right" colspan="2">自动模式</th>
+          </tr>
+          <tr>
+            <td class="solidTop">参数名</td>
+            <td class="solidTop left">说明</td>
+            <td class="solidTop right">参数名</td>
+            <td class="solidTop">说明</td>
+          </tr>
+          <tr>
+            <td class="top">PC_maxVelXY</td>
+            <td class="top left">最大水平速度</td>
+            <td class="top right">PC_maxAutoVelXY</td>
+            <td class="top">最大水平速度</td>
+          </tr>
+          <tr>
+            <td>PC_maxAccXY</td>
+            <td class="left">最大水平加速度</td>
+            <td class="right">PC_maxAutoAccXY</td>
+            <td>最大水平加速度</td>
+          </tr>
+          <tr>
+            <td>PC_maxJerkXY</td>
+            <td class="left">最大水平加加速度</td>
+            <td class="right">PC_maxAutoJerkXY</td>
+            <td>最大水平加加速度</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td class="left"></td>
+            <td class="right"></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>PC_maxVelUp</td>
+            <td class="left">最大向上速度</td>
+            <td class="right">PC_maxAutoVelUp</td>
+            <td>最大向上速度</td>
+          </tr>
+          <tr>
+            <td>PC_maxAccUp</td>
+            <td class="left">最大向上加速度</td>
+            <td class="right">PC_maxAutoAccUp</td>
+            <td>最大向上加速度</td>
+          </tr>
+          <tr>
+            <td>PC_maxJerkUp</td>
+            <td class="left">最大向上加加速度</td>
+            <td class="right">PC_maxAutoJerkUp</td>
+            <td>最大向上加加速度</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td class="left"></td>
+            <td class="right"></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>PC_maxVelDn</td>
+            <td class="left">最大向下速度</td>
+            <td class="right">PC_maxAutoVelDn</td>
+            <td>最大向下速度</td>
+          </tr>
+          <tr>
+            <td>PC_maxAccDn</td>
+            <td class="left">最大向下加速度</td>
+            <td class="right">PC_maxAutoAccDn</td>
+            <td>最大向下加速度</td>
+          </tr>
+          <tr>
+            <td>PC_maxJerkDn</td>
+            <td class="left">最大向下加加速度</td>
+            <td class="right">PC_maxAutoJerkDn</td>
+            <td>最大向下加加速度</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td class="left"></td>
+            <td class="right">PC_AutoVXY</td>
+            <td>二维XY航线速度</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td class="left"></td>
+            <td class="right">PC_AutoVXYZ</td>
+            <td>三维XYZ航线速度</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td class="left"></td>
+            <td class="right">PC_AutoVZ</td>
+            <td>高度方向航线速度</td>
+          </tr>
+          <tr>
+            <td class="solidBottom"></td>
+            <td class="solidBottom left"></td>
+            <td class="solidBottom right">PC_LandVel</td>
+            <td class="solidBottom">高度小于10米时的自动降落速度</td>
+          </tr>
+        </table>
+        <table class="table1" style="margin-top: 50px;">
+          <tr>
+            <th class="left solidTop bottom">高度前馈滤波器参数</th>
+            <th class="right solidTop bottom">反馈增益参数</th>
+          </tr>
+          <tr>
+            <td class="left">PC_Z_TD4P1</td>
+            <td class="right">PC_P1</td>
+          </tr>
+          <tr>
+            <td class="left">PC_Z_TD4P2</td>
+            <td class="right">PC_P1</td>
+          </tr>
+          <tr>
+            <td class="left">PC_Z_TD4P3</td>
+            <td class="right">PC_P1</td>
+          </tr>
+          <tr>
+            <td class="left solidBottom">PC_Z_TD4P4</td>
+            <td class="right solidBottom"></td>
+          </tr>
+        </table>
+      </div>
+      <div class="box" id="C9_6_8">
+        <p class="title">7.8 安全模式参数</p>
+        <p style="text-align: right;margin: 20px 0 -20px 0;">单位：cm</p>
+        <table class="table1">
+          <tr>
+            <th class="left solidTop bottom">参数名</th>
+            <th class="right solidTop bottom">说明</th>
+          </tr>
+          <tr>
+            <td class="left">Sf_FcLandVolt</td>
+            <td class="right">低电量自动降落电压</td>
+          </tr>
+          <tr>
+            <td class="left">Sf_FcRTLVolt</td>
+            <td class="right">低电量自动返航电压</td>
+          </tr>
+          <tr>
+            <td class="left">Sf_SfRtMode</td>
+            <td class="right">返航模式</td>
+          </tr>
+          <tr>
+            <td class="left">Sf_RtSpeed</td>
+            <td class="right">返航速度,单位：cm/s</td>
+          </tr>
+          <tr>
+            <td class="left">Sf_GbRtHeight</td>
+            <td class="right">有GPS导航时的返航高度(相对Home点)</td>
+          </tr>
+          <tr>
+            <td class="left">Sf_LcRtHeight</td>
+            <td class="right">无GPS导航时的返航高度(相对Home点)</td>
+          </tr>
+          <tr>
+            <td class="left">Sf_GbRtHRange</td>
+            <td class="right">有GPS导航时，返航高度的作用范围（距Home点的水平距离）</td>
+          </tr>
+          <tr>
+            <td class="left solidBottom">Sf_LcRtHRange</td>
+            <td class="right solidBottom">无GPS导航时，返航高度的作用范围（距Home点的水平距离）</td>
+          </tr>
+        </table>
+        <p class="indent_2">有GPS导航时，切换至返航模式，无人机在距Home点Sf_GbRtHRange的水平距离范围内无视返航高度参数，直接返航，范围外则按照Sf_GbRtHeight高度参数进行判断，当前高度低于Sf_GbRtHeight时，无人机先升高至Sf_GbRtHeight，再按照Sf_RtSpeed速度进行返航，当前高度高于Sf_GbRtHeight时，无人机直接以当前高度，按照Sf_RtSpeed速度进行返航。</p>
+      </div>
+      <div class="box" id="C9_6_9">
+        <p class="title">7.9 AUX参数</p>
+        <ul>
+          <li>Aux_1Func - Aux_8Func: 1-8分别对应M1-M8引脚，不同参数值对应功能如下：</li>
+          <li style="list-style: none;">1-16:映射遥控器对应通道（raw data）。1-16:对应遥控通道1-16</li>
+          <li style="list-style: none;">25-40:用遥控器对应通道进行相机快门触发（raw_data），25-40对应遥控通道1-16。</li>
+          <li style="list-style: none;">49-64:用遥控器对应通道进行云台控制（raw_data）。49-64对应遥控通道1-16。</li>
+          <li>Aux_CamOffPwm: 相机不触发时输出的PWM，默认值1000。</li>
+          <li>Aux_CamOnPwm: 相机触发时输出的PWM，默认值2000。</li>
+          <li>Aux_CamShTime: 相机触发时输出PWM持续时间,单位：毫秒。</li>
+          <li>Aux_CamTrigEna: 相机热靴功能使能。</li>
+        </ul>
+      </div>
+      <div class="box" id="C9_6_10">
+        <p class="title">7.10 POfs参数</p>
+        <p class="indent_2">飞控机体坐标系为前左上，前为X轴正方向(机头)，左为Y轴正方向，上为Z轴正方向。偏移坐标系和飞控坐标系相同。单位：cm。偏移有正负，按照坐标系区分。</p>
+        <ul>
+          <li>POfs_Fc_x: 飞控安装x轴<span style="color: red;text-indent: 0em;">距离飞机中心</span>的偏移。</li>
+          <li>POfs_Fc_y: 飞控安装y轴<span style="color: red;text-indent: 0em;">距离飞机中心</span>的偏移。</li>
+          <li>POfs_Fc_z: 飞控安装z轴<span style="color: red;text-indent: 0em;">距离飞机中心</span>的偏移。</li>
+          <li>POfs_S0_x - POfs_S15_x: 0-15号位置传感器安装x轴<span style="color: red;text-indent: 0em;">距离飞控</span>的偏移。</li>
+          <li>POfs_S0_y - POfs_S15_y: 0-15号位置传感器安装y轴<span style="color: red;text-indent: 0em;">距离飞控</span>的偏移。</li>
+          <li>POfs_S0_z - POfs_S15_z: 0-15号位置传感器安装z轴<span style="color: red;text-indent: 0em;">距离飞控</span>的偏移。</li>
+          <li>位置传感器ID：
+            <table class="table6">
+              <tr>
+                <th>传感器名称</th>
+                <th>ID</th>
+              </tr>
+              <tr>
+                <td>超声波</td>
+                <td>1号</td>
+              </tr>
+              <tr>
+                <td>光流</td>
+                <td>8号</td>
+              </tr>
+              <tr>
+                <td>外置气压</td>
+                <td>3号</td>
+              </tr>
+              <tr>
+                <td>GPS</td>
+                <td>6号</td>
+              </tr>
+              <tr>
+                <td>激光定高</td>
+                <td>2号</td>
+              </tr>
+            </table>
+          </li>
+        </ul>
+      </div>
+      <div class="box" id="C9_6_11">
+        <p class="title">7.11 Init参数</p>
+        <table class="table6">
+          <tr>
+            <th>参数名称</th>
+            <th>参数说明</th>
+          </tr>
+          <tr>
+            <td rowspan="2">Init_CalibESC</td>
+            <td class="bottom">21586:下次上电自动校准电调(需将Init_CalibESC_T参数设置为3)，校准完电调此参数会自动清0。</td>
+          </tr>
+          <tr>
+            <td class="top">其他参数值：无电调校准</td>
+          </tr>
+          <tr>
+            <td rowspan="3">Init_CalibESC_T</td>
+            <td class="bottom">3：电调校准</td>
+          </tr>
+          <tr>
+            <td class="top bottom">5：电调开DEO</td>
+          </tr>
+          <tr>
+            <td class="top">9：电调关DEO</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div id="C9_7">
+      <div class="box" id="C9_7_1">
+        <p class="title">8.1 航点设置</p>
+        <p class="indent_2">本飞控使用的是mavlink协议，支持主流开源地面站设置航点，包括Mission Planner、QGC(电脑和手机版都支持)等。最多设置65536个航点。以mission planner为例：</p>
+        <div class="image">
+          <img src="../../../assets/images/document/8.1_1.png" alt="" />
+        </div>
+        <p class="indent_2">首先设置第一个点为TAKEOFF点，再点击地图设置想要的航点(waypoint)、设置每个航点的高度和飞向下一个航点的等待时间等，最后可设置一个返航点。设置完后点击右边的写入航点按钮等待写入成功，可以点击读取航点查看是否成功写入航点。</p>
+      </div>
+      <div class="box" id="C9_7_2">
+        <p class="title">8.2 航线飞行</p>
+        <p class="indent_2">校准完遥控(看5.2节)，设置完航点后，即可飞航线，步骤如下：</p>
+        <ul>
+          <li>飞控上电等待GPS定位成功(定位不成功则无法自动起飞)，切换任务模式(请参考5.3节)，解锁飞控。</li>
+          <li>摇杆回中等待自动起飞(航点需设置起飞点)。也可手动起飞后再执行上述操作，无人机将开始自动执行任务。</li>
+          <li>无人机在飞行过程中会自动把机头对准下一个航点再飞过去，期间飞手可以打任意摇杆中断，夺回控制权，如果执行任务按钮设置的是按下，摇杆不动持续一段时间后会再次从断点处继续执行任务。</li>
+        </ul>
+      </div>
+      <div class="box" id="C9_7_3">
+        <p class="title">8.3 一键返航</p>
+        <ul>
+          <li>有GPS导航时，切换至返航模式，无人机在距Home点Sf_GbRtHRange的水平距离范围内无视返航高度参数，直接返航。范围外按照Sf_GbRtHeight高度参数进行判断，当前高度低于Sf_GbRtHeight时，无人机先升高至Sf_GbRtHeight，再按照Sf_RtSpeed速度进行返航，当前高度高于Sf_GbRtHeight时，无人机直接以当前高度，按照Sf_RtSpeed速度进行返航。</li>
+          <li>返航过程可以打任意摇杆中断，如果一键返航设置的是按下，中断后如果3秒内不打摇杆则会继续自动返航。如果一键返航设置的是变化，则打杆中断会取消返航，需要重新拨一下一键返航按钮继续返航。</li>
+          <li>返航的精确度由GPS定位精度决定，一般的GPS可能会有1到2米的误差。</li>
+        </ul>
+      </div>
+      <div class="box" id="C9_7_4">
+        <p class="title">8.4 失控返航</p>
+        <ul>
+          <li>如果无人机不是在任务模式，飞行过程中遥控器断联无人机会自动返航，使用PPM接收机则不支持此功能。</li>
+          <li>如果无人机在任务模式，飞行过程中遥控器断联后无人机会继续执行任务，执行完任务后自动返航，使用PPM接收机则不支持此功能。</li>
+          <li>如果GPS没定位，遥控断联，无人机则会自动降落。</li>
+        </ul>
+      </div>
+      <div class="box" id="C9_7_5">
+        <p class="title">8.5 低电量自动返航或降落</p>
+        <p>设置安全模式参数Sf_FcLandVolt 和Sf_FcRTLVolt，单位：伏。</p>
+        <ul>
+          <li>当无人机电压低于Sf_FcRTLVolt时，无人机将自动返航。</li>
+          <li>当无人机电压低于Sf_FcLandVolt时，无人机将自动降落。</li>
+          <li>如果上面两个参数设置的值一样，则会优先降落。</li>
+        </ul>
+      </div>
+      <div class="box" id="C9_7_6">
+        <p class="title">8.6 抗磁干扰</p>
+        <p class="indent_2">因强磁场等环境因素干扰导致无人机航向异常，飞控可实时监测磁场异常，并通过GPS进行航向智能对准，避免飞行过程中因磁场异常而炸机。</p>
+      </div>
+      <div class="box" id="C9_7_7">
+        <p class="title">8.7 相机触发拍照</p>
+        <p class="indent_2">请参考7.9节。</p>
+      </div>
+    </div>
+    <!--<div id="C9_8">
+      <div class="box" id="C9_8_1">
+        <p class="title">8 代码框架</p>
+        <p>本飞控代码已经分组在14个大类里，如图所示。建议看的部分：</p>
+        <p>（3）驱动中的Sensors接口及Receiver接口；</p>
+        <p>（5）Basic中的时间实现；</p>
+        <p>（7）解算系统中的解算系统接口；</p>
+        <p>（11）模式中的飞行模式；</p>
+        <p>（12）控制系统中的控制系统接口。</p>
+        <div class="image">
+          <img src="../../../assets/images/document/9.1_1.png" alt="" class="max_image" />
+        </div>
+        <p>（1）CMSIS（板级支持包）</p>
+        <p class="indent_2_5">板级支持文件，最底层的库，不用看基本不用修改（可以修改startup.s里面的堆栈设置）。</p>
+        <p>（2）Main（主函数文件）</p>
+        <p class="indent_2_5">主函数包括：</p>
+        <ul style="margin-left: 32px;">
+          <li>初始化所有需要用到的外设；</li>
+          <li>开启任务调度器；</li>
+          <li>错误中断拉低所有输出。</li>
+        </ul>
+        <p>（3）Driver（驱动）</p>
+        <p class="indent_2_5">驱动包含：</p>
+        <ul style="margin-left: 32px;">
+          <li>外设的初始化配置（drv_开头文件）</li>
+          <li>
+          <span style="text-indent: 0.1em;">
+            传感器接口，包括（建议细看，二次开发必备）：
+          </span>
+            <ul>
+              <li>Sensors.c：传感器接口实现函数</li>
+              <li>Sensors.h：传感器读取接口函数声明，建议细看</li>
+              <li>Sensors_Backend.h：传感器注册、更新接口函数声明，建议细看</li>
+            </ul>
+          </li>
+          <li>
+          <span style="text-indent: 0.1em;">
+            接收机接口，包括：
+          </span>
+            <ul>
+              <li>Receiver.c：接收机接口实现函数</li>
+              <li>Receiver.h：接收机读取接口函数声明，建议细看</li>
+            </ul>
+          </li>
+        </ul>
+        <p>（4）HAL_Library</p>
+        <p class="indent_2_5">32HAL库，二次开发需要用到的但现工程没有的请自己加进工程。</p>
+        <p>（5）Basic（基本）</p>
+        <p class="indent_2_5">Basic.c里面初始化TIM5定时器用于计时，实现了TIME结构体用于时间计算，其他部分程序所有时间相关操作都是基于TIME，建议细看。</p>
+        <p>（6）Math（数学库）</p>
+        <p class="indent_2_5">包含四元数、三维向量运算，以及一些简单的数学运算，重力等常量的定义。</p>
+        <p>（7）MeasurementSystem（解算系统）</p>
+        <p class="indent_2_5">姿态解算及位置解算。</p>
+        <p class="indent_2_5">建议细看解算系统接口MeasurementSystem.h，包含解算结果的获取函数声明及使用说明。</p>
+        <p>（8）Filters（滤波器）</p>
+        <p class="indent_2_5">包含巴特沃斯低通滤波器、TD4非线性滤波器实现。</p>
+        <p>（9）DataStructure（数据结构）</p>
+        <p class="indent_2_5">包含环形缓冲区的实现。</p>
+        <p>（10）Communic（通讯）</p>
+        <p class="indent_2_5">包含Mavlink库、调试通讯文件Debug.c、通用端口交互文件Commulink.c（驱动程序可通过Commulink.h里的函数注册端口成为通用端口用于mavlink等标准通讯）</p>
+        <p>（11）Modes（模式）</p>
+        <p class="indent_2_5">建议细看飞行模式！二次开发必备</p>
+        <ul style="margin-left: 32px;">
+          <li>0-9号为非飞行非校准的其他模式</li>
+          <li>10-19号为校准模式</li>
+          <li>30-39号为飞行模式</li>
+          <li>M00为初始化模式，等待解算系统初始化完成。然后进入M01地面模式。</li>
+          <li>M01下可通过遥控或上位机命令进入其他校准及飞行模式。</li>
+        </ul>
+        <p>（12）ControlSystem（控制系统）</p>
+        <p class="indent_2_5">建议细看ControlSystem.h！二次开发必备</p>
+        <p class="indent_2_5">ControlSystem.h包含控制系统的API接口。Ctrl_Attitude和Ctrl_Position分别为姿态和位置控制器。</p>
       </div>
     </div>
     <div id="C9_9">
       <div class="box">
-        <p class="title bond">9 电压检测参数校准</p>
+        <p class="title">9 代码接口手册</p>
+        <ul>
+          <li>本代码接口中所有位置、速度、加速度数据单位均为cm厘米</li>
+          <li>本代码接口中所有角度、角速度、角加速度数据单位均为rad弧度</li>
+          <li>本代码接口中所有磁场数据单位均为Gauss高斯</li>
+          <li>本飞控模块化编程，不同模块通过接口进行访问操作，此文档必看！！</li>
+          <li>此文档包括：传感器接口、接收机接口</li>
+        </ul>
+      </div>
+      <div class="box" id="C9_9_1">
+        <p class="title">9.1 传感器接口</p>
+        <ul>
+          <li>位于Drivers目录下</li>
+          <li>传感器接口分为：传感器读取接口 和 传感器注册及更新接口。</li>
+          <li>函数声明分别位于：Sensors.h和Sensors_Backend.h里</li>
+          <li>函数定义位于：Sensors.c里</li>
+        </ul>
+        <p>（1）IMU传感器定义（Sensors.h）</p>
+        <p class="indent_2_5">IMU传感器包括加速度计、陀螺仪、磁力计，每种各支持3个。定义如下：</p>
         <div class="image">
-          <img src="../../../assets/images/document_C9/008.png" alt=""/>
+          <img src="../../../assets/images/document/10.1_1.png" alt="" />
         </div>
-        <ul>
-          <li>使用电池给飞控供电，需连接电压检测B1或B2。(参考4.2和4.3)。</li>
-          <li>使用USB或者数传连接电脑，选择电池类型和填写电池节数。</li>
-          <li>用BB响或者万用表测出电池的准确电压，填写到准确电压栏里，点击校准，然后再点击写入电池参数，等待参数写入成功。</li>
-          <li>电流测量系数默认50。</li>
+        <p>（2）位置传感器定义（Sensors.h）</p>
+        <p class="indent_2_5">位置传感器包括气压、光流、超声波等，本飞控最多支持同时存在8个定位传感器。定义如下：</p>
+        <div class="image">
+          <img src="../../../assets/images/document/10.1_2.png" alt="" />
+        </div>
+        <p class="indent_2_5">其中：</p>
+        <ul style="margin-left: 32px;">
+          <li>sensor_type定义了传感器是经纬度定位、相对定位，还是测距定位传感器。</li>
+          <li>sensor_DataType定义了传感器的数据类型：例如z轴位置数据，xy速度数据等。</li>
+          <li>velocity_data_frame针对速度传感器，定义了速度传感器所测速度所在的坐标系。</li>
         </ul>
+        <p>（3）IMU传感器读取接口（Sensors.h）</p>
+        <p class="indent_2_5">IMU传感器读取接口会返回const的IMU传感器结构体：</p>
+        <div class="image">
+          <img src="../../../assets/images/document/10.1_3.png" alt="" />
+        </div>
+        <p>（4）IMU传感器注册、更新接口（Sensors_Backend.h）</p>
+        <p class="indent_2_5">在IMU传感器更新前，首先调用注册函数进行注册，设置传感器的灵敏度。</p>
+        <p class="indent_2_5">注册完成后把IMU传感器编号及原始数据送入update接口即可完成更新。</p>
+        <div class="image">
+          <img src="../../../assets/images/document/10.1_4.png" alt="" />
+        </div>
+        <p>（5）位置传感器读取接口（Sensors.h）</p>
+        <p class="indent_2_5">位置传感器读取接口会返回const的位置传感器结构体：</p>
+        <div class="image">
+          <img src="../../../assets/images/document/10.1_5.png" alt="" />
+        </div>
+        <p>（6）位置传感器注册、更新接口（Sensors_Backend.h）</p>
+        <p class="indent_2_5">在位置传感器更新前，首先调用注册函数进行注册，设置传感器的类型等参数：</p>
+        <div class="image">
+          <img src="../../../assets/images/document/10.1_6.png" alt="" />
+        </div>
+        <p class="indent_2_5">如果位置传感器很久没有更新，MS_Main解算任务中会自动把此传感器取消注册。</p>
+        <p class="indent_2_5">注册完成后把位置传感器编号及与传感器sensor_data_type对应的数据送入update接口即可完成更新：</p>
+        <div class="image">
+          <img src="../../../assets/images/document/10.1_7.png" alt="" />
+        </div>
       </div>
-    </div>
-    <div id="C9_10">
-      <div class="box">
-        <p class="title bond">10 解锁上锁</p>
+      <div class="box" id="C9_9_2">
+        <p class="title">9.2 接收机接口</p>
         <ul>
-          <li>此为美国手和日本手的解锁手势，中国手的上锁手势。</li>
+          <li>位于Drivers目录下</li>
+          <li>接收机接口分为：接收机读取接口 和 接收机更新接口。</li>
+          <li>函数声明分别位于：Receiver.h和Receiver _Backend.h里</li>
+          <li>函数定义位于：Receiver.c里</li>
+        </ul>
+        <p>（1）接收机定义（Receiver.h）</p>
+        <p class="indent_2_5">接收机包含SBUS、PPM等协议的接收机（至少具有6个通道），定义如下：</p>
+        <div class="image">
+          <img src="../../../assets/images/document/10.2_1.png" alt="" />
+        </div>
+        <p>（2）接收机读取接口（Receiver.h）</p>
+        <ul style="margin-left: 32px;">
+          <li>get_Receiver会返回指定接收机的const结构体</li>
+          <li>get_current_Receiver会返回当前接收机的const结构体（自动选择序号最低的可用接收机，无可用接收机是返回随机接收机）</li>
+          <li>get_current_Reciever_Type返回当前接收机的类型（SBUS接收机、PPM接收机等）</li>
         </ul>
         <div class="image">
-          <img src="../../../assets/images/document_C9/009.png" alt=""/>
+          <img src="../../../assets/images/document/10.2_2.png" alt="" />
         </div>
-        <ul>
-          <li>此为美国手和日本手的上锁手势，中国手的解锁手势。</li>
-        </ul>
+        <p>（3）接收机更新接口（Receiver_Backend.h）</p>
+        <p class="indent_2_5">把接收机类型、原始数据、是否已连接等信息发送给接口即可完成接收机数据更新。</p>
         <div class="image">
-          <img src="../../../assets/images/document_C9/010.png" alt=""/>
-        </div>
-        <ul>
-          <li>解锁后油门保持在中立位，电机依次从1、2、3...开始旋转到怠速（电调需已校准），如怠速不稳定，加大起转油门百分比AC_STThr。</li>
-          <li>降落后拉低油门自动上锁（不要外八，以防打杆过快引起侧翻）。</li>
-          <li>如遇到翻机或倒扣等炸鸡情况，可使用外八强制上锁，因此飞行过程中严禁外八操作！</li>
-        </ul>
-      </div>
-    </div>
-    <div id="C9_11">
-      <div class="box">
-        <p class="title bond">11 固件更新</p>
-      </div>
-      <div class="box" id="C9_11_1">
-        <p class="title1">11.1 SD卡更新固件(推荐)</p>
-        <p class="indent_2">飞控用USB连接电脑，电脑会弹出一个U盘(飞控SD卡)，将固件文件(.hex)放进U盘里的ACFLy文件夹中，然后重启飞控，等待固件升级完成，升级过程中飞控蓝灯快闪，此过程需12秒左右。固件更新完会自动删除ACFLy文件夹里的固件，以免下次上电重复更新。</p>
-        <div class="image">
-          <img src="../../../assets/images/document_C9/011.png" alt=""/>
+          <img src="../../../assets/images/document/10.2_3.png" alt="" />
         </div>
       </div>
-      <div class="box" id="C9_11_2">
-        <p class="title1">11.2  USB更新固件</p>
-        <ul>
-          <li>网站下载ACFLY地面站压缩包，其中包括名为DFU驱动的压缩包，解压后安装对应的版本。Win10系统安装win8.1版本。</li>
-          <li>打开ACFLY地面站，点击配置–固件更新–浏览 双击选择固件(.hex)</li>
-          <li>插上飞控USB，等待烧录完成。</li>
-          <li>注意：需要飞控先断电，地面站选择固件后10秒内将飞控通过USB连接至电脑。</li>
-          <li>部分用户电脑无法烧录固件，需按照如下微软常用运行库合集。</li>
-        </ul>
-        <div class="image">
-          <img src="../../../assets/images/document_C9/012.png" alt=""/>
-        </div>
-      </div>
-    </div>
-    <div id="C9_12">
-      <div class="box">
-        <p class="title bond">12 高级调参</p>
-        <div class="image">
-          <img src="../../../assets/images/document_C9/013.png" alt=""/>
-        </div>
-        <ul>
-          <li>ACFLy地面站支持图形化调参，用USB或者数传连接飞控后，点击连接-配置-参数调整-稳定飞行。地面站会自动加载飞控参数并显示。</li>
-          <li>一般情况下，所有机架都可使用默认参数起飞，后根据飞行情况调试以下参数。</li>
-          <li>无人机高频振荡发抖需将b参数调大，一般只需调 AC_Roll_b、AC_Pitch_b。</li>
-          <li>无人机打杆软绵绵没力需将b参数调小，一般只需调 AC_Roll_b、AC_Pitch_b。</li>
-          <li>T参数（参数名：AC_T）：飞行器电机的惯性时间常数。飞机桨加速至期望值的时间越长，此参数越大。此参数过小飞行器会高频振荡发抖。针对特定机型，此参数需微调。此参数越小（电机加速快），抗扰性能越好，此参数太小会导致b怎么调都会有震荡现象。此参数大不会震荡但是抗扰性能会打折扣（适中就行，没必要追求太强抗扰）。</li>
-          <li>感度调节：感度越大，无人机打杆反应速度越快。感度按照需求调节。感度设置好后需点击写入感度按钮等待参数写入成功。</li>
-          <li>最大倾角建议35度。</li>
-        </ul>
-        <div class="image_word">
-          <img src="../../../assets/images/document_C9/014.png" alt=""/>
-          <p class="explain">此参数表仅做参考，根据实际效果细调</p>
-        </div>
-      </div>
-    </div>
-    <div id="C9_13">
-      <div class="box">
-        <p class="title bond">13 常用参数表</p>
-        <table class="table1">
-          <tr>
-            <th>参数名</th>
-            <th>定义</th>
-            <th>单位</th>
-            <th>说明</th>
-          </tr>
-          <tr>
-            <td>AC_UAVType</td>
-            <td>飞行器类型</td>
-            <td></td>
-            <td class="word_left">10：四旋翼 X 型；11：六旋翼 X 型；<br/>12：八旋翼 X 型；15：四旋翼十字型；<br/>20：四旋翼 Double 十字型；32：六旋翼异构</td>
-          </tr>
-          <tr>
-            <td>AC_STThr</td>
-            <td>怠速油门</td>
-            <td>%</td>
-            <td class="word_left">默认10%</td>
-          </tr>
-          <tr>
-            <td>Init_CalibESC_T</td>
-            <td>电调校准延时</td>
-            <td>秒</td>
-            <td class="word_left">3：电调校准<br/>5：电调开 DEO<br/>9：电调关 DEO</td>
-          </tr>
-          <tr>
-            <td>Bat_VoltMKp</td>
-            <td>电压比例系数</td>
-            <td>V/V</td>
-            <td class="word_left">标准18.4</td>
-          </tr>
-          <tr>
-            <td>Bat_STVoltage</td>
-            <td>电池标准电压</td>
-            <td>V</td>
-            <td class="word_left">飞行器使用电池的标准电压，如6s电池为22.8v，4S电池为15.2V，3S电池为11.6V。此值用于动态调整姿态控制器b参数。</td>
-          </tr>
-          <tr>
-            <td>Bat_CurrentMKp</td>
-            <td>电流比例系数</td>
-            <td>A/V</td>
-            <td class="word_left">标准50</td>
-          </tr>
-          <tr>
-            <td>Bat_Capacity</td>
-            <td>电池容量</td>
-            <td>mAh</td>
-            <td class="word_left">暂未使用</td>
-          </tr>
-          <tr>
-            <td>Bat_VoltP0 ~ Bat_VoltP10</td>
-            <td>十级电量百分比对应的电压</td>
-            <td>V</td>
-            <td class="word_left">相对Bat_STVoltage的电压偏移值。Bat_VoltP0为电量为0%时的电压偏移值，Bat_VoltP1为电量为10%时的电压偏移值。以此类推至Bat_VoltP10为电量为100%时的电压偏移值。</td>
-          </tr>
-          <tr>
-            <td>Sf_FcRTLVolt</td>
-            <td>返航电压</td>
-            <td>V</td>
-            <td class="word_left">低于此电压时自动返航</td>
-          </tr>
-          <tr>
-            <td>Sf_FcLandVolt</td>
-            <td>降落电压</td>
-            <td>V</td>
-            <td class="word_left">低于此电压时自动降落</td>
-          </tr>
-          <tr>
-            <td>Aux_12Func</td>
-            <td>通道12功能</td>
-            <td></td>
-            <td class="word_left">33：相机拍照</td>
-          </tr>
-          <tr>
-            <td>Aux_CamOffPwm</td>
-            <td>拍照关</td>
-            <td>PWM</td>
-            <td class="word_left">默认1100；使用电平拍照时为60000</td>
-          </tr>
-          <tr>
-            <td>Aux_CamOnPwm</td>
-            <td>拍照开</td>
-            <td>PWM</td>
-            <td class="word_left">默认2000；使用电平拍照时为0</td>
-          </tr>
-          <tr>
-            <td>Aux_CamShTime</td>
-            <td>拍照时间</td>
-            <td>秒</td>
-            <td class="word_left">建议0.1</td>
-          </tr>
-          <tr>
-            <td>Aux_CamTrigEna</td>
-            <td>热靴触发</td>
-            <td></td>
-            <td class="word_left">0：禁用；1：启用</td>
-          </tr>
-          <tr>
-            <td>PC_AutoVXY</td>
-            <td>航线水平速度</td>
-            <td>cm/s</td>
-            <td class="word_left">默认1000,10m/s</td>
-          </tr>
-          <tr>
-            <td>PC_AutoVXYZ</td>
-            <td>航线三维限制速度</td>
-            <td>cm/s</td>
-            <td class="word_left">默认1000,10m/s，建议与PC_AutoVXY一致</td>
-          </tr>
-          <tr>
-            <td>PC_AutoVZUp</td>
-            <td>航线上升速度</td>
-            <td>cm/s</td>
-            <td class="word_left">默认450,4.5m/s</td>
-          </tr>
-          <tr>
-            <td>PC_AutoVZDn</td>
-            <td>航线下降速度</td>
-            <td>cm/s</td>
-            <td class="word_left">默认350,3.5m/s</td>
-          </tr>
-          <tr>
-            <td>PC_LandVel</td>
-            <td>末端降落速度</td>
-            <td>cm/s</td>
-            <td class="word_left">距离地面10米内的末端降落速度，建议30-50cm/s</td>
-          </tr>
-          <tr>
-            <td>Sf_RtSpeed</td>
-            <td>返航速度</td>
-            <td>cm/s</td>
-            <td class="word_left">默认1000,10m/s</td>
-          </tr>
-          <tr>
-            <td>Sf_GbRtHRange</td>
-            <td>返航高度的作用范围（距离家）</td>
-            <td>cm</td>
-            <td class="word_left">范围内按当前飞行高度直接返航，忽略返航高度参数。<br/>范围外自动判断，如果当前高度低于返航高度，则先升高再返航，如果当前高度高于返航高度，则按当前高度返航。<br/>默认3000,即30m</td>
-          </tr>
-          <tr>
-            <td>Sf_GbRtHeight</td>
-            <td>返航高度</td>
-            <td>cm</td>
-            <td class="word_left">默认5000,50m</td>
-          </tr>
-          <tr>
-            <td>PC_maxVelXY</td>
-            <td>手动控制时的最大水平速度</td>
-            <td>cm/s</td>
-            <td class="word_left">默认1500,15m/s</td>
-          </tr>
-          <tr>
-            <td>PC_maxVelUp</td>
-            <td>手动控制时的最大上升速度</td>
-            <td>cm/s</td>
-            <td class="word_left">默认500,5m/s</td>
-          </tr>
-          <tr>
-            <td>PC_maxVelDn</td>
-            <td>手动控制时的最大下降速度</td>
-            <td>cm/s</td>
-            <td class="word_left">默认400,4m/s</td>
-          </tr>
-          <tr>
-            <td>AC_maxLean</td>
-            <td>最大倾斜角度</td>
-            <td>°</td>
-            <td class="word_left">默认35°</td>
-          </tr>
-          <tr>
-            <td>AC_Pitch_b</td>
-            <td>俯仰控制b参数</td>
-            <td></td>
-            <td class="word_left">默认5.5，高频振荡发抖需将b参数调大，打杆软绵绵没力需将b参数调小</td>
-          </tr>
-          <tr>
-            <td>AC_Roll_b</td>
-            <td>横滚控制b参数</td>
-            <td></td>
-            <td class="word_left">默认5.5，高频振荡发抖需将b参数调大，打杆软绵绵没力需将b参数调小</td>
-          </tr>
-          <tr>
-            <td>GPS0_delay<br/>GPS1_delay(RTK)</td>
-            <td>GPS延时</td>
-            <td>s</td>
-            <td class="word_left">默认0.1<br/>M8N更新频率为5Hz，延时为0.1<br/>F9P更新频率为10Hz，延时为0.05</td>
-          </tr>
-          <tr>
-            <td>GPS0_GNSS<br/>GPS1_ GNSS (RTK)</td>
-            <td>GPS卫星配置</td>
-            <td></td>
-            <td class="word_left">默认0，不改变<br/>GPS+GLONASS:  65<br/>GPS+GLONASS+GALILEO:  69<br/>GPS+BEIDOU:  9<br/>GPS+BEIDOU+GALILEO: 13(M8N推荐)<br/>GPS+GLONASS+BEIDOU+GALILEO: 77(仅F9P适用)</td>
-          </tr>
-          <tr>
-            <td>LK_Port7Baud</td>
-            <td>数传波特率(UART7)</td>
-            <td></td>
-            <td class="word_left">默认115200</td>
-          </tr>
-          <tr>
-            <td>Aux_1Func-<br/>Aux_11Func</td>
-            <td>对应飞控C1-C11通道 </td>
-            <td></td>
-            <td class="word_left">1-16: 映射遥控器对应通。1-16:对应遥控通道1-16<br/>25-40: 用遥控器对应通道进行相机快门触发，25-40对应遥控通道1-16。<br/>49-64: 用遥控器对应通道进行云台控制。49-64对应遥控通道1-16。</td>
-          </tr>
-        </table>
-      </div>
-    </div>
-    <div id="C9_14">
-      <div class="box">
-        <p class="title bond">14 自动返航策略</p>
-        <p>一键返航、低电量自动返航和失控自动返航都遵循以下返航策略：</p>
-        <ul>
-          <li>无人机在距Home点Sf_GbRtHRange(默认30米)的水平距离范围内无视返航高度参数，直接返航。</li>
-          <li>范围外按照Sf_GbRtHeight高度参数进行判断。当前高度低于Sf_GbRtHeight时，无人机先升高至Sf_GbRtHeight，再按照Sf_RtSpeed速度进行返航。当前高度高于Sf_GbRtHeight时，无人机直接以当前高度，按照Sf_RtSpeed速度进行返航。</li>
-        </ul>
-      </div>
-      <div class="box" id="C9_14_1">
-        <p class="title1">14.1 一键自动返航</p>
-        <ul>
-          <li>当设置了一键返航按钮并按下后，无人机开始自动返航，返航过程可以打任意摇杆中断，如果一键返航设置的是按下，中断后如果3秒内不打摇杆则会继续自动返航。如果一键返航设置的是变化，则打杆中断会取消返航，需要重新拨一下一键返航按钮继续返航。</li>
-        </ul>
-      </div>
-      <div class="box" id="C9_14_2">
-        <p class="title1">14.2 低电量自动返航或降落</p>
-        <ul>
-          <li>设置安全模式参数Sf_FcLandVolt 和Sf_FcRTLVolt，单位：伏。</li>
-          <li>当无人机检测电池电压低于Sf_FcRTLVolt时，无人机将自动返航。</li>
-          <li>当无人机检测电池电压低于Sf_FcLandVolt时，无人机将自动降落。</li>
-          <li>如果上面两个参数设置的值一样，则会优先降落。</li>
-        </ul>
-      </div>
-      <div class="box" id="C9_14_3">
-        <p class="title1">14.3 失控自动返航</p>
-        <ul>
-          <li>如果无人机不是在任务模式，飞行过程中遥控器断联无人机会自动返航，使用PPM接收机则不支持此功能(因为PPM接收机断联后仍有输出)，返航过程中遥控器恢复连接会继续返航，可手动打杆夺取控制权。 </li>
-          <li>执行任务过程中遥控器断联后无人机会继续执行任务(需有定位)，执行完任务后或者电量低于Sf_FcRTLVolt时无人机会自动返航。</li>
-          <li>如果无定位且遥控断联，无人机则会自动降落。</li>
-        </ul>
-      </div>
-    </div>
-    <div id="C9_15">
-      <div class="box">
-        <p class="title bond">15 航线任务设置</p>
-        <ul>
-          <li>飞控使用的是mavlink协议，支持主流开源地面站设置航点，包括Mission Planner、QGC(电脑和手机版都支持)等。最多设置65536个航点。</li>
-          <li>航点设置完成，无人机定位成功(蓝绿交替闪烁)后，模式按钮打到任务模式挡位，若设置的第一个任务是起飞任务(起飞航点)，则解锁无人机即可自动起飞执行任务。 若第一个任务不是起飞任务，则需手动起飞后无人机再自动执行任务。</li>
-        </ul>
-      </div>
-    </div>
-    <div id="C9_16">
-      <div class="box">
-        <p class="title bond">16 相机触发拍照配置</p>
-        <table class="table1">
-          <tr>
-            <th>参数名</th>
-            <th>定义</th>
-            <th>单位</th>
-            <th>说明</th>
-          </tr>
-          <tr>
-            <td>Aux_12Func</td>
-            <td>通道12功能，拍照</td>
-            <td></td>
-            <td class="word_left">33：相机拍照</td>
-          </tr>
-          <tr>
-            <td>Aux_CamOffPwm</td>
-            <td>拍照关</td>
-            <td>PWM</td>
-            <td class="word_left">默认1100；使用电平拍照时为60000</td>
-          </tr>
-          <tr>
-            <td>Aux_CamOnPwm</td>
-            <td>拍照开</td>
-            <td>PWM</td>
-            <td class="word_left">默认2000；使用电平拍照时为0</td>
-          </tr>
-          <tr>
-            <td>Aux_CamShTime</td>
-            <td>拍照时间</td>
-            <td>秒</td>
-            <td class="word_left">建议0.1</td>
-          </tr>
-          <tr>
-            <td>Aux_CamTrigEna</td>
-            <td>热靴触发</td>
-            <td></td>
-            <td class="word_left">0：禁用；1：启用</td>
-          </tr>
-        </table>
-        <ul>
-          <li>地面测试拍照功能可使用MP地面站，在地图上鼠标点击右键选择现在按下相机快门即可，拍照成功POS会记录到飞控内部SD卡中，可插USB导出POS记录查看。</li>
-        </ul>
-      </div>
-    </div>
-    <div id="C9_17">
-      <div class="box">
-        <p class="title bond">17 飞控及定位传感器安装偏移</p>
-        <ul>
-          <li>飞控机体坐标系为前左上，前为X轴正方向(机头)，左为Y轴正方向，上为Z轴正方向。偏移坐标系和飞控坐标系相同。单位：cm。偏移有正负，按照坐标系区分。</li>
-        </ul>
-        <table class="table1">
-          <tr>
-            <th>参数名</th>
-            <th>定义</th>
-            <th>单位</th>
-            <th>说明</th>
-          </tr>
-          <tr>
-            <td>POfs_Fc_x</td>
-            <td>安装偏移</td>
-            <td>cm</td>
-            <td class="word_left">飞控安装x轴距离飞机中心的偏移</td>
-          </tr>
-          <tr>
-            <td>POfs_Fc_y</td>
-            <td>安装偏移</td>
-            <td>cm</td>
-            <td class="word_left">飞控安装y轴距离飞机中心的偏移</td>
-          </tr>
-          <tr>
-            <td>POfs_Fc_z</td>
-            <td>安装偏移</td>
-            <td>cm</td>
-            <td class="word_left">飞控安装z轴距离飞机中心的偏移</td>
-          </tr>
-          <tr>
-            <td>POfs_S0_x -<br/>POfs_S15_x</td>
-            <td>安装偏移</td>
-            <td>cm</td>
-            <td class="word_left">0-15号位置传感器安装x轴距离飞控的偏移</td>
-          </tr>
-          <tr>
-            <td>POfs_S0_y - <br/>POfs_S15_y</td>
-            <td>安装偏移</td>
-            <td>cm</td>
-            <td class="word_left">0-15号位置传感器安装y轴距离飞控的偏移</td>
-          </tr>
-          <tr>
-            <td>POfs_S0_z - <br/>POfs_S15_z</td>
-            <td>安装偏移</td>
-            <td></td>
-            <td class="word_left"></td>
-          </tr>
-        </table>
-        <table class="table1" style="margin-top: 40px;">
-          <tr>
-            <th>定位传感器名称</th>
-            <th>ID</th>
-          </tr>
-          <tr>
-            <td>超声波</td>
-            <td>1号</td>
-          </tr>
-          <tr>
-            <td>光流</td>
-            <td>8号</td>
-          </tr>
-          <tr>
-            <td>外置气压</td>
-            <td>3号</td>
-          </tr>
-          <tr>
-            <td>GPS</td>
-            <td>6号</td>
-          </tr>
-          <tr>
-            <td>RTK</td>
-            <td>7号</td>
-          </tr>
-          <tr>
-            <td>测距(激光/毫米波)</td>
-            <td>2号</td>
-          </tr>
-        </table>
-      </div>
-    </div>
+    </div>-->
   </div>
 </template>
 
@@ -1087,5 +1043,5 @@
 </script>
 
 <style lang="less" scoped>
-  @import "../../../assets/style/document_v3";
+  @import "../../../assets/style/document_v2";
 </style>

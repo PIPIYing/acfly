@@ -101,22 +101,22 @@ const routes = [
       {
         path: 'document_C9',
         name: 'document_C9',
-        component: () => import('../views/skill/document_v2/document_C9')
+        component: () => import('../views/skill/document_v3/document_C9')
       },
       {
         path: 'document_A9',
         name: 'document_A9',
-        component: () => import('../views/skill/document_v2/document_A9')
+        component: () => import('../views/skill/document_v3/document_A9')
       },
-      {
+      /*{
         path: 'document_mapping',
         name: 'document_mapping',
-        component: () => import('../views/skill/document_v2/document_mapping')
-      },
+        component: () => import('../views/skill/document_v3/document_mapping')
+      },*/
       {
         path: 'document_update',
         name: 'document_update',
-        component: () => import('../views/skill/document_v2/document_update')
+        component: () => import('../views/skill/document_v3/document_update')
       },
     ]
     /*children: [
