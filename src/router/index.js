@@ -6,7 +6,7 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '*',
-    redirect: '/index/intro'
+    redirect: '/index/pay'
   },
   {
     path: '/index',
@@ -341,7 +341,12 @@ const routes = [
         component: () => import('../views/skill/document_v1/document13')
       }
     ]*/
-  }
+  },
+  {
+    path: '/index/pay',
+    name: 'Pay',
+    component: () => import('../views/payment/pay')
+  },
 ]
 
 const router = new VueRouter({
