@@ -184,18 +184,56 @@
             <div class="invoiceContent">
               <span class="invoiceWord">是否需要开具发票</span>
               <div class="radioBox">
-                <input type="radio" name="invoice" id="invoice1" value="1" class="invoiceBox">
+                <input type="radio" name="invoice" id="invoice1" value="1" class="invoiceBox" @click="toInvoice">
                 <label for="invoice1"></label>
                 <span class="invoiceWord">需要</span>
                 <div style="display: inline-block;margin-left: 20px;"></div>
-                <input type="radio" name="invoice" id="invoice2" value="0" checked class="invoiceBox">
+                <input type="radio" name="invoice" id="invoice2" value="0" checked class="invoiceBox" @click="notToInvoice">
                 <label for="invoice2"></label>
                 <span class="invoiceWord">不需要</span>
               </div>
             </div>
+            <div class="invoiceForm" v-if="invoice">
+              <span class="invoiceWord">发票类型：</span>
+              <div class="radioBox">
+                <span class="invoiceWord">增值税普通发票（电子）</span>
+                <input type="radio" name="invoices" id="invoice3" value="1" checked class="invoiceBox">
+                <label for="invoice3"></label>
+                <div style="display: inline-block;margin-left: 20px;"></div>
+                <span class="invoiceWord">增值税专用发票（纸质）</span>
+                <input type="radio" name="invoices" id="invoice4" value="0" class="invoiceBox">
+                <label for="invoice4"></label>
+              </div>
+              <div class="invoiceRemark">（将通过您的邮箱发送到您的账户）</div>
+              <el-form
+                  ref="form"
+                  :model="invoiceForm"
+                  :rules="invoiceRules"
+                  class="invForm">
+                <div class="row_two">
+                  <el-form-item prop="rise">
+                    <el-input v-model="invoiceForm.rise" placeholder="请输入发票抬头" class="dataInput"></el-input>
+                    <span class="tag">*</span>
+                  </el-form-item>
+                  <el-form-item prop="bank">
+                    <el-input v-model="invoiceForm.bank" placeholder="请输入开户银行" class="dataInput inputMargin"></el-input>
+                    <span class="tag">*</span>
+                  </el-form-item>
+                </div>
+                <div class="row_two">
+                  <el-form-item prop="tax">
+                    <el-input v-model="invoiceForm.tax" placeholder="请输入税号" class="dataInput"></el-input>
+                    <span class="tag">*</span>
+                  </el-form-item>
+                  <el-form-item prop="account">
+                    <el-input v-model="invoiceForm.account" placeholder="请输入开户银行账号" class="dataInput inputMargin"></el-input>
+                    <span class="tag">*</span>
+                  </el-form-item>
+                </div>
+              </el-form>
+            </div>
           </div>
         </div>
-        <div class="invoiceForm"></div>
         <div class="payChoose">
           <div class="choose" @click="getRadio">
             <img src="../../assets/images/icon_wechat.png" alt="" class="icon icon_wechat">
@@ -305,7 +343,16 @@
         need1: '（不含税）',
         need2: '（含税）',
         pushValue: false,
-        radioValue: false
+        radioValue1: false,
+        radioValue2: true,
+        invoiceForm: {
+          rise: '',
+          bank: '',
+          tax: '',
+          account: ''
+        },
+        invoiceRules: {},
+        invoice: false
       }
     },
     methods: {
@@ -361,6 +408,12 @@
           this.showPayment = true;
         }
       },
+      toInvoice() {
+        this.invoice = true;
+      },
+      notToInvoice() {
+        this.invoice = false;
+      },
       goBack1() {
         this.showAddress = false;
         this.showList = true;
@@ -382,7 +435,8 @@
         this.pushValue = document.getElementById("push").checked;
       },
       getRadio() {
-        this.radioValue = document.getElementById("invoice1").checked;
+        this.radioValue1 = document.getElementById("invoice1").checked;
+        this.radioValue2 = document.getElementById("invoice3").checked;
       }
     }
   }
