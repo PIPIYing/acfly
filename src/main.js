@@ -4,10 +4,11 @@ import router from './router'
 import store from './store'
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
-
+import VDistpicker from 'v-distpicker'
 
 Vue.config.productionTip = false;
 Vue.use(ElementUI);
+Vue.component('v-distpicker', VDistpicker)
 
 new Vue({
   router,
