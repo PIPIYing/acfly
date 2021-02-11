@@ -8,6 +8,7 @@
       width: 90%;
       height: 100%;
       margin: 30px auto 0 auto;
+      padding-bottom: 95px;
       .name {
         color: rgba(0,0,0,0.8);
         font-size: 22px;
@@ -27,6 +28,7 @@
       background-color: #7A7A7A;
       position: fixed;
       bottom: 0;
+      z-index: 99;
       .cart, .step {
         width: 200px;
         height: 68px;  /*90 - 20margin - 2border*/
@@ -86,7 +88,7 @@
         margin: 30px auto;
         line-height: 28px;
         .dataTitle {
-          margin: 35px 2%;
+          margin: 30px 2%;
         }
         .flex_two {
           display: flex;
@@ -190,7 +192,7 @@
         margin: 30px auto;
         line-height: 28px;
         .dataTitle {
-          margin: 35px 2%;
+          margin: 30px 2%;
         }
         .flex_two {
           display: flex;
@@ -204,16 +206,17 @@
           }
           .dataSum {
             margin-left: 40px;
+            color: red;
           }
         }
       }
       .payStyle {
         .dataTitle {
-          margin: 35px 7%;
+          margin: 30px 7% 25px 7%;
         }
         .payBox {
           width: 80%;
-          margin: 50px auto 30px auto;
+          margin: 10px auto;
           font-size: 20px;
           line-height: 40px;
           .pushContent {
@@ -364,6 +367,92 @@
         }
         .choose_left {
           margin-left: 20%;
+        }
+      }
+    }
+  }
+  #fullscreen {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: rgba(0,0,0,0.6);
+    .process {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .tips {
+        margin-top: 40px;
+        color: red;
+        font-size: 26px;
+        line-height: 40px;
+      }
+      .info {
+        margin-top: 40px;
+        margin-left: -10%;
+        color: #fff;
+        font-size: 20px;
+        line-height: 60px;
+        .order {
+          display: flex;
+          line-height: 40px;
+        }
+      }
+      .scan {
+        width: 360px;
+        height: 60px;
+        background-color: #ccc;
+        border: 1px solid #ccc;
+        border-radius: 30px;
+        text-align: center;
+        text-align: -moz-center;
+        text-align: -webkit-center;
+        line-height: 60px;
+      }
+    }
+    .success {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .tips {
+        margin-top: 40px;
+        color: red;
+        font-size: 26px;
+        line-height: 40px;
+      }
+      .info {
+        margin-top: 40px;
+        color: #fff;
+        font-size: 20px;
+        line-height: 60px;
+        .order {
+          display: flex;
+          line-height: 40px;
+        }
+      }
+      .back {
+        width: 380px;
+        height: 300px;
+        background-color: #fff;
+        border: 1px solid #fff;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .icon {
+          width: 150px;
+          margin: 15px auto;
+        }
+        .big {
+          font-size: 30px;
+          line-height: 60px;
+          margin-left: 25px;
+        }
+        .small {
+          font-size: 14px;
+          margin-top: 10px;
+          margin-left: 25px;
         }
       }
     }

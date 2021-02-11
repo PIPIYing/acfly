@@ -170,7 +170,7 @@
                 {{ item.num?item.name + '  *' + item.num:"" }}
               </p>
             </div>
-            <p class="dataSum">商品总额：{{ productSum }}  {{ need1 }}</p>
+            <p class="dataSum">商品总额：{{ productSum }}  {{ invoice?'（含税）':'（不含税）' }}</p>
           </div>
         </div>
         <div class="payStyle">
@@ -235,17 +235,64 @@
           </div>
         </div>
         <div class="payChoose">
-          <div class="choose" @click="getRadio">
+          <div class="choose" @click="openFullScreen(true)">
             <img src="../../assets/images/icon_wechat.png" alt="" class="icon icon_wechat">
             <p class="word">微信支付</p>
           </div>
-          <div class="choose choose_left">
+          <div class="choose choose_left" @click="openFullScreen(false)">
             <img src="../../assets/images/icon_zhifubao.png" alt="" class="icon">
             <p class="word">支付宝支付</p>
           </div>
         </div>
       </div>
     </div>
+    <div id="fullscreen" v-if="fullscreen">
+      <div class="process" v-if="paySuccess">
+        <p class="tips">订单提交成功  请尽快付款</p>
+        <div class="info">
+          <div>订单号：121344551214</div>
+          <div class="order">
+            <p>商品信息：</p>
+            <div>
+              <p
+                  v-for="(item, index) in cartList"
+                  :key="index"
+                  class="dataItem">
+                {{ item.num?item.name + '  *' + item.num:"" }}
+              </p>
+            </div>
+          </div>
+          <p>订单总额：{{ productSum }}元</p>
+        </div>
+        <div class="code"></div>
+        <div class="scan" @click="closeFullScreen">打开{{ style?'微信':'支付宝' }}扫一扫，立即付款</div>
+      </div>
+      <div class="success" v-else>
+        <p class="tips">恭喜您！付款成功</p>
+        <div class="info">
+          <div>订单号：121344551214</div>
+          <div class="order">
+            <p>商品信息：</p>
+            <div>
+              <p
+                  v-for="(item, index) in cartList"
+                  :key="index"
+                  class="dataItem">
+                {{ item.num?item.name + '  *' + item.num:"" }}
+              </p>
+            </div>
+          </div>
+          <p>订单总额：{{ productSum }}元 商品信息已发至您的手机 请查收核对</p>
+          <p>物流信息将通过短信或电话的方式发送到您的手机上，请注意查收</p>
+        </div>
+        <div class="back">
+          <img src="../../assets/images/icon_success.png" alt="" class="icon">
+          <p class="big">付款成功！</p>
+          <p class="small">3s后将返回主页面......</p>
+        </div>
+      </div>
+    </div>
+
   </div>
 </template>
 
@@ -340,8 +387,6 @@
             { required: true, message: '请输入详细地址', trigger: 'blur' }
           ]*/
         },
-        need1: '（不含税）',
-        need2: '（含税）',
         pushValue: false,
         radioValue1: false,
         radioValue2: true,
@@ -352,7 +397,10 @@
           account: ''
         },
         invoiceRules: {},
-        invoice: false
+        invoice: false,
+        fullscreen: false,
+        style: true,
+        paySuccess: false
       }
     },
     methods: {
@@ -437,6 +485,20 @@
       getRadio() {
         this.radioValue1 = document.getElementById("invoice1").checked;
         this.radioValue2 = document.getElementById("invoice3").checked;
+      },
+      openFullScreen(a) {
+        this.style = a;
+        this.paySuccess = true;
+        this.fullscreen = true;
+      },
+      closeFullScreen() {
+        this.paySuccess = false;
+        setTimeout(() => {
+          this.fullscreen = false;
+          this.showPayment = false;
+          this.showList = true;
+        }, 3000);
+
       }
     }
   }
