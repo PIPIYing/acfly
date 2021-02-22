@@ -357,9 +357,9 @@
             num: 4
           },
         ],
-        showList: false,
+        showList: true,
         showAddress: false,
-        showPayment: true,
+        showPayment: false,
         form: {
           name: '',
           phone: '',
@@ -499,7 +499,18 @@
           this.showList = true;
         }, 3000);
 
+      },
+      getGoods() {
+        this.$axios.get('/api/goods/goods')
+          .then((res) => {
+          console.log(res);
+        }).catch((err) => {
+          console.log(err);
+        })
       }
+    },
+    beforeMount() {
+      this.getGoods();
     }
   }
 </script>

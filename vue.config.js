@@ -1,14 +1,14 @@
 module.exports = {
-  /*devServer: {
+  devServer: {
       proxy : {
           "/api" : {
-              target : "http://star.chavy.top",
-              changeOrigin: true,
-              ws : true,
+              target: "http://borui.cn.utools.club",
+              /*changeOrigin: true,*/
+              /*ws : true,*/
               pathRewrite: {
-              '^/api': '/api'
+                '^/api': ''
               }
           }
       }
-  }*/
+  }
 }
