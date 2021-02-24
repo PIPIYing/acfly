@@ -10,39 +10,47 @@
             :cell-style="rowClass"
             style="width: 100%;">
           <el-table-column
-              prop="id"
-              label="商品编号">
-          </el-table-column>
-          <el-table-column
-              prop="name"
-              label="商品名称">
-          </el-table-column>
-          <el-table-column
-              prop="picture"
-              label="商品图片">
+              label="商品编号"
+              align="center">
             <template slot-scope="scope">
-              <img :src=scope.row.picture alt="" style="width: 200px;height: 200px">
+              {{ scope.$index+1 }}
             </template>
           </el-table-column>
           <el-table-column
-              prop="text"
-              label="商品描述"
-              width="200">
+              prop="productName"
+              label="商品名称"
+              align="center">
           </el-table-column>
           <el-table-column
-              prop="price"
-              label="商品价格">
+              label="商品图片"
+              align="center">
             <template slot-scope="scope">
-              ￥{{ scope.row.price }}（不含税）
+              <img :src=scope.row.imageUrl alt="" style="width: 200px;height: 150px">
+            </template>
+          </el-table-column>
+          <el-table-column
+              prop="describe"
+              label="商品描述"
+              width="200"
+              align="center">
+          </el-table-column>
+          <el-table-column
+              prop="productPrice"
+              label="商品价格"
+              align="center">
+            <template slot-scope="scope">
+              ￥{{ scope.row.productPrice }}（不含税）
             </template>
           </el-table-column>
           <el-table-column
               prop="remark"
-              label="备注">
+              label="备注"
+              align="center">
           </el-table-column>
           <el-table-column
               prop="operation"
-              label="操作">
+              label="操作"
+              align="center">
             <template slot-scope="scope">
               <i
                   class="el-icon-remove-outline"
@@ -67,7 +75,7 @@
                     v-for="(item, index) in cartList"
                     :key="index"
                     style="line-height: 22px;">
-                  {{ item.num?item.name + '  *' + item.num:"" }}
+                  {{ item.num?item.item + '  *' + item.num:"" }}
                 </p>
               </div>
             </el-tooltip>
@@ -91,10 +99,10 @@
                   v-for="(item, index) in cartList"
                   :key="index"
                   class="dataItem">
-                {{ item.num?item.name + '  *' + item.num:"" }}
+                {{ item.num?item.item + '  *' + item.num:"" }}
               </p>
             </div>
-            <p class="dataSum">商品总额：{{ productSum }}（不含税）</p>
+            <p class="dataSum">商品总额：{{ productSum }}元（不含税）</p>
           </div>
           <el-form
               ref="form"
@@ -167,10 +175,10 @@
                   v-for="(item, index) in cartList"
                   :key="index"
                   class="dataItem">
-                {{ item.num?item.name + '  *' + item.num:"" }}
+                {{ item.num?item.item + '  *' + item.num:"" }}
               </p>
             </div>
-            <p class="dataSum">商品总额：{{ productSum }}  {{ invoice?'（含税）':'（不含税）' }}</p>
+            <p class="dataSum">商品总额：{{ productSum }}元  {{ invoice?'（含税）':'（不含税）' }}</p>
           </div>
         </div>
         <div class="payStyle">
@@ -235,11 +243,11 @@
           </div>
         </div>
         <div class="payChoose">
-          <div class="choose" @click="openFullScreen(true)">
+          <div class="choose" @click="payStyle(true)">
             <img src="../../assets/images/icon_wechat.png" alt="" class="icon icon_wechat">
             <p class="word">微信支付</p>
           </div>
-          <div class="choose choose_left" @click="openFullScreen(false)">
+          <div class="choose choose_left" @click="payStyle(false)">
             <img src="../../assets/images/icon_zhifubao.png" alt="" class="icon">
             <p class="word">支付宝支付</p>
           </div>
@@ -250,7 +258,7 @@
       <div class="process" v-if="paySuccess">
         <p class="tips">订单提交成功  请尽快付款</p>
         <div class="info">
-          <div>订单号：121344551214</div>
+          <div>订单号：</div>
           <div class="order">
             <p>商品信息：</p>
             <div>
@@ -258,14 +266,14 @@
                   v-for="(item, index) in cartList"
                   :key="index"
                   class="dataItem">
-                {{ item.num?item.name + '  *' + item.num:"" }}
+                {{ item.num?item.item + '  *' + item.num:"" }}
               </p>
             </div>
           </div>
           <p>订单总额：{{ productSum }}元</p>
+          <img :src=codeUrl alt="">
         </div>
-        <div class="code"></div>
-        <div class="scan" @click="closeFullScreen">打开{{ style?'微信':'支付宝' }}扫一扫，立即付款</div>
+        <div class="scan" @click="closeFullScreen">打开{{ payType?'微信':'支付宝' }}扫一扫，立即付款</div>
       </div>
       <div class="success" v-else>
         <p class="tips">恭喜您！付款成功</p>
@@ -292,18 +300,19 @@
         </div>
       </div>
     </div>
-
   </div>
 </template>
 
 <script>
-  import VDistpicker from 'v-distpicker'
+  import VDistpicker from 'v-distpicker';
+
   export default {
     name: "pay",
     components: { VDistpicker },
     data() {
       return {
-        tableList: [
+        showCode: false,
+        tableList: [/*
           {
             id: '01',
             name: 'C9PRO飞行控制器1',
@@ -335,43 +344,27 @@
             text: '单参数调参，工业级创新型飞行控制器',
             price: 1500.0,
             remark: '无'
-          }
+          }*/
         ],
         productNum: 0,
         productSum: 0,
-        cartList: [
-          {
-            name: 'C9PRO飞行控制器1',
-            num: 1
-          },
-          {
-            name: 'C9PRO飞行控制器2',
-            num: 2
-          },
-          {
-            name: 'C9PRO飞行控制器3',
-            num: 3
-          },
-          {
-            name: 'C9PRO飞行控制器4',
-            num: 4
-          },
-        ],
+        cartList: [],
+        cartNum: [],
         showList: true,
         showAddress: false,
         showPayment: false,
         form: {
-          name: '',
-          phone: '',
-          email: '',
+          name: '测试1号',
+          phone: '19924338329',
+          email: '19924338329@163.com',
           address1: {
             province: '广东省',
             city: '广州市',
             area: '番禺区',
-            add: ''
+            add: '外环西路生活东区'
           },
           address2: '',
-          remark: ''
+          remark: '无'
         },
         rules: {
           name: [
@@ -391,27 +384,27 @@
         radioValue1: false,
         radioValue2: true,
         invoiceForm: {
-          rise: '',
-          bank: '',
-          tax: '',
-          account: ''
+          rise: '12345678',
+          bank: '中国银行',
+          tax: '1234567890',
+          account: '0987654321'
         },
         invoiceRules: {},
         invoice: false,
         fullscreen: false,
-        style: true,
-        paySuccess: false
+        payType: true,
+        paySuccess: false,
+        codeUrl: ''
       }
     },
     methods: {
       handleSub(index, row) {
-        /*console.log(index, row);*/
         for(let i=0; i<this.cartList.length; i++) {
-          if(this.cartList[i].name === row.name){
+          if(this.cartList[i].item === row.productName){
             if(this.cartList[i].num > 0 && this.productNum > 0) {
               this.cartList[i].num--;
               this.productNum--;
-              this.productSum -= row.price;
+              this.productSum -= Number(row.productPrice);
             }else {
               this.errorMsg();
             }
@@ -419,12 +412,11 @@
         }
       },
       handleAdd(index, row) {
-        /*console.log(index, row);*/
         for(let i=0; i<this.cartList.length; i++) {
-          if(this.cartList[i].name === row.name){
+          if(this.cartList[i].item === row.productName){
             this.cartList[i].num++;
             this.productNum++;
-            this.productSum += row.price;
+            this.productSum += Number(row.productPrice);
           }
         }
       },
@@ -487,7 +479,7 @@
         this.radioValue2 = document.getElementById("invoice3").checked;
       },
       openFullScreen(a) {
-        this.style = a;
+        this.payType = a;
         this.paySuccess = true;
         this.fullscreen = true;
       },
@@ -500,14 +492,90 @@
         }, 3000);
 
       },
+      //构建数组对象
+      createArr(a, b) {
+        const f1 = (key, arr) => arr.map(item => ({
+          [key]: item
+        }))
+        const getMaxArr = (a, b) => (a.length >= b.length) ? a : b;
+        const mergeArr = (oldArr, arr) => oldArr.map((item, index) => ({
+          item,
+          ...arr[index]
+        }))
+        let list1 = f1('item', a)
+        let list2 = f1('num', b)
+        this.cartList = mergeArr(getMaxArr(a, b), list2)
+        console.log(list1);
+        console.log(list2);
+        console.log(this.cartList);
+      },
       getGoods() {
-        this.$axios.get('/api/goods/goods')
-          .then((res) => {
-          console.log(res);
+        this.$axios.get('/api/goods/goods').then((res) => {
+          if(res.status === 200) {
+            let a = [];
+            let b = [];
+            let c = [];
+            this.tableList = res.data;
+            for(let i=0; i<this.tableList.length; i++) {
+              //判断商品是否上架
+              if(this.tableList[i].status) {
+                c.push(this.tableList[i]);
+                //拼接图片地址
+                c[i].imageUrl = "http://borui.cn.utools.club/static/images/" + c[i].imageUrl;
+                a.push(this.tableList[i].productName);
+                b[i] = 0;
+              }
+            }
+            this.createArr(a, b);
+          }
+          else {
+            this.$message.error(res.msg);
+          }
         }).catch((err) => {
           console.log(err);
         })
-      }
+      },
+      //支付信息提交
+      payStyle(a) {
+        let product = [];
+        let type = '支付宝';
+        let j = 0;
+        for(let i=0; i<this.cartList.length; i++) {
+          if(this.cartList[i].num !== 0) {
+            product[j] = this.cartList[i];
+            j++;
+          }
+        }
+        if(a) {
+          type = '微信';
+        }
+        this.$axios.post('/api/wxPay/pay',{
+          product: product,
+          userName: this.form.name,
+          phone: this.form.phone,
+          email: this.form.email,
+          address: this.form.address2,
+          remark: this.form.remark,
+          flag: this.pushValue,
+          invoiceFlag: this.radioValue1,
+          invoiceType: this.radioValue2,
+          invoiceTitle: this.invoiceForm.rise,
+          account: this.invoiceForm.account,
+          taxId: this.invoiceForm.tax,
+          bank: this.invoiceForm.bank,
+          payType: type
+        },{
+            responseType: "blob"
+          }).then((res) => {
+            console.log(res);
+            const blob = new Blob([res])
+            const url = window.URL.createObjectURL(blob);
+            this.codeUrl = url;
+            this.openFullScreen(a);
+        }).catch((err) => {
+          console.log(err);
+        })
+      },
     },
     beforeMount() {
       this.getGoods();
