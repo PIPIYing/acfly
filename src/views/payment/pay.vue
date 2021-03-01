@@ -258,7 +258,7 @@
       <div class="process" v-if="paySuccess">
         <p class="tips">订单提交成功  请尽快付款</p>
         <div class="info">
-          <div>订单号：</div>
+          <div>订单号：{{ orderId }}</div>
           <div class="order">
             <p>商品信息：</p>
             <div>
@@ -271,14 +271,14 @@
             </div>
           </div>
           <p>订单总额：{{ productSum }}元</p>
-          <img :src=codeUrl alt="">
+          <img :src=codeUrl alt="" style="margin-left: 40px;">
         </div>
         <div class="scan" @click="closeFullScreen">打开{{ payType?'微信':'支付宝' }}扫一扫，立即付款</div>
       </div>
       <div class="success" v-else>
         <p class="tips">恭喜您！付款成功</p>
         <div class="info">
-          <div>订单号：121344551214</div>
+          <div>订单号：{{ orderId }}</div>
           <div class="order">
             <p>商品信息：</p>
             <div>
@@ -286,7 +286,7 @@
                   v-for="(item, index) in cartList"
                   :key="index"
                   class="dataItem">
-                {{ item.num?item.name + '  *' + item.num:"" }}
+                {{ item.num?item.item + '  *' + item.num:"" }}
               </p>
             </div>
           </div>
@@ -394,7 +394,8 @@
         fullscreen: false,
         payType: true,
         paySuccess: false,
-        codeUrl: ''
+        codeUrl: '',
+        orderId: ''
       }
     },
     methods: {
@@ -564,18 +565,61 @@
           taxId: this.invoiceForm.tax,
           bank: this.invoiceForm.bank,
           payType: type
-        },{
-            responseType: "blob"
-          }).then((res) => {
-            console.log(res);
-            const blob = new Blob([res])
-            const url = window.URL.createObjectURL(blob);
-            this.codeUrl = url;
-            this.openFullScreen(a);
+        }).then((res) => {
+            if(res.status === 200) {
+              this.getCode(res.data);
+              this.orderId = res.data.orderId;
+              this.openFullScreen(a);
+            }
         }).catch((err) => {
           console.log(err);
         })
       },
+      //获取二维码
+      getCode(data) {
+        this.$axios.post('/api/wxPay/realPay',data,{
+          responseType: "blob"
+        }).then((res) => {
+          const blob = new Blob([res])
+          const url = window.URL.createObjectURL(blob);
+          this.codeUrl = url;
+          this.checkStatus();
+        }).catch((err) => {
+          console.log(err);
+        })
+      },
+      //每隔3s查询一次订单状态
+      checkStatus(status) {
+        let time;
+        if (status) {
+          //请求成功，清除定时器
+          clearTimeout(time);
+          this.closeFullScreen();
+        } else {
+          //否则的话，每隔3秒钟请求一次
+          time = setTimeout(() => {
+            this.inquiryPay();
+          }, 3000);
+        }
+      },
+      //查询订单状态
+      inquiryPay() {
+        this.$axios.get('/api/wxPay/inquiryPay',{
+          params: {
+            orderId: this.orderId
+          }
+        }).then((res) => {
+          console.log(res);
+          if(res.status === 200) {
+            this.checkStatus(res.data);
+          }
+          else {
+            this.$message.error(res.msg);
+          }
+        }).catch((err) => {
+          console.log(err);
+        })
+      }
     },
     beforeMount() {
       this.getGoods();
