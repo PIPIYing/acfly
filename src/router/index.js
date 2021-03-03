@@ -343,7 +343,8 @@ const routes = [
     ]*/
   },
   {
-    path: '/index/pay',
+    path: '/index/' +
+      'pay',
     name: 'Pay',
     component: () => import('../views/payment/pay')
   },

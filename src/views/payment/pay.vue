@@ -178,7 +178,7 @@
                 {{ item.num?item.item + '  *' + item.num:"" }}
               </p>
             </div>
-            <p class="dataSum">商品总额：{{ productSum }}元  {{ invoice?'（含税）':'（不含税）' }}</p>
+            <p class="dataSum">商品总额：{{ productSumChange }}元  {{ invoice?'（含税）':'（不含税）' }}</p>
           </div>
         </div>
         <div class="payStyle">
@@ -205,11 +205,11 @@
               <span class="invoiceWord">发票类型：</span>
               <div class="radioBox">
                 <span class="invoiceWord">增值税普通发票（电子）</span>
-                <input type="radio" name="invoices" id="invoice3" value="1" checked class="invoiceBox">
+                <input type="radio" name="invoices" id="invoice3" value="1" checked class="invoiceBox" @click="invoice3()">
                 <label for="invoice3"></label>
                 <div style="display: inline-block;margin-left: 20px;"></div>
                 <span class="invoiceWord">增值税专用发票（纸质）</span>
-                <input type="radio" name="invoices" id="invoice4" value="0" class="invoiceBox">
+                <input type="radio" name="invoices" id="invoice4" value="0" class="invoiceBox" @click="invoice4()">
                 <label for="invoice4"></label>
               </div>
               <div class="invoiceRemark">（将通过您的邮箱发送到您的账户）</div>
@@ -312,42 +312,10 @@
     data() {
       return {
         showCode: false,
-        tableList: [/*
-          {
-            id: '01',
-            name: 'C9PRO飞行控制器1',
-            picture: '../../assets/images/A9_2.jpg',
-            text: '单参数调参，工业级创新型飞行控制器',
-            price: 4500.0,
-            remark: '无'
-          },
-          {
-            id: '02',
-            name: 'C9PRO飞行控制器2',
-            picture: '../../assets/images/A9_2.jpg',
-            text: '单参数调参，工业级创新型飞行控制器',
-            price: 3500.0,
-            remark: '无'
-          },
-          {
-            id: '03',
-            name: 'C9PRO飞行控制器3',
-            picture: '../../assets/images/A9_2.jpg',
-            text: '单参数调参，工业级创新型飞行控制器',
-            price: 2500.0,
-            remark: '无'
-          },
-          {
-            id: '04',
-            name: 'C9PRO飞行控制器4',
-            picture: '../../assets/images/A9_2.jpg',
-            text: '单参数调参，工业级创新型飞行控制器',
-            price: 1500.0,
-            remark: '无'
-          }*/
-        ],
+        tableList: [],
         productNum: 0,
         productSum: 0,
+        productSumChange: 0,
         cartList: [],
         cartNum: [],
         showList: true,
@@ -381,8 +349,10 @@
           ]*/
         },
         pushValue: false,
-        radioValue1: false,
-        radioValue2: true,
+        radioValue1: '',
+        radioValue2: '',
+        radioValue3: '',
+        radioValue4: '',
         invoiceForm: {
           rise: '12345678',
           bank: '中国银行',
@@ -444,16 +414,24 @@
           this.$message.error('请完整填写您的地址');
         } else {
           this.form.address2 = addValue.province + addValue.city + addValue.area + addValue.add;
-          console.log(this.form);
           this.showAddress = false;
           this.showPayment = true;
         }
+        this.productSumChange = this.productSum;
       },
       toInvoice() {
         this.invoice = true;
+        this.productSumChange = (this.productSum * 1.06).toFixed(1);
       },
       notToInvoice() {
         this.invoice = false;
+        this.productSumChange = this.productSum;
+      },
+      invoice3() {
+        this.productSumChange = (this.productSum * 1.06).toFixed(1);
+      },
+      invoice4() {
+        this.productSumChange = (this.productSum * 1.1).toFixed(1);
       },
       goBack1() {
         this.showAddress = false;
@@ -477,7 +455,11 @@
       },
       getRadio() {
         this.radioValue1 = document.getElementById("invoice1").checked;
-        this.radioValue2 = document.getElementById("invoice3").checked;
+        this.radioValue2 = document.getElementById("invoice2").checked;
+        if(this.invoice) {
+          this.radioValue3 = document.getElementById("invoice3").checked;
+          this.radioValue4 = document.getElementById("invoice4").checked;
+        }
       },
       openFullScreen(a) {
         this.payType = a;
@@ -491,7 +473,6 @@
           this.showPayment = false;
           this.showList = true;
         }, 3000);
-
       },
       //构建数组对象
       createArr(a, b) {
@@ -507,26 +488,33 @@
         let list2 = f1('num', b)
         this.cartList = mergeArr(getMaxArr(a, b), list2)
         console.log(list1);
-        console.log(list2);
-        console.log(this.cartList);
+        /*console.log(list2);
+        console.log(this.cartList);*/
       },
       getGoods() {
-        this.$axios.get('/api/goods/goods').then((res) => {
+        this.$axios.get('/goods/goods').then((res) => {
           if(res.status === 200) {
+            let data = res.data;
+            console.log(data);
             let a = [];
-            let b = [];
-            let c = [];
-            this.tableList = res.data;
-            for(let i=0; i<this.tableList.length; i++) {
+            let b = [];  //a b为拼接数组
+            let c = [];  //已上架商品
+            this.tableList = data;
+            for(let i=0, j=0; i<data.length; i++) {
               //判断商品是否上架
-              if(this.tableList[i].status) {
-                c.push(this.tableList[i]);
+              if(data[i].status === '1') {
+                //上架商品
+                c.push(data[j]);
+                j++;
                 //拼接图片地址
                 c[i].imageUrl = "http://borui.cn.utools.club/static/images/" + c[i].imageUrl;
                 a.push(this.tableList[i].productName);
                 b[i] = 0;
               }
             }
+            this.tableList = c;
+            console.log("test");
+            console.log(c);
             this.createArr(a, b);
           }
           else {
@@ -540,17 +528,33 @@
       payStyle(a) {
         let product = [];
         let type = '支付宝';
+        let invoiceType = '';
         let j = 0;
+        //处理订单数组
         for(let i=0; i<this.cartList.length; i++) {
           if(this.cartList[i].num !== 0) {
             product[j] = this.cartList[i];
             j++;
           }
         }
+        this.getRadio();
+        //处理发票类型
+        if(this.radioValue1) {
+          //需要发票
+          if(this.radioValue3) {
+            invoiceType = 3;
+          } else if(this.radioValue4) {
+            invoiceType = 4;
+          }
+        } else if(this.radioValue2) {
+          //不需要发票
+          invoiceType = 2;
+        }
+        //处理支付类型
         if(a) {
           type = '微信';
         }
-        this.$axios.post('/api/wxPay/pay',{
+        this.$axios.post('/wxPay/pay',{
           product: product,
           userName: this.form.name,
           phone: this.form.phone,
@@ -558,8 +562,8 @@
           address: this.form.address2,
           remark: this.form.remark,
           flag: this.pushValue,
-          invoiceFlag: this.radioValue1,
-          invoiceType: this.radioValue2,
+          /*invoiceFlag: this.radioValue1,*/
+          invoiceType: invoiceType,
           invoiceTitle: this.invoiceForm.rise,
           account: this.invoiceForm.account,
           taxId: this.invoiceForm.tax,
@@ -577,7 +581,7 @@
       },
       //获取二维码
       getCode(data) {
-        this.$axios.post('/api/wxPay/realPay',data,{
+        this.$axios.post('/wxPay/realPay',data,{
           responseType: "blob"
         }).then((res) => {
           const blob = new Blob([res])
@@ -604,7 +608,7 @@
       },
       //查询订单状态
       inquiryPay() {
-        this.$axios.get('/api/wxPay/inquiryPay',{
+        this.$axios.get('/wxPay/inquiryPay',{
           params: {
             orderId: this.orderId
           }
@@ -619,10 +623,26 @@
         }).catch((err) => {
           console.log(err);
         })
+      },
+      //计数浏览人数
+      getCount() {
+        this.$axios.get('/count/count',).then((res) => {
+          if(res.status === 200) {
+            console.log(res);
+          }
+          else {
+            this.$message.error(res.msg);
+          }
+        }).catch((err) => {
+          console.log(err);
+        })
       }
     },
     beforeMount() {
       this.getGoods();
+    },
+    mounted() {
+      this.getCount();
     }
   }
 </script>

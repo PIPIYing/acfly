@@ -32,7 +32,7 @@
           <router-link to="/index/skill" target="_blank">技术支持</router-link>
           <div class="navList">
             <div class="item">
-              <a href="#">地面站下载</a>
+              <p @click="downloadZip()" style="color: black;">地面站下载</p>
             </div>
             <div class="item">
               <router-link to="/index/skill" target="_blank">技术文档</router-link>
@@ -65,7 +65,7 @@
           <p class="title">购买渠道</p>
           <a href="https://shop227604841.taobao.com/?spm=2013.1.1000126.2.315331437MJ3XW" target="_blank">官方商城</a>
           <router-link to="/index/develop">经销合作</router-link>
-          <a href="#">地面站下载</a>
+          <p style="font-size: 18px;" @click="downloadZip()">地面站下载</p>
         </div>
         <div class="footerList">
           <p class="title">安全飞行</p>
@@ -124,6 +124,31 @@
           this.sizeInfo.width = window.innerWidth - 5 + 'px';
         }
         console.log(window.outerWidth,window.innerWidth,this.sizeInfo.width);
+      },
+      downloadZip() {
+        let url = 'http://borui.test.utools.club/file/download/地面站.zip';
+        window.open(url);
+        /*let xhr = new XMLHttpRequest();
+        xhr.open("get", url, true);
+        xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhr.send();
+        xhr.responseType = "blob";
+        xhr.onload = function () {
+          if (this.status === 200) {
+            var blob = this.response;
+            let href = window.URL.createObjectURL(blob);
+            let link = document.createElement("a");
+            link.href = href;
+            link.download = "地面站"+'.zip';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            window.URL.revokeObjectURL(href);
+          }
+          else {
+            alert("出现了未知的错误!");
+          }
+        }*/
       }
     },
     created(){

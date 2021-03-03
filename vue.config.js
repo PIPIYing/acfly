@@ -1,14 +1,14 @@
 module.exports = {
-  devServer: {
+/*  devServer: {
       proxy : {
           "/api" : {
               target: "http://borui.cn.utools.club",
-              /*changeOrigin: true,*/
-              /*ws : true,*/
+              /!*changeOrigin: true,*!/
+              /!*ws : true,*!/
               pathRewrite: {
                 '^/api': ''
               }
           }
       }
-  }
+  }*/
 }

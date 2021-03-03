@@ -12,7 +12,7 @@ Vue.use(ElementUI);
 Vue.component('v-distpicker', VDistpicker)
 
 Vue.prototype.$axios = axios;
-/*axios.defaults.baseURL = 'http://borui.cn.utools.club';*/
+axios.defaults.baseURL = 'http://borui.test.utools.club';
 
 new Vue({
   router,
