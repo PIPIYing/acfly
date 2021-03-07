@@ -63,9 +63,12 @@
         </div>
         <div class="footerList">
           <p class="title">购买渠道</p>
+<!--
           <a href="https://shop227604841.taobao.com/?spm=2013.1.1000126.2.315331437MJ3XW" target="_blank">官方商城</a>
+-->
+          <router-link to="/index/pay" target="_blank">立即购买</router-link>
           <router-link to="/index/develop">经销合作</router-link>
-          <p style="font-size: 18px;" @click="downloadZip()">地面站下载</p>
+          <p style="font-size: 18px;color: rgba(255,255,255,0.4);" @click="downloadZip()">地面站下载</p>
         </div>
         <div class="footerList">
           <p class="title">安全飞行</p>
@@ -126,9 +129,10 @@
         console.log(window.outerWidth,window.innerWidth,this.sizeInfo.width);
       },
       downloadZip() {
-        let url = 'http://borui.test.utools.club/file/download/地面站.zip';
+        let url = 'https://acfly.cn/background/file/download/地面站.zip';
         window.open(url);
-        /*let xhr = new XMLHttpRequest();
+        /*let url = 'https://acfly.cn/background/file/download/地面站.rar'
+        let xhr = new XMLHttpRequest();
         xhr.open("get", url, true);
         xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         xhr.send();
@@ -139,7 +143,7 @@
             let href = window.URL.createObjectURL(blob);
             let link = document.createElement("a");
             link.href = href;
-            link.download = "地面站"+'.zip';
+            link.download = "/地面站"+'.rar';
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
@@ -149,9 +153,23 @@
             alert("出现了未知的错误!");
           }
         }*/
+      },
+      //计数浏览人数
+      getCount() {
+        this.$axios.get('/count/count',).then((res) => {
+          if(res.status === 200) {
+            console.log(res);
+          }
+          else {
+            this.$message.error(res.msg);
+          }
+        }).catch((err) => {
+          console.log(err);
+        })
       }
     },
     created(){
+      this.getCount();
       window.addEventListener('resize', this.getInfo); //注册监听器
       this.getInfo() //页面创建时先调用一次
     },

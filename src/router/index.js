@@ -6,7 +6,7 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '*',
-    redirect: '/index/pay'
+    redirect: '/index/intro'
   },
   {
     path: '/index',
@@ -117,6 +117,11 @@ const routes = [
         path: 'document_update',
         name: 'document_update',
         component: () => import('../views/skill/document_v3/document_update')
+      },
+      {
+        path: 'document_video',
+        name: 'document_video',
+        component: () => import('../views/skill/document_v3/document_video')
       },
     ]
     /*children: [

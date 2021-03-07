@@ -1,6 +1,6 @@
 <template>
   <div id="document_update">
-    <div id="update_C9">
+<!--    <div id="update_C9">
       <div class="box">
         <p class="title">C9固件说明</p>
         <p>A9-1.6.1-official-20201215.hex版本固件说明：</p>
@@ -53,6 +53,18 @@
           </div>
         </div>
       </div>
+    </div>-->
+    <div id="update_C9">
+      <div class="box">
+        <p class="title">C9固件说明</p>
+
+      </div>
+    </div>
+    <div id="update_A9">
+      <div class="box">
+        <p class="title">A9固件说明</p>
+
+      </div>
     </div>
   </div>
 </template>
@@ -63,7 +75,27 @@
     data() {
       return {}
     },
-    methods: {}
+    methods: {
+      getZip() {
+        this.$axios.get('/file/zip').then((res) => {
+          if(res.status === 200) {
+            this.downloadData = res.data;
+          }
+          else {
+            this.$message.error(res.msg);
+          }
+        }).catch((err) => {
+          console.log(err);
+        })
+      },
+      downloadZip() {
+        let url = 'https://acfly.cn/background/file/download/地面站.zip';
+        window.open(url);
+      },
+    },
+    beforeMount() {
+      this.getZip();
+    }
   }
 </script>
 

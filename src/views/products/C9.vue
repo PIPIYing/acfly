@@ -245,7 +245,10 @@
     </div>
     <div class="btnBox">
       <div class="btn">
+<!--
         <a href="https://item.taobao.com/item.htm?spm=a1z10.1-c.w4004-23273774756.5.78dc4a92ubEpVX&id=631387331308" target="_blank">立即购买</a>
+-->
+        <router-link to="/index/pay" target="_blank" style="color: #fff;">立即购买</router-link>
       </div>
     </div>
   </div>

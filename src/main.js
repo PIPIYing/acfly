@@ -12,7 +12,7 @@ Vue.use(ElementUI);
 Vue.component('v-distpicker', VDistpicker)
 
 Vue.prototype.$axios = axios;
-axios.defaults.baseURL = 'http://borui.test.utools.club';
+axios.defaults.baseURL = 'https://acfly.cn/background';
 
 new Vue({
   router,
@@ -22,6 +22,9 @@ new Vue({
 
 //请求拦截器
 axios.interceptors.request.use((config) => {
+  if (localStorage.token) { //判断token是否存在
+    config.headers.token = localStorage.token;  //将token设置成请求头
+  }
   return config;
 }, function (error) {
   return Promise.reject(error);
@@ -30,13 +33,13 @@ axios.interceptors.request.use((config) => {
 //响应拦截器
 axios.interceptors.response.use((config) => {
   const data = config.data;
+/*  const code = data.state;
+  if(code === false) {
+    alert("登录已过期，请重新登录后再访问主页");
+    location.href = '/login'
+  }*/
   return data;
 }, function (error) {
-  /*const code = error.response.data.code;
-  if(code === 401) {
-    alert("登录已过期，请重新登录后再访问主页");
-    location.href = '/login';
-  }*/
   return Promise.reject(error);
 });
 

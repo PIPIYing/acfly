@@ -362,9 +362,6 @@
                   </el-menu-item>
                 </el-menu-item-group>
               </el-submenu>
-              <!--<el-submenu index="/index/skill/document_C9#3">
-                <a href="#C9_3" slot="title">3 遥控器校准</a>
-              </el-submenu>-->
               <el-menu-item index="/index/skill/document_C9#3">
                 <a href="#C9_3" slot="title">3 遥控器校准</a>
               </el-menu-item>
@@ -384,7 +381,7 @@
                 <a href="#C9_8" slot="title">8 陀螺校准</a>
               </el-menu-item>
               <el-menu-item index="/index/skill/document_C9#9">
-                <a href="#C9_9" slot="title">9 电压检测参数校准</a>
+                <a href="#C9_9" slot="title">9 标准电压和电量电压设置(必须设置)</a>
               </el-menu-item>
               <el-menu-item index="/index/skill/document_C9#10">
                 <a href="#C9_10" slot="title">10 解锁上锁</a>
@@ -396,7 +393,10 @@
                     <a href="#C9_11_1">11.1 SD卡更新固件(推荐)</a>
                   </el-menu-item>
                   <el-menu-item index="/index/skill/document_C9">
-                    <a href="#C9_11_2">11.2  USB更新固件</a>
+                    <a href="#C9_11_2">11.2  USB更新飞控固件</a>
+                  </el-menu-item>
+                  <el-menu-item index="/index/skill/document_C9">
+                    <a href="#C9_11_3">11.3  BootLoader固件更新</a>
                   </el-menu-item>
                 </el-menu-item-group>
               </el-submenu>
@@ -724,6 +724,17 @@
                 <a href="#update_A9">A9</a>
               </el-menu-item>
             </el-menu-item-group>
+          </el-submenu>
+          <el-submenu index="/index/skill/document_video">
+            <a href="#video_C9" slot="title">视频教程</a>
+            <!--<el-menu-item-group>
+              <el-menu-item index="/index/skill/document_video">
+                <a href="#video_C9">C9</a>
+              </el-menu-item>
+              <el-menu-item index="/index/skill/document_video">
+                <a href="#video_A9">A9</a>
+              </el-menu-item>
+            </el-menu-item-group>-->
           </el-submenu>
         </el-menu>
       </div>

@@ -270,7 +270,7 @@
               </p>
             </div>
           </div>
-          <p>订单总额：{{ productSum }}元</p>
+          <p>订单总额：{{ productSumChange }}元</p>
           <img :src=codeUrl alt="" style="margin-left: 40px;">
         </div>
         <div class="scan" @click="closeFullScreen">打开{{ payType?'微信':'支付宝' }}扫一扫，立即付款</div>
@@ -290,7 +290,7 @@
               </p>
             </div>
           </div>
-          <p>订单总额：{{ productSum }}元 商品信息已发至您的手机 请查收核对</p>
+          <p>订单总额：{{ productSumChange }}元 商品信息已发至您的手机 请查收核对</p>
           <p>物流信息将通过短信或电话的方式发送到您的手机上，请注意查收</p>
         </div>
         <div class="back">
@@ -310,6 +310,42 @@
     name: "pay",
     components: { VDistpicker },
     data() {
+      //姓名 电话 邮箱校验
+      var nameCheck = (rule, value, callback) => {
+        if(!value) {
+          callback(new Error('姓名不能为空'));
+          this.nameRule = false;
+        } else {
+          this.nameRule = true;
+        }
+        console.log(rule, value, callback);
+      };
+      var phoneCheck = (rule, value, callback) => {
+        if(!value) {
+          callback(new Error('电话不能为空'));
+          this.phoneRule = false;
+        } else if(!/^(\+?0?86-?)?1[3-9]\d{9}$/.test(value)) {
+          /*  /^(\+?0?86\-?)?1[3-9]\d{9}$/  */
+          callback(new Error('您输入的电话不正确，请重新输入'));
+          this.phoneRule = false;
+        } else {
+          this.phoneRule = true;
+        }
+        console.log(rule, value, callback);
+      };
+      var emailCheck = (rule, value, callback) => {
+        if(!value) {
+          callback(new Error('邮箱不能为空'));
+          this.emailRule = false;
+        } else if(!/^([A-Za-z0-9_\-.\u4e00-\u9fa5])+@([A-Za-z0-9_\-.])+\.([A-Za-z]{2,8})$/.test(value)) {
+          /*  /^([A-Za-z0-9_\-\.\u4e00-\u9fa5])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,8})$/  */
+          callback(new Error('您输入的邮箱不正确，请重新输入'));
+          this.emailRule = false;
+        } else {
+          this.emailRule = true;
+        }
+        console.log(rule, value, callback);
+      };
       return {
         showCode: false,
         tableList: [],
@@ -322,42 +358,45 @@
         showAddress: false,
         showPayment: false,
         form: {
-          name: '测试1号',
-          phone: '19924338329',
-          email: '19924338329@163.com',
+          name: '',
+          phone: '',
+          email: '',
           address1: {
-            province: '广东省',
-            city: '广州市',
-            area: '番禺区',
-            add: '外环西路生活东区'
+            province: '',
+            city: '',
+            area: '',
+            add: ''
           },
           address2: '',
-          remark: '无'
+          remark: ''
         },
         rules: {
           name: [
-            { required: true, message: '请输入您的姓名', trigger: 'blur' }
+            { required: true, validator: nameCheck, trigger: 'blur' }
           ],
           phone: [
-            { required: true, message: '请输入您的电话', trigger: 'blur' }
+            { required: true, validator: phoneCheck, trigger: 'blur' }
           ],
           email: [
-            { required: true, message: '请输入您的邮箱', trigger: 'blur' }
+            { required: true, validator: emailCheck, trigger: 'blur' }
           ]/*,
           add: [
             { required: true, message: '请输入详细地址', trigger: 'blur' }
           ]*/
         },
+        nameRule: false,
+        phoneRule: false,
+        emailRule: false,
         pushValue: false,
         radioValue1: '',
         radioValue2: '',
         radioValue3: '',
         radioValue4: '',
         invoiceForm: {
-          rise: '12345678',
-          bank: '中国银行',
-          tax: '1234567890',
-          account: '0987654321'
+          rise: '',
+          bank: '',
+          tax: '',
+          account: ''
         },
         invoiceRules: {},
         invoice: false,
@@ -410,7 +449,13 @@
       },
       nextToPayment() {
         var addValue = this.form.address1;
-        if(addValue.province==='' || addValue.city==='' || addValue.area==='' || addValue.add==='') {
+        if(!this.nameRule) {
+          this.$message.error('请正确填写您的姓名');
+        } else if(!this.phoneRule) {
+          this.$message.error('请正确填写您的电话');
+        } else if(!this.emailRule) {
+          this.$message.error('请正确填写您的邮箱');
+        } else if(addValue.province==='' || addValue.city==='' || addValue.area==='' || addValue.add==='') {
           this.$message.error('请完整填写您的地址');
         } else {
           this.form.address2 = addValue.province + addValue.city + addValue.area + addValue.add;
@@ -467,11 +512,17 @@
         this.fullscreen = true;
       },
       closeFullScreen() {
+        this.codeUrl = '';
         this.paySuccess = false;
         setTimeout(() => {
           this.fullscreen = false;
           this.showPayment = false;
           this.showList = true;
+          this.cartList = [];
+          this.cartNum = [];
+          this.productNum = 0;
+          this.productSum = 0;
+          this.productSumChange = 0;
         }, 3000);
       },
       //构建数组对象
@@ -488,14 +539,11 @@
         let list2 = f1('num', b)
         this.cartList = mergeArr(getMaxArr(a, b), list2)
         console.log(list1);
-        /*console.log(list2);
-        console.log(this.cartList);*/
       },
       getGoods() {
         this.$axios.get('/goods/goods').then((res) => {
           if(res.status === 200) {
             let data = res.data;
-            console.log(data);
             let a = [];
             let b = [];  //a b为拼接数组
             let c = [];  //已上架商品
@@ -507,14 +555,14 @@
                 c.push(data[j]);
                 j++;
                 //拼接图片地址
-                c[i].imageUrl = "http://borui.cn.utools.club/static/images/" + c[i].imageUrl;
+                c[i].imageUrl = "http://acfly.cn:8888/static/images/" + c[i].imageUrl;
                 a.push(this.tableList[i].productName);
                 b[i] = 0;
+                //修改价格
+                c[i].productPrice = c[i].productPrice / 100;
               }
             }
             this.tableList = c;
-            console.log("test");
-            console.log(c);
             this.createArr(a, b);
           }
           else {
@@ -623,26 +671,10 @@
         }).catch((err) => {
           console.log(err);
         })
-      },
-      //计数浏览人数
-      getCount() {
-        this.$axios.get('/count/count',).then((res) => {
-          if(res.status === 200) {
-            console.log(res);
-          }
-          else {
-            this.$message.error(res.msg);
-          }
-        }).catch((err) => {
-          console.log(err);
-        })
       }
     },
     beforeMount() {
       this.getGoods();
-    },
-    mounted() {
-      this.getCount();
     }
   }
 </script>

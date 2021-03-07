@@ -478,7 +478,8 @@
         <p class="title1">2.5 连接USB</p>
         <ul>
           <li>用USB-TYPEC线连接配套的USB转接板，转接板另一端是MX1.25-4P插头连接至飞控USB标识口。</li>
-          <li>飞控通过USB和电脑连接后，电脑会出现一个虚拟串口和一个U盘，串口用于连接地面站，U盘是飞控内部的SD卡，可用于导出POS记录和飞行日志(log)和更新固件(参考11.1节)。</li>
+          <li>飞控通过USB和电脑连接后，电脑会出现一个虚拟串口和一个U盘，串口用于连接地面站，U盘是飞控内部的SD卡，可用于导出POS记录、飞行日志(log)、ubx文件和更新固件(参考11.1节)。</li>
+          <li>飞控检测到USB连接则停止SD卡记录，保证记录文件的一致性和可靠性。</li>
         </ul>
       </div>
       <div class="box" id="C9_2_6">
@@ -569,12 +570,14 @@
           <img src="../../../assets/images/document_C9/007.png" alt=""/>
         </div>
         <p class="indent_2">为了安全起见，请先卸桨！！！</p>
-        <ul>
-          <li>打开ACFly调参地面站，将飞控通过USB或者数传与地面站连接，连接成功后，更改参数Init_CalibESC_T值为3，在配置-参数调整-电调参数栏目中，点击校准电调，飞控断电，然后用电池给飞控和电机同时上电，此时电调会发出滴-滴滴滴的声音，表示校准完成。</li>
-          <li>校准完成后将参数Init_CalibESC_T值改回5(开DEO)或者9(关DEO)，自锁桨请设置为9。然后再重新上电一次完成DEO设置。</li>
-          <li>天行者、铂金等非多旋翼电调必须进行起转油门设置，一般天行者起转油门设为15。其他多旋翼电调不用设置起转油门。修改完需点击写入电调参数。</li>
-          <li>非线性系数和电调刹车设置有关，普通电调(未开刹车)非线性系数一般为0.45，开刹车一般为0.1，DJI电调一般为0.75。修改完需点击写入电调参数。</li>
-        </ul>
+        <p>（1）电调油门行程校准</p>
+        <p class="indent_2">打开ACFly调参地面站，将飞控通过USB或者数传与地面站连接。更改参数Init_CalibESC_T值为电调说明书对应的油门行程校准时间(好盈电调设置为1.5秒)，在配置-参数调整-电调参数栏目中，点击校准电调。飞控断电后，用电池给飞控和电机同时上电，然后根据电调说明书上的校准反应判断是否校准成功(好盈电调会发出滴滴-滴的声音)。</p>
+        <p>（2）电调开/关DEO(电调刹车，乐天Pro电调支持)：</p>
+        <p class="indent_2">请先确认使用的电调是否支持DEO功能！！！若不支持请忽略此小节。</p>
+        <p class="indent_2">将参数Init_CalibESC_T值改为电调开或关DEO所需的校准时间(单位：秒，不同电调所需的校准时间可能不一样，具体看自己使用的电调的说明书，自锁桨请关闭DEO)。飞控断电后，用电池给飞控和电机同时上电，然后根据电调说明书上的校准反应判断是否校准成功。</p>
+        <p>（3）起转油门和非线性系数设置：</p>
+        <p class="indent_2">天行者、铂金等非多旋翼电调必须进行起转油门设置，一般天行者起转油门设为15。其他多旋翼电调不用设置起转油门。修改完需点击写入电调参数。</p>
+        <p class="indent_2">非线性系数和电调刹车设置有关，普通电调(未开刹车)非线性系数一般为0.45，开刹车一般为0.1，DJI电调一般为0.75。修改完需点击写入电调参数。</p>
       </div>
     </div>
     <div id="C9_6">
@@ -613,8 +616,8 @@
     </div>
     <div id="C9_9">
       <div class="box">
-        <p class="title">9 电压检测参数校准</p>
-        <div class="image">
+        <p class="title">9 标准电压和电量电压设置(必须设置)</p>
+       <!-- <div class="image">
           <img src="../../../assets/images/document_C9/008.png" alt=""/>
         </div>
         <ul>
@@ -622,7 +625,45 @@
           <li>使用USB或者数传连接电脑，选择电池类型和填写电池节数。</li>
           <li>用BB响或者万用表测出电池的准确电压，填写到准确电压栏里，点击校准，然后再点击写入电池参数，等待参数写入成功。</li>
           <li>电流测量系数默认50。</li>
-        </ul>
+        </ul>-->
+        <table class="table1">
+          <tr>
+            <th>参数名</th>
+            <th>定义</th>
+            <th>单位</th>
+            <th>说明</th>
+          </tr>
+          <tr>
+            <td>Bat_VoltMKp</td>
+            <td>电压比例系数</td>
+            <td>V/V</td>
+            <td class="word_left">标准18.4</td>
+          </tr>
+          <tr>
+            <td>Bat_STVoltage</td>
+            <td>电池标准电压</td>
+            <td>V</td>
+            <td class="word_left">默认为11.6，如果检测到的电池电压大于或小于标准电压参数的30%亦无法解锁飞控，不接电压检测则无此限制。<br/>飞行器使用电池的标准电压，如6s电池为22.8v，4S电池为15.2V，3S电池为11.6V。此值用于动态调整姿态控制器b参数。</td>
+          </tr>
+          <tr>
+            <td>Bat_CurrentMKp</td>
+            <td>电流比例系数</td>
+            <td>A/V</td>
+            <td class="word_left">标准50</td>
+          </tr>
+          <tr>
+            <td>Bat_Capacity</td>
+            <td>电池容量</td>
+            <td>mAh</td>
+            <td class="word_left">暂未使用</td>
+          </tr>
+          <tr>
+            <td>Bat_VoltP0 ~ Bat_VoltP10</td>
+            <td>十级电量百分比对应的电压</td>
+            <td>V</td>
+            <td class="word_left">相对Bat_STVoltage的电压偏移值。Bat_VoltP0为电量为0%时的电压偏移值，Bat_VoltP1为电量为10%时的电压偏移值。以此类推至Bat_VoltP10为电量为100%时的电压偏移值。</td>
+          </tr>
+        </table>
       </div>
     </div>
     <div id="C9_10">
@@ -653,13 +694,13 @@
       </div>
       <div class="box" id="C9_11_1">
         <p class="title1">11.1 SD卡更新固件(推荐)</p>
-        <p class="indent_2">飞控用USB连接电脑，电脑会弹出一个U盘(飞控SD卡)，将固件文件(.hex)放进U盘里的ACFLy文件夹中，然后重启飞控，等待固件升级完成，升级过程中飞控蓝灯快闪，此过程需12秒左右。固件更新完会自动删除ACFLy文件夹里的固件，以免下次上电重复更新。</p>
+        <p class="indent_2">飞控用USB连接电脑，电脑会弹出一个U盘(飞控SD卡)，将固件文件(.hex)放进U盘里的ACFLy文件夹中，然后重启飞控，等待固件升级完成，升级过程中飞控蓝灯快闪，此过程需12秒左右。固件更新完会自动删除ACFLy文件夹里的固件，以免下次上电重复更新。 如果SD卡无法更新固件请使用11.2节方法更新固件。</p>
         <div class="image">
           <img src="../../../assets/images/document_C9/011.png" alt=""/>
         </div>
       </div>
       <div class="box" id="C9_11_2">
-        <p class="title1">11.2  USB更新固件</p>
+        <p class="title1">11.2  USB更新飞控固件</p>
         <ul>
           <li>网站下载ACFLY地面站压缩包，其中包括名为DFU驱动的压缩包，解压后安装对应的版本。Win10系统安装win8.1版本。</li>
           <li>打开ACFLY地面站，点击配置–固件更新–浏览 双击选择固件(.hex)</li>
@@ -670,6 +711,12 @@
         <div class="image">
           <img src="../../../assets/images/document_C9/012.png" alt=""/>
         </div>
+      </div>
+      <div class="box" id="C9_11_3">
+        <p class="title1">11.3  BootLoader固件更新</p>
+        <ul>
+          <li>飞控使用USSB连接上电脑后会弹出一个U盘，打开ACFLY文件夹，把BootLoader固件放进BootLoaderUpdate文件夹里，然后给飞控重新上电。</li>
+        </ul>
       </div>
     </div>
     <div id="C9_12">
@@ -719,7 +766,7 @@
             <td>Init_CalibESC_T</td>
             <td>电调校准延时</td>
             <td>秒</td>
-            <td class="word_left">3：电调校准<br/>5：电调开 DEO<br/>9：电调关 DEO</td>
+            <td class="word_left">1.5：电调校准<br/>5：电调开 DEO<br/>9：电调关 DEO</td>
           </tr>
           <tr>
             <td>Bat_VoltMKp</td>
@@ -879,27 +926,147 @@
           </tr>
           <tr>
             <td>GPS0_delay<br/>GPS1_delay(RTK)</td>
-            <td>GPS延时</td>
+            <td>GPS/RTK延时</td>
             <td>s</td>
-            <td class="word_left">默认0.1<br/>M8N更新频率为5Hz，延时为0.1<br/>F9P更新频率为10Hz，延时为0.05</td>
+            <td class="word_left">默认0.1<br/>M8N： 0.1<br/>RTK： 0.05</td>
           </tr>
           <tr>
             <td>GPS0_GNSS<br/>GPS1_ GNSS (RTK)</td>
-            <td>GPS卫星配置</td>
+            <td>GPS/RTK卫星配置</td>
             <td></td>
-            <td class="word_left">默认0，不改变<br/>GPS+GLONASS:  65<br/>GPS+GLONASS+GALILEO:  69<br/>GPS+BEIDOU:  9<br/>GPS+BEIDOU+GALILEO: 13(M8N推荐)<br/>GPS+GLONASS+BEIDOU+GALILEO: 77(仅F9P适用)</td>
+            <td class="word_left">默认0，不改变<br/>GPS+GLONASS:  65<br/>GPS+GLONASS+GALILEO:  69<br/>GPS+BEIDOU:  9<br/>GPS+BEIDOU+GALILEO: 13(M8N推荐)<br/>GPS+GLONASS+BEIDOU+GALILEO: 77(仅F9P/RTK适用)</td>
           </tr>
           <tr>
-            <td>LK_Port7Baud</td>
-            <td>数传波特率(UART7)</td>
+            <td>Lk_Uart1Func</td>
+            <td>串口1功能</td>
             <td></td>
-            <td class="word_left">默认115200</td>
+            <td class="word_left">0：无功能<br/>1：数传<br/>12：gps<br/>13：rtk<br/>32：LC302光流<br/>33：LC306光流<br/>34：JL32xx光流<br/>35：GL9306光流<br/>52：TFMini定高<br/>默认：52；<br/>范围：0 - 255。</td>
           </tr>
           <tr>
-            <td>Aux_1Func-<br/>Aux_11Func</td>
-            <td>对应飞控C1-C11通道 </td>
+            <td>Lk_Uart1Param</td>
+            <td>串口1参数</td>
             <td></td>
-            <td class="word_left">1-16: 映射遥控器对应通。1-16:对应遥控通道1-16<br/>25-40: 用遥控器对应通道进行相机快门触发，25-40对应遥控通道1-16。<br/>49-64: 用遥控器对应通道进行云台控制。49-64对应遥控通道1-16。</td>
+            <td class="word_left">如果该串口为数传功能，则此参数为波特率(1000以上的波特率)；<br/>如果该串口为光流接口，则此参数为光流方向：( 飞控坐标系：前左上(XYZ)） <br/>0：光流坐标系和飞控坐标系一样;<br/>1：飞控X轴 = 光流Y轴；飞控Y轴 = -光流X轴；<br/>2：飞控X轴 = -光流X轴； 飞控Y轴 = -光流Y轴；<br/>3：飞控X轴 = -光流Y轴； 飞控Y轴 = 光流X轴；<br/>默认：0；<br/>范围：0 - 255。</td>
+          </tr>
+          <tr>
+            <td>Lk_Uart3Func</td>
+            <td>串口3功能 (C9 Pro飞控请勿修改此参数)</td>
+            <td></td>
+            <td class="word_left">0：无功能<br/>1：数传<br/>12：gps<br/>13：rtk<br/>32：LC302光流<br/>33：LC306光流<br/>34：JL32xx光流<br/>35：GL9306光流<br/>52：TFMini定高<br/>默认：13；<br/>范围：0 - 255。</td>
+          </tr>
+          <tr>
+            <td>Lk_Uart3Param</td>
+            <td>串口3参数 (C9 Pro飞控请勿修改此参数)</td>
+            <td></td>
+            <td class="word_left">如果该串口为数传功能，则此参数为波特率(1000以上的波特率)；<br/>如果该串口为光流接口，则此参数为光流方向：( 飞控坐标系：前左上(XYZ)） <br/>0：光流坐标系和飞控坐标系一样;<br/>1：飞控X轴 = 光流Y轴；飞控Y轴 = -光流X轴；<br/>2：飞控X轴 = -光流X轴； 飞控Y轴 = -光流Y轴；<br/>3：飞控X轴 = -光流Y轴； 飞控Y轴 = 光流X轴；<br/>默认：0；<br/>范围：0 - 255。</td>
+          </tr>
+          <tr>
+            <td>Lk_Uart5Func</td>
+            <td>串口5功能</td>
+            <td></td>
+            <td class="word_left">0：无功能<br/>1：数传<br/>12：gps<br/>13：rtk<br/>32：LC302光流<br/>33：LC306光流<br/>34：JL32xx光流<br/>35：GL9306光流<br/>52：TFMini定高<br/>默认：35；<br/>范围：0 - 255。</td>
+          </tr>
+          <tr>
+            <td>Lk_Uart5Param</td>
+            <td>串口5参数</td>
+            <td></td>
+            <td class="word_left">如果该串口为数传功能，则此参数为波特率(1000以上的波特率)；<br/>如果该串口为光流接口，则此参数为光流方向：( 飞控坐标系：前左上(XYZ)） <br/>0：光流坐标系和飞控坐标系一样;<br/>1：飞控X轴 = 光流Y轴；飞控Y轴 = -光流X轴；<br/>2：飞控X轴 = -光流X轴； 飞控Y轴 = -光流Y轴；<br/>3：飞控X轴 = -光流Y轴； 飞控Y轴 = 光流X轴；<br/>默认：0；<br/>范围：0 - 255。</td>
+          </tr>
+          <tr>
+            <td>Lk_Uart7Func</td>
+            <td>串口7功能</td>
+            <td></td>
+            <td class="word_left">0：无功能<br/>1：数传<br/>12：gps<br/>13：rtk<br/>32：LC302光流<br/>33：LC306光流<br/>34：JL32xx光流<br/>35：GL9306光流<br/>52：TFMini定高<br/>默认：1；<br/>范围：0 - 255。</td>
+          </tr>
+          <tr>
+            <td>Lk_Uart7Param</td>
+            <td>串口7参数</td>
+            <td></td>
+            <td class="word_left">如果该串口为数传功能，则此参数为波特率(1000以上的波特率)；<br/>如果该串口为光流接口，则此参数为光流方向：( 飞控坐标系：前左上(XYZ)） <br/>0：光流坐标系和飞控坐标系一样;<br/>1：飞控X轴 = 光流Y轴；飞控Y轴 = -光流X轴；<br/>2：飞控X轴 = -光流X轴； 飞控Y轴 = -光流Y轴；<br/>3：飞控X轴 = -光流Y轴； 飞控Y轴 = 光流X轴；<br/>默认：57600；<br/>范围：0 - 255。</td>
+          </tr>
+          <tr>
+            <td>Lk_Uart8Func</td>
+            <td>串口8功能</td>
+            <td></td>
+            <td class="word_left">0：无功能<br/>1：数传<br/>12：gps<br/>13：rtk<br/>32：LC302光流<br/>33：LC306光流<br/>34：JL32xx光流<br/>35：GL9306光流<br/>52：TFMini定高<br/>默认：12；<br/>范围：0 - 255。</td>
+          </tr>
+          <tr>
+            <td>Lk_Uart8Param</td>
+            <td>串口8参数</td>
+            <td></td>
+            <td class="word_left">如果该串口为数传功能，则此参数为波特率(1000以上的波特率)；<br/>如果该串口为光流接口，则此参数为光流方向：( 飞控坐标系：前左上(XYZ)） <br/>0：光流坐标系和飞控坐标系一样;<br/>1：飞控X轴 = 光流Y轴；飞控Y轴 = -光流X轴；<br/>2：飞控X轴 = -光流X轴； 飞控Y轴 = -光流Y轴；<br/>3：飞控X轴 = -光流Y轴； 飞控Y轴 = 光流X轴；<br/>默认：0；<br/>范围：0 - 255。</td>
+          </tr>
+          <tr>
+            <td>Aux_1Func</td>
+            <td>对应飞控C1通道</td>
+            <td></td>
+            <td class="word_left">PWM输出，对应飞控C1通道，单位：无；<br/>1-16： 映射遥控器对应通道：<br/>1：在PWM通道1映射遥控器通道1信号值<br/>2：在PWM通道1映射遥控器通道2信号值<br/>...<br/>25-40: 用遥控器对应通道进行相机快门触发：<br/>25：用遥控器通道1在PWM通道1控制相机快门<br/>26：用遥控器通道2在PWM通道1控制相机快门<br/>...<br/>49-64: 用遥控器对应通道进行云台控制：<br/>49：用遥控器通道1在PWM通道1进行云台控制。<br/>50：用遥控器通道2在PWM通道1进行云台控制。<br/>...</td>
+          </tr>
+          <tr>
+            <td>Aux_2Func</td>
+            <td>对应飞控C2通道</td>
+            <td></td>
+            <td class="word_left">PWM输出，对应飞控C2通道，单位：无；<br/>1-16： 映射遥控器对应通道：<br/>1：在PWM通道2映射遥控器通道1信号值<br/>2：在PWM通道2映射遥控器通道2信号值<br/>...<br/>25-40: 用遥控器对应通道进行相机快门触发：<br/>25：用遥控器通道1在PWM通道2控制相机快门<br/>26：用遥控器通道2在PWM通道2控制相机快门<br/>...<br/>49-64: 用遥控器对应通道进行云台控制：<br/>49：用遥控器通道1在PWM通道2进行云台控制。<br/>50：用遥控器通道2在PWM通道2进行云台控制。<br/>...</td>
+          </tr>
+          <tr>
+            <td>Aux_3Func</td>
+            <td>对应飞控C3通道</td>
+            <td></td>
+            <td class="word_left">PWM输出，对应飞控C3通道，单位：无；<br/>1-16： 映射遥控器对应通道：<br/>1：在PWM通道3映射遥控器通道1信号值<br/>2：在PWM通道3映射遥控器通道2信号值<br/>...<br/>25-40: 用遥控器对应通道进行相机快门触发：<br/>25：用遥控器通道1在PWM通道3控制相机快门<br/>26：用遥控器通道2在PWM通道3控制相机快门<br/>...<br/>49-64: 用遥控器对应通道进行云台控制：<br/>49：用遥控器通道1在PWM通道3进行云台控制。<br/>50：用遥控器通道2在PWM通道3进行云台控制。<br/>...</td>
+          </tr>
+          <tr>
+            <td>Aux_4Func</td>
+            <td>对应飞控C4通道</td>
+            <td></td>
+            <td class="word_left">PWM输出，对应飞控C4通道，单位：无；<br/>1-16： 映射遥控器对应通道：<br/>1：在PWM通道4映射遥控器通道1信号值<br/>2：在PWM通道4映射遥控器通道2信号值<br/>...<br/>25-40: 用遥控器对应通道进行相机快门触发：<br/>25：用遥控器通道1在PWM通道4控制相机快门<br/>26：用遥控器通道2在PWM通道4控制相机快门<br/>...<br/>49-64: 用遥控器对应通道进行云台控制：<br/>49：用遥控器通道1在PWM通道4进行云台控制。<br/>50：用遥控器通道2在PWM通道4进行云台控制。<br/>...</td>
+          </tr>
+          <tr>
+            <td>Aux_5Func</td>
+            <td>对应飞控C5通道</td>
+            <td></td>
+            <td class="word_left">PWM输出，对应飞控C5通道，单位：无；<br/>1-16： 映射遥控器对应通道：<br/>1：在PWM通道5映射遥控器通道1信号值<br/>2：在PWM通道5映射遥控器通道2信号值<br/>...<br/>25-40: 用遥控器对应通道进行相机快门触发：<br/>25：用遥控器通道1在PWM通道5控制相机快门<br/>26：用遥控器通道2在PWM通道5控制相机快门<br/>...<br/>49-64: 用遥控器对应通道进行云台控制：<br/>49：用遥控器通道1在PWM通道5进行云台控制。<br/>50：用遥控器通道2在PWM通道5进行云台控制。<br/>...</td>
+          </tr>
+          <tr>
+            <td>Aux_6Func</td>
+            <td>对应飞控C6通道</td>
+            <td></td>
+            <td class="word_left">PWM输出，对应飞控C6通道，单位：无；<br/>1-16： 映射遥控器对应通道：<br/>1：在PWM通道6映射遥控器通道1信号值<br/>2：在PWM通道6映射遥控器通道2信号值<br/>...<br/>25-40: 用遥控器对应通道进行相机快门触发：<br/>25：用遥控器通道1在PWM通道6控制相机快门<br/>26：用遥控器通道2在PWM通道6控制相机快门<br/>...<br/>49-64: 用遥控器对应通道进行云台控制：<br/>49：用遥控器通道1在PWM通道6进行云台控制。<br/>50：用遥控器通道2在PWM通道6进行云台控制。<br/>...</td>
+          </tr>
+          <tr>
+            <td>Aux_7Func</td>
+            <td>对应飞控C7通道</td>
+            <td></td>
+            <td class="word_left">PWM输出，对应飞控C7通道，单位：无；<br/>1-16： 映射遥控器对应通道：<br/>1：在PWM通道7映射遥控器通道1信号值<br/>2：在PWM通道7映射遥控器通道2信号值<br/>...<br/>25-40: 用遥控器对应通道进行相机快门触发：<br/>25：用遥控器通道1在PWM通道7控制相机快门<br/>26：用遥控器通道2在PWM通道7控制相机快门<br/>...<br/>49-64: 用遥控器对应通道进行云台控制：<br/>49：用遥控器通道1在PWM通道7进行云台控制。<br/>50：用遥控器通道2在PWM通道7进行云台控制。<br/>...</td>
+          </tr>
+          <tr>
+            <td>Aux_8Func</td>
+            <td>对应飞控C8通道</td>
+            <td></td>
+            <td class="word_left">PWM输出，对应飞控C8通道，单位：无；<br/>1-16： 映射遥控器对应通道：<br/>1：在PWM通道8映射遥控器通道1信号值<br/>2：在PWM通道8映射遥控器通道2信号值<br/>...<br/>25-40: 用遥控器对应通道进行相机快门触发：<br/>25：用遥控器通道1在PWM通道8控制相机快门<br/>26：用遥控器通道2在PWM通道8控制相机快门<br/>...<br/>49-64: 用遥控器对应通道进行云台控制：<br/>49：用遥控器通道1在PWM通道8进行云台控制。<br/>50：用遥控器通道2在PWM通道8进行云台控制。<br/>...</td>
+          </tr>
+          <tr>
+            <td>Aux_9Func</td>
+            <td>对应飞控C9通道</td>
+            <td></td>
+            <td class="word_left">PWM输出，对应飞控C9通道，单位：无；<br/>1-16： 映射遥控器对应通道：<br/>1：在PWM通道9映射遥控器通道1信号值<br/>2：在PWM通道9映射遥控器通道2信号值<br/>...<br/>25-40: 用遥控器对应通道进行相机快门触发：<br/>25：用遥控器通道1在PWM通道9控制相机快门<br/>26：用遥控器通道2在PWM通道9控制相机快门<br/>...<br/>49-64: 用遥控器对应通道进行云台控制：<br/>49：用遥控器通道1在PWM通道9进行云台控制。<br/>50：用遥控器通道2在PWM通道9进行云台控制。<br/>...</td>
+          </tr>
+          <tr>
+            <td>Aux_10Func</td>
+            <td>对应飞控C10通道</td>
+            <td></td>
+            <td class="word_left">PWM输出，对应飞控C10通道，单位：无；<br/>1-16： 映射遥控器对应通道：<br/>1：在PWM通道10映射遥控器通道1信号值<br/>2：在PWM通道10映射遥控器通道2信号值<br/>...<br/>25-40: 用遥控器对应通道进行相机快门触发：<br/>25：用遥控器通道1在PWM通道10控制相机快门<br/>26：用遥控器通道2在PWM通道10控制相机快门<br/>...<br/>49-64: 用遥控器对应通道进行云台控制：<br/>49：用遥控器通道1在PWM通道10进行云台控制。<br/>50：用遥控器通道2在PWM通道10进行云台控制。<br/>...</td>
+          </tr>
+          <tr>
+            <td>Aux_11Func</td>
+            <td>对应飞控C11通道</td>
+            <td></td>
+            <td class="word_left">PWM输出，对应飞控C11通道，单位：无；<br/>1-16： 映射遥控器对应通道：<br/>1：在PWM通道11映射遥控器通道1信号值<br/>2：在PWM通道11映射遥控器通道2信号值<br/>...<br/>25-40: 用遥控器对应通道进行相机快门触发：<br/>25：用遥控器通道1在PWM通道11控制相机快门<br/>26：用遥控器通道2在PWM通道11控制相机快门<br/>...<br/>49-64: 用遥控器对应通道进行云台控制：<br/>49：用遥控器通道1在PWM通道11进行云台控制。<br/>50：用遥控器通道2在PWM通道11进行云台控制。<br/>...</td>
+          </tr>
+          <tr>
+            <td>Aux_12Func</td>
+            <td>对应飞控C12通道</td>
+            <td></td>
+            <td class="word_left">PWM输出，对应飞控C12通道，单位：无；<br/>1-16： 映射遥控器对应通道：<br/>1：在PWM通道12映射遥控器通道1信号值<br/>2：在PWM通道12映射遥控器通道2信号值<br/>...<br/>25-40: 用遥控器对应通道进行相机快门触发：<br/>25：用遥控器通道1在PWM通道12控制相机快门<br/>26：用遥控器通道2在PWM通道12控制相机快门<br/>...<br/>49-64: 用遥控器对应通道进行云台控制：<br/>49：用遥控器通道1在PWM通道12进行云台控制。<br/>50：用遥控器通道2在PWM通道12进行云台控制。<br/>...</td>
           </tr>
         </table>
       </div>
@@ -940,15 +1107,27 @@
     <div id="C9_15">
       <div class="box">
         <p class="title">15 航线任务设置</p>
+        <div class="image">
+          <img src="../../../assets/images/document_C9/015.png" alt=""/>
+        </div>
         <ul>
           <li>飞控使用的是mavlink协议，支持主流开源地面站设置航点，包括Mission Planner、QGC(电脑和手机版都支持)等。最多设置65536个航点。</li>
-          <li>航点设置完成，无人机定位成功(蓝绿交替闪烁)后，模式按钮打到任务模式挡位，若设置的第一个任务是起飞任务(起飞航点)，则解锁无人机即可自动起飞执行任务。 若第一个任务不是起飞任务，则需手动起飞后无人机再自动执行任务。</li>
+          <li>航点设置完成，无人机定位成功(蓝绿交替闪烁)后，模式按钮打到任务模式挡位，若设置的第一个任务是起飞任务，则解锁无人机即可自动起飞执行任务。 若第一个任务不是起飞任务，则需手动起飞后无人机再切换到任务模式。</li>
         </ul>
       </div>
     </div>
     <div id="C9_16">
       <div class="box">
-        <p class="title">16 相机触发拍照配置</p>
+        <p class="title">16 断电/断点续飞</p>
+        <p>（1）断电续飞</p>
+        <p class="indent_2">如果参数MFunc_RstWp0为0(默认)，则在执行任务过程中由于低电量自动返航或人为返航等原因中断任务执行后，飞机会存储当前航点信息，在下一次上电时将此航点设置为第一个任务。如果参数MFunc_RstWp0不为0，则上电后从头开始执行航线任务。</p>
+        <p>（2）断点续飞</p>
+        <p class="indent_2">如果在任务模式过程中打杆干预无人机，无人机会退出任务模式并自动记录断点处的经纬度，再次进入任务模式后飞机会从断点处开始继续执行任务。</p>
+      </div>
+    </div>
+    <div id="C9_17">
+      <div class="box">
+        <p class="title">17 相机触发拍照配置</p>
         <table class="table1">
           <tr>
             <th>参数名</th>
@@ -960,7 +1139,7 @@
             <td>Aux_12Func</td>
             <td>通道12功能，拍照</td>
             <td></td>
-            <td class="word_left">33：相机拍照</td>
+            <td class="word_left">40：相机拍照</td>
           </tr>
           <tr>
             <td>Aux_CamOffPwm</td>
@@ -982,19 +1161,52 @@
           </tr>
           <tr>
             <td>Aux_CamTrigEna</td>
-            <td>热靴触发</td>
+            <td>热靴触发使能</td>
             <td></td>
             <td class="word_left">0：禁用；1：启用</td>
           </tr>
+          <tr>
+            <td>SDLog_PPK</td>
+            <td>PPK记录</td>
+            <td></td>
+            <td>默认：0，更改此参数需重启飞控生效<br/>0：不记录PPK；<br/>1：记录GPS数据；<br/>2：记录RTK数据。</td>
+          </tr>
         </table>
         <ul>
-          <li>地面测试拍照功能可使用MP地面站，在地图上鼠标点击右键选择现在按下相机快门即可，拍照成功POS会记录到飞控内部SD卡中，可插USB导出POS记录查看。</li>
+          <li>地面测试拍照功能可使用ACFLY GCS地面站，数传连接地面站后点击下图的相机图案即可，拍照成功飞控会滴滴提示两声，绿灯闪烁，拍照失败则长鸣一声并显示红灯。拍照成功POS会记录到飞控内部SD卡中，可插USB导出POS记录查看。(插着飞控USB将停止SD卡数据记录，无法写入POS)。</li>
+        </ul>
+        <div class="image">
+          <img src="../../../assets/images/document_C9/016.png" alt=""/>
+        </div>
+      </div>
+    </div>
+    <div id="C9_18">
+      <div class="box">
+        <p class="title">18 POS记录及PPK功能</p>
+        <table class="table1">
+          <tr>
+            <th>参数名</th>
+            <th>定义</th>
+            <th>单位</th>
+            <th>说明</th>
+          </tr>
+          <tr>
+            <td>SDLog_PPK</td>
+            <td>PPK记录</td>
+            <td></td>
+            <td>默认：0，更改此参数需重启飞控生效<br/>0：不记录PPK；<br/>1：记录GPS数据；<br/>2：记录RTK数据。</td>
+          </tr>
+        </table>
+        <ul>
+          <li>PPK记录下需设置如上表所示参数。</li>
+          <li>POS记录将自动采用精度最高的POS进行记录。</li>
+          <li>POS格式兼容大疆精灵4rtk格式，PPK记录文件后缀名为.ubx，使用USB的U盘功能可导出ubx文件和pos文件。</li>
         </ul>
       </div>
     </div>
-    <div id="C9_17">
+    <div id="C9_19">
       <div class="box">
-        <p class="title">17 飞控及定位传感器安装偏移</p>
+        <p class="title">19 飞控及定位传感器安装偏移</p>
         <ul>
           <li>飞控机体坐标系为前左上，前为X轴正方向(机头)，左为Y轴正方向，上为Z轴正方向。偏移坐标系和飞控坐标系相同。单位：cm。偏移有正负，按照坐标系区分。</li>
         </ul>
@@ -1009,37 +1221,37 @@
             <td>POfs_Fc_x</td>
             <td>安装偏移</td>
             <td>cm</td>
-            <td class="word_left">飞控安装x轴距离飞机中心的偏移</td>
+            <td class="word_left">飞控安装距离飞机中心的x轴偏移</td>
           </tr>
           <tr>
             <td>POfs_Fc_y</td>
             <td>安装偏移</td>
             <td>cm</td>
-            <td class="word_left">飞控安装y轴距离飞机中心的偏移</td>
+            <td class="word_left">飞控安装距离飞机中心的y轴偏移</td>
           </tr>
           <tr>
             <td>POfs_Fc_z</td>
             <td>安装偏移</td>
             <td>cm</td>
-            <td class="word_left">飞控安装z轴距离飞机中心的偏移</td>
+            <td class="word_left">飞控安装距离飞机中心的z轴偏移</td>
           </tr>
           <tr>
             <td>POfs_S0_x -<br/>POfs_S15_x</td>
             <td>安装偏移</td>
             <td>cm</td>
-            <td class="word_left">0-15号位置传感器安装x轴距离飞控的偏移</td>
+            <td class="word_left">0-15号位置传感器安装距离飞控的x轴偏移</td>
           </tr>
           <tr>
             <td>POfs_S0_y - <br/>POfs_S15_y</td>
             <td>安装偏移</td>
             <td>cm</td>
-            <td class="word_left">0-15号位置传感器安装y轴距离飞控的偏移</td>
+            <td class="word_left">0-15号位置传感器安装距离飞控的y轴偏移</td>
           </tr>
           <tr>
             <td>POfs_S0_z - <br/>POfs_S15_z</td>
             <td>安装偏移</td>
             <td></td>
-            <td class="word_left"></td>
+            <td class="word_left">0-15号位置传感器安装距离飞控的Z轴偏移</td>
           </tr>
         </table>
         <table class="table1" style="margin-top: 40px;">
@@ -1061,17 +1273,119 @@
           </tr>
           <tr>
             <td>GPS</td>
-            <td>6号</td>
+            <td>7号</td>
           </tr>
           <tr>
             <td>RTK</td>
-            <td>7号</td>
+            <td>6号</td>
           </tr>
           <tr>
             <td>测距(激光/毫米波)</td>
             <td>2号</td>
           </tr>
         </table>
+      </div>
+    </div>
+    <div id="C9_20">
+      <div class="box">
+        <p class="title">20 串口功能配置</p>
+        <p>默认串口7为数传，波特率为Lk_Uart1Param：57600；</p>
+        <table class="table1">
+          <tr>
+            <th>参数名</th>
+            <th>定义</th>
+            <th>单位</th>
+            <th>说明</th>
+          </tr>
+          <tr>
+            <td>Lk_Uart1Func</td>
+            <td>串口1功能</td>
+            <td></td>
+            <td>0：无功能<br/>1：数传<br/>12：gps<br/>13：rtk<br/>32：LC302光流 <br/>33：LC306光流 <br/>34：JL32xx光流 <br/>35：GL9306光流 <br/>52：TFMini定高<br/>默认：52；<br/>范围：0 - 255。</td>
+          </tr>
+          <tr>
+            <td>Lk_Uart1Param</td>
+            <td>串口1参数</td>
+            <td></td>
+            <td>如果该串口为数传功能，则此参数为波特率(1000以上的波特率)；<br/>如果该串口为光流接口，则此参数为光流方向：( 飞控坐标系：前左上(XYZ) ) <br/>0：光流坐标系和飞控坐标系一样; <br/>1：飞控X轴 = 光流Y轴；飞控Y轴 = -光流X轴； <br/>2：飞控X轴 = -光流X轴； 飞控Y轴 = -光流Y轴；<br/>3：飞控X轴 = -光流Y轴； 飞控Y轴 = 光流X轴；<br/>默认：0；<br/>范围：0 - 255。</td>
+          </tr>
+          <tr>
+            <td>Lk_Uart3Func</td>
+            <td>串口3功能(C9 Pro飞控请勿修改此参数)</td>
+            <td></td>
+            <td>0：无功能<br/>1：数传<br/>12：gps<br/>13：rtk<br/>32：LC302光流 <br/>33：LC306光流 <br/>34：JL32xx光流 <br/>35：GL9306光流 <br/>52：TFMini定高<br/>默认：13；<br/>范围：0 - 255。</td>
+          </tr>
+          <tr>
+            <td>Lk_Uart3Param</td>
+            <td>串口3参数 (C9 Pro飞控请勿修改此参数)</td>
+            <td></td>
+            <td>如果该串口为数传功能，则此参数为波特率(1000以上的波特率)；<br/>如果该串口为光流接口，则此参数为光流方向：( 飞控坐标系：前左上(XYZ) ) <br/>0：光流坐标系和飞控坐标系一样; <br/>1：飞控X轴 = 光流Y轴；飞控Y轴 = -光流X轴； <br/>2：飞控X轴 = -光流X轴； 飞控Y轴 = -光流Y轴；<br/>3：飞控X轴 = -光流Y轴； 飞控Y轴 = 光流X轴；<br/>默认：0；<br/>范围：0 - 255。</td>
+          </tr>
+          <tr>
+            <td>Lk_Uart5Func</td>
+            <td>串口5功能</td>
+            <td></td>
+            <td>0：无功能<br/>1：数传<br/>12：gps<br/>13：rtk<br/>32：LC302光流 <br/>33：LC306光流 <br/>34：JL32xx光流 <br/>35：GL9306光流 <br/>52：TFMini定高<br/>默认：35；<br/>范围：0 - 255。</td>
+          </tr>
+          <tr>
+            <td>Lk_Uart5Param</td>
+            <td>串口5参数</td>
+            <td></td>
+            <td>如果该串口为数传功能，则此参数为波特率(1000以上的波特率)；<br/>如果该串口为光流接口，则此参数为光流方向：( 飞控坐标系：前左上(XYZ) ) <br/>0：光流坐标系和飞控坐标系一样; <br/>1：飞控X轴 = 光流Y轴；飞控Y轴 = -光流X轴； <br/>2：飞控X轴 = -光流X轴； 飞控Y轴 = -光流Y轴；<br/>3：飞控X轴 = -光流Y轴； 飞控Y轴 = 光流X轴；<br/>默认：0；<br/>范围：0 - 255。</td>
+          </tr>
+          <tr>
+            <td>Lk_Uart7Func</td>
+            <td>串口7功能</td>
+            <td></td>
+            <td>0：无功能<br/>1：数传<br/>12：gps<br/>13：rtk<br/>32：LC302光流 <br/>33：LC306光流 <br/>34：JL32xx光流 <br/>35：GL9306光流 <br/>52：TFMini定高<br/>默认：1；<br/>范围：0 - 255。</td>
+          </tr>
+          <tr>
+            <td>Lk_Uart7Param</td>
+            <td>串口7参数</td>
+            <td></td>
+            <td>如果该串口为数传功能，则此参数为波特率(1000以上的波特率)；<br/>如果该串口为光流接口，则此参数为光流方向：( 飞控坐标系：前左上(XYZ) ) <br/>0：光流坐标系和飞控坐标系一样; <br/>1：飞控X轴 = 光流Y轴；飞控Y轴 = -光流X轴； <br/>2：飞控X轴 = -光流X轴； 飞控Y轴 = -光流Y轴；<br/>3：飞控X轴 = -光流Y轴； 飞控Y轴 = 光流X轴；<br/>默认：57600；<br/>范围：0 - 255。</td>
+          </tr>
+          <tr>
+            <td>Lk_Uart8Func</td>
+            <td>串口8功能</td>
+            <td></td>
+            <td>0：无功能<br/>1：数传<br/>12：gps<br/>13：rtk<br/>32：LC302光流 <br/>33：LC306光流 <br/>34：JL32xx光流 <br/>35：GL9306光流 <br/>52：TFMini定高<br/>默认：12；<br/>范围：0 - 255。</td>
+          </tr>
+          <tr>
+            <td>Lk_Uart8Param</td>
+            <td>串口8参数</td>
+            <td></td>
+            <td>如果该串口为数传功能，则此参数为波特率(1000以上的波特率)；<br/>如果该串口为光流接口，则此参数为光流方向：( 飞控坐标系：前左上(XYZ) ) <br/>0：光流坐标系和飞控坐标系一样; <br/>1：飞控X轴 = 光流Y轴；飞控Y轴 = -光流X轴； <br/>2：飞控X轴 = -光流X轴； 飞控Y轴 = -光流Y轴；<br/>3：飞控X轴 = -光流Y轴； 飞控Y轴 = 光流X轴；<br/>默认：0；<br/>范围：0 - 255。</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div id="C9_21">
+      <div class="box">
+        <p class="title">21 AUX参数功能</p>
+        <table class="table1">
+          <tr>
+            <th>参数名</th>
+            <th>定义</th>
+            <th>说明</th>
+          </tr>
+          <tr>
+            <td>Aux_1Func-Aux_11Func</td>
+            <td>对应飞控C1-C11通道</td>
+            <td>1-16: 映射遥控器对应通。1-16:对应遥控通道1-16<br/>25-40: 用遥控器对应通道进行相机快门触发，25-40对应遥控通道1-16。<br/>49-64: 用遥控器对应通道进行云台控制。49-64对应遥控通道1-16。
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div id="C9_22">
+      <div class="box">
+        <p class="title">22 低电量报警功能</p>
+        <ul>
+          <li>设置返航电压后(需大于5V)则开启低电量报警功能。</li>
+          <li>检测到的电压(需大于7V)低于返航电压则报警(红灯闪烁+蜂鸣器持续快响)。</li>
+          <li>飞控发送“Low Power”警告提示到上位机。</li>
+        </ul>
       </div>
     </div>
   </div>
