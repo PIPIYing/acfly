@@ -66,9 +66,9 @@
 <!--
           <a href="https://shop227604841.taobao.com/?spm=2013.1.1000126.2.315331437MJ3XW" target="_blank">官方商城</a>
 -->
-          <router-link to="/index/pay" target="_blank">立即购买</router-link>
+          <router-link to="/index/pay" target="_blank">官方商城</router-link>
           <router-link to="/index/develop">经销合作</router-link>
-          <p style="font-size: 18px;color: rgba(255,255,255,0.4);" @click="downloadZip()">地面站下载</p>
+          <p style="font-size: 18px;color: rgba(255,255,255,0.4);cursor: pointer;" @click="downloadZip()">地面站下载</p>
         </div>
         <div class="footerList">
           <p class="title">安全飞行</p>

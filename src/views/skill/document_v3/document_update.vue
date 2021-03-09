@@ -94,14 +94,14 @@
             let name2 = [];  //存放A9视频的名字
             let path2 = [];  //存放A9视频的路径
             for(let i = 0; i<data.length; i++) {
-              if(data[i].videoName.indexOf("C9") != -1) {
+              if(data[i].videoName.indexOf("C9") !== -1) {
                 name1.push(data[i].videoName);
-                describe1.push(data[i].descirbe);
+                describe1.push(data[i].describe);
                 path1.push(data[i].path);
               }
-              if(data[i].videoName.indexOf("A9") != -1) {
+              if(data[i].videoName.indexOf("A9") !== -1) {
                 name2.push(data[i].videoName);
-                describe2.push(data[i].descirbe);
+                describe2.push(data[i].describe);
                 path2.push(data[i].path);
               }
             }
