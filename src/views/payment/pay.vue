@@ -11,7 +11,8 @@
             style="width: 100%;">
           <el-table-column
               label="商品编号"
-              align="center">
+              align="center"
+              mid-width="5%">
             <template slot-scope="scope">
               {{ scope.$index+1 }}
             </template>
@@ -19,11 +20,13 @@
           <el-table-column
               prop="productName"
               label="商品名称"
-              align="center">
+              align="center"
+              mid-width="10%">
           </el-table-column>
           <el-table-column
               label="商品图片"
-              align="center">
+              align="center"
+              width="200">
             <template slot-scope="scope">
               <img :src=scope.row.imageUrl alt="" style="width: 200px;height: 150px">
             </template>
@@ -31,13 +34,14 @@
           <el-table-column
               prop="describe"
               label="商品描述"
-              width="200"
-              align="center">
+              align="center"
+              mid-width="15%">
           </el-table-column>
           <el-table-column
               prop="productPrice"
               label="商品价格"
-              align="center">
+              align="center"
+              mid-width="5%">
             <template slot-scope="scope">
               ￥{{ scope.row.productPrice }}（不含税）
             </template>
@@ -50,7 +54,8 @@
           <el-table-column
               prop="operation"
               label="操作"
-              align="center">
+              align="center"
+              mid-width="5%">
             <template slot-scope="scope">
               <i
                   class="el-icon-remove-outline"
@@ -398,7 +403,20 @@
           tax: '',
           account: ''
         },
-        invoiceRules: {},
+        invoiceRules: {
+          rise: [
+            { required: true, message: '发票抬头不能为空', trigger: 'blur' }
+          ],
+          bank: [
+            { required: true, message: '开户银行不能为空', trigger: 'blur' }
+          ],
+          tax: [
+            { required: true, message: '税号不能为空', trigger: 'blur' }
+          ],
+          account: [
+            { required: true, message: '开户银行账号不能为空', trigger: 'blur' }
+          ]
+        },
         invoice: false,
         fullscreen: false,
         payType: true,
@@ -555,7 +573,7 @@
                 c.push(data[j]);
                 j++;
                 //拼接图片地址
-                c[i].imageUrl = "http://acfly.cn:8888/static/images/" + c[i].imageUrl;
+                c[i].imageUrl = "https://www.acfly.cn/static/images/" + c[i].imageUrl;
                 a.push(this.tableList[i].productName);
                 b[i] = 0;
                 //修改价格
@@ -585,6 +603,10 @@
             j++;
           }
         }
+        //处理支付类型
+        if(a) {
+          type = '微信';
+        }
         this.getRadio();
         //处理发票类型
         if(this.radioValue1) {
@@ -594,38 +616,67 @@
           } else if(this.radioValue4) {
             invoiceType = 4;
           }
+          //需要发票则增加对发票内容的判断
+          if(!this.invoiceForm.rise) {
+            this.$message.error('请完整填写发票抬头');
+          }else if(!this.invoiceForm.bank) {
+            this.$message.error('请完整填写开户银行');
+          }else if(!this.invoiceForm.tax) {
+            this.$message.error('请完整填写税号');
+          }else if(!this.invoiceForm.account) {
+            this.$message.error('请完整填写开户银行账号');
+          }else {
+            this.$axios.post('/wxPay/pay',{
+              product: product,
+              userName: this.form.name,
+              phone: this.form.phone,
+              email: this.form.email,
+              address: this.form.address2,
+              remark: this.form.remark,
+              flag: this.pushValue,
+              invoiceType: invoiceType,
+              invoiceTitle: this.invoiceForm.rise,
+              account: this.invoiceForm.account,
+              taxId: this.invoiceForm.tax,
+              bank: this.invoiceForm.bank,
+              payType: type
+            }).then((res) => {
+              if(res.status === 200) {
+                this.getCode(res.data);
+                this.orderId = res.data.orderId;
+                this.openFullScreen(a);
+              }
+            }).catch((err) => {
+              console.log(err);
+            })
+          }
         } else if(this.radioValue2) {
           //不需要发票
           invoiceType = 2;
-        }
-        //处理支付类型
-        if(a) {
-          type = '微信';
-        }
-        this.$axios.post('/wxPay/pay',{
-          product: product,
-          userName: this.form.name,
-          phone: this.form.phone,
-          email: this.form.email,
-          address: this.form.address2,
-          remark: this.form.remark,
-          flag: this.pushValue,
-          /*invoiceFlag: this.radioValue1,*/
-          invoiceType: invoiceType,
-          invoiceTitle: this.invoiceForm.rise,
-          account: this.invoiceForm.account,
-          taxId: this.invoiceForm.tax,
-          bank: this.invoiceForm.bank,
-          payType: type
-        }).then((res) => {
+          this.$axios.post('/wxPay/pay',{
+            product: product,
+            userName: this.form.name,
+            phone: this.form.phone,
+            email: this.form.email,
+            address: this.form.address2,
+            remark: this.form.remark,
+            flag: this.pushValue,
+            invoiceType: invoiceType,
+            invoiceTitle: this.invoiceForm.rise,
+            account: this.invoiceForm.account,
+            taxId: this.invoiceForm.tax,
+            bank: this.invoiceForm.bank,
+            payType: type
+          }).then((res) => {
             if(res.status === 200) {
               this.getCode(res.data);
               this.orderId = res.data.orderId;
               this.openFullScreen(a);
             }
-        }).catch((err) => {
-          console.log(err);
-        })
+          }).catch((err) => {
+            console.log(err);
+          })
+        }
       },
       //获取二维码
       getCode(data) {

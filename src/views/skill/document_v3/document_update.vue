@@ -57,13 +57,13 @@
     <div id="update_C9">
       <div class="box">
         <p class="title">C9固件说明</p>
-
+        <p v-for="(item, i) in describe1" :key="i">{{ item }} : <span class="download" @click="downloadZip1(i)" style="color: #4299F9;text-decoration: underline;cursor: pointer;">立即下载</span></p>
       </div>
     </div>
     <div id="update_A9">
       <div class="box">
         <p class="title">A9固件说明</p>
-
+        <p v-for="(item, i) in describe2" :key="i">{{ item }} : <span class="download" @click="downloadZip2(i)" style="color: #4299F9;text-decoration: underline;cursor: pointer;">立即下载</span></p>
       </div>
     </div>
   </div>
@@ -73,13 +73,44 @@
   export default {
     name: "document_update",
     data() {
-      return {}
+      return {
+        name1: [],
+        describe1: [],
+        path1: [],
+        name2: [],
+        describe2: [],
+        path2: [],
+      }
     },
     methods: {
       getZip() {
         this.$axios.get('/file/zip').then((res) => {
           if(res.status === 200) {
-            this.downloadData = res.data;
+            let data = res.data;
+            let describe1 = [];  //存放C9视频的描述文字
+            let name1 = [];  //存放C9视频的名字
+            let path1 = [];  //存放C9视频的路径
+            let describe2 = [];  //存放A9视频的描述文字
+            let name2 = [];  //存放A9视频的名字
+            let path2 = [];  //存放A9视频的路径
+            for(let i = 0; i<data.length; i++) {
+              if(data[i].videoName.indexOf("C9") != -1) {
+                name1.push(data[i].videoName);
+                describe1.push(data[i].descirbe);
+                path1.push(data[i].path);
+              }
+              if(data[i].videoName.indexOf("A9") != -1) {
+                name2.push(data[i].videoName);
+                describe2.push(data[i].descirbe);
+                path2.push(data[i].path);
+              }
+            }
+            this.name1 = name1;
+            this.describe1 = describe1;
+            this.path1 = path1;
+            this.name2 = name2;
+            this.describe2 = describe2;
+            this.path2= path2;
           }
           else {
             this.$message.error(res.msg);
@@ -88,10 +119,18 @@
           console.log(err);
         })
       },
-      downloadZip() {
-        let url = 'https://acfly.cn/background/file/download/地面站.zip';
+      downloadZip1(i) {
+        let name = '';
+        name = this.path1[i].slice(11);
+        let url = 'https://acfly.cn/background/file/download/' + name;
         window.open(url);
       },
+      downloadZip2(i) {
+        let name = '';
+        name = this.path2[i].slice(11);
+        let url = 'https://acfly.cn/background/file/download/' + name;
+        window.open(url);
+      }
     },
     beforeMount() {
       this.getZip();

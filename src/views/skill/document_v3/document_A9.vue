@@ -526,7 +526,7 @@
     </div>
     <div id="A9_17">
       <div class="box">
-        <p class="title">14 自动返航策略</p>
+        <p class="title">17 自动返航策略</p>
         <p>一键返航、低电量自动返航和失控自动返航都遵循以下返航策略：</p>
         <ul>
           <li>无人机在距Home点Sf_GbRtHRange(默认30米)的水平距离范围内无视返航高度参数，直接返航。</li>

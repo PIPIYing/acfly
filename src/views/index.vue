@@ -32,7 +32,7 @@
           <router-link to="/index/skill" target="_blank">技术支持</router-link>
           <div class="navList">
             <div class="item">
-              <p @click="downloadZip()" style="color: black;">地面站下载</p>
+              <p @click="downloadZip()" class="download">地面站下载</p>
             </div>
             <div class="item">
               <router-link to="/index/skill" target="_blank">技术文档</router-link>

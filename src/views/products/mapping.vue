@@ -2,7 +2,7 @@
   <div id="mapping">
     <div class="intro_mapping" :style="size">
       <p class="title15">X640四旋翼无人机</p>
-      <p class="word15">简单 | 使用 | 创新</p>
+      <p class="word15">简单 | 实用 | 创新</p>
     </div>
     <div class="detail16" :style="imgSize">
 <!--

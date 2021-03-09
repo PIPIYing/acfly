@@ -424,10 +424,25 @@
                 <a href="#C9_15" slot="title">15 航线任务设置</a>
               </el-menu-item>
               <el-menu-item index="/index/skill/document_C9#16">
-                <a href="#C9_16" slot="title">16 相机触发拍照配置</a>
+                <a href="#C9_16" slot="title">16 断电/断点续飞</a>
               </el-menu-item>
               <el-menu-item index="/index/skill/document_C9#17">
-                <a href="#C9_17" slot="title">17 飞控及定位传感器安装偏移</a>
+                <a href="#C9_17" slot="title">17 相机触发拍照配置</a>
+              </el-menu-item>
+              <el-menu-item index="/index/skill/document_C9#18">
+                <a href="#C9_18" slot="title">18 POS记录及PPK功能</a>
+              </el-menu-item>
+              <el-menu-item index="/index/skill/document_C9#19">
+                <a href="#C9_19" slot="title">19 飞控及定位传感器安装偏移</a>
+              </el-menu-item>
+              <el-menu-item index="/index/skill/document_C9#20">
+                <a href="#C9_20" slot="title">20 串口功能配置</a>
+              </el-menu-item>
+              <el-menu-item index="/index/skill/document_C9#21">
+                <a href="#C9_21" slot="title">21 AUX参数功能</a>
+              </el-menu-item>
+              <el-menu-item index="/index/skill/document_C9#22">
+                <a href="#C9_22" slot="title">22 低电量报警功能</a>
               </el-menu-item>
             </el-menu-item-group>
           </el-submenu>
@@ -714,18 +729,18 @@
               </el-submenu>
             </el-menu-item-group>
           </el-submenu>-->
-          <el-submenu index="/index/skill/document_update">
+          <el-submenu index="/index/skill/document_update#">
             <a href="#update_C9" slot="title">固件下载</a>
             <el-menu-item-group>
-              <el-menu-item index="/index/skill/document_update">
+              <el-menu-item index="/index/skill/document_update#C9">
                 <a href="#update_C9">C9</a>
               </el-menu-item>
-              <el-menu-item index="/index/skill/document_update">
+              <el-menu-item index="/index/skill/document_update#A9">
                 <a href="#update_A9">A9</a>
               </el-menu-item>
             </el-menu-item-group>
           </el-submenu>
-          <el-submenu index="/index/skill/document_video">
+          <el-submenu index="/index/skill/document_video#">
             <a href="#video_C9" slot="title">视频教程</a>
             <!--<el-menu-item-group>
               <el-menu-item index="/index/skill/document_video">
