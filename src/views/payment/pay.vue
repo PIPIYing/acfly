@@ -259,7 +259,8 @@
         </div>
       </div>
     </div>
-    <div id="fullscreen" v-if="fullscreen">
+    <div id="fullscreen" v-if="fullscreen" @mousewheel.prevent>
+      <i class="el-icon-circle-close" id="icon" @click="stopFullscreen()"></i>
       <div class="process" v-if="paySuccess">
         <p class="tips">订单提交成功  请尽快付款</p>
         <div class="info">
@@ -314,6 +315,7 @@
   export default {
     name: "pay",
     components: { VDistpicker },
+    inject: ['reload'],
     data() {
       //姓名 电话 邮箱校验
       var nameCheck = (rule, value, callback) => {
@@ -422,7 +424,8 @@
         payType: true,
         paySuccess: false,
         codeUrl: '',
-        orderId: ''
+        orderId: '',
+        checkType: false
       }
     },
     methods: {
@@ -532,16 +535,23 @@
       closeFullScreen() {
         this.codeUrl = '';
         this.paySuccess = false;
+        this.showPayment = false;
+        this.showList = true;
+        this.cartList = [];
+        this.cartNum = [];
+        this.productNum = 0;
+        this.productSum = 0;
+        this.productSumChange = 0;
         setTimeout(() => {
           this.fullscreen = false;
-          this.showPayment = false;
-          this.showList = true;
-          this.cartList = [];
-          this.cartNum = [];
-          this.productNum = 0;
-          this.productSum = 0;
-          this.productSumChange = 0;
         }, 3000);
+        this.reload();
+      },
+      stopFullscreen() {
+        this.paySuccess = false;
+        this.fullscreen = false;
+        this.checkType = false;
+        this.codeUrl = '';
       },
       //构建数组对象
       createArr(a, b) {
@@ -686,7 +696,8 @@
           const blob = new Blob([res])
           const url = window.URL.createObjectURL(blob);
           this.codeUrl = url;
-          this.checkStatus();
+          this.checkType = true;
+          this.inquiryPay();
         }).catch((err) => {
           console.log(err);
         })
@@ -698,11 +709,14 @@
           //请求成功，清除定时器
           clearTimeout(time);
           this.closeFullScreen();
-        } else {
-          //否则的话，每隔3秒钟请求一次
+        } else if(this.checkType) {
+          //否则的话且窗口还没有关闭，则每隔3秒钟请求一次
           time = setTimeout(() => {
             this.inquiryPay();
           }, 3000);
+        } else if(!this.checkType) {
+          //窗口已关闭，则不发送查询订单状态的请求
+          this.$message.warning('已取消付款');
         }
       },
       //查询订单状态
