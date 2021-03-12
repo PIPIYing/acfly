@@ -47,9 +47,11 @@
             </template>
           </el-table-column>
           <el-table-column
-              prop="remark"
               label="备注"
               align="center">
+            <template>
+              可开具发票
+            </template>
           </el-table-column>
           <el-table-column
               prop="operation"
@@ -70,7 +72,7 @@
         </el-table>
       </div>
       <div class="bottom">
-        <div class="step" @click="nextToAdd">下一步</div>
+        <div id="step1" @click="nextToAdd">下一步</div>
         <div class="cart">
           <el-badge :value="productNum" class="item" slot="reference">
             <el-tooltip class="item_word" effect="light" placement="top">
@@ -146,7 +148,7 @@
         </div>
       </div>
       <div class="bottom">
-        <div class="step" @click="nextToPayment">下一步</div>
+        <div id="step2" @click="nextToPayment">下一步</div>
         <div class="cart">
           <el-badge :value="productNum" class="item" slot="reference">
             <el-tooltip class="item_word" effect="light" placement="top">
@@ -229,8 +231,8 @@
                     <span class="tag">*</span>
                   </el-form-item>
                   <el-form-item prop="bank">
-                    <el-input v-model="invoiceForm.bank" placeholder="请输入开户银行" class="dataInput inputMargin"></el-input>
-                    <span class="tag">*</span>
+                    <el-input v-model="invoiceForm.bank" placeholder="请输入开户银行及账号" class="dataInput inputMargin"></el-input>
+                    <span class="tag" v-show="ruleShow === true">*</span>
                   </el-form-item>
                 </div>
                 <div class="row_two">
@@ -239,8 +241,8 @@
                     <span class="tag">*</span>
                   </el-form-item>
                   <el-form-item prop="account">
-                    <el-input v-model="invoiceForm.account" placeholder="请输入开户银行账号" class="dataInput inputMargin"></el-input>
-                    <span class="tag">*</span>
+                    <el-input v-model="invoiceForm.account" placeholder="请输入地址、电话" class="dataInput inputMargin"></el-input>
+                    <span class="tag" v-show="ruleShow === true">*</span>
                   </el-form-item>
                 </div>
               </el-form>
@@ -399,6 +401,7 @@
         radioValue2: '',
         radioValue3: '',
         radioValue4: '',
+        ruleShow: false,
         invoiceForm: {
           rise: '',
           bank: '',
@@ -406,7 +409,7 @@
           account: ''
         },
         invoiceRules: {
-          rise: [
+          /*rise: [
             { required: true, message: '发票抬头不能为空', trigger: 'blur' }
           ],
           bank: [
@@ -417,7 +420,7 @@
           ],
           account: [
             { required: true, message: '开户银行账号不能为空', trigger: 'blur' }
-          ]
+          ]*/
         },
         invoice: false,
         fullscreen: false,
@@ -488,16 +491,20 @@
       toInvoice() {
         this.invoice = true;
         this.productSumChange = (this.productSum * 1.06).toFixed(1);
+        this.ruleShow = false;
       },
       notToInvoice() {
         this.invoice = false;
         this.productSumChange = this.productSum;
+        this.ruleShow = false;
       },
       invoice3() {
         this.productSumChange = (this.productSum * 1.06).toFixed(1);
+        this.ruleShow = false;
       },
       invoice4() {
         this.productSumChange = (this.productSum * 1.1).toFixed(1);
+        this.ruleShow = true;
       },
       goBack1() {
         this.showAddress = false;
@@ -534,18 +541,22 @@
       },
       closeFullScreen() {
         this.codeUrl = '';
+        this.radioValue1 = '';
+        this.radioValue2 = '';
+        this.radioValue3 = '';
+        this.radioValue4 = '';
         this.paySuccess = false;
-        this.showPayment = false;
-        this.showList = true;
-        this.cartList = [];
-        this.cartNum = [];
-        this.productNum = 0;
-        this.productSum = 0;
-        this.productSumChange = 0;
         setTimeout(() => {
+          this.cartList = [];
+          this.cartNum = [];
+          this.productNum = 0;
+          this.productSum = 0;
+          this.productSumChange = 0;
           this.fullscreen = false;
+          this.showPayment = false;
+          this.showList = true;
+          this.reload();
         }, 3000);
-        this.reload();
       },
       stopFullscreen() {
         this.paySuccess = false;
@@ -571,26 +582,26 @@
       getGoods() {
         this.$axios.get('/goods/goods').then((res) => {
           if(res.status === 200) {
-            let data = res.data;
             let a = [];
             let b = [];  //a b为拼接数组
-            let c = [];  //已上架商品
-            this.tableList = data;
-            for(let i=0, j=0; i<data.length; i++) {
+            let c = res.data;  //商品数据
+            let d = [];  //已上架商品数组
+            let len = c.length;
+            for(let i=0; i<len; i++) {
               //判断商品是否上架
-              if(data[i].status === '1') {
-                //上架商品
-                c.push(data[j]);
-                j++;
+              if(c[i].status === '1') {
                 //拼接图片地址
                 c[i].imageUrl = "https://www.acfly.cn/static/images/" + c[i].imageUrl;
-                a.push(this.tableList[i].productName);
-                b[i] = 0;
                 //修改价格
                 c[i].productPrice = c[i].productPrice / 100;
+                //获取产品名和初始化产品数量
+                a.push(c[i].productName);
+                b.push(0);
+                //上架商品的数组
+                d.push(c[i]);
               }
             }
-            this.tableList = c;
+            this.tableList = d;
             this.createArr(a, b);
           }
           else {
@@ -629,12 +640,12 @@
           //需要发票则增加对发票内容的判断
           if(!this.invoiceForm.rise) {
             this.$message.error('请完整填写发票抬头');
-          }else if(!this.invoiceForm.bank) {
-            this.$message.error('请完整填写开户银行');
+          }else if(!this.invoiceForm.bank && this.ruleShow) {
+            this.$message.error('请完整填写开户银行及账号');
           }else if(!this.invoiceForm.tax) {
             this.$message.error('请完整填写税号');
-          }else if(!this.invoiceForm.account) {
-            this.$message.error('请完整填写开户银行账号');
+          }else if(!this.invoiceForm.account && this.ruleShow) {
+            this.$message.error('请完整填写地址、电话');
           }else {
             this.$axios.post('/wxPay/pay',{
               product: product,
@@ -740,6 +751,28 @@
     },
     beforeMount() {
       this.getGoods();
+    },
+    watch: {
+      'productNum': function(newV) {
+        let a  = document.getElementById('step1');
+        if(newV > 0) {
+          a.style.color = '#4299F9';
+        } else {
+          a.style.color = 'gray';
+        }
+      },
+      'form': {
+        handler(newV) {
+          let a  = document.getElementById('step2');
+          if(newV.name && newV.phone && newV.email && newV.address1.province && newV.address1.city && newV.address1.area && newV.address1.add) {
+            a.style.color = '#4299F9';
+          } else {
+            a.style.color = 'gray';
+          }
+        },
+        deep: true,  //深度遍历
+        immediate: false  //默认false，设置为true会立即执行
+      }
     }
   }
 </script>

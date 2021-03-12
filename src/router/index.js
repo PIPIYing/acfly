@@ -123,6 +123,11 @@ const routes = [
         name: 'document_video',
         component: () => import('../views/skill/document_v3/document_video')
       },
+      {
+        path: 'document_download',
+        name: 'document_download',
+        component: () => import('../views/skill/document_v3/document_download')
+      },
     ]
     /*children: [
       {

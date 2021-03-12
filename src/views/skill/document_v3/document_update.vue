@@ -55,15 +55,25 @@
       </div>
     </div>-->
     <div id="update_C9">
-      <div class="box">
+      <div class="box update_box">
         <p class="title">C9固件说明</p>
-        <p v-for="(item, i) in describe1" :key="i">{{ item }} : <span class="download" @click="downloadZip1(i)" style="color: #4299F9;text-decoration: underline;cursor: pointer;">立即下载</span></p>
+        <p v-for="(item, i) in describe1" :key="i" class="update_item">
+          {{ item }}
+          <span class="link_style" @click="downloadZip1(i)">
+            立即下载
+          </span>
+        </p>
       </div>
     </div>
     <div id="update_A9">
-      <div class="box">
+      <div class="box update_box">
         <p class="title">A9固件说明</p>
-        <p v-for="(item, i) in describe2" :key="i">{{ item }} : <span class="download" @click="downloadZip2(i)" style="color: #4299F9;text-decoration: underline;cursor: pointer;">立即下载</span></p>
+        <p v-for="(item, i) in describe2" :key="i" class="update_item">
+          {{ item }}
+          <span class="link_style" @click="downloadZip2(i)">
+            立即下载
+          </span>
+        </p>
       </div>
     </div>
   </div>
@@ -96,6 +106,7 @@
             for(let i = 0; i<data.length; i++) {
               if(data[i].videoName.indexOf("C9") !== -1) {
                 name1.push(data[i].videoName);
+                /*console.log(data[i].describe.replace(/<br\/>/g, "+\n"));*/
                 describe1.push(data[i].describe);
                 path1.push(data[i].path);
               }

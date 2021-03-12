@@ -1,4 +1,4 @@
-#document_C9, #document_A9, #document_mapping, #document_update, #document_video {
+#document_C9, #document_A9, #document_mapping, #document_update, #document_video, #document_download {
   width: 100%;
   height: 100%;
   font-family: "微软雅黑", sans-serif;
@@ -33,8 +33,9 @@
       text-indent: 2em;
     }
     .link_style {
-      color: #0563C1;
+      color: #4299F9;
       text-decoration: underline;
+      cursor: pointer;
     }
     .image, .image_two, .image_word, .image_col {
       display: flex;
@@ -161,6 +162,21 @@
       .video {
         display: flex;
       }
+    }
+  }
+  .update_box {
+    white-space:pre-wrap;
+    /*.title2 {
+      line-height: 60px;
+      padding: 10px 0;
+    }*/
+    .update_item {
+      border-bottom: 1px rgba(0,0,0,0.2) solid;
+      /*.download {
+        color: #4299F9;
+        text-decoration: underline;
+        cursor: pointer;
+      }*/
     }
   }
 }

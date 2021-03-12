@@ -740,7 +740,7 @@
               </el-menu-item>
             </el-menu-item-group>
           </el-submenu>
-          <el-submenu index="/index/skill/document_video#">
+          <el-menu-item index="/index/skill/document_video#">
             <a href="#video_C9" slot="title">视频教程</a>
             <!--<el-menu-item-group>
               <el-menu-item index="/index/skill/document_video">
@@ -750,7 +750,10 @@
                 <a href="#video_A9">A9</a>
               </el-menu-item>
             </el-menu-item-group>-->
-          </el-submenu>
+          </el-menu-item>
+          <el-menu-item index="/index/skill/document_download#">
+            <a href="#download" slot="title">文档下载</a>
+          </el-menu-item>
         </el-menu>
       </div>
       <router-view class="content"></router-view>
