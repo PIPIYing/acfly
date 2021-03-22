@@ -14,7 +14,7 @@ const routes = [
   },
   {
     path: '/index/skill',
-    redirect: '/index/skill/document_C9'
+    redirect: '/index/skill/document_update'
   },
   {
     path: '/index',
@@ -84,21 +84,6 @@ const routes = [
     component: () => import('../views/skill/skill'),
     children: [
       /*{
-        path: 'catalog_C9',
-        name: 'catalog_C9',
-        component: () => import('../views/skill/document_v2/catalog_C9')
-      },
-      {
-        path: 'catalog_A9',
-        name: 'catalog_A9',
-        component: () => import('../views/skill/document_v2/catalog_A9')
-      },
-      {
-        path: 'catalog_mapping',
-        name: 'catalog_mapping',
-        component: () => import('../views/skill/document_v2/catalog_mapping')
-      },*/
-      {
         path: 'document_C9',
         name: 'document_C9',
         component: () => import('../views/skill/document_v3/document_C9')
@@ -107,7 +92,7 @@ const routes = [
         path: 'document_A9',
         name: 'document_A9',
         component: () => import('../views/skill/document_v3/document_A9')
-      },
+      },*/
       /*{
         path: 'document_mapping',
         name: 'document_mapping',

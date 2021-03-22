@@ -264,7 +264,7 @@
         </table>
       </div>
       <div class="link">
-        （更多详情请查看<router-link to="/index/skill/document_mapping">产品手册</router-link>）
+        （更多详情请查看<router-link target="_blank" to="/index/skill/document_download">产品手册</router-link>）
       </div>
     </div>
     <div class="btnBox">

@@ -13,6 +13,9 @@ Vue.component('v-distpicker', VDistpicker)
 
 Vue.prototype.$axios = axios;
 axios.defaults.baseURL = 'https://acfly.cn/background';
+/*
+axios.defaults.baseURL = 'http://borui.cn.utools.club';
+*/
 
 new Vue({
   router,

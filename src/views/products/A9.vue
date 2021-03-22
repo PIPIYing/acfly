@@ -106,7 +106,7 @@
         </table>
       </div>
       <div class="link">
-        （更多详情请查看<router-link to="/index/skill/document_A9">产品手册</router-link>）
+        （更多详情请查看<router-link target="_blank" to="/index/skill/document_download">产品手册</router-link>）
       </div>
     </div>
     <div class="btnBox">
@@ -144,7 +144,7 @@
     methods: {
       getImgSize() {
         //获取背景图元素
-        var img = document.getElementsByTagName('img')[0];
+        /*var img = document.getElementsByTagName('img')[0];*/
         if(window.innerWidth > 2000) {
           this.size.height = ( 1080 * window.innerWidth ) / 1920 - 100 + "px";
         }
@@ -161,7 +161,7 @@
           this.size.height = ( 1080 * window.innerWidth ) / 1920 + "px";
         }
         /*this.size.height = img.offsetHeight + 'px';*/
-        console.log(img);
+        /*console.log(img);*/
       },
       getImgH() {
         this.imgSize.height = ( 840 * window.innerWidth ) / 1920 - 4 + "px";

@@ -273,9 +273,9 @@
             router
             @open="handleOpen"
             @close="handleClose">
-          <el-submenu index="/index/skill/document_C9#">
+          <!--<el-submenu index="/index/skill/document_C9#">
             <a href="#C9_0" slot="title">C9/C9pro飞行控制器</a>
-            <!--<span slot="title">C9/C9pro飞行控制器</span>-->
+            &lt;!&ndash;<span slot="title">C9/C9pro飞行控制器</span>&ndash;&gt;
             <el-menu-item-group>
               <el-submenu index="/index/skill/document_C9#1">
                 <a href="#C9_1" slot="title">1 飞控接线</a>
@@ -582,7 +582,7 @@
                 <a href="#A9_23">23 二次开发视频教程链接</a>
               </el-menu-item>
             </el-menu-item-group>
-          </el-submenu>
+          </el-submenu>-->
           <!--<el-submenu index="/index/skill/document_mapping#">
             <a href="#mapping_0" slot="title">整机测绘</a>
             &lt;!&ndash;<span slot="title">C9/C9pro飞行控制器</span>&ndash;&gt;

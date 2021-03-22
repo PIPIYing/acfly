@@ -1,7 +1,7 @@
 <template>
   <div id="index">
     <div id="topBar" :style="sizeInfo">
-      <div class="logoImg">
+      <div class="logoImg" :style="{ 'background-image':'url('+imgUrl+')' }">
         <!--<img src="../assets/images/logo.png" alt="博睿创新科技" class="logo" />-->
       </div>
       <div id="nav">
@@ -68,7 +68,7 @@
 -->
           <router-link to="/index/pay" target="_blank">官方商城</router-link>
           <router-link to="/index/develop">经销合作</router-link>
-          <p style="font-size: 18px;color: rgba(255,255,255,0.4);cursor: pointer;" @click="downloadZip()">地面站下载</p>
+          <a href="#" onclick="return false" @click="downloadZip()">地面站下载</a>
         </div>
         <div class="footerList">
           <p class="title">安全飞行</p>
@@ -114,7 +114,8 @@
       return {
         sizeInfo: {
           width: ''
-        }
+        },
+        imgUrl: require('../assets/images/logo_black.png')
       }
     },
     methods: {
@@ -166,16 +167,34 @@
         }).catch((err) => {
           console.log(err);
         })
-      }
+      },
+     /* routerChange(to, from) {
+        console.log('原路由：' + from.path);
+        console.log('现路由：' + to.path);
+        if(to.path === '/index/products/A9') {
+          this.imgUrl = require('../assets/images/logo.png');
+        } else {
+          this.imgUrl = require('../assets/images/logo_black.png');
+        }
+      }*/
     },
     created(){
       this.getCount();
       window.addEventListener('resize', this.getInfo); //注册监听器
       this.getInfo() //页面创建时先调用一次
     },
+    /*mounted() {
+      var logo = document.getElementById('changeLogo');
+      this.imgUrl = require('../assets/images/logo.png')
+      console.log(logo.style.backgroundImage);
+    },*/
     destroyed(){
       window.removeEventListener('resize', this.getInfo)
-    }
+    },
+    /*watch: {
+      //注意：$route不是$router
+      '$route' : 'routerChange'
+    }*/
   }
 </script>
 
